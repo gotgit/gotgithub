@@ -1,0 +1,33 @@
+.. GotGitHub documentation master file, created by
+   sphinx-quickstart on Wed Aug 24 20:52:42 2011.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+GotGitHub
+=====================================
+
+.. include:: README.rst
+
+目录:
+
+.. toctree::
+   :maxdepth: 3
+   :numbered:
+   :glob:
+
+   01-explore-github/index
+   02-join-github/index
+   03-project-hosting/index
+   04-work-with-others/index
+   05-private-and-commercial/index
+   06-side-projects/index
+   10-appendix/index
+   20-appendix/index
+
+索引和表格
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

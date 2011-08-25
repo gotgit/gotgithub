@@ -1,0 +1,37 @@
+{#
+    sphinxdoc/layout.html
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    Sphinx layout template for the sphinxdoc theme.
+
+    :copyright: Copyright 2007-2011 by the Sphinx team, see AUTHORS.
+    :license: BSD, see LICENSE for details.
+#}
+{% extends "basic/layout.html" %}
+
+{# put the sidebar before the body #}
+{% block sidebar1 %}{{ sidebar() }}{% endblock %}
+{% block sidebar2 %}{% endblock %}
+{%- block footer %}
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      <br />
+      全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
+      <br />
+
+    {%- if show_copyright %}
+      {%- if hasdoc('copyright') %}
+        {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+      {%- else %}
+        {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+      {%- endif %}
+    {%- endif %}
+    {%- if last_updated %}
+      {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+    {%- endif %}
+    {%- if show_sphinx %}
+      {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+    {%- endif %}
+
+    </div>
+{%- endblock %}
