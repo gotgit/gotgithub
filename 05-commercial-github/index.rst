@@ -4,6 +4,5 @@
 .. toctree::
    :maxdepth: 1
 
-   010-private-plans
-   020-enterprise-plans
-   030-github-fi
+   010-non-free-plans
+   020-github-fi

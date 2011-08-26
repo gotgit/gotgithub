@@ -19,7 +19,7 @@ GotGitHub
    02-join-github/index
    03-project-hosting/index
    04-work-with-others/index
-   05-private-and-commercial/index
+   05-commercial-github/index
    06-side-projects/index
    10-appendix/index
    20-appendix/index
