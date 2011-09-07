@@ -32,6 +32,7 @@ help:
 	@echo "  changes    to make an overview of all changed/added/deprecated items"
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
+	@echo "  gh-pages   to publish htmls on gh-pages branch for GitHub"
 
 clean:
 	-rm -rf $(BUILDDIR)/*
@@ -124,7 +125,7 @@ linkcheck:
 	@echo "Link check complete; look for any errors in the above output " \
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
 
-gh-pages:
+gh-pages: clean html
 	@git add -f _build/html; \
 	tree=$$(git write-tree); \
 	newhtml=$$(git ls-tree $$tree:_build | grep "html$$" | awk '{print $$3;}') ; \
