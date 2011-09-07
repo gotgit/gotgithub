@@ -124,6 +124,20 @@ linkcheck:
 	@echo "Link check complete; look for any errors in the above output " \
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
 
+gh-pages:
+	@git add -f _build/html; \
+	tree=$$(git write-tree); \
+	newhtml=$$(git ls-tree $$tree:_build | grep "html$$" | awk '{print $$3;}') ; \
+	oldhtml=$$(git rev-parse refs/heads/gh-pages^{tree}); \
+	if [ "$$oldhtml" = "$$newhtml" ]; then \
+	  echo "HTML is uptodate, branch gh-pages not changed." ; \
+	else \
+	  commit=$$(git log --format=%B -1 | git commit-tree $$newhtml -p refs/heads/gh-pages) ; \
+	  git update-ref -m "HTML compiled from $$(git rev-parse HEAD)" refs/heads/gh-pages $$commit ; \
+	  echo "Branch gh-pages changed." ; \
+	fi; \
+	git rm --cached -r -q _build/html
+
 doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
