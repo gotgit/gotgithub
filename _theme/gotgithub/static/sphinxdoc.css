@@ -337,3 +337,17 @@ div.viewcode-block:target {
     border-top: 1px solid #ac9;
     border-bottom: 1px solid #ac9;
 }
+
+div.figure {
+    text-align: center;
+    margin: 1.5em 0 1.5em 0;
+}
+
+div.figure p.caption {
+    font-size: 0.9em;
+}
+
+div.figure img {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
