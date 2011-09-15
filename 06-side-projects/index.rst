@@ -6,9 +6,9 @@ GitHub最核心的产品是Git版本库（即项目）托管，此外GitHub还�
    :maxdepth: 1
 
    010-gist
-   030-jobs
-   040-shop
-   050-svn
-   060-hg-git
-   070-client-tools
-   080-opensource
+   020-jobs
+   030-shop
+   040-svn
+   050-hg-git
+   060-client-tools
+   070-opensource

@@ -1,4 +1,4 @@
-Gist
+GitHub:Gist
 ===============
 在GitHub网站的导航条上就有Gist子网站的链接： https://gist.github.com/ ，在本节我们就揭开其面纱。
 
