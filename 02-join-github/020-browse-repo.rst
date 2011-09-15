@@ -1,11 +1,11 @@
 浏览托管项目
 ===============
 
-GitHub的账户已经建立好了，在建立自己的项目托管之前，看看别人是怎么做的。在GitHub中搜索字符串“GotGit”，可以搜索到我建立的一个项目，项目地址是: https://github.com/ossxp-com/gotgit/ 。由上至下，GotGit项目首页可以分为四个区域。
+GitHub的账户已经建立好了，在建立自己的项目托管之前，看看别人是怎么做的。在GitHub中搜索字符串“GotGit”，可以搜索到我建立的一个项目，项目地址是: https://github.com/gotgit/gotgit/ 。由上至下，GotGit项目首页可以分为四个区域。
 
 * 区域一：项目概要介绍及版本库URL等。
 
-  项目GotGit是由用户 ossxp-com 创建，并且当前有4个关注用户和2个项目分支。最下面一行显示版本库的访问地址，只显示了HTTP和Git-daemon两个协议的URL地址，这是因为当前用户对该版本库只具有只读权限，因此没有显示SSH协议的URL地址。
+  项目GotGit托管在组织账号 gotgit 之下 [#]_ ，并且当前有4个关注用户和2个项目分支。最下面一行显示版本库的访问地址，只显示了HTTP和Git-daemon两个协议的URL地址，这是因为当前用户对该版本库只具有只读权限，因此没有显示SSH协议的URL地址。
 
   .. figure:: /images/join-github/gotgit-repo-tree-1.png
      :scale: 100
@@ -16,13 +16,13 @@ GitHub的账户已经建立好了，在建立自己的项目托管之前，看�
 
   ::
 
-    $ git clone https://github.com/ossxp-com/gotgit.git
+    $ git clone https://github.com/gotgit/gotgit.git
 
   或者使用Git-daemon协议。
 
   ::
 
-    $ git clone git://github.com/ossxp-com/gotgit.git
+    $ git clone git://github.com/gotgit/gotgit.git
 
 
 * 区域二：显示提交说明、提交用户头像、提交时间等提交信息。右侧还显示此次提交对应的提交ID、树ID，及父提交ID等。
@@ -142,6 +142,7 @@ GitHub还为项目提供图像化报表分析。图2-24是GotGit项目中用到�
 
 ----
 
+.. [#] 项目 gotgit 最早由用户 ossxp-com 创建，现已转移到组织 gotgit 账号之下。
 .. [#] https://github.com/blog/809-git-dumb-http-transport-to-be-turned-off-in-90-days
 .. [#] 短格式URL，实际对应于: https://github.com/cameronmcefee/Image-Diff-View-Modes/commit/8e95f70c9c47168305970e91021072673d7cdad8
 .. [#] https://github.com/blog/621-bye-bye-flash-network-graph-is-now-canvas

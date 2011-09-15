@@ -13,5 +13,5 @@
 
 ----
 
-.. [#] http://www.ossxp.com/doc/gotgit/
+.. [#] http://gotgit.github.com/gotgit/
 .. [#] https://github.com/gotgit/gotgithub

@@ -13,7 +13,7 @@ Fork + Pull模式
 GotGit版本库 [#]_ 用于维护《Git权威指南》一书的官网和勘误，下面演示的勘误表修改是由王胜 [#]_
 通过GitHub之外的一个缺陷追踪平台报告的 [#]_ 。他在报告中，甚至直接用GNU diff格式告诉我该如何修改。
 
-下面就以用户gotgithub身份，访问版本库 https://github.com/ossxp-com/gotgit/ ，添加新的勘误。如图4-1所示，gotgit项目在之前的示例中已经被我们关注但尚未Fork。
+下面就以用户gotgithub身份，访问版本库 https://github.com/gotgit/gotgit/ ，添加新的勘误。如图4-1所示，gotgit项目在之前的示例中已经被我们关注但尚未Fork。
 
 .. figure:: /images/work-with-others/gotgit-repo.png
    :scale: 100
@@ -66,10 +66,10 @@ GotGit版本库 [#]_ 用于维护《Git权威指南》一书的官网和勘误�
     --- a/errata.mkd
     +++ b/errata.mkd
     @@ -14,5 +14,6 @@
-     |     66 | 倒数第11行                | Author（提交者）             |  Author（作者）              | [Github#2](http://github.com/ossxp-com/gotgit/issues/2)    |
+     |     66 | 倒数第11行                | Author（提交者）             |  Author（作者）              | [Github#2](http://github.com/gotgit/gotgit/issues/2)    |
      |    144 | 第1行                     | \`$ **git rev-parse  A^{tree}  A:**  | $ **git rev-parse  A^{tree}  A:**              | [#153](http://redmine.ossxp.com/redmine/issues/153)  |
      |    218 | 第8行                     | 况下，Gits标识出合并冲突，           | 况下，Git标识出合并冲突，                      | [#159](http://redmine.ossxp.com/redmine/issues/159)  |
-    +|    369 | 第21行                    | 但 `-i` 参数仅当对一个项执行时才有效。 | 但 `-i` 参数仅当对一个项目执行时才有效。     | [Github#3](http://github.com/ossxp-com/gotgit/issues/3)    |
+    +|    369 | 第21行                    | 但 `-i` 参数仅当对一个项执行时才有效。 | 但 `-i` 参数仅当对一个项目执行时才有效。     | [Github#3](http://github.com/gotgit/gotgit/issues/3)    |
      |    516 | 倒数第15行                | **oldtag="cat"**             | **oldtag=\`cat\`**           | [#151](http://redmine.ossxp.com/redmine/issues/151)  |
 
 * 提交修改。至于提交说明中出现的编号，是为了和缺陷跟踪系统关联，会在后面章节介绍。
@@ -118,14 +118,14 @@ Pull Request
 
    图4-7：Pull Request包含的文件差异
 
-当Pull Request发出后，原始创建者ossxp-com用户会收到通知邮件，如图4-8所示。
+当Pull Request发出后，项目gotgit的开发者会收到通知邮件，如图4-8所示。
 
 .. figure:: /images/work-with-others/pull-request-email.png
    :scale: 100
 
    图4-8：Pull Request的通知邮件
 
-点击邮件中的URL链接，以gotgit版本库的原始创建者（即ossxp-com用户）身份登录，看到如图4-9的视图。之所以看到有两个用户参与到此Pull Request，是因为Pull Request和提交是以不同用户身份创建的。图4-9下方的表单可以向Pull Request追加评论，或者关闭此Pull Request。
+点击邮件中的URL链接，以项目gotgit的开发者（如ossxp-com）身份登录，看到如图4-9的视图。之所以看到有两个用户参与到此Pull Request，是因为Pull Request和提交是以不同用户身份创建的。图4-9下方的表单可以向Pull Request追加评论，或者关闭此Pull Request。
 
 .. figure:: /images/work-with-others/pull-request-owner-view.png
    :scale: 100
@@ -153,7 +153,7 @@ Pull Request提供的自动合并显示在提交日志中是什么样子的呢�
 
 ::
 
-  $ git clone git@github.com:ossxp-com/gotgit.git
+  $ git clone git@github.com:gotgit/gotgit.git
   $ cd gotgit
   $ git log --graph -3
   *   commit 6c1f1ee152629fd2f8d00ebe92c27a32d068d756
@@ -177,7 +177,7 @@ Pull Request提供的自动合并显示在提交日志中是什么样子的呢�
   | 
   |     Change font color for stronger text from red to brown.
 
-可以看出GitHub的自动合并产生了一个合并提交，类似执行 ``git merge --no-ff`` 命令。也就是说即使用户wangsheng的提交是一个“快进式提交”（基于ossxp-com/gotgit版本库最新提交所做的提交），也要产生一个合并提交。
+可以看出GitHub的自动合并产生了一个合并提交，类似执行 ``git merge --no-ff`` 命令。也就是说即使用户wangsheng的提交是一个“快进式提交”（基于gotgit/gotgit版本库最新提交所做的提交），也要产生一个合并提交。
 
 可能有人并不喜欢这种用 ``--no-ff`` 参数的非标准的合并方式，因为这种合并产生了一个多余的提交，可能增加代码评审的负担。若要取消GitHub的自动合并也很简单，因为Git无所不能：
 
@@ -205,8 +205,8 @@ Pull Request提供的自动合并显示在提交日志中是什么样子的呢�
     $ git remote -v
     gotgithub       https://github.com/gotgithub/gotgit.git (fetch)
     gotgithub       https://github.com/gotgithub/gotgit.git (push)
-    origin  git@github.com:ossxp-com/gotgit.git (fetch)
-    origin  git@github.com:ossxp-com/gotgit.git (push)
+    origin  git@github.com:gotgit/gotgit.git (fetch)
+    origin  git@github.com:gotgit/gotgit.git (push)
 
 * 获取远程版本库gotgithub的分支和提交。
 
@@ -322,6 +322,6 @@ GitHub提供了一个快捷的“Fork + Pull Request”操作。在介绍该操�
 
 ----
 
-.. [#] https://github.com/ossxp-com/gotgit/
+.. [#] https://github.com/gotgit/gotgit/
 .. [#] https://github.com/wangsheng/
 .. [#] http://redmine.ossxp.com/redmine/issues/161
