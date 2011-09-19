@@ -1,7 +1,22 @@
 用SVN操作GitHub
 =================
+2008年4月1日，GitHub宣布推出基于SVN的SVNHub网站，后证实这是一个善意的愚人节玩笑 [#]_ 。2010年愚人节，类似消息再起，可这一次是真的 [#]_ 。
 
-不是愚人节笑话哦。
+对于GitHub上的Git版本库，都可以用SVN命令检出甚至修改和提交。例如对于本书的Git版本库可以用SVN命令检出，如下。
 
-用SVN操作Git版本库。
+::
 
+  $ svn checkout http://svn.github.com/gotgit/gotgithub
+
+甚至可以修改并用SVN命令提交，进而修改Git版本库的内容。
+
+::
+
+  $ svn status
+  $ svn commit -m "6.4 svn.github initial."
+
+
+----
+
+.. [#] https://github.com/blog/31-back-to-subversion
+.. [#] https://github.com/blog/626-announcing-svn-support
