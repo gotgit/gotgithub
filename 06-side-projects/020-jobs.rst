@@ -1,6 +1,6 @@
 GitHub:Jobs
 ===============
-GitHub运营着一个求职网站，网址为 http://jobs.github.com/ ，如图6-12所示。还记得在“第2.1节 创建GitHub账号”介绍的相关内容么？当用户在个人设置中对简历和求职状态进行设置和启用后，GitHub就会帮助用户寻找合适的工作机会，而工作机会就来自于GitHub的求职网站。
+GitHub求职网站 [#]_ ，于2010年8月开通，提供求职招聘服务 [#]_ 。还记得在“第2.1节 创建GitHub账号”介绍的相关内容么？当用户在个人设置中对简历和求职状态进行设置和启用后，GitHub就会帮助用户寻找合适的工作机会，而工作机会就来自于GitHub的求职网站（如图6-12所示）。
 
 .. figure:: /images/side-projects/jobs-homepage.png
    :scale: 100
@@ -15,3 +15,8 @@ GitHub运营着一个求职网站，网址为 http://jobs.github.com/ ，如图6
    图6-13：企业主发布招聘启示流程
 
 企业发布招聘启示，首先要按照模版填写职位说明及留下供求职着投递简历的邮件地址，然后用信用卡付费，每一个招聘启示的付费标准为350美元/月。一旦付费完成招聘马上生效。GitHub作为程序员的聚集地，无疑是招聘和应聘的理想之地。
+
+----
+
+.. [#] http://jobs.github.com/
+.. [#] https://github.com/blog/694-github-jobs-launches-tomorrow
