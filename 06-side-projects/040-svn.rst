@@ -1,20 +1,44 @@
 用SVN操作GitHub
 =================
-2008年4月1日，GitHub宣布推出基于SVN的SVNHub网站，后证实这是一个善意的愚人节玩笑 [#]_ 。2010年愚人节，类似消息再起，可这一次是真的 [#]_ 。
+2008年4月1日，GitHub宣布推出基于SVN的SVNHub网站，后证实这是一个愚人节玩笑 [#]_ 。2010年愚人节，类似消息再起，可这一次不再是玩笑 [#]_ 。即对于GitHub上的每一个Git版本库，现在都可以用SVN命令进行操作。
 
-对于GitHub上的Git版本库，都可以用SVN命令检出甚至修改和提交。例如对于本书的Git版本库可以用SVN命令检出，如下。
+例如对于本书的Git版本库可以用如下的SVN命令检出。
 
 ::
 
   $ svn checkout http://svn.github.com/gotgit/gotgithub
+  $ cd gotgithub
 
-甚至可以修改并用SVN命令提交，进而修改Git版本库的内容。
+还支持用SVN进行提交，进而修改Git版本库。
 
-::
+* 用SVN查看修订状态。
 
-  $ svn status
-  $ svn commit -m "6.4 svn.github initial."
+  ::
 
+    $ svn status
+    M       06-side-projects/040-svn.rst
+
+* 用SVN向Git版本库提交。提交时要输入认证信息，本例以gotgit账号进行认证。
+
+  ::
+
+    $ svn commit -m "6.4 svn.github initial."
+    Authentication realm: <http://svn.github.com:80> GitHub
+    Username: gotgithub
+    Password for 'gotgithub':
+    Sending        06-side-projects/040-svn.rst
+    Transmitting file data .
+    Committed revision 24.
+
+GitHub提供的SVN支持和标准SVN服务还有很多不同，存在一定局限性，如果真的要把Git抛到一边完全使用SVN操作GitHub上的版本库，可能要失望。
+
+* 不能用SVN向版本库中添加新目录，只能在现有目录结构下添加新文件。
+* 命令 ``svn ls`` 的输出不能显示目录树结构，同理也不能用TortoiseSVN远程浏览版本库。
+* 不能按照目录检出，即使执行 ``svn checkout`` 命令时指向版本库的某一个目录，也会检出整个版本库。
+* 执行 ``svn commit`` 命令提交时，如果版本库已被更新，会尝试自动合并，若合并成功提交亦会成功，这和SVN标准行为不同。
+* 不支持SVN的分支和里程碑。即没有SVN的三个约定俗成顶级目录 `/trunk` 、 `/tags` 和 `/branches` ，SVN版本库仅和Git版本库中默认的 `master` 分支对应。
+
+虽然如此，在没有安装Git但安装了SVN的环境下，GitHub的这一功能还是有帮助的，可以让用户访问版本库。
 
 ----
 
