@@ -11,11 +11,11 @@ Date:   Fri Aug 26 10:39:23 2011 +0800
     This patch change the hard-coded dirs from _static, _images, _sources
     to static, images, and sources.
 
-diff --git a/application.py b/application.py
-index 3f03ffa..4607750 100644
---- a/application.py
-+++ b/application.py
-@@ -468,12 +468,12 @@ class Sphinx(object):
+diff --git a/sphinx/application.py b/sphinx/application.py
+index bfb39a7..9d336bf 100755
+--- a/sphinx/application.py
++++ b/sphinx/application.py
+@@ -467,7 +467,7 @@ class Sphinx(object):
              StandaloneHTMLBuilder.script_files.append(filename)
          else:
              StandaloneHTMLBuilder.script_files.append(
@@ -24,17 +24,20 @@ index 3f03ffa..4607750 100644
  
      def add_stylesheet(self, filename):
          from sphinx.builders.html import StandaloneHTMLBuilder
-         StandaloneHTMLBuilder.css_files.append(
--            posixpath.join('_static', filename))
-+            posixpath.join('static', filename))
+@@ -475,7 +475,7 @@ class Sphinx(object):
+             StandaloneHTMLBuilder.css_files.append(filename)
+         else:
+             StandaloneHTMLBuilder.css_files.append(
+-                posixpath.join('_static', filename))
++                posixpath.join('static', filename))
  
      def add_lexer(self, alias, lexer):
          from sphinx.highlighting import lexers
-diff --git a/builders/html.py b/builders/html.py
-index 8ff628c..6d9da24 100644
---- a/builders/html.py
-+++ b/builders/html.py
-@@ -70,8 +70,8 @@ class StandaloneHTMLBuilder(Builder):
+diff --git a/sphinx/builders/html.py b/sphinx/builders/html.py
+index e909954..6a929e3 100755
+--- a/sphinx/builders/html.py
++++ b/sphinx/builders/html.py
+@@ -71,8 +71,8 @@ class StandaloneHTMLBuilder(Builder):
      embedded = False  # for things like HTML help or Qt help: suppresses sidebar
  
      # This is a class attribute because it is mutated by Sphinx.add_javascript.
@@ -45,7 +48,7 @@ index 8ff628c..6d9da24 100644
      # Dito for this one.
      css_files = []
  
-@@ -103,7 +103,7 @@ class StandaloneHTMLBuilder(Builder):
+@@ -104,7 +104,7 @@ class StandaloneHTMLBuilder(Builder):
  
          if self.config.language is not None:
              if self._get_translations_js():
@@ -54,7 +57,7 @@ index 8ff628c..6d9da24 100644
  
      def _get_translations_js(self):
          candidates = [path.join(package_dir, 'locale', self.config.language,
-@@ -401,9 +401,9 @@ class StandaloneHTMLBuilder(Builder):
+@@ -412,9 +412,9 @@ class StandaloneHTMLBuilder(Builder):
          doctree.settings = self.docsettings
  
          self.secnumbers = self.env.toc_secnumbers.get(docname, {})
@@ -66,7 +69,7 @@ index 8ff628c..6d9da24 100644
          self.current_docname = docname
          self.docwriter.write(doctree, destination)
          self.docwriter.assemble_parts()
-@@ -441,7 +441,7 @@ class StandaloneHTMLBuilder(Builder):
+@@ -452,7 +452,7 @@ class StandaloneHTMLBuilder(Builder):
  
          if self.config.html_use_opensearch and self.name != 'htmlhelp':
              self.info(' opensearch', nonl=1)
@@ -75,7 +78,7 @@ index 8ff628c..6d9da24 100644
              self.handle_page('opensearch', {}, 'opensearch.xml', outfilename=fn)
  
          self.info()
-@@ -496,13 +496,13 @@ class StandaloneHTMLBuilder(Builder):
+@@ -507,13 +507,13 @@ class StandaloneHTMLBuilder(Builder):
      def copy_image_files(self):
          # copy image files
          if self.images:
@@ -91,7 +94,7 @@ index 8ff628c..6d9da24 100644
                  except Exception, err:
                      self.warn('cannot copy image file %r: %s' %
                                (path.join(self.srcdir, src), err))
-@@ -510,14 +510,14 @@ class StandaloneHTMLBuilder(Builder):
+@@ -521,14 +521,14 @@ class StandaloneHTMLBuilder(Builder):
      def copy_download_files(self):
          # copy downloadable files
          if self.env.dlfiles:
@@ -108,7 +111,7 @@ index 8ff628c..6d9da24 100644
                  except Exception, err:
                      self.warn('cannot copy downloadable file %r: %s' %
                                (path.join(self.srcdir, src), err))
-@@ -525,23 +525,23 @@ class StandaloneHTMLBuilder(Builder):
+@@ -536,16 +536,16 @@ class StandaloneHTMLBuilder(Builder):
      def copy_static_files(self):
          # copy static files
          self.info(bold('copying static files... '), nonl=True)
@@ -126,23 +129,24 @@ index 8ff628c..6d9da24 100644
 -                copyfile(jsfile, path.join(self.outdir, '_static',
 +                copyfile(jsfile, path.join(self.outdir, 'static',
                                             'translations.js'))
-         # then, copy over theme-supplied static files
-         if self.theme:
+ 
+         # add context items for search function used in searchtools.js_t
+@@ -557,7 +557,7 @@ class StandaloneHTMLBuilder(Builder):
              themeentries = [path.join(themepath, 'static')
                              for themepath in self.theme.get_dirchain()[::-1]]
              for entry in themeentries:
 -                copy_static_entry(entry, path.join(self.outdir, '_static'),
 +                copy_static_entry(entry, path.join(self.outdir, 'static'),
-                                   self, self.globalcontext)
+                                   self, ctx)
          # then, copy over all user-supplied static files
          staticentries = [path.join(self.confdir, spath)
-@@ -554,18 +554,18 @@ class StandaloneHTMLBuilder(Builder):
+@@ -570,18 +570,18 @@ class StandaloneHTMLBuilder(Builder):
              if not path.exists(entry):
                  self.warn('html_static_path entry %r does not exist' % entry)
                  continue
 -            copy_static_entry(entry, path.join(self.outdir, '_static'), self,
 +            copy_static_entry(entry, path.join(self.outdir, 'static'), self,
-                               self.globalcontext, exclude_matchers=matchers)
+                               ctx, exclude_matchers=matchers)
          # copy logo and favicon files if not already in static path
          if self.config.html_logo:
              logobase = path.basename(self.config.html_logo)
@@ -158,7 +162,7 @@ index 8ff628c..6d9da24 100644
              if not path.isfile(icontarget):
                  copyfile(path.join(self.confdir, self.config.html_favicon),
                           icontarget)
-@@ -724,7 +724,7 @@ class StandaloneHTMLBuilder(Builder):
+@@ -743,7 +743,7 @@ class StandaloneHTMLBuilder(Builder):
              self.warn("error writing file %s: %s" % (outfilename, err))
          if self.copysource and ctx.get('sourcename'):
              # copy the source file for the "show source" link
@@ -167,7 +171,7 @@ index 8ff628c..6d9da24 100644
                                      os_path(ctx['sourcename']))
              ensuredir(path.dirname(source_name))
              copyfile(self.env.doc2path(pagename), source_name)
-@@ -905,7 +905,7 @@ class SingleFileHTMLBuilder(StandaloneHTMLBuilder):
+@@ -927,7 +927,7 @@ class SingleFileHTMLBuilder(StandaloneHTMLBuilder):
  
          if self.config.html_use_opensearch:
              self.info(' opensearch', nonl=1)
@@ -176,7 +180,7 @@ index 8ff628c..6d9da24 100644
              self.handle_page('opensearch', {}, 'opensearch.xml', outfilename=fn)
  
          self.info()
-@@ -969,7 +969,7 @@ class SerializingHTMLBuilder(StandaloneHTMLBuilder):
+@@ -1000,7 +1000,7 @@ class SerializingHTMLBuilder(StandaloneHTMLBuilder):
          # if there is a source file, copy the source file for the
          # "show source" link
          if ctx.get('sourcename'):
@@ -185,11 +189,11 @@ index 8ff628c..6d9da24 100644
                                      os_path(ctx['sourcename']))
              ensuredir(path.dirname(source_name))
              copyfile(self.env.doc2path(pagename), source_name)
-diff --git a/builders/htmlhelp.py b/builders/htmlhelp.py
-index 2c9fe53..366596e 100644
---- a/builders/htmlhelp.py
-+++ b/builders/htmlhelp.py
-@@ -200,7 +200,7 @@ class HTMLHelpBuilder(StandaloneHTMLBuilder):
+diff --git a/sphinx/builders/htmlhelp.py b/sphinx/builders/htmlhelp.py
+index f09f42e..1271c5a 100755
+--- a/sphinx/builders/htmlhelp.py
++++ b/sphinx/builders/htmlhelp.py
+@@ -201,7 +201,7 @@ class HTMLHelpBuilder(StandaloneHTMLBuilder):
                  outdir += os.sep
              olen = len(outdir)
              for root, dirs, files in os.walk(outdir):
@@ -198,11 +202,11 @@ index 2c9fe53..366596e 100644
                  for fn in files:
                      if (staticdir and not fn.endswith('.js')) or \
                             fn.endswith('.html'):
-diff --git a/builders/qthelp.py b/builders/qthelp.py
-index bf536db..ec2835f 100644
---- a/builders/qthelp.py
-+++ b/builders/qthelp.py
-@@ -146,8 +146,8 @@ class QtHelpBuilder(StandaloneHTMLBuilder):
+diff --git a/sphinx/builders/qthelp.py b/sphinx/builders/qthelp.py
+index b2ff26f..c653df5 100755
+--- a/sphinx/builders/qthelp.py
++++ b/sphinx/builders/qthelp.py
+@@ -154,8 +154,8 @@ class QtHelpBuilder(StandaloneHTMLBuilder):
              outdir += os.sep
          olen = len(outdir)
          projectfiles = []
@@ -213,11 +217,11 @@ index bf536db..ec2835f 100644
          for root, dirs, files in os.walk(outdir):
              resourcedir = root.startswith(staticdir) or \
                            root.startswith(imagesdir)
-diff --git a/ext/graphviz.py b/ext/graphviz.py
-index 398c6be..f95b6f2 100644
---- a/ext/graphviz.py
-+++ b/ext/graphviz.py
-@@ -98,7 +98,7 @@ def render_dot(self, code, options, format, prefix='graphviz'):
+diff --git a/sphinx/ext/graphviz.py b/sphinx/ext/graphviz.py
+index ee93594..296cf0e 100755
+--- a/sphinx/ext/graphviz.py
++++ b/sphinx/ext/graphviz.py
+@@ -128,7 +128,7 @@ def render_dot(self, code, options, format, prefix='graphviz'):
      if hasattr(self.builder, 'imgpath'):
          # HTML
          relfn = posixpath.join(self.builder.imgpath, fname)
@@ -226,10 +230,10 @@ index 398c6be..f95b6f2 100644
      else:
          # LaTeX
          relfn = fname
-diff --git a/ext/pngmath.py b/ext/pngmath.py
-index 6fdfbfe..eabed9e 100644
---- a/ext/pngmath.py
-+++ b/ext/pngmath.py
+diff --git a/sphinx/ext/pngmath.py b/sphinx/ext/pngmath.py
+index 78c331a..e391e4c 100755
+--- a/sphinx/ext/pngmath.py
++++ b/sphinx/ext/pngmath.py
 @@ -78,7 +78,7 @@ def render_math(self, math):
  
      shasum = "%s.png" % sha(math.encode('utf-8')).hexdigest()
@@ -239,10 +243,10 @@ index 6fdfbfe..eabed9e 100644
      if path.isfile(outfn):
          depth = read_png_depth(outfn)
          return relfn, depth
-diff --git a/themes/agogo/layout.html b/themes/agogo/layout.html
-index 6668a7f..047a0d1 100644
---- a/themes/agogo/layout.html
-+++ b/themes/agogo/layout.html
+diff --git a/sphinx/themes/agogo/layout.html b/sphinx/themes/agogo/layout.html
+index d063194..fd6d4a2 100644
+--- a/sphinx/themes/agogo/layout.html
++++ b/sphinx/themes/agogo/layout.html
 @@ -15,7 +15,7 @@
        <div class="header">
          {%- if logo %}
@@ -252,7 +256,7 @@ index 6668a7f..047a0d1 100644
            </a></p>
          {%- endif %}
          {%- block headertitle %}
-@@ -74,7 +74,7 @@
+@@ -75,7 +75,7 @@
            {%- endfor %}
            {%- if show_source and has_source and sourcename %}
              <br/>
@@ -261,10 +265,10 @@ index 6668a7f..047a0d1 100644
                 rel="nofollow">{{ _('Show Source') }}</a>
            {%- endif %}
          </div>
-diff --git a/themes/basic/domainindex.html b/themes/basic/domainindex.html
+diff --git a/sphinx/themes/basic/domainindex.html b/sphinx/themes/basic/domainindex.html
 index 947a01e..776c034 100644
---- a/themes/basic/domainindex.html
-+++ b/themes/basic/domainindex.html
+--- a/sphinx/themes/basic/domainindex.html
++++ b/sphinx/themes/basic/domainindex.html
 @@ -39,7 +39,7 @@
               in entries %}
       <tr{% if grouptype == 2 %} class="cg-{{ groupid.current() }}"{% endif %}>
@@ -274,11 +278,11 @@ index 947a01e..776c034 100644
                id="toggle-{{ groupid.next() }}" style="display: none" alt="-" />
             {%- endif %}</td>
         <td>{% if grouptype == 2 %}&nbsp;&nbsp;&nbsp;{% endif %}
-diff --git a/themes/basic/layout.html b/themes/basic/layout.html
-index 7aa0315..3d44416 100644
---- a/themes/basic/layout.html
-+++ b/themes/basic/layout.html
-@@ -46,7 +46,7 @@
+diff --git a/sphinx/themes/basic/layout.html b/sphinx/themes/basic/layout.html
+index 9fb989c..a00570e 100644
+--- a/sphinx/themes/basic/layout.html
++++ b/sphinx/themes/basic/layout.html
+@@ -52,7 +52,7 @@
            {%- block sidebarlogo %}
            {%- if logo %}
              <p class="logo"><a href="{{ pathto(master_doc) }}">
@@ -287,10 +291,10 @@ index 7aa0315..3d44416 100644
              </a></p>
            {%- endif %}
            {%- endblock %}
-@@ -90,8 +90,8 @@
-     {%- block htmltitle %}
-     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
-     {%- endblock %}
+@@ -100,8 +100,8 @@
+ {%- endmacro %}
+ 
+ {%- macro css() %}
 -    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
 -    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
 +    <link rel="stylesheet" href="{{ pathto('static/' + style, 1) }}" type="text/css" />
@@ -298,7 +302,7 @@ index 7aa0315..3d44416 100644
      {%- for cssfile in css_files %}
      <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
      {%- endfor %}
-@@ -111,10 +111,10 @@
+@@ -120,10 +120,10 @@
      {%- if use_opensearch %}
      <link rel="search" type="application/opensearchdescription+xml"
            title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
@@ -311,10 +315,10 @@ index 7aa0315..3d44416 100644
      {%- endif %}
      {%- endif %}
  {%- block linktags %}
-diff --git a/themes/basic/search.html b/themes/basic/search.html
+diff --git a/sphinx/themes/basic/search.html b/sphinx/themes/basic/search.html
 index 4cdc693..69a5b6e 100644
---- a/themes/basic/search.html
-+++ b/themes/basic/search.html
+--- a/sphinx/themes/basic/search.html
++++ b/sphinx/themes/basic/search.html
 @@ -9,7 +9,7 @@
  #}
  {% extends "layout.html" %}
@@ -324,10 +328,10 @@ index 4cdc693..69a5b6e 100644
  {% block extrahead %}
    <script type="text/javascript">
      jQuery(function() { Search.loadIndex("{{ pathto('searchindex.js', 1) }}"); });
-diff --git a/themes/basic/sourcelink.html b/themes/basic/sourcelink.html
+diff --git a/sphinx/themes/basic/sourcelink.html b/sphinx/themes/basic/sourcelink.html
 index 53f2f6b..7d2596b 100644
---- a/themes/basic/sourcelink.html
-+++ b/themes/basic/sourcelink.html
+--- a/sphinx/themes/basic/sourcelink.html
++++ b/sphinx/themes/basic/sourcelink.html
 @@ -10,7 +10,7 @@
  {%- if show_source and has_source and sourcename %}
    <h3>{{ _('This Page') }}</h3>
@@ -337,11 +341,11 @@ index 53f2f6b..7d2596b 100644
             rel="nofollow">{{ _('Show Source') }}</a></li>
    </ul>
  {%- endif %}
-diff --git a/themes/basic/static/searchtools.js b/themes/basic/static/searchtools.js
-index dae92b5..36c0cf1 100644
---- a/themes/basic/static/searchtools.js
-+++ b/themes/basic/static/searchtools.js
-@@ -480,7 +480,7 @@ var Search = {
+diff --git a/sphinx/themes/basic/static/searchtools.js_t b/sphinx/themes/basic/static/searchtools.js_t
+index 45989c6..3553113 100644
+--- a/sphinx/themes/basic/static/searchtools.js_t
++++ b/sphinx/themes/basic/static/searchtools.js_t
+@@ -275,7 +275,7 @@ var Search = {
              displayNextItem();
            });
          } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
@@ -350,10 +354,10 @@ index dae92b5..36c0cf1 100644
                  item[0] + '.txt', function(data) {
              if (data != '') {
                listItem.append($.makeSearchSummary(data, searchterms, hlterms));
-diff --git a/themes/default/layout.html b/themes/default/layout.html
+diff --git a/sphinx/themes/default/layout.html b/sphinx/themes/default/layout.html
 index d91a565..9c6e06c 100644
---- a/themes/default/layout.html
-+++ b/themes/default/layout.html
+--- a/sphinx/themes/default/layout.html
++++ b/sphinx/themes/default/layout.html
 @@ -10,5 +10,5 @@
  {% extends "basic/layout.html" %}
  
@@ -361,10 +365,10 @@ index d91a565..9c6e06c 100644
 -{% set script_files = script_files + ['_static/sidebar.js'] %}
 +{% set script_files = script_files + ['static/sidebar.js'] %}
  {% endif %}
-diff --git a/themes/haiku/layout.html b/themes/haiku/layout.html
+diff --git a/sphinx/themes/haiku/layout.html b/sphinx/themes/haiku/layout.html
 index 719dba7..79973f2 100644
---- a/themes/haiku/layout.html
-+++ b/themes/haiku/layout.html
+--- a/sphinx/themes/haiku/layout.html
++++ b/sphinx/themes/haiku/layout.html
 @@ -8,8 +8,8 @@
      :license: BSD, see LICENSE for details.
  #}
@@ -390,10 +394,10 @@ index 719dba7..79973f2 100644
          {%- endif -%}
          <h1 class="heading"><a href="{{ pathto('index') }}">
            <span>{{ shorttitle|e }}</span></a></h1>
-diff --git a/themes/scrolls/layout.html b/themes/scrolls/layout.html
+diff --git a/sphinx/themes/scrolls/layout.html b/sphinx/themes/scrolls/layout.html
 index 92cb694..fee5ff5 100644
---- a/themes/scrolls/layout.html
-+++ b/themes/scrolls/layout.html
+--- a/sphinx/themes/scrolls/layout.html
++++ b/sphinx/themes/scrolls/layout.html
 @@ -9,8 +9,8 @@
      :license: BSD, see LICENSE for details.
  #}
