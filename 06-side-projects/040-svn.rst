@@ -18,7 +18,7 @@
     $ svn status
     M       06-side-projects/040-svn.rst
 
-* 用SVN向Git版本库提交。提交时要输入认证信息，本例以gotgit账号进行认证。
+* 用SVN向Git版本库提交。提交时要输入认证信息，本例以gotgithub账号进行认证。
 
   ::
 
