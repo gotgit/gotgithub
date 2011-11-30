@@ -17,7 +17,7 @@
 
    图2-27：关注项目在仪表板页的显示
 
-GitHub还可以关注用户。访问 https://github.com/mojombo 可以看到mojombo（GitHub创始者之一）的用户页，关注他只需点击图2-28中的“Folow”按钮。从mojombo的用户页还可以看到majombo关注的开发者，可以以此扩大GitHub朋友圈。
+GitHub还可以关注用户。访问 https://github.com/mojombo 可以看到mojombo（GitHub创始者之一）的用户页，关注他只需点击图2-28中的“Follow”按钮。从mojombo的用户页还可以看到majombo关注的开发者，可以以此扩大GitHub朋友圈。
 
 .. figure:: /images/join-github/github-mojombo.png
    :scale: 100
