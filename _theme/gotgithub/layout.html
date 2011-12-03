@@ -12,6 +12,26 @@
 {# put the sidebar before the body #}
 {% block sidebar1 %}{{ sidebar() }}{% endblock %}
 {% block sidebar2 %}{% endblock %}
+
+{% set css_files = css_files + ["/stylesheets/master.css", "/stylesheets/syntax.css"] %}
+
+{% block header %}
+    <div id='header'>
+      <h1><a href='/'>World Hello</a></h1>
+
+      <div id='menu'>
+        <ul>
+          <li><a href='/' id='home_link' title='Home'>首页</a></li>
+          <li><a href='/blog.html' id='blog_link' title='Blog'>博客</a></li>
+          <li><a href='/doc/' id='docs_link' title='Docs'>文章</a></li>
+          <li><a href='/about.html' id='about_link' title='About'>关于</a></li>
+          <li><a href='http://github.com/gotgit' target='_blank' title='GitHub' rel='me' id='github_link'>GitHub</a></li>
+          <li><a href='http://weibo.com/gotgit' title='微博' target='_blank' id='weibo_link'>微博</a></li>
+        </ul>
+      </div>
+    </div>
+{% endblock %}
+
 {%- block footer %}
     <div class="footer">
       <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
