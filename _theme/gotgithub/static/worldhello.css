@@ -1,0 +1,13 @@
+body {
+    min-width: 740px;
+    width: 960px;
+    margin: 0 auto;
+    -moz-border-radius: 1.5em;
+    -webkit-border-radius: 1.5em;
+    border-radius: 1.5em;
+}
+
+div.related {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
