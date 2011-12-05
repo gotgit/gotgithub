@@ -155,7 +155,7 @@ https://gist.github.com/1084591 ，如图6-8所示。
 
 其中第5行和第6行的两条 `include` 语句限定了此用户端JavaScript脚本的应用范围，即只针对指定的URL（使用通配符）执行该脚本。第7行设定脚本依赖，即该脚本依赖jQuery，会在运行前到指定的URL地址加载jQuery脚本。
 
-在安装该脚本前，先用浏览器访问网址 http://gotgit.github.com/gotgit/demo_index.html ，看看不加载用户端JavaScript脚本时网页的模样。该网页中包含一个冗长的网上书店列表，如图6-9所示。 
+在安装该脚本前，先用浏览器访问网址 http://gotgit.github.com/gotgit/demo.html ，看看不加载用户端JavaScript脚本时网页的模样。该网页中包含一个冗长的网上书店列表，如图6-9所示。 
 
 .. figure:: /images/side-projects/gist-user-js-apply-before.png
    :scale: 100
@@ -169,7 +169,7 @@ https://gist.github.com/1084591 ，如图6-8所示。
 
    图6-10：安装用户端JavaScript脚本
 
-用户端脚本安装完毕后，再访问同样的测试网页 http://gotgit.github.com/gotgit/demo_index.html ，会发现网页中出现了一个名为“更多”的可点击链接，冗长的网上书店列表不见了。如图6-11所示。
+用户端脚本安装完毕后，再访问同样的测试网页 http://gotgit.github.com/gotgit/demo.html ，会发现网页中出现了一个名为“更多”的可点击链接，冗长的网上书店列表不见了。如图6-11所示。
 
 .. figure:: /images/side-projects/gist-user-js-apply-after.png
    :scale: 100
