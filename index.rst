@@ -21,7 +21,6 @@ GotGitHub
    04-work-with-others/index
    05-commercial-github/index
    06-side-projects/index
-   10-appendix/index
    20-appendix/index
 
 索引和表格
