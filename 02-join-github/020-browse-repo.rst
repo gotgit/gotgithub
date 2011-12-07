@@ -80,7 +80,7 @@ GitHub的账户已经建立好了，在建立自己的项目托管之前，看�
 
 在文本文件的差异比较中，不但将有差异的行标识出来，还将行内具体改动的字词用特殊颜色进行了标识，不由得感叹GitHub的细致入微。
 
-GitHub还支持对图形文件的差异比较，并提供四种比较方式。在如下地址: http://goo.gl/Gy85b [#]_ 提供了一个示例提交，尝试一下使用不同的图形文件比较方式，查看该提交对图形文件的改动。
+GitHub还支持对图形文件的差异比较，并提供四种比较方式。在如下地址: http://git.io/image-diff [#]_ 提供了一个示例提交，尝试一下使用不同的图形文件比较方式，查看该提交对图形文件的改动。
 
 * 默认修改前后的两幅图片左右并排显示，如图2-18所示。
 
@@ -144,5 +144,5 @@ GitHub还为项目提供图像化报表分析。图2-24是GotGit项目中用到�
 
 .. [#] 项目 gotgit 最早由用户 ossxp-com 创建，现已转移到组织 gotgit 账号之下。
 .. [#] https://github.com/blog/809-git-dumb-http-transport-to-be-turned-off-in-90-days
-.. [#] 短格式URL，实际对应于: https://github.com/cameronmcefee/Image-Diff-View-Modes/commit/8e95f70c9c47168305970e91021072673d7cdad8
+.. [#] 短格式URL，实际对应于: https://github.com/cameronmcefee/Image-Diff-View-Modes/commit/8e95f7
 .. [#] https://github.com/blog/621-bye-bye-flash-network-graph-is-now-canvas

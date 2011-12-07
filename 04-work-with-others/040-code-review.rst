@@ -37,7 +37,7 @@
 
    图4-41：提交评注
 
-GitHub还支持Git自身提供的评注功能 [#]_ ，如图4-42所示的是提交 http://goo.gl/ujw5e [#]_ 的评注，这个评注并非通过GitHub添加的，而是由 ``git-note`` 命令提交的评注。这种评注针对一个特定提交只能有一个，GitHub只能显示不能编辑和删除。关于如何通过命令行查看 ``git-note`` 格式的评注，参见《Git权威指南》第570页“41.5 Git评注”。
+GitHub还支持Git自身提供的评注功能 [#]_ ，如图4-42所示的是提交 http://git.io/git-notes [#]_ 的评注，这个评注并非通过GitHub添加的，而是由 ``git-note`` 命令提交的评注。这种评注针对一个特定提交只能有一个，GitHub只能显示不能编辑和删除。关于如何通过命令行查看 ``git-note`` 格式的评注，参见《Git权威指南》第570页“41.5 Git评注”。
 
 .. figure:: /images/work-with-others/commit-note-by-git-note.png
    :scale: 100
@@ -72,4 +72,4 @@ GitHub还支持Git自身提供的评注功能 [#]_ ，如图4-42所示的是提�
 ----
 
 .. [#] http://www.kernel.org/pub/software/scm/git/docs/git-notes.html
-.. [#] 实际地址为 https://github.com/ossxp-com/gitdemo-commit-tree/commit/e80aa7481beda65ae00e35afc4bc4b171f9b0ebf
+.. [#] 实际地址为 https://github.com/ossxp-com/gitdemo-commit-tree/commit/e80aa74
