@@ -1,5 +1,5 @@
-GitHub开源项目
-===============
+GitHub Open Source
+===================
 
 Grit和ruby-git
 ---------------

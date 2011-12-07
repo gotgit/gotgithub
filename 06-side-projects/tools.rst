@@ -6,6 +6,6 @@ GitHub提供的Web服务，在客户端通常只需要浏览器及Git命令行�
 .. toctree::
    :maxdepth: 1
 
-   061-github-mac
-   062-hub
-   063-ios
+   github-mac
+   hub
+   ios

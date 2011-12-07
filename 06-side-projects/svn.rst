@@ -117,8 +117,6 @@ SVN 支持部分检出，下面命令将整个主线 ``trunk`` （对应于 Git 
      c4d370b1b0bafb103de14e104ca18b8c31d80add        refs/heads/master
      64b80cb5331e28fdfb896e2ab3085779bf6ca019        refs/heads/svn-github
 
-如果曾经有人对 GitHub 只提供唯一的版本库格式（Git）托管表示过怀疑的话，那么今天看到 GitHub 对其他版本控制工具提供的愈发完善的支持，争议应该烟消云散了吧。
-
 ----
 
 .. [#] https://github.com/blog/31-back-to-subversion
