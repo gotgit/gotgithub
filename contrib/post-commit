@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# An example hook script that is called after a successful
+# commit is made.
+#
+# To enable this hook, rename this file to "post-commit".
+
+gh_pages_repo=$(dirname $(pwd))/gotgithub.gh-pages
+
+if [ -d $gh_pages_repo ]; then
+  cd $gh_pages_repo
+  git fetch
+  if [ $(git rev-list origin/gh-pages...HEAD | wc -l) -ne 0 ]; then
+    echo "remote: repo $(basename $gh_pages_repo) switched to the updated gh-pages branch" >&2
+    git reset --hard origin/gh-pages
+  fi
+else
+  echo "not found gh-pages repo!" >&2
+fi

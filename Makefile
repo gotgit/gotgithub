@@ -136,6 +136,7 @@ gh-pages: clean html
 	  commit=$$(git log --format=%B -1 | git commit-tree $$newhtml -p refs/heads/gh-pages) ; \
 	  git update-ref -m "HTML compiled from $$(git rev-parse HEAD)" refs/heads/gh-pages $$commit ; \
 	  echo "Branch gh-pages changed." ; \
+	  [ -x .git/hooks/post-commit ] && .git/hooks/post-commit; \
 	fi; \
 	git rm --cached -r -q _build/html
 
