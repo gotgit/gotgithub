@@ -1,8 +1,3 @@
-客户端工具
-===============
-
-GitHub提供的Web服务，在客户端通常只需要浏览器及Git命令行工具就可以满足需要了。而GitHub还开发了一些客户端工具，以便用户有更好的客户端体验。
-
 github:mac
 -----------------------
 
@@ -37,10 +32,3 @@ GitHub专为Mac用户开发了一款图形化客户端应用 `github:mac` ，在
 
   $ ssh-add -d ~/.ssh/github_rsa
   Identity removed: /Users/jiangxin/.ssh/github_rsa (/Users/jiangxin/.ssh/github_rsa.pub)
-
-hub命令
-------------
-
-iOS应用
-------------
-

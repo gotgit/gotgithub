@@ -10,5 +10,5 @@ GitHub最核心的产品是Git版本库（即项目）托管，此外GitHub还�
    030-shop
    040-svn
    050-hg-git
-   060-client-tools
+   060-tools
    070-opensource
