@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'GotGitHub'
-copyright = u'2011, Jiang Xin'
+copyright = u'2011, 蒋鑫'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
