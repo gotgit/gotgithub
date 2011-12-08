@@ -12,7 +12,7 @@ GotGitHub
 
 .. toctree::
    :maxdepth: 3
-   :numbered:
+   :numbered: 3
    :glob:
 
    01-explore-github/index
