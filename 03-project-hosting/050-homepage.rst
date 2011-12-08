@@ -169,29 +169,33 @@ GitHub会为每个用户分配一个子域名作为用户主页，同样用户�
 
 Jekyll是由Tom Preston-Werner（GitHub创始人之一）开发的静态网站生成软件，支持博客及网页模版。使用Jekyll，可以直接使用Markdown或其他标记语言撰写页面及博客，当GitHub托管的版本库更新后，GitHub会自动运行Jekyll将标记语言撰写的文件转换为网页。
 
-Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/mojombo/jekyll/ ，专有的URL地址为： http://jekyllrb.com/ 。安装Jekyll最简单的方法是通过RubyGems安装，会自动将Jekyll依赖的directory_watcher、liquid、open4、maruku和classifier等Gem包一并安装。
+Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/mojombo/jekyll/ ，专有的URL地址为： http://jekyllrb.com/ 。
+
+安装Jekyll最简单的方法是通过RubyGems安装，会自动将Jekyll依赖的directory_watcher、liquid、open4、maruku和classifier等Gem包一并安装。
 
 ::
 
   $ gem install jekyll
 
-如果安装过程因编译扩展模组遇到错误，可能是因为尚未安装所需的头文件。对于Debian Linux、Ubuntu等可以用如下方法安装所需软件包：
+如果安装过程因编译扩展模组遇到错误，可能是因为尚未安装所需的头文件，需要进行如下操作：
 
-::
+* 对于Debian Linux、Ubuntu等可以用如下方法安装所需软件包：
 
-  $ sudo apt-get install ruby1.8-dev
+  ::
+  
+    $ sudo apt-get install ruby1.8-dev
 
-如果是Red Hat、CentOS或Fedora等系统，使用如下命令安装：
+* 如果是Red Hat、CentOS或Fedora等系统，使用如下命令安装：
 
-::
+  ::
+  
+    $ sudo yum install ruby-devel
 
-  $ sudo yum install ruby-devel
+* 对于Mac OSX，可能需要更新RubyGems，如下：
 
-对于Mac OSX，可能需要更新RubyGems，如下：
-
-::
-
-  $ sudo gem update --system
+  ::
+  
+    $ sudo gem update --system
 
 安装完毕，执行下面的命令显示Jekyll的版本：
 
@@ -202,14 +206,22 @@ Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/
 
 先来看一下作者Tom Preston-Werner在GitHub上的个人网站，看看是如何用Jekyll制作出来的。
 
-先克隆版本库：
+克隆版本库：
 
 ::
 
   $ git clone git://github.com/mojombo/mojombo.github.com.git
-  $ cd mojombo.github.com
 
-版本库根目录下的 ``index.html`` 文件不是一个完整的HTML文件，而是套用了模版（Liquid格式模版）的页面，对其关键内容添加行号显示如下：
+版本库包含的文件如下：
+
+::
+
+  $ cd mojombo.github.com
+  $ ls -F
+  CNAME           _config.yml     _posts/         css/            index.html
+  README.textile  _layouts/       atom.xml        images/         random/
+
+版本库根目录下的 ``index.html`` 文件不是一个普通的HTML文件，而是使用 Liquid 模版语言 [#]_ 定义的页面。
 
 ::
 
@@ -228,13 +240,35 @@ Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/
      ...
   63 </div>
 
-第1-4行是YAML格式的文件头，确定模版的对应关系并设定相关属性。凡是设置有YAML文件头的文件（目录 ``_layouts`` 等除外）无论文件扩展名为何，都会在Jekyll编译时转换为对应的HTML文件。其中第2行含义为使用default模版（对应于的模版文件为 ``_layouts/default.html`` ），第3行设定本页面的标题。
+为方便描述为内容添加了行号，说明如下：
 
-第6行开始的内容绝大多数是标准的HTML语法，其中夹杂少量liquid模版特有的语法。有着liquid或其他模版编程经验的用户，不难理解其中第9行和第11行出现的由”{%“和”%}“标识的指令是一个循环指令（for循环）用于逐条对博客进行相关操作，而第10行中由”{{“和”}}“标识的表达式则用于显示博文的日期、链接和标题。
+* 第1-4行是YAML格式的文件头，确定模版的对应关系并设定相关属性。
 
-根目录下的 ``atom.xml`` 文件亦套用 ``default`` 模版。
+  凡是设置有YAML文件头的文件（目录 ``_layouts`` 除外）无论文件扩展名为何，都会在Jekyll编译时转换为对应的HTML文件。
 
-目录 ``_post`` 下的文件是博客文章列表，每个博文都以 ``<YYYY>-<MM>-<DD>-<blog-tiltle>`` 格式的文件名命名。扩展名为 ``.md`` 的为Markdown格式，扩展名为 ``.textile`` 的为Textile格式。这些文件都类似如下格式的文件头：
+* 其中第2行含义为使用default模版。
+
+  对应的模版文件为 ``_layouts/default.html`` 。
+
+* 第3行设定本页面的标题。
+
+  在模版文件 ``_layouts/default.html`` 中用 ``{{ page.title }}`` 语法嵌入所设置的标题。下面是模版文件中部分内容：
+
+  ::
+
+    <head>
+       <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+       <title>{{ page.title }}</title>
+
+* 第6行开始的内容绝大多数是标准的HTML语法，其中夹杂少量Liquid模版特有的语法。
+
+* 第9行和第11行，对于有着Liquid或其他模版编程经验的用户，不难理解其中出现的由”{%“和”%}“标识的指令是一个循环指令（for循环），用于逐条对博客进行相关操作。
+
+* 第10行中由”{{“和”}}“标识的表达式则用于显示博文的日期、链接和标题。
+
+非下划线（_）开头的文件和目录在编译时会直接进行编译，并将编译后的网页复制到目标文件夹（默认为 ``_site`` 目录）下。而以下划线开头的文件和目录有的直接忽略不予处理（如 ``_layouts`` 、 ``_site`` 目录等），有的则需要特殊处理（如 ``_post`` 目录）。
+
+目录 ``_post`` 用于保存博客条目，每个博客条目都以 ``<YYYY>-<MM>-<DD>-<blog-tiltle>`` 格式的文件名命名。扩展名为 ``.md`` 的为Markdown格式，扩展名为 ``.textile`` 的为Textile格式。这些文件都包含类似的文件头：
 
 ::
 
@@ -243,7 +277,7 @@ Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/
   title: How I Turned Down $300,000 from Microsoft to go Full-Time on GitHub
   ---
 
-在 ``_layouts`` 目录下定义网页模版，其中文件 ``_layouts/post.html`` 是博客用到的模版，而 ``_layouts/default.html`` 是默认模版。模版文件亦是liquid格式文件。
+即博客使用文件 ``_layouts/post.html`` 作为页面模版，而不是 ``index.html`` 等文件所使用的 ``_layouts/default.html`` 模版。这些模版文件都采用Liquid模版语法。保存于 ``_post`` 目录下的博客文件编译后会以 ``<YYYY>/<MM>/<DD>/<blog-title>.html`` 文件名保存在输出目录中。
 
 在根目录下还有一个配置文件 ``_config.yml`` 用于覆盖Jekyll的默认设置，例如本版本库中的设置。
 
@@ -252,9 +286,7 @@ Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/
   markdown: rdiscount
   pygments: true
 
-第1行设置使用rdiscount软件包作为Markdown的解析引擎，而非默认的Maruku。第2行开启pygments支持。关于该配置文件的详细介绍参见 `Jekyll项目维基`_  。
-
-.. _`Jekyll项目维基`: https://github.com/mojombo/jekyll/wiki/configuration
+第1行设置使用rdiscount软件包作为Markdown的解析引擎，而非默认的Maruku。第2行开启pygments支持。对于中文用户强烈建议通过配置文件 ``_config.yml`` 重设 markdown 解析引擎，默认的 Maruku 对中文支持不好，而使用 rdiscount 或 kramdown 均可。关于该配置文件的更多参数详见Jekyll项目维基 [#]_  。
 
 编译Jekyll编辑网站只需在根目录执行 ``jekyll`` 命令，下面的命令是GitHub更新网站所使用的默认指令。
 
@@ -283,3 +315,9 @@ Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/
 
 .. _`gitready`: https://github.com/gitready 
 
+我的个人网站也使用Jekyll构建并托管在GitHub上，网址： http://www.worldhello.net/ 。
+
+----
+
+.. [#] http://liquidmarkup.org/
+.. [#] https://github.com/mojombo/jekyll/wiki/configuration
