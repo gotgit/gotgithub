@@ -387,3 +387,5 @@ GitHub的维基编辑界面没有提供冲突解决的工具，而通过本地�
    :scale: 100
 
    图4-94：推送后的维基修订历史
+
+GitHub维基背后的引擎名为Gollum，GitHub已将其开源，项目网址： https://github.com/github/gollum 。安装Gollum，在克隆的维基版本库中运行 ``gollum`` 就可以在本地启动维基服务。
