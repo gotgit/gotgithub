@@ -215,3 +215,5 @@ man_pages = [
     ('index', 'gotgithub', u'GotGitHub Documentation',
      [u'Jiang Xin'], 1)
 ]
+
+language = 'zh_CN';
