@@ -6,5 +6,5 @@ GitHub神奇的协同工具使得开源项目的创建和协同更加简单、�
 .. toctree::
    :maxdepth: 1
 
-   010-non-free-plans
-   020-github-fi
+   non-free-plans.rst
+   github-enterprise.rst
