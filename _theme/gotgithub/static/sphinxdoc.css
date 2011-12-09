@@ -148,7 +148,8 @@ a:hover {
 }
 
 div.body a {
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: normal;
 }
 
 h1 {
@@ -350,4 +351,16 @@ div.figure p.caption {
 div.figure img {
     border: 1px solid #ccc;
     padding: 5px;
+}
+
+.footnote-reference {
+    font-size: smaller;
+    line-height: 0;
+    vertical-align: super;
+    margin: 0;
+    font-weight: normal;
+}
+
+div.body a.footnote-reference {
+    text-decoration: none;
 }
