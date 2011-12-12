@@ -89,9 +89,14 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/gotgithub
 
-.. 通过在配置文件 ``~/.ssh/config`` 中添加不同的 Host 主机名，可以实现在同一个客户端用Git命令（以SSH协议）访问不同的GitHub账户。
+好了，有了上面的准备，就将 :file:`~/.ssh/gotgithub.pub` 文件内容拷贝到剪切板。在命令行用下面的命令可直接将文件内容拷贝到剪切板：
 
-好了，有了上面的准备，就可以把公钥文件中的内容复制到GitHub的SSH公钥管理的对话框中。注意整个公钥为一行，不要断行。
+::
+
+  $ cat ~/.ssh/gotgithub.pub | pbcopy
+
+
+然后将公钥文件中的内容粘贴到GitHub的SSH公钥管理的对话框中，如图2-8所示。注意整个公钥为一行，不要断行。
 
 .. figure:: /images/join-github/setting-ssh-gotgithub.png
    :scale: 100

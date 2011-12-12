@@ -8,28 +8,28 @@
 .. figure:: /images/join-github/watch-project.png
    :scale: 100
 
-   图2-26：项目的关注按钮
+   图2-27：项目的关注按钮
 
-添加对项目的关注后，在“Dashboard”（仪表板）页面的左侧会显示关注项目的最新动态，右侧会列表显示关注的项目。如图2-27所示。
+添加对项目的关注后，在“Dashboard”（仪表板）页面的左侧会显示关注项目的最新动态，右侧会列表显示关注的项目。如图2-28所示。
 
 .. figure:: /images/join-github/dashboard-with-watched-prj.png
    :scale: 100
 
-   图2-27：关注项目在仪表板页的显示
+   图2-28：关注项目在仪表板页的显示
 
-GitHub还可以关注用户。访问 https://github.com/mojombo 可以看到mojombo（GitHub创始者之一）的用户页，关注他只需点击图2-28中的“Follow”按钮。从mojombo的用户页还可以看到majombo关注的开发者，可以以此扩大GitHub朋友圈。
+GitHub还可以关注用户。访问 https://github.com/mojombo 可以看到mojombo（GitHub创始者之一）的用户页，关注他只需点击图2-29中的“Follow”按钮。从mojombo的用户页还可以看到majombo关注的开发者，可以以此扩大GitHub朋友圈。
 
 .. figure:: /images/join-github/github-mojombo.png
    :scale: 100
 
-   图2-28：mojombo的用户页
+   图2-29：mojombo的用户页
 
-GitHub仪表板页面，有一个“RSS Feed”链接，如图2-29所示。点击该链接可以使用RSS客户端（如Google Reader）订阅，实现无需登录GitHub即可访问所关注的项目和人的动态。
+GitHub仪表板页面，有一个“RSS Feed”链接，如图2-30所示。点击该链接可以使用RSS客户端（如Google Reader）订阅，实现无需登录GitHub即可访问所关注的项目和人的动态。
 
 .. figure:: /images/join-github/rss-feed.png
    :scale: 100
 
-   图2-29：RSS Feed
+   图2-30：RSS Feed
 
 RSS中可能包括隐私信息，如私有版本库的更新信息，那么RSS订阅是如何保护个人隐私呢？难道需要口令认证么？查看一下RSS订阅的URL，你会看到类似如下格式的URL地址：
 
