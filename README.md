@@ -1,4 +1,4 @@
-这是一本关于GitHub的书，在线阅读请访问： <http://www.worldhello.net/gogithub> 。
+这是一本关于GitHub的书，在线阅读请访问： <http://www.worldhello.net/gotgithub> 。
 
 动笔写GitHub不是因为我对其了解，恰恰是对其太不了解。在我写的 [《Git权威指南》][gotgit] 一书中，涉及到GitHub的只有区区三页纸，这显然回答不了读者对于GitHub的诸多疑问。
 

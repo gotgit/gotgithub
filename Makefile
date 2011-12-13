@@ -126,6 +126,10 @@ linkcheck:
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
 
 gh-pages: clean html
+	@if ! git rev-parse refs/heads/gh-pages >/dev/null 2>&1 ; then \
+		echo "Branch gh-pages not exists, forgot check it out?" >&2; \
+		exit 1; \
+	fi
 	@cp README.md _build/html/
 	@echo '*' > _build/html/images/.gitignore
 	@git add -f _build/html; \
