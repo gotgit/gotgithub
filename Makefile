@@ -126,6 +126,8 @@ linkcheck:
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
 
 gh-pages: clean html
+	@cp README.md _build/html/
+	@echo '*' > _build/html/images/.gitignore
 	@git add -f _build/html; \
 	tree=$$(git write-tree); \
 	newhtml=$$(git ls-tree $$tree:_build | grep "html$$" | awk '{print $$3;}') ; \

@@ -6,7 +6,7 @@
 GotGitHub
 =====================================
 
-.. include:: README.rst
+.. include:: preface.rst
 
 目录:
 
