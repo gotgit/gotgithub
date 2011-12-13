@@ -155,14 +155,48 @@ GitHub会为每个用户分配一个子域名作为用户主页，同样用户�
 
 无论是用户主页还是项目主页，除了使用 ``github.com`` 下的子域名访问之外，还可以使用指定的专有域名。实现起来也非常简单，只要在 ``master`` 分支（用户主页所在版本库）或 ``gh-pages`` 分支（项目版本库）的根目录下检入一个名为 ``CNAME`` 的文件，内容为相应的专有域名。
 
-例如用户拥有的专有域名为 ``example.com`` ，希望访问 ``example.com`` 时实际得到的是 ``gotgithub.github.com`` 网页的内容。只需进行如下操作：
+例如 ``worldhello.net`` [#]_ 是我的个人域名，若计划将网站改为由GitHub托管，即将账号 ``gotgit`` 的用户主页作为网站 ``worldhello.net`` 的首页，首先按照上节介绍的步骤，为GitHub账号（如 ``gotgit`` ）设置账户主页。
 
-* 在GitHub的 ``gotgithub`` 账户的 ``gotgithub.github.com`` 版本库的根目录下添加文件 ``CNAME`` ，文件内容为： ``example.com`` 。
-* 然后将域名 ``example.com`` 的IP指向 ``gotgithub.github.com`` 的IP地址（注意不是 ``github.com`` 的IP地址）。
+* 在账户 ``gotgit`` 下创建版本库 ``gotgit.github.com`` 以维护该账号主页。
 
-设置完成后，访问 ``example.com`` 即可看到 ``gotgithub`` 用户在GitHub的个人主页。访问 ``gotgithub.github.com`` 网站亦会重定向到 ``example.com`` 。
+  地址： https://github.com/gotgit/gotgit.github.com/
 
-看一个实际的例子： http://github.com/mojombo/mojombo.github.com/ → http://tom.preston-werner.com/ 。
+* 将网站内容提交并推送到该版本库中。即在 ``gotgit.github.com`` 版本库的根目录下至少包含一个 index 文件，如 ``index.html`` 。
+
+  还可以使用下节将要介绍到的 Jekyll 技术，让网页有统一的显示风格，此时首页文件可能并非一个完整的HTML文档，而是套用了页面模版。
+
+* 至此当访问网址 ``http://gotgit.github.com`` 时，会以版本库 ``gotgit.github.com`` 中 ``index.html`` 文件作为首页显示出来。
+
+接下来进行如下操作，使得该网站能够使用专有域名 ``www.worldhello.net`` 提供服务。
+
+* 在版本库 ``gotgit.github.com`` 根目录下添加文件 ``CNAME`` ，文件内容为： ``www.worldhello.net`` 。
+
+  参见： https://github.com/gotgit/gotgit.github.com/blob/master/CNAME
+
+* 然后将域名 ``www.worldhello.net`` 的IP指向 ``gotgit.github.com`` 的IP地址（注意不是 ``github.com`` 的IP地址）。
+
+  当完成域名的DNS指向后，使用 ``ping`` 或 ``dig`` 命令确认域名 ``www.worldhello.net`` 和 ``gotgit.github.com`` 指向同一IP。
+
+  ::
+
+    $ dig @8.8.8.8 -t a www.worldhello.net
+    ...
+    ; ANSWER SECTION:
+    www.worldhello.net.     81078   IN      A       207.97.227.245
+    
+    $ dig @8.8.8.8 -t a gotgit.github.com
+    ...
+    ; ANSWER SECTION:
+    gotgit.github.com.      43200   IN      A       207.97.227.245
+
+设置完成后用浏览器访问 http://www.worldhello.net/ 即可看到由账号 ``gotgit`` 的 ``gotgit.github.com`` 版本库设置的首页。若将域名 ``worldhello.net`` （不带www前缀）也指向IP地址 ``207.97.227.245`` ，访问 http://worldhello.net/ 会看到GitHub体贴地将该网址重定向到正确的地址 http://www.worldhello.net/ 。
+
+在账号 ``gotgit`` 下的其他版本库，若包含了 ``gh-pages`` 分支，亦可由域名 ``www.worldhello.net`` 访问到。
+
+* 网址 http://www.worldhello.net/doc 实际对应于版本库 https://github.com/gotgit/doc 。
+* 网址 http://www.worldhello.net/gotgit 实际对应于版本库 https://github.com/gotgit/gotgit 。
+* 网址 http://www.worldhello.net/gotgithub 实际对应于版本库 https://github.com/gotgit/gotgithub 。
+
 
 使用Jekyll维护网站
 -------------------------
@@ -319,5 +353,6 @@ Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/
 
 ----
 
+.. [#] “Hello, world”最为程序员所熟知，2002年申请不到helloworld相关域名便退而求其次，申请了 worldhello.net。
 .. [#] http://liquidmarkup.org/
 .. [#] https://github.com/mojombo/jekyll/wiki/configuration
