@@ -95,7 +95,7 @@ GotGit版本库 [#]_ 用于维护《Git权威指南》一书的官网和勘误�
 Pull Request
 ------------------
 
-那么如何能够让gotgit原始项目的创建者知道这个派生项目及新的提交呢？GitHub提供的工具就是“Pull Request”。注意到图4-4中标记的按钮了么？点击该按钮进入Pull Request创建界面。
+那么如何能够让gotgit原始项目的创建者知道这个派生项目及新的提交呢？GitHub提供的工具就是“Pull Request”。注意到图4-3右上方“Pull Request”按钮了么？点击该按钮进入Pull Request创建界面。
 
 在弹出的Pull Request创建界面中，点击菜单中的“Commits”，查看所包含的提交。如图4-5所示。
 
@@ -267,11 +267,7 @@ Pull Request提供的自动合并显示在提交日志中是什么样子的呢�
 简化的 Fork + Pull Request
 --------------------------------
 
-GitHub提供了一个快捷的“Fork + Pull Request”操作。在介绍该操作前，先介绍一下GitHub的在线编辑文件功能。例如以gotgithub用户登录GitHub，访问一下地址：
-
-* https://github.com/gotgithub/gotgit/blob/master/errata.mkd
-
-即浏览派生的版本库 ``gotgithub/gotgit`` 中的文件 ``errata.mkd`` ，会看到其中一个“Edit this file”的按钮，如图4-12所示。
+GitHub提供了一个快捷的“Fork + Pull Request”操作。在介绍该操作前，先介绍一下GitHub的在线编辑文件功能。例如以gotgithub用户登录GitHub，访问一下地址： https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md 。即浏览派生的版本库 ``gotgithub/gotgit`` 中的文件 ``errata.md`` ，会看到其中一个“Edit this file”的按钮，如图4-12所示。
 
 
 .. figure:: /images/work-with-others/edit-this-file-btn.png
@@ -279,7 +275,7 @@ GitHub提供了一个快捷的“Fork + Pull Request”操作。在介绍该操�
 
    图4-12：浏览自己版本库中文件
 
-点击图4-12中的“Edit this file”按钮，开始在线编辑文件 ``errata.mkd`` ，编辑器还支持语法加亮，如图4-13所示。
+点击图4-12中的“Edit this file”按钮，开始在线编辑文件 ``errata.md`` ，编辑器还支持语法加亮，如图4-13所示。
 
 .. figure:: /images/work-with-others/edit-this-file-form.png
    :scale: 100
@@ -299,7 +295,7 @@ GitHub提供了一个快捷的“Fork + Pull Request”操作。在介绍该操�
 
    图4-14：浏览让人版本库中文件
 
-点击图4-14中的“Fork and edit this file”按钮，会自动在自己托管空间创建派生版本库，并开始在线编辑文件 ``errata.mkd`` ，如图4-15所示。
+点击图4-14中的“Fork and edit this file”按钮，会自动在自己托管空间创建派生版本库，并开始在线编辑文件 ``errata.md`` ，如图4-15所示。
 
 .. figure:: /images/work-with-others/fork-and-edit-form.png
    :scale: 100
