@@ -47,7 +47,7 @@ GitHub的账户已经建立好了，在建立自己的项目托管之前，看�
   
      图2-13：目录树
   
-* 区域五：根目录下的文件 ``README.mkd`` 格式化为HTML输出显示。
+* 区域五：根目录下的文件 ``README.md`` 格式化为HTML输出显示。
 
   GitHub内置了多种文本标记语言的支持，如Markdown、Textile、reStructuredText、asciidoc、Wiki等。当发现根目录下的 ``README`` 文件后，会根据其扩展名判断所用的标记语言类型，自动转换为HTML格式显示。
 
@@ -72,7 +72,7 @@ GitHub的账户已经建立好了，在建立自己的项目托管之前，看�
 
    图2-16：快捷键“t”开启过滤器在目录树中搜索
 
-点击菜单中的“Commits”（提交）显示版本库GotGit的提交历史，如图2-17所示。
+点击代码浏览子菜单中的“Commits”（提交）显示版本库GotGit的提交历史，如图2-17所示。
 
 .. figure:: /images/join-github/gotgit-repo-commit-history.png
    :scale: 100

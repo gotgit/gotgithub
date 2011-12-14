@@ -49,7 +49,7 @@ GitHub的注册页面非常简洁，只有登录ID，邮件地址和口令需要
 
    图2-6：邮件地址管理
 
-GitHub为托管的Git版本库提供SSH协议支持，即用户可以以公钥认证的方式连接到GitHub的SSH服务器。下面的示例用ssh命令连接github.com的SSH服务，登录用户名为git（所有GitHub用户共享此SSH用户名，不要写成其他）。
+GitHub为托管的Git版本库提供SSH协议支持，即用户可以用公钥认证的方式连接到GitHub的SSH服务器。下面的示例用ssh命令连接github.com的SSH服务，登录用户名为git（所有GitHub用户共享此SSH用户名，不要写成其他）。
 
 ::
 
@@ -71,7 +71,7 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
 
   $ ssh-keygen
 
-然后根据提示在用户主目录下的 .ssh 目录中创建默认的公钥/私钥对文件，其中 ``~/.ssh/id_rsa`` 是私钥文件， ``~/.ssh/id_rsa.pub`` 是公钥文件。注意私钥文件要严加保护，不能泄露给任何人，如果在执行 ``ssh-keygen`` 命令时选择了使用口令保护私钥，私钥文件是经过加密的。公钥文件 ``~/.ssh/id_rsa.pub`` 则可以放心地公开给任何人。
+然后根据提示在用户主目录下的 ``.ssh`` 目录中创建默认的公钥/私钥对文件，其中 ``~/.ssh/id_rsa`` 是私钥文件， ``~/.ssh/id_rsa.pub`` 是公钥文件。注意私钥文件要严加保护，不能泄露给任何人。如果在执行 ``ssh-keygen`` 命令时选择了使用口令保护私钥，私钥文件是经过加密的。至于公钥文件 ``~/.ssh/id_rsa.pub`` 则可以放心地公开给他人。
 
 也可以用 ``ssh-keygen`` 命令以不同的名称创建多个公钥，当拥有多个GitHub账号时，非常重要。这是因为虽然一个GitHub账号允许使用多个不同的SSH公钥，但反过来，一个SSH公钥只能对应于一个GitHub账号。下面的命令在 ``~/.ssh`` 目录下创建名为 ``gotgithub`` 的私钥和名为 ``gotgithub.pub`` 的公钥文件。
 
@@ -79,7 +79,7 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
 
   $ ssh-keygen -C "gotgithub@gmail.com" -f ~/.ssh/gotgithub
 
-当生成的公钥/私钥对不在缺省位置（~/.ssh/id_rsa等）时，可以在 ``ssh`` 命令中用 ``-i <filename>`` 指定，或者在配置文件 ``~/.ssh/config`` 中通过相应的设置进行设定。例如对于上例创建了非缺省公钥/私钥对 ``~/.ssh/gotgithub`` ，可以在 ``~/.ssh/config`` 配置文件中写入如下配置。
+当生成的公钥/私钥对不在缺省位置（~/.ssh/id_rsa等）时，使用 ``ssh`` 命令连接远程主机时需要使用参数 ``-i <filename>`` 指定公钥/私钥对。或者在配置文件 ``~/.ssh/config`` 中针对相应主机进行设定。例如对于上例创建了非缺省公钥/私钥对 ``~/.ssh/gotgithub`` ，可以在 ``~/.ssh/config`` 配置文件中写入如下配置。
 
 ::
 
@@ -103,7 +103,7 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
 
    图2-8：添加SSH公钥认证
 
-设置成功后，再用 ``ssh`` 命令访问 github.com，会显示一条认证成功信息，然后退出。在认证成功的信息中还会显示该公钥对应的用户名。
+设置成功后，再用 ``ssh`` 命令访问 github.com，会显示一条认证成功信息并退出。在认证成功的信息中还会显示该公钥对应的用户名。
 
 ::
 
