@@ -203,7 +203,7 @@
   $ git branch -D mybranch1
   Deleted branch mybranch1 (was 73e586f).
 
-现在只是本地分支被删除了，远程GitHub服务器上的 ``mybranch1`` 分支尚在。删除远程GitHub版本库中的分支就不能使用 ``git branch`` 命令而，而是要使用 ``git push`` 命令，不过在使用推送分支命令时要使用一个特殊的引用表达式（冒号前为空）。如下：
+现在只是本地分支被删除了，远程GitHub服务器上的 ``mybranch1`` 分支尚在。删除远程GitHub版本库中的分支就不能使用 ``git branch`` 命令，而是要使用 ``git push`` 命令，不过在使用推送分支命令时要使用一个特殊的引用表达式（冒号前为空）。如下：
 
 ::
 
