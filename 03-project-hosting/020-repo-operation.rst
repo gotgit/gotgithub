@@ -9,12 +9,12 @@
 ::
 
   $ git log --pretty=fuller
-  commit a00f4dda9f72d1f71eed6b6269dd7327951446f1
+  commit 92dee9b8125afc9a606394ed463f9f264f2d3d58
   Author:     Jiang Xin <worldhello.net@gmail.com>
-  AuthorDate: Thu Aug 11 16:31:39 2011 +0800
+  AuthorDate: Wed Dec 14 14:52:40 2011 +0800
   Commit:     Jiang Xin <worldhello.net@gmail.com>
-  CommitDate: Thu Aug 11 16:31:39 2011 +0800
-
+  CommitDate: Wed Dec 14 14:52:40 2011 +0800
+  
       README for this project.
 
 原来提交用户设置的邮件地址并非gotgithub用户设置的邮件地址。补救办法就是对此提交进行修改，然后强制推送到GitHub。
@@ -41,11 +41,11 @@
   ::
 
     $ git log --pretty=fuller
-    commit f172c51a111d558130028c7e9c3e81b60196d512
+    commit e1e52d99fa71fd6f606903efa9da04fd0055fca9
     Author:     Jiang Xin <gotgithub@gmail.com>
-    AuthorDate: Thu Aug 11 18:23:56 2011 +0800
+    AuthorDate: Wed Dec 14 15:05:47 2011 +0800
     Commit:     Jiang Xin <gotgithub@gmail.com>
-    CommitDate: Thu Aug 11 18:23:56 2011 +0800
+    CommitDate: Wed Dec 14 15:05:47 2011 +0800
     
         README for this project.
 
@@ -71,10 +71,10 @@
     Counting objects: 3, done.
     Delta compression using up to 2 threads.
     Compressing objects: 100% (2/2), done.
-    Writing objects: 100% (3/3), 597 bytes, done.
-    Total 3 (delta 0), reused 2 (delta 0)
+    Writing objects: 100% (3/3), 629 bytes, done.
+    Total 3 (delta 0), reused 0 (delta 0)
     To git@github.com:gotgithub/helloworld.git
-     + a00f4dd...f172c51 master -> master (forced update)
+     + 92dee9b...e1e52d9 master -> master (forced update)
 
 完成强制推送后，再查看GitHub项目页面，会发现提交者已经显示为gotgithub用户。如图3-7所示。
 
@@ -104,7 +104,7 @@
     $ touch hello1
     $ git add hello1
     $ git commit -m "add hello1 for mark."
-    [mybranch1 73e586f] add hello1 for mark.
+    [mybranch1 f46a284] add hello1 for mark.
      0 files changed, 0 insertions(+), 0 deletions(-)
      create mode 100644 hello1
 
@@ -116,7 +116,7 @@
     Counting objects: 4, done.
     Delta compression using up to 2 threads.
     Compressing objects: 100% (2/2), done.
-    Writing objects: 100% (3/3), 280 bytes, done.
+    Writing objects: 100% (3/3), 281 bytes, done.
     Total 3 (delta 0), reused 0 (delta 0)
     To git@github.com:gotgithub/helloworld.git
      * [new branch]      mybranch1 -> mybranch1
@@ -144,11 +144,11 @@
 ::
 
   $ git clone git@github.com:gotgithub/helloworld.git helloworld-nb
-  Cloning into helloworld-nb...
+  Cloning into 'helloworld-nb'...
   remote: Counting objects: 6, done.
   remote: Compressing objects: 100% (4/4), done.
   remote: Total 6 (delta 0), reused 6 (delta 0)
-  Receiving objects: 100% (6/6), 845 bytes, done.
+  Receiving objects: 100% (6/6), done.
   $ cd helloworld-nb
   $ git branch
   * mybranch1
@@ -168,9 +168,9 @@
 
   $ git ls-remote
   From git@github.com:gotgithub/helloworld.git
-  73e586f46f5a4a476e415f248714e595ddbe2f7f        HEAD
-  f172c51a111d558130028c7e9c3e81b60196d512        refs/heads/master
-  73e586f46f5a4a476e415f248714e595ddbe2f7f        refs/heads/mybranch1
+  f46a28484adb6c1b4830eb4df582325c740e9d6c        HEAD
+  e1e52d99fa71fd6f606903efa9da04fd0055fca9        refs/heads/master
+  f46a28484adb6c1b4830eb4df582325c740e9d6c        refs/heads/mybranch1
 
 删除分支
 ---------------
@@ -201,7 +201,7 @@
 ::
  
   $ git branch -D mybranch1
-  Deleted branch mybranch1 (was 73e586f).
+  Deleted branch mybranch1 (was f46a284).
 
 现在只是本地分支被删除了，远程GitHub服务器上的 ``mybranch1`` 分支尚在。删除远程GitHub版本库中的分支就不能使用 ``git branch`` 命令，而是要使用 ``git push`` 命令，不过在使用推送分支命令时要使用一个特殊的引用表达式（冒号前为空）。如下：
 
@@ -223,13 +223,14 @@
   To git@github.com:gotgithub/helloworld.git
    - [deleted]         mybranch1
 
-执行 ``git ls-remote`` 命令可以看到GitHub远程分支已删除。
+执行 ``git ls-remote`` 命令可以看到GitHub远程分支 ``mybranch1`` 已删除。
 
 ::
 
   $ git ls-remote git@github.com:gotgithub/helloworld.git
-  f172c51a111d558130028c7e9c3e81b60196d512        HEAD
-  f172c51a111d558130028c7e9c3e81b60196d512        refs/heads/master
+  From git@github.com:gotgithub/helloworld.git
+  e1e52d99fa71fd6f606903efa9da04fd0055fca9        HEAD
+  e1e52d99fa71fd6f606903efa9da04fd0055fca9        refs/heads/master
 
 里程碑管理
 ------------
@@ -269,9 +270,9 @@
     Counting objects: 6, done.
     Delta compression using up to 2 threads.
     Compressing objects: 100% (4/4), done.
-    Writing objects: 100% (5/5), 564 bytes, done.
-    Total 5 (delta 0), reused 2 (delta 0)
-    To git@github.github.com:gotgithub/helloworld.git
+    Writing objects: 100% (5/5), 548 bytes, done.
+    Total 5 (delta 0), reused 0 (delta 0)
+    To git@github.com:gotgithub/helloworld.git
      * [new tag]         mytag1 -> mytag1
      * [new tag]         mytag2 -> mytag2
      * [new tag]         mytag3 -> mytag3
@@ -281,15 +282,15 @@
   ::
 
     $ git tag -d mytag3
-    Deleted tag 'mytag3' (was de60c49)
+    Deleted tag 'mytag3' (was c71231c)
 
 * 删除GitHub远程版本库中的里程碑。
 
   ::
 
     $ git push origin :mytag3
-    To git@github.github.com:gotgithub/helloworld.git
-     - [deleted]         mytag3
+    To git@github.com:gotgithub/helloworld.git
+      [deleted]         mytag3
 
 此时查看GitHub上的项目页，会看到已有两个里程碑，如图3-10所示。
 
