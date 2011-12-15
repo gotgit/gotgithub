@@ -25,21 +25,56 @@
 
 ## 如何编译
 
-本书使用 [reStructuredText](http://docutils.sourceforge.net/rst.html) 格式撰写，用 [Sphinx](http://sphinx.pocoo.org/) 工具进行编译。编译前先确认已经安装 Python、docutils 及 sphinx。
+### 预备
 
-本书的图片位于另外的版本库中，采用子模组方式关联到本版本库，以使主版本库更小、更易克隆。若需要克隆保存图片的子模组版本库，使用下面命令。
+* Python, docutils
 
-* 若尚未克隆主版本库，先克隆主版本库。
+  本书使用 [reStructuredText](http://docutils.sourceforge.net/rst.html) 格式撰写，格式解析依赖 Python 和 docutils 包。
+
+* Sphinx
+
+  用 [Sphinx](http://sphinx.pocoo.org/) 工具进行编译。编译前先确认已经安装 Python、docutils 及 sphinx。
+
+* ImageMagick 及 Inkscape
+
+  本书图片矢量图采用 [Inkscape](http://inkscape.org/) 绘制，位图处理采用 [GIMP](http://www.gimp.org/) 。上述格式图片在网页显示需要格式转换，格式转换需用到 ImageMagick 和 Inkscape。
+
+* Git
+
+  不解释。
+
+### 克隆版本库（本书书稿及图片）
+
+本书用两个版本库维护：
+
+* 书稿版本库：
+
+  https://github.com/gotgit/gotgithub/
+
+* 图片版本库：
+
+  https://github.com/gotgit/gotgithub-graphics/
+
+
+本书的图片版本库以子模组形式关联到书稿版本库，运行下面命令执行克隆：
+
+* 若尚未克隆书稿版本库，先克隆书稿版本库。
 
       $ git clone git://github.com/gotgit/gotgithub.git
       $ cd gotgithub
 
-* 检出子模组版本库（即保存图片的版本库）。
+* 默认检出 ``master`` 分支。如果当前非 ``master`` 分支，执行下面命令检出分支。
+
+      $ git checkout master
+
+* 通过子模组更新命令克隆子模组版本库（即保存图片的版本库）并检出。
 
       $ git submodule init
       $ git submodule update
 
-安装了 Sphinx 后，编译本书使用命令：
+### 编译书稿
+
+确保安装了 Sphinx、ImageMagick、Inkscape。编译本书使用命令：
 
     $ make html
 
@@ -52,7 +87,6 @@
 * 创建项目分支。即 Fork。
 * 修改您觉得不满意的地方。修改后推送到您创建的分支版本库中。
 * 通过 GitHub 向我发送 Pull Request。
-
 
 [gotgit]: http://www.worldhello.net/gotgit/ "Got Git"
 
