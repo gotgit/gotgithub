@@ -5,7 +5,7 @@ GitHub的账户已经建立好了，在建立自己的项目托管之前，看�
 
 * 区域一：项目概要介绍及版本库URL等。
 
-  项目GotGit托管在组织账号 gotgit 之下 [#]_ ，并且当前有4个关注用户和2个项目分支。最下面一行显示版本库的访问地址，只显示了HTTP和Git-daemon两个协议的URL地址，这是因为当前用户对该版本库只具有只读权限，因此没有显示SSH协议的URL地址。
+  项目GotGit托管在组织账号 gotgit 之下 [#]_ ，并且当前有25个关注用户和9个项目分支。最下面一行显示版本库的访问地址，只显示了HTTP和Git-daemon两个协议的URL地址，这是因为当前用户对该版本库只具有只读权限，因此没有显示SSH协议的URL地址。
 
   .. figure:: /images/join-github/gotgit-repo-tree-1.png
      :scale: 100

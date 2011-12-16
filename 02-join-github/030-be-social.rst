@@ -10,12 +10,14 @@
 
    图2-27：项目的关注按钮
 
-添加对项目的关注后，在“Dashboard”（仪表板）页面的左侧会显示关注项目的最新动态，右侧会列表显示关注的项目。如图2-28所示。
+添加对项目的关注后，点击页面右上角的“github”文字图标进入仪表板（Dashboard）页面，如图2-28所示。
 
 .. figure:: /images/join-github/dashboard-with-watched-prj.png
    :scale: 100
 
    图2-28：关注项目在仪表板页的显示
+
+仪表板页面的左侧显示所关注项目的最新动态，右侧会列表显示关注的项目列表。
 
 GitHub还可以关注用户。访问 https://github.com/mojombo 可以看到mojombo（GitHub创始者之一）的用户页，关注他只需点击图2-29中的“Follow”按钮。从mojombo的用户页还可以看到majombo关注的开发者，可以以此扩大GitHub朋友圈。
 
@@ -35,6 +37,6 @@ RSS中可能包括隐私信息，如私有版本库的更新信息，那么RSS�
 
 ::
 
-  https://github.com/gotgithub.private.atom?token=7fa3febca074046415a6308a3f673a4a
+  https://github.com/gotgithub.private.atom?token=681a8a5a38419ecfb80f8633d4cb4e16
 
 原来RSS订阅用到了API Token，既保护了隐私，又不怕密码泄露。关于API Token参见本章第一节的相关介绍。

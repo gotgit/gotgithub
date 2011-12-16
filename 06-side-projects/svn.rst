@@ -28,8 +28,6 @@ SVN 支持部分检出，下面命令将整个主线 ``trunk`` （对应于 Git 
   A    gotgithub/Makefile
   A    gotgithub/README.rst
   ...
-  A    gotgithub/images/work-with-others/wiki-reverted.png
-  A    gotgithub/images/work-with-others/wiki-reverted.xcf
   Checked out revision 30.
 
 还可以使用 SVN 命令创建分支，即相当于在 Git 版本库中创建新的引用。测试发现 GitHub 尚不支持 SVN 远程拷贝创建分支，需要通过本地拷贝再提交的方式创建新分支。操作如下：
