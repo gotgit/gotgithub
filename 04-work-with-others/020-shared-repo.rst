@@ -15,28 +15,28 @@ GitHub可以通过多种途径为版本库授权，让版本库成为多人共�
 
    图4-17：添加项目合作者
 
-图4-17为项目添加了两个合作者：ossxp-com和jiangxin。添加到项目当中的合作者会收到通知邮件，告知已经被加入到相应的项目当中。当新加入的项目合作者，如jiangxin，登录GitHub，在仪表板的版本库列表中会看到源自gotgithub用户的版本库，如图4-18所示。
+图4-17为项目添加了两个合作者：supergirl和incredible。添加到项目当中的合作者会收到通知邮件，告知已经被加入到相应的项目当中。当新加入的项目合作者，如incredible，登录GitHub，在仪表板的版本库列表中会看到源自gotgithub用户的版本库，如图4-18所示。
 
 .. figure:: /images/work-with-others/prj-list-of-collab.png
    :scale: 100
 
    图4-18：合作者项目列表
 
-从图4-18可以看出GitHub用户jiangxin自己创建的项目托管在自己的空间下，而作为合作者参与的项目仍然托管在原创建者（gotgithub）的空间下，这一点明显和项目分支（Fork）不同。图4-19是以jiangxin登录GitHub访问 ``gotgithub/helloworld`` 的界面。
+从图4-18可以看出GitHub用户incredible自己创建的项目托管在自己的空间下，而作为合作者参与的项目仍然托管在原创建者（gotgithub）的空间下，这一点明显和项目分支（Fork）不同。图4-19是以incredible登录GitHub访问 ``gotgithub/helloworld`` 的界面。
 
-.. figure:: /images/work-with-others/jx-helloworld.png
+.. figure:: /images/work-with-others/collab-view-helloworld.png
    :scale: 100
 
    图4-19：以合作者身份访问项目
 
-用户jiangxin对版本库 ``gotgithub/helloworld`` 拥有写入权限。和 ``gotgithub`` 用户稍有区别的是没有管理员权限。
+用户incredible对版本库 ``gotgithub/helloworld`` 拥有写入权限。和 ``gotgithub`` 用户稍有区别的是没有管理员权限。
 
 与传统集中式工作模式的异同
 --------------------------------
 
 传统的集中式版本控制系统，如CVS、SVN，所有用户都访问同一个版本库。采用集中式工作模式的GitHub用户同样也是访问同一版本库。
 
-对于由用户gotgithub创建的 ``helloworld`` 版本库，添加了合作者ossxp-com和jiangxin，三个人克隆版本库使用如下命令。
+对于由用户gotgithub创建的 ``helloworld`` 版本库，添加了合作者supergirl和incredible，三个人克隆版本库使用如下命令。
 
 * 用户 gotgithub 克隆版本库。
 
@@ -44,17 +44,17 @@ GitHub可以通过多种途径为版本库授权，让版本库成为多人共�
 
     gotgithub$ git clone https://gotgithub@github.com/gotgithub/helloworld.git
 
-* 用户 ossxp-com 克隆版本库。
+* 用户 supergirl 克隆版本库。
 
   ::
 
-    ossxp-com$ git clone https://ossxp-com@github.com/gotgithub/helloworld.git
+    supergirl$ git clone https://supergirl@github.com/gotgithub/helloworld.git
 
-* 用户 jiangxin 克隆版本库。
+* 用户 incredible 克隆版本库。
 
   ::
 
-    jiangxin$ git clone https://jiangxin@github.com/gotgithub/helloworld.git
+    incredible$ git clone https://incredible@github.com/gotgithub/helloworld.git
 
 传统集中式版本控制系统，所有的提交历史数据都在唯一的版本库中，各个提交是顺序进行的。为了防止多用户在提交时相互覆盖，集中式版本控制系统发明了很多方法。有的采用编辑锁的形式（如VSS），更改文件前对文件锁定，其他人禁止对文件进行访问（甚至无法读取），完成修改并提交后，文件解锁。有的如SVN，允许多人同时编辑同一文件，但只有先进行提交的才能成功，后提交的会遇到“过时”错误，必须先获取版本库中的新增提交并和本地修改进行合并。即传统集中式版本控制系统，提交时必须和唯一的版本库所在的服务器保持连接，而且提交有可能会失败。
 
@@ -84,24 +84,24 @@ GitHub可以通过多种途径为版本库授权，让版本库成为多人共�
 合并后推送
 ---------------
 
-当用户gotgithub完成推送后，共享版本库以及三个用户的本地版本库如图4-21所示。其中共享版本库变得和gotgithub用户的本地版本库相一致。此时如果用户 ossxp-com 执行推送，会遇到错误：非快进式推送。
+当用户gotgithub完成推送后，共享版本库以及三个用户的本地版本库如图4-21所示。其中共享版本库变得和gotgithub用户的本地版本库相一致。此时如果用户 supergirl 执行推送，会遇到错误：非快进式推送。
 
 ::
 
-  ossxp-com$ git push
-  To https://ossxp-com@github.com/gotgithub/helloworld.git
+  supergirl$ git push
+  To https://supergirl@github.com/gotgithub/helloworld.git
    ! [rejected]        master -> master (non-fast-forward)
-  error: failed to push some refs to 'https://ossxp-com@github.com/gotgithub/helloworld.git'
+  error: failed to push some refs to 'https://supergirl@github.com/gotgithub/helloworld.git'
   To prevent you from losing history, non-fast-forward updates were rejected
   Merge the remote changes (e.g. 'git pull') before pushing again.  See the
   'Note about fast-forwards' section of 'git push --help' for details.
 
-GitHub并不对强制推送进行限制，但是用户ossxp-com不要用 ``git push -f`` 命令强制推送，因为那样会覆盖掉共享版本库中用户gotgithub的推送，正确的做法是获取共享版本库中新提交，并在本地版本库中和本地提交合并。即执行：
+GitHub并不对强制推送进行限制，但是用户supergirl不要用 ``git push -f`` 命令强制推送，因为那样会覆盖掉共享版本库中用户gotgithub的推送，正确的做法是获取共享版本库中新提交，并在本地版本库中和本地提交合并。即执行：
 
 ::
 
-  ossxp-com$ git fetch
-  ossxp-com$ git merge
+  supergirl$ git fetch
+  supergirl$ git merge
   
 获取和合并操作过程如图4-22所示。
 
@@ -110,11 +110,11 @@ GitHub并不对强制推送进行限制，但是用户ossxp-com不要用 ``git p
 
    图4-22：合并操作示意图
 
-实际上用户ossxp-com只需执行一条命令便可完成所有的操作：
+实际上用户supergirl只需执行一条命令便可完成所有的操作：
 
 ::
 
-  ossxp-com$ git pull
+  supergirl$ git pull
 
 即： ``git pull = git fetch + git merge`` 。
 
@@ -122,7 +122,7 @@ GitHub并不对强制推送进行限制，但是用户ossxp-com不要用 ``git p
 
 ::
 
-  ossxp-com$ git mergetool
+  supergirl$ git mergetool
 
 冲突解决完毕，执行提交即完成冲突解决。如果在冲突解决过程把本地文件搞得一团糟，随时可以取消合并操作。取消冲突的合并让本地版本库的 ``master`` 分支退回到合并之前的状态，执行命令 ``git reset --hard`` 。
 
@@ -130,7 +130,7 @@ GitHub并不对强制推送进行限制，但是用户ossxp-com不要用 ``git p
 
 ::
 
-  ossxp-com$ git push
+  supergirl$ git push
 
 完成推送后的版本库示意图如图4-23所示。
 
@@ -144,32 +144,32 @@ GitHub并不对强制推送进行限制，但是用户ossxp-com不要用 ``git p
 
 合并会产生除了合并双方（或多方）所有提交外的一个新提交，这一方面会增加代码审核的负担，另一方面本地多个提交混杂一起与远程分支合并可能会比本地提交逐一迁移式合并更加困难。因此在特定情况下，变基是取代合并的一个选择。
 
-图4-24展示用户jiangxin若采用合并和变基两种不同方案时本地版本库 ``master`` 分支的情况。图中右上是合并操作后的结果，右下是变基操作后的结果。
+图4-24展示用户incredible若采用合并和变基两种不同方案时本地版本库 ``master`` 分支的情况。图中右上是合并操作后的结果，右下是变基操作后的结果。
 
 .. figure:: /images/work-with-others/workflow-merge-or-rebase.png
    :scale: 100
 
    图4-24：合并和变基结果比较
 
-若用户 jiangxin 选择变基操作，执行命令如下：
+若用户 incredible 选择变基操作，执行命令如下：
 
 * 获取远程版本库的提交到本地的远程分支。
 
   ::
 
-    jiangxin$ git fetch origin
+    incredible$ git fetch origin
 
 * 执行变基操作，将本地 ``master`` 分支的提交变基到新的远程分支中。
 
   ::
 
-    jiangxin$ git rebase origin/master
+    incredible$ git rebase origin/master
 
 如果一切顺利，变基后推送到共享版本库。
 
 ::
 
-  jiangxin$ git push
+  incredible$ git push
 
 推送后的版本库状态如图4-25所示。
 
