@@ -15,7 +15,7 @@ GotGit版本库 [#]_ 用于维护《Git权威指南》一书的官网和勘误�
 
 下面就以用户gotgithub身份，访问版本库 https://github.com/gotgit/gotgit/ ，添加新的勘误。如图4-1所示，gotgit项目在之前的示例中已经被我们关注但尚未Fork。
 
-.. figure:: /images/work-with-others/gotgit-repo.png
+.. figure:: /images/work-with-others/gotgit-repo-before-fork.png
    :scale: 100
 
    图4-1：原gotgit项目
@@ -50,7 +50,7 @@ GotGit版本库 [#]_ 用于维护《Git权威指南》一书的官网和勘误�
     $ git config user.name "Wang Sheng"
     $ git config user.email wangsheng@ossxp.com
 
-* 编辑 ``error.mkd`` 文件，录入新发现的书中的文字错误。
+* 编辑 ``errata.mkd`` 文件 [#]_ ，录入新发现的书中的文字错误。
 
   ::
 
@@ -77,7 +77,7 @@ GotGit版本库 [#]_ 用于维护《Git权威指南》一书的官网和勘误�
   ::
 
     $ git add -u
-    $ git commit -m "Fixed #3: should be 项目, not 项." 
+    $ git commit -m "Fixed #3: should be 项目, not 项."
 
 * 推送提交到GitHub。
 
@@ -85,7 +85,7 @@ GotGit版本库 [#]_ 用于维护《Git权威指南》一书的官网和勘误�
 
     $ git push
 
-访问GitHub上的派生项目页面，会看到以用户whangsheng创建的提交，如图4-4所示。
+访问GitHub上的派生项目页面，会看到以用户whangsheng在 ``master`` 分支 [#]_ 创建的提交。如图4-4所示。
 
 .. figure:: /images/work-with-others/gotgit-new-commit.png
    :scale: 100
@@ -263,11 +263,12 @@ Pull Request提供的自动合并显示在提交日志中是什么样子的呢�
 
     $ git push
 
+在线编辑
+---------
 
-简化的 Fork + Pull Request
---------------------------------
+GitHub提供了在线编辑功能，这样可以无需克隆版本库、无需使用Git即可完成对版本库中文件的修改，甚至可以在你的iPad甚至iPhone上完成对文件的修改。
 
-GitHub提供了一个快捷的“Fork + Pull Request”操作。在介绍该操作前，先介绍一下GitHub的在线编辑文件功能。例如以gotgithub用户登录GitHub，访问一下地址： https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md 。即浏览派生的版本库 ``gotgithub/gotgit`` 中的文件 ``errata.md`` ，会看到其中一个“Edit this file”的按钮，如图4-12所示。
+以gotgithub用户登录GitHub，访问之前派生而来的版本库 gotgithub/gotgit 中的文件，例如文件 ``errata.md`` [#]_ ，会看到其中一个“Edit this file”的按钮，如图4-12所示。
 
 
 .. figure:: /images/work-with-others/edit-this-file-btn.png
@@ -282,20 +283,19 @@ GitHub提供了一个快捷的“Fork + Pull Request”操作。在介绍该操�
 
    图4-13：编辑文件
 
-到目前，我们已经了解了GitHub的三大武器：Fork、Pull Request和在线编辑。下面就介绍一下对于最常用的“Fork + Pull Request”操作，GitHub是如何完美地将三大武器整合在一起，提供最快捷和最自然的操作方式。即GitHub对于他人版本库文件（无权修改）提供了一个“Fork and edit this file”的按钮，将三大武器一勺烩。
+简化的 Fork + Pull Request
+--------------------------------
 
-访问他人版本库（尚未在自己空间派生）中的文件，例如访问下面网址：
+到目前，我们已经了解了GitHub的三大武器：Fork、Pull Request和在线编辑。对于最常用的“Fork + Pull Request”操作，GitHub还提供了一个快捷模式。即GitHub对于无权更改的他人版本库中的文件，也提供了一个类似在线编辑的按钮，名为“Fork and edit this file”按钮，自动完成版本库派生和在线编辑，即将三大武器一勺烩。
 
-* https://github.com/ossxp-com/hello-world/blob/master/README
-
-显示他人（ossxp-com）版本库 ``hello-world`` 中的 ``README`` 文件，如图4-14所示。
+访问他人版本库（尚未在自己空间派生）中的文件，例如访问下面地址： http://git.io/hello-world-makefile [#]_ 。显示他人（ossxp-com）版本库 ``hello-world`` 中的 ``src/Makefile`` 文件，如图4-14所示。
 
 .. figure:: /images/work-with-others/fork-and-edit-btn.png
    :scale: 100
 
-   图4-14：浏览让人版本库中文件
+   图4-14：浏览他人版本库中文件
 
-点击图4-14中的“Fork and edit this file”按钮，会自动在自己托管空间创建派生版本库，并开始在线编辑文件 ``errata.md`` ，如图4-15所示。
+点击图4-14中的“Fork and edit this file”按钮，会自动在自己托管空间创建派生版本库，并开始在线编辑文件 ``src/Makefile`` ，如图4-15所示。
 
 .. figure:: /images/work-with-others/fork-and-edit-form.png
    :scale: 100
@@ -309,11 +309,50 @@ GitHub提供了一个快捷的“Fork + Pull Request”操作。在介绍该操�
 
    图4-16：编辑完毕自动开启Pull Request
 
-如果仔细查看图4-16，会发现此次派生并修改发生在 ``gotgithub/hello-world`` 派生版本库中的 ``patch-1`` 分支中，并非通常的 ``master`` 分支。因此当 ``hello-world`` 原始版本库的管理员收到此Pull Request并打算手工合并的话，要注意合并正确的分支。例如使用如下命令：
+点击“Send pull request”按钮完成Pull Request的创建。如果仔细查看图4-16，会发现Pull Request所包含的修改发生在 ``gotgithub/hello-world`` 派生版本库中的 ``patch-1`` 分支中，并非通常的 ``master`` 分支。
+
+原版本库 ``ossxp-com/hello-world`` 的管理员会收到一封邮件，通知有新的Pull Request，如下所示（前四行为信头）：
 
 ::
 
-  $ git merge gotgithub/patch-1
+  From: GotGitHub <reply+i-...@reply.github.com>
+  Date: 2011/12/17
+  Subject: [hello-world] Bugfix: build target when version.h changed.  (#1)
+  To: Jiang Xin <worldhello.net@gmail.com>
+
+
+  Without this fix, when version changed only version.h update, target rebuild needs a second `make`.
+
+  You can merge this Pull Request by running:
+
+   git pull https://github.com/gotgithub/hello-world patch-1
+
+  Or you can view, comment on it, or merge it online at:
+
+   https://github.com/ossxp-com/hello-world/pull/1
+
+  -- Commit Summary --
+
+  * Bugfix: build target when version.h changed.
+
+  -- File Changes --
+
+  M src/Makefile (3)
+
+  -- Patch Links --
+
+   https://github.com/ossxp-com/hello-world/pull/1.patch
+   https://github.com/ossxp-com/hello-world/pull/1.diff
+
+  ---
+  Reply to this email directly or view it on GitHub:
+  https://github.com/ossxp-com/hello-world/pull/1
+
+版本库 ``ossxp-com/hello-world`` 的管理员既可以通过GitHub提供的图形化界面完成对 Pull Request 的审核和合并，也可以在命令行下完成。正如邮件中所述若使用命令行，操作如下：
+
+::
+
+  $ git pull https://github.com/gotgithub/hello-world patch-1
 
 
 ----
@@ -321,3 +360,7 @@ GitHub提供了一个快捷的“Fork + Pull Request”操作。在介绍该操�
 .. [#] https://github.com/gotgit/gotgit/
 .. [#] https://github.com/wangsheng/
 .. [#] http://redmine.ossxp.com/redmine/issues/161
+.. [#] 版本库 gotgit/gotgit 已将勘误文件重命名为 ``errata.md`` 。
+.. [#] 版本库 gotgit/gotgit 原 ``master`` 分支内容已转移至 ``gh-pages`` 分支，通过GitHub提供的网站部署机制完成网页的编译和部署。
+.. [#] 版本库 gotgit/gotgit 已重构。分支 ``gh-pages`` 中文件 ``errata.md`` 文件来自于原 ``master`` 分支的 ``errata.mkd`` 文件，地址： https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md 。
+.. [#] 即地址 https://github.com/ossxp-com/hello-world/blob/master/src/Makefile 。
