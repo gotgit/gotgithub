@@ -4,11 +4,15 @@
    contain the root `toctree` directive.
 
 GotGitHub
-=====================================
+==========
+
+前言
+----
 
 .. include:: preface.rst
 
-目录:
+目录
+----
 
 .. toctree::
    :maxdepth: 3
@@ -23,10 +27,14 @@ GotGitHub
    06-side-projects/index
    20-appendix/index
 
-索引和表格
-==================
+贡献者
+------
+.. include:: contributors.rst
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
+.. 索引和表格
+.. ==================
+.. 
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
