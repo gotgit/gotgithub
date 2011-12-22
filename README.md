@@ -10,12 +10,12 @@
 
 * 克隆版本库。
 
-      $ git clone git://github.com/gotgit/gotgithub.git
+        $ git clone git://github.com/gotgit/gotgithub.git
 
 * 检出 ``gh-pages`` 分支。
 
-      $ cd gotgithub
-      $ git checkout gh-pages
+        $ cd gotgithub
+        $ git checkout gh-pages
 
 * 用浏览器打开 ``index.html`` 即可离线阅读。
 
@@ -29,19 +29,19 @@
 
 * Python, docutils
 
-  本书使用 [reStructuredText](http://docutils.sourceforge.net/rst.html) 格式撰写，格式解析依赖 Python 和 docutils 包。
+    本书使用 [reStructuredText](http://docutils.sourceforge.net/rst.html) 格式撰写，格式解析依赖 Python 和 docutils 包。
 
 * Sphinx
 
-  用 [Sphinx](http://sphinx.pocoo.org/) 工具进行编译。编译前先确认已经安装 Python、docutils 及 sphinx。
+    用 [Sphinx](http://sphinx.pocoo.org/) 工具进行编译。编译前先确认已经安装 Python、docutils 及 sphinx。
 
 * ImageMagick 及 Inkscape
 
-  本书图片矢量图采用 [Inkscape](http://inkscape.org/) 绘制，位图处理采用 [GIMP](http://www.gimp.org/) 。上述格式图片在网页显示需要格式转换，格式转换需用到 ImageMagick 和 Inkscape。
+    本书图片矢量图采用 [Inkscape](http://inkscape.org/) 绘制，位图处理采用 [GIMP](http://www.gimp.org/) 。上述格式图片在网页显示需要格式转换，格式转换需用到 ImageMagick 和 Inkscape。
 
 * Git
 
-  不解释。
+    不解释。
 
 ### 克隆版本库（本书书稿及图片）
 
@@ -49,23 +49,23 @@
 
 * 书稿版本库：
 
-  https://github.com/gotgit/gotgithub/
+    https://github.com/gotgit/gotgithub/
 
 * 图片版本库：
 
-  https://github.com/gotgit/gotgithub-graphics/
+    https://github.com/gotgit/gotgithub-graphics/
 
 
 本书的图片版本库以子模组形式关联到书稿版本库，运行下面命令执行克隆：
 
 * 若尚未克隆书稿版本库，先克隆书稿版本库。
 
-      $ git clone git://github.com/gotgit/gotgithub.git
-      $ cd gotgithub
+        $ git clone git://github.com/gotgit/gotgithub.git
+        $ cd gotgithub
 
 * 默认检出 ``master`` 分支。如果当前非 ``master`` 分支，执行下面命令检出分支。
 
-      $ git checkout master
+        $ git checkout master
 
 * 通过子模组更新命令克隆子模组版本库（即保存图片的版本库）并检出。
 
@@ -79,6 +79,10 @@
     $ make html
 
 编译后的网页位于 ``_build/html`` 目录下。
+
+更多的格式输出参见下面的命令输出：
+
+    $ make
 
 ## 如何贡献
 
