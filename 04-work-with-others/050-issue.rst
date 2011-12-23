@@ -1,9 +1,9 @@
 缺陷跟踪
 ===============
 
-缺陷跟踪（Bug Tracking）是软件研发流程中重要的一环，集项目需求管理和缺陷管理于一身，通过对研发工作流的控制帮助团队建立规范的研发体系。
+缺陷跟踪（Bug Tracking）是软件研发流程中重要的一环，集项目需求管理和缺陷管理于一身，通过对研发工作流的控制帮助团队建立规范的研发体系。GitHub提供轻量级的缺陷跟踪模块，称为Issues。小巧、易用的Issues模块能与Pull Request紧密整合，是Pull Request工作流的有益补充。
 
-GitHub提供轻量级的缺陷跟踪模块，称为Issues。小巧、易用的Issues模块能与Pull Request紧密整合，是Pull Request工作流的有益补充。一个小型、管理文档和网页的项目，使用Pull Request往往就足够了。试想如果贡献者能够直接修改代码（Fork and edit this file）并通过Pull Request贡献给项目核心开发者，那么为什么还要通过Issues模块报告错误并由他人来更改呢？但是对于大型项目需要做需求管理，或者参与代码开发有难度，则非常有必要通过Issues模块启用缺陷跟踪系统，提供更多途径让贡献者参与到项目中来。
+一个小型、管理文档和网页的项目，使用Pull Request往往就足够了。试想如果贡献者能够直接修改代码（Fork and edit this file）并通过Pull Request贡献给项目核心开发者，那么为什么还要通过Issues模块报告错误并由他人来更改呢？但是对于大型项目需要做需求管理，或者参与代码开发有难度，则非常有必要通过Issues模块启用缺陷跟踪系统，提供更多途径让贡献者参与到项目中来。
 
 缺陷跟踪可以通过项目的管理页面开启或关闭，如图4-45所示。
 
@@ -65,7 +65,7 @@ Issue的生命周期
 
 GitHub的Issues模块非常简单，对标签和里程碑进行简单的设置后，基本上就完成了Issues模块的配置工作，接下来就是如何创建和修改Issue，完成项目的缺陷跟踪和需求管理等，这才是Issues模块的主要工作。
 
-每个Issue都自己的生命周期，从问题的创建，到问题的指派，再到问题的解决，直至问题的关闭。图4-51就是普通贡献者身份为项目创建Issue。
+每个Issue都自己的生命周期，从问题的创建，到问题的指派，再到问题的解决，直至问题的关闭。图4-51就是以普通贡献者身份为项目创建Issue。
 
 .. figure:: /images/issues/issue-new-by-non-member.png
    :scale: 100
@@ -88,7 +88,7 @@ GitHub的Issues模块非常简单，对标签和里程碑进行简单的设置�
 
    图4-53：项目成员创建问题有更多权限
 
-完成上述两个问题的创建后，问题浏览界面显示出新创建的两个问题，一个以项目成员身份创建的问题已经被设置了“缺陷”的标签，而另外一个问题则没有设置任何标签。如图4-54所示。
+完成上述两个问题的创建后，问题浏览界面显示新创建的两个问题，一个以项目成员身份创建的问题已经被设置了“缺陷”的标签，而另外一个问题则没有设置任何标签。如图4-54所示。
 
 .. figure:: /images/issues/issue-list.png
    :scale: 100
@@ -102,7 +102,7 @@ GitHub的Issues模块非常简单，对标签和里程碑进行简单的设置�
 
    图4-55：为问题添加指派、里程碑和标签
 
-在问题浏览页面的过滤器中选择里程碑”Version4.0“，可以看到两条问题都显示出来，这是因为这两条问题都属于该里程碑。里程碑的进度条显示进度为零，这是因为里程碑所包含的全部（两个）问题都处于打开状态，尚未解决。如图4-56所示。
+在问题浏览页面的过滤器中选择里程碑”Version 4.0“，可以看到两条问题都显示出来，这是因为这两条问题都属于该里程碑。里程碑的进度条显示进度为零，这是因为里程碑所包含的全部（两个）问题都处于打开状态，尚未解决。如图4-56所示。
 
 .. figure:: /images/issues/issue-list-with-milestone.png
    :scale: 100
@@ -128,19 +128,39 @@ GitHub还支持版本库提交和问题建立关联，只要提交说明中出�
   
     $ git clone git@github.com:gotgithub/helloworld.git
     $ cd helloworld
- 
-* 在工作区中进行修改、添加文件等，然后添加至暂存区。
+
+* 编辑文件 `src/main.c` ，改正“问题#1”发现的文字错误。
+
+  ::
+
+    $ vi src/main.c
+    $ git diff
+    diff --git a/src/main.c b/src/main.c
+    index 3daf9fe..f974b49 100644
+    --- a/src/main.c
+    +++ b/src/main.c
+    @@ -19,7 +19,7 @@ int usage(int code)
+                "            say hello to the world.\n\n"
+                "    hello -v, --version\n"
+                "            show version.\n\n"
+    -           "    hello -h, -help\n"
+    +           "    hello -h, --help\n"
+                "            this help screen.\n\n"), _VERSION);
+         return code;
+     }
+
+
+* 将修改添加至暂存区。
 
   ::
  
-    hack, hack, hack...
-    $ git add -i
+    $ git add -u
     
-* 提交说明中用 ``fixed #xxx`` 关键字关闭相关问题。
+* 提交，并在提交说明中用 ``fixed #xxx`` 关键字关闭相关问题。
 
   ::
  
-    $ git commit -m "Fixed #1: Source code for Hello world."
+    $ git commit -m "Fixed #1: -help should be --help."
 
 * 向GitHub版本库推送。
 
@@ -148,7 +168,7 @@ GitHub还支持版本库提交和问题建立关联，只要提交说明中出�
 
     $ git push
 
-推送完毕后，在问题浏览界面可以看到里程碑“Version4.0”的进度已经完成了一半，即其中一个问题（#1）已经完成并关闭。如图4-57所示。
+推送完毕后，在问题浏览界面可以看到里程碑“Version 4.0”的进度已经完成了一半，即其中一个问题（#1）已经完成并关闭。如图4-57所示。
 
 .. figure:: /images/issues/issue-milestone-half-closed.png
    :scale: 100
@@ -174,14 +194,16 @@ Pull Requst也是Issue
 
 Pull Request和Issue一样，也是一种对项目的反馈，而且是更为主动的反馈。GitHub的Issues模块将Pull Request也纳入到问题的管理之中，完美地将Pull Request整合到问题追踪的框架之中。
 
-为了弄清二者之间的关联，首先创建一个Pull Request。以非项目成员（用户 wangsheng [#]_ ）的账号访问 ``gotgithub/helloworld`` 项目，查看文件 ``README.mkd`` ，点击“Fork and edit this file”按钮快速创建项目分支，如图4-60所示。
+为了弄清二者之间的关联，首先创建一个Pull Request。
+
+以非项目成员（如用户 omnidroid）的账号访问 ``gotgithub/helloworld`` 项目，查看文件 ``src/Makefile`` ，点击“Fork and edit this file”按钮快速创建项目分支，如图4-60所示。
 
 .. figure:: /images/issues/fork-and-edit-btn-for-issue.png
    :scale: 100
 
    图4-60：在线编辑并创建项目分支
 
-通过GitHub提供的在线编辑功能修改 ``README.mkd`` 文件，修改完毕后撰写提交说明，点击“Propose File Change”按钮提交。如图4-61所示。
+通过GitHub提供的在线编辑功能修改 ``src/Makefile`` 文件，修改完毕后撰写提交说明，点击“Propose File Change”按钮提交。如图4-61所示。
 
 .. figure:: /images/issues/fork-and-edit-form-for-issue.png
    :scale: 100
@@ -209,7 +231,7 @@ Pull Request创建完毕后，除了在菜单项“Pull Requests”中有显示�
 
    图4-64：可以像更新其他Issue那样更新Pull Request
 
-当Pull Request归类到里程碑“Version4.0”中时，在过滤器打开里程碑“Version4.0”，可以看到本来已经完成50%的进度，由于新增了一个“问题”（Pull Request），导致进度降低了。如图4-65所示。
+当Pull Request归类到里程碑“Version 4.0”中时，在过滤器打开里程碑“Version 4.0”，可以看到本来已经完成50%的进度，由于新增了一个“问题”（Pull Request），导致进度降低了。如图4-65所示。
 
 .. figure:: /images/issues/milestone-progress-with-pull-request.png
    :scale: 100
@@ -237,7 +259,7 @@ Pull Request创建完毕后，除了在菜单项“Pull Requests”中有显示�
 
    图4-68：Pull Request自动关闭
 
-如果再回到问题浏览界面，能够猜到现在里程碑“Version4.0”的进度是多少么？由于编号为“#3”的Pull Request的关闭，以及该Pull Request对应的提交中同时关闭了编号为“#2”的问题，所以现在里程碑“Version4.0”关联的所有问题均已关闭，里程碑显示已关闭，即里程碑完成度为100%。
+如果再回到问题浏览界面，能够猜到现在里程碑“Version 4.0”的进度是多少么？由于编号为“#3”的Pull Request的关闭，以及该Pull Request对应的提交中同时关闭了编号为“#2”的问题，所以现在里程碑“Version 4.0”关联的所有问题均已关闭，里程碑显示已关闭，即里程碑完成度为100%。
 
 .. figure:: /images/issues/milestone-closed.png
    :scale: 100
@@ -248,4 +270,3 @@ Pull Request创建完毕后，除了在菜单项“Pull Requests”中有显示�
 
 .. [#] https://github.com/blog/821-mention-somebody-they-re-notified
 .. [#] https://github.com/blog/811-reply-to-comments-from-email
-.. [#] 感谢王胜提供测试账号。
