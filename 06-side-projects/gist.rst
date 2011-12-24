@@ -127,7 +127,7 @@ Greasemonkey
 -----------------
 Gist除了被用于粘贴数据（如代码块）并在网页中引用之外，还被用户挖掘出了新的应用模式，例如用作Greasemonkey脚本的维护 [#]_ 。
 
-Greasemonkey [#]_ 或类似插件为浏览器提供用户端JavaScript扩展功能，最早出现于FireFox浏览器中。其他浏览器也陆续增加了对用户端JavaScript的支持，如Safari的GreaseKit [#]_ 插件，IE的Trixie [#]_ 插件，以及Chrome的Greasemetal插件 [#]_ 。关于如何在浏览器中安装并启用相应的插件，参照相关插件网站的介绍，在此不做过多叙述。
+Greasemonkey [#]_ 或类似插件为浏览器提供用户端JavaScript扩展功能，最早出现于FireFox浏览器中。其他浏览器也陆续增加了对用户端JavaScript的支持，如Safari的 NinjaKit [#]_ 插件，IE的Trixie [#]_ 插件，以及Chrome的Greasemetal插件 [#]_ 。关于如何在浏览器中安装并启用相应的插件，参照相关插件网站的介绍，在此不做过多叙述。
 
 当浏览器安装了 Greasemonkey 或类似插件之后，当访问扩展名为 ``.user.js`` 的URL时，会将该URL指向的JavaScript脚本安装在浏览器中，当访问指定的网址时会自动调用相应的JavaScript脚本，修改相关网页内容或添加特效等等。
 
@@ -144,18 +144,18 @@ https://gist.github.com/1084591 ，如图6-8所示。
 ::
 
   1  // ==UserScript==
-  2  // @name Click more for toggle
-  3  // @namespace gotgit
-  4  // @description Add a toogle effect at the location where anchor with a click-more css.
-  5  // @include http://www.ossxp.com/doc/gotgit/demo*
-  6  // @include http://gotgit.github.com/gotgit/demo*
-  7  // @require http://code.jquery.com/jquery-1.6.2.min.js
-  8  // ==/UserScript==
-  9  // Copyright 2011, Jiang Xin
+  2  // @name           Click more for toggle
+  3  // @namespace      gotgit
+  4  // @description    Add a toogle effect at the location where anchor with a click-more css.
+  5  // @include        http://www.worldhello.net/gotgit/demo*
+  6  // @include        http://gotgit.github.com/gotgit/demo*
+  7  // @include        http://www.ossxp.com/doc/gotgit/demo*
+  8  // @require        http://code.jquery.com/jquery-1.6.2.min.js
+  9  // ==/UserScript==
 
-其中第5行和第6行的两条 `include` 语句限定了此用户端JavaScript脚本的应用范围，即只针对指定的URL（使用通配符）执行该脚本。第7行设定脚本依赖，即该脚本依赖jQuery，会在运行前到指定的URL地址加载jQuery脚本。
+其中第5、6、7行三条 `include` 语句限定了此用户端JavaScript脚本的应用范围，即只针对指定的URL（使用通配符）执行该脚本。第8行设定脚本依赖，即该脚本依赖jQuery，会在运行前到指定的URL地址加载jQuery脚本。
 
-在安装该脚本前，先用浏览器访问网址 http://gotgit.github.com/gotgit/demo.html ，看看不加载用户端JavaScript脚本时网页的模样。该网页中包含一个冗长的网上书店列表，如图6-9所示。 
+在安装该脚本前，先用浏览器访问网址 http://www.worldhello.net/gotgit/demo.html ，看看不加载用户端JavaScript脚本时网页的模样。该网页中包含一个长长的网上书店列表，如图6-9所示。 
 
 .. figure:: /images/side-projects/gist-user-js-apply-before.png
    :scale: 100
@@ -169,7 +169,7 @@ https://gist.github.com/1084591 ，如图6-8所示。
 
    图6-10：安装用户端JavaScript脚本
 
-用户端脚本安装完毕后，再访问同样的测试网页 http://gotgit.github.com/gotgit/demo.html ，会发现网页中出现了一个名为“更多”的可点击链接，冗长的网上书店列表不见了。如图6-11所示。
+用户端脚本安装完毕后，再访问同样的测试网页 http://www.worldhello.net/gotgit/demo.html ，会发现网页中出现了一个名为“更多”的可点击链接，长长的网上书店列表不见了。如图6-11所示。
 
 .. figure:: /images/side-projects/gist-user-js-apply-after.png
    :scale: 100
@@ -218,12 +218,12 @@ GitHub开发者还写了一个名为gist的命令行工具对Gist进行操作，
 ----
 
 .. [#] http://pastie.org/
-.. [#] http://blog.ossxp.com/2011/09/2521/
+.. [#] http://www.worldhello.net/2011/09/14/2521.html
 .. [#] 对感兴趣的Gist进行收藏，参见博客 https://github.com/blog/673-starring-gists 。
 .. [#] 访问他人创建的Gist时，提供分支功能按钮。
 .. [#] https://github.com/blog/302-gist-for-greasemonkey
 .. [#] https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/
-.. [#] http://8-p.info/greasekit/
+.. [#] http://ss-o.net/safari/extension/NinjaKit.safariextz
 .. [#] http://www.bhelpuri.net/Trixie/
 .. [#] 版本4之后的Chrome内置了Greasemonkey类似功能，无需额外插件。
 .. [#] https://gist.github.com/raw/1084591/73c3e4dfc827732241ca753fe7bb985c14c9d7ab/click_more.user.js
