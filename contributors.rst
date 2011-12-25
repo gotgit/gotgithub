@@ -2,7 +2,7 @@ Git和GitHub促进了开源软件的发展是因为消除了核心开发者和�
 
 以贡献时间为序，感谢：
 
-1. `ZHANG Hailong <https://github.com/zhhailon>`_ 报告文字错误。问题： `#2 <https://github.com/gotgit/gotgithub/issues/2>`_ 。
+1. `Zhang Hailong <https://github.com/zhhailon>`_ 报告文字错误。问题： `#2 <https://github.com/gotgit/gotgithub/issues/2>`_ 。
 2. `Riku <https://github.com/riku>`_ 纠正文字错误。提交： `455d0db`_ , `f244e3d`_ 。
 
 .. _455d0db: https://github.com/gotgit/gotgithub/commit/455d0db

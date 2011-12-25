@@ -10,7 +10,7 @@
 
    图2-27：项目的关注按钮
 
-添加对项目的关注后，点击页面右上角的“github”文字图标进入仪表板（Dashboard）页面，如图2-28所示。
+添加对项目的关注后，点击页面左上角的“github”文字图标进入仪表板（Dashboard）页面，如图2-28所示。
 
 .. figure:: /images/join-github/dashboard-with-watched-prj.png
    :scale: 100

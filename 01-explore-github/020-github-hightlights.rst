@@ -5,17 +5,17 @@ GitHub亮点
 
 1. 只用Git。
 
-   GitHub只支持Git格式的版本库托管，而不像其他开源项目托管平台还对CVS、SVN、Hg等格式的版本库进行托管。GitHub的哲学很简单，既然Git是最好的版本控制系统之一（对于喜欢GitHub的人没有之一），没有必要为兼顾其他版本控制系统而牺牲Git某些独有特性。因此没有支持其他版本控制系统的历史负担，是GitHub成功的要素之一。
+   GitHub只支持Git格式的版本库托管，而不像其他开源项目托管平台还对CVS、SVN、Hg等格式的版本库进行托管。GitHub的哲学很简单，既然Git是最好的版本控制系统之一（对于很多喜欢Git和GitHub的人没有之一），没有必要为兼顾其他版本控制系统而牺牲Git某些独有特性。因此没有支持其他版本控制系统的历史负担，是GitHub成功的要素之一。
 
    只用Git并不是说GitHub完全无视其他版本控制系统的使用者，相反，GitHub面向SVN（Subversion）用户和Hg（Mercurial）用户开发了接口，让这些用户可以使用SVN或Hg的客户端工具访问Git版本库。
 
 2. 对Git的完整支持。
 
-   相比其他开源项目托管平台，GitHub对Git版本库提供了完整的协议支持，支持HTTP智能协议、Git-daemon、SSH协议。相比只支持HTTP协议的GoogleCode，GitHub通过SSH协议可以实现版本库访问的无口令认证。
+   相比其他开源项目托管平台，GitHub对Git版本库提供了完整的协议支持，支持HTTP智能协议、Git-daemon、SSH协议。相比只支持HTTP协议的GoogleCode，GitHub通过SSH协议可以实现版本库访问的无口令认证 [#]_ 。
 
 3. 无处不在的Git。
 
-   除了在版本库托管上使用Git，Git还被应用到GitHub更多的领域。维基使用Git，可以通过克隆维基所在的版本库，线下修改维基。在线粘贴信息的Gist网站 [#]_ 使用Git，记录变更历史。在Jekyll应用的帮助下，可以用Git版本库维护个人网站和博客。
+   除了在版本库托管上使用Git，Git还被应用到GitHub更多的领域。维基使用Git，可以通过克隆维基所在的版本库，离线修改维基；在线粘贴数据的Gist网站 [#]_ 使用Git，记录变更历史；以及在Jekyll应用的帮助下，用Git版本库维护个人网站和博客等。
 
 4. 在线编辑文件。
 
@@ -31,8 +31,9 @@ GitHub亮点
 
 7. 关注细节。
 
-   GitHub网站采用了Ruby on Rails架构，在Web设计中运用了大量的JavaScript、AJAX、HTML5等技术，支持使用了Markdown等标记语言的文件自动渲染和显示等。关注细节使得GitHub成为了项目托管领域的后起之秀。
+   GitHub网站采用了Ruby on Rails架构，在Web设计中运用了大量的JavaScript、AJAX、HTML5等技术，支持对使用Markdown等标记语言的内容进行渲染和显示等。关注细节使得GitHub成为了项目托管领域的后起之秀。
 
 ----
 
+.. [#] 实际上使用HTTP协议也可以免口令输入。即通过文件 ``~/.netrc`` 写入HTTP认证的明文口令，具体文件格式参见 ``ftp`` 命令的MAN手册中相关介绍。
 .. [#] https://gist.github.com/
