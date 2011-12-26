@@ -6,10 +6,12 @@
 GotGitHub
 ==========
 
+.. include:: _version.inc
+
 前言
 ----
 
-.. include:: preface.rst
+.. include:: preface.inc
 
 目录
 ----
@@ -27,9 +29,9 @@ GotGitHub
    06-side-projects/index
    20-appendix/index
 
-贡献者
-------
-.. include:: contributors.rst
+贡献者列表
+----------
+.. include:: contributors.inc
 
 
 .. 索引和表格
