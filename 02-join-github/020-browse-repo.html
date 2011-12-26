@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2. 浏览托管项目 &mdash; GotGitHub</title>
+    
+    <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="../static/worldhello.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="GotGitHub" href="../index.html" />
+    <link rel="up" title="2. 加入GitHub" href="index.html" />
+    <link rel="next" title="2.3. 社交网络" href="030-be-social.html" />
+    <link rel="prev" title="2.1. 创建GitHub账号" href="010-account-setup.html" /> 
+  </head>
+  <body>
+    <div id='header'>
+      <h1><a href='/'>World Hello</a></h1>
+
+      <div id='menu'>
+        <ul>
+          <li><a href='/' id='home-link' title='Home'>首页</a></li>
+          <li><a href='/blog.html' id='blog-link' title='Blog'>博客</a></li>
+          <li><a href='/doc/' id='docs-link' title='Docs'>文章</a></li>
+          <li><a href='/about.html' id='about-link' title='About'>关于</a></li>
+          <li><a href='http://github.com/gotgit' target='_blank' title='GitHub' rel='me' id='github-link'>GitHub</a></li>
+          <li><a href='http://weibo.com/gotgit' title='微博' target='_blank' id='weibo-link'>微博</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="030-be-social.html" title="2.3. 社交网络"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="010-account-setup.html" title="2.1. 创建GitHub账号"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">2. 加入GitHub</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="010-account-setup.html"
+                        title="上一章">2.1. 创建GitHub账号</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="030-be-social.html"
+                        title="下一章">2.3. 社交网络</a></p>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/02-join-github/020-browse-repo.txt"
+           rel="nofollow">显示源代码</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的模块，术语，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>2.2. 浏览托管项目<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>GitHub的账户已经建立好了，在建立自己的项目托管之前，看看别人是怎么做的。在GitHub中搜索字符串“GotGit”，可以搜索到我建立的一个项目，项目地址是: <a class="reference external" href="https://github.com/gotgit/gotgit/">https://github.com/gotgit/gotgit/</a> 。由上至下，GotGit项目首页可以分为如下几个区域。</p>
+<ul>
+<li><p class="first">区域一：项目概要介绍及版本库URL等。</p>
+<p>项目GotGit托管在组织账号 gotgit 之下 <a class="footnote-reference" href="#id7" id="id2">[1]</a> ，并且已经有若干关注用户和派生项目。最下面一行显示版本库的访问地址，只显示了HTTP和Git-daemon两个协议的URL地址，这是因为当前用户对该版本库只具有只读权限，因此没有显示SSH协议的URL地址。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-tree-1.png"><img alt="../images/gotgit-repo-tree-1.png" src="../images/gotgit-repo-tree-1.png" /></a>
+<p class="caption">图2-10：版本库概要信息</p>
+</div>
+<p>使用任意一种协议均可克隆该Git版本库，但要注意只有Git 1.6.6及以上版本才支持智能HTTP协议，低版本Git则无法用HTTP协议克隆GitHub上的版本库 <a class="footnote-reference" href="#id8" id="id3">[2]</a> 。</p>
+<div class="highlight-python"><pre>$ git clone https://github.com/gotgit/gotgit.git</pre>
+</div>
+<p>或者使用Git-daemon协议。</p>
+<div class="highlight-python"><pre>$ git clone git://github.com/gotgit/gotgit.git</pre>
+</div>
+</li>
+<li><p class="first">区域二：代码浏览子菜单及分支切换对话框。</p>
+<p>默认项目代码页（即项目首页）显示项目文件列表（即 <tt class="docutils literal"><span class="pre">Files</span></tt> 子菜单）。在图2-11的右侧还显示了项目 <tt class="docutils literal"><span class="pre">gotgit/gotgit</span></tt> 默认的分支为 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 而非常见的 <tt class="docutils literal"><span class="pre">master</span></tt> 分支。关于 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支，在“第3.5节 建立主页”会介绍该分支的神奇用途。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-tree-1-submenu.png"><img alt="../images/gotgit-repo-tree-1-submenu.png" src="../images/gotgit-repo-tree-1-submenu.png" /></a>
+<p class="caption">图2-11：代码浏览子菜单及分支</p>
+</div>
+</li>
+<li><p class="first">区域三：显示最新提交的提交说明、提交用户头像、提交时间等提交信息。右侧还显示此次提交对应的提交ID。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-tree-2.png"><img alt="../images/gotgit-repo-tree-2.png" src="../images/gotgit-repo-tree-2.png" /></a>
+<p class="caption">图2-12：提交信息</p>
+</div>
+</li>
+<li><p class="first">区域四：目录树。每个目录和文件后面还显示最后一次变更的提交说明。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-tree-3.png"><img alt="../images/gotgit-repo-tree-3.png" src="../images/gotgit-repo-tree-3.png" /></a>
+<p class="caption">图2-13：目录树</p>
+</div>
+</li>
+<li><p class="first">区域五：根目录下的文件 <tt class="docutils literal"><span class="pre">README.md</span></tt> 格式化为HTML输出。</p>
+<p>GitHub内置了多种文本标记语言的支持，如Markdown、Textile、reStructuredText、asciidoc、Wiki等。当发现根目录下的 <tt class="docutils literal"><span class="pre">README</span></tt> 文件后，会根据其扩展名判断所用的标记语言类型，自动转换为HTML格式显示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-tree-4.png"><img alt="../images/gotgit-repo-tree-4.png" src="../images/gotgit-repo-tree-4.png" /></a>
+<p class="caption">图2-14：README文件</p>
+</div>
+</li>
+</ul>
+<p>在GitHub的页面中可以使用键盘快捷键，按下问号（?）会在弹出窗口显示当前页面可用的快捷键。</p>
+<p>在项目的代码浏览页按下字母“w”，弹出分支切换菜单，如图2-15所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-switch-branch.png"><img alt="../images/gotgit-repo-switch-branch.png" src="../images/gotgit-repo-switch-branch.png" /></a>
+<p class="caption">图2-15：快捷键“w”切换分支</p>
+</div>
+<p>按下字母“t”，开启目录树中文件查找和过滤。图2-16就是在按下字母“t”后，当逐一输入单词“download”时的过滤效果。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-tree-filter.png"><img alt="../images/gotgit-repo-tree-filter.png" src="../images/gotgit-repo-tree-filter.png" /></a>
+<p class="caption">图2-16：快捷键“t”开启过滤器在目录树中搜索</p>
+</div>
+<p>点击代码浏览子菜单中的“Commits”（提交）显示版本库GotGit的提交历史，如图2-17所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-commit-history.png"><img alt="../images/gotgit-repo-commit-history.png" src="../images/gotgit-repo-commit-history.png" /></a>
+<p class="caption">图2-17：提交历史</p>
+</div>
+<p>提交历史页面也支持快捷键，按下问号（?）或者点击页面中的键盘标志会显示快捷键帮助。其中快捷键&#8221;j&#8221;和&#8221;k&#8221;用于在提交列表中向上和向下选择提交，在选中的提交按下回车键，会显示该提交包含的文件改动差异，如图2-18所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-commit-diff.png"><img alt="../images/gotgit-repo-commit-diff.png" src="../images/gotgit-repo-commit-diff.png" /></a>
+<p class="caption">图2-18：文本文件改动差异</p>
+</div>
+<p>在文本文件的差异比较中，不但将有差异的行标识出来，还将行内具体改动的字词用特殊颜色进行了标识，不由得感叹GitHub的细致入微。</p>
+<p>GitHub还支持对图形文件的差异比较，并提供四种比较方式。在如下地址: <a class="reference external" href="http://git.io/image-diff">http://git.io/image-diff</a> <a class="footnote-reference" href="#id9" id="id4">[3]</a> 提供了一个示例提交。您可以去尝试一下不同的图形文件比较方式，以便更直观地观察图形文件前后的改动。</p>
+<ul>
+<li><p class="first">默认修改前后的两幅图片左右并排显示，如图2-19所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/image-diff-2-up.png"><img alt="../images/image-diff-2-up.png" src="../images/image-diff-2-up.png" /></a>
+<p class="caption">图2-19：左右并排比较图形文件差异</p>
+</div>
+</li>
+<li><p class="first">选择交换显示比较修改前后的图片，用鼠标左右拖动进度条，可以非常直观地看到图片的差异。如图2-20所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/image-diff-swipe.png"><img alt="../images/image-diff-swipe.png" src="../images/image-diff-swipe.png" /></a>
+<p class="caption">图2-20：交换显示图形文件比较差异</p>
+</div>
+</li>
+<li><p class="first">还提供洋葱皮和色差比较，自己动手试试吧。</p>
+</li>
+</ul>
+<p>网络图是GitHub的一大特色，显示一个项目的版本库被不同用户派生（Fork）后，各个版本库的派生关系。这个网络图最早使用Flash实现的，目前已经改为HTML5实现 <a class="footnote-reference" href="#id10" id="id5">[4]</a> 。图2-21的示例网络图来自于Gitosis项目 <a class="footnote-reference" href="#id11" id="id6">[5]</a> 。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/network-graph.png"><img alt="../images/network-graph.png" src="../images/network-graph.png" /></a>
+<p class="caption">图2-21：Gitosis项目网络图</p>
+</div>
+<p>Pull Requests（拉拽请求）是派生（Fork）版本库的开发者向项目贡献提交的方法。如图2-22所示，GotGit项目目前没有未被处理的Pull Request，但是可以看到有一个已经关闭的Pull Request请求。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-pull-request.png"><img alt="../images/gotgit-repo-pull-request.png" src="../images/gotgit-repo-pull-request.png" /></a>
+<p class="caption">图2-22：Pull Requests界面</p>
+</div>
+<p>这个Pull Request是GitHub用户agate发现了GotGit脚本中一个和ruby1.9不兼容的Bug，当我把agate派生版本库中的提交合并到GotGit版本库后，该Pull Request自动关闭。整个Pull Request的变更记录如图2-23所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-pull-request-detail.png"><img alt="../images/gotgit-repo-pull-request-detail.png" src="../images/gotgit-repo-pull-request-detail.png" /></a>
+<p class="caption">图2-23：Pull Request的变更历史</p>
+</div>
+<p>缺陷追踪（Issue）也是GitHub工作流中一个重要的组件。GotGit项目用缺陷跟踪系统帮助维护《Git权威指南》一书的勘误，图2-24
+可以看到当前有2个打开的问题和9个已关闭的问题。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-issue.png"><img alt="../images/gotgit-repo-issue.png" src="../images/gotgit-repo-issue.png" /></a>
+<p class="caption">图2-24：缺陷追踪</p>
+</div>
+<p>GitHub还为项目提供报表分析。图2-25是GotGit项目中用到的开发语言分布图。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-graph-lang.png"><img alt="../images/gotgit-repo-graph-lang.png" src="../images/gotgit-repo-graph-lang.png" /></a>
+<p class="caption">图2-25：GotGit项目开发语言分布图</p>
+</div>
+<p>图2-26是开发者对GotGit项目贡献分布图。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-graph-impact.png"><img alt="../images/gotgit-repo-graph-impact.png" src="../images/gotgit-repo-graph-impact.png" /></a>
+<p class="caption">图2-26：GotGit项目贡献分布图</p>
+</div>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>项目 gotgit 最早由用户 ossxp-com 创建，现已转移到组织 gotgit 账号之下。</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="https://github.com/blog/809-git-dumb-http-transport-to-be-turned-off-in-90-days">https://github.com/blog/809-git-dumb-http-transport-to-be-turned-off-in-90-days</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td>短格式URL，实际对应于: <a class="reference external" href="https://github.com/cameronmcefee/Image-Diff-View-Modes/commit/8e95f7">https://github.com/cameronmcefee/Image-Diff-View-Modes/commit/8e95f7</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td><a class="reference external" href="https://github.com/blog/621-bye-bye-flash-network-graph-is-now-canvas">https://github.com/blog/621-bye-bye-flash-network-graph-is-now-canvas</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td><a class="reference external" href="https://github.com/res0nat0r/gitosis">https://github.com/res0nat0r/gitosis</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="030-be-social.html" title="2.3. 社交网络"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="010-account-setup.html" title="2.1. 创建GitHub账号"
+             >上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" >2. 加入GitHub</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      <br />
+      全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
+      <br />
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/26。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.5. 建立主页 &mdash; GotGitHub</title>
+    
+    <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="../static/worldhello.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="GotGitHub" href="../index.html" />
+    <link rel="up" title="3. 项目托管" href="index.html" />
+    <link rel="next" title="4. 工作协同" href="../04-work-with-others/index.html" />
+    <link rel="prev" title="3.4. 版本库钩子扩展" href="040-repo-hooks.html" /> 
+  </head>
+  <body>
+    <div id='header'>
+      <h1><a href='/'>World Hello</a></h1>
+
+      <div id='menu'>
+        <ul>
+          <li><a href='/' id='home-link' title='Home'>首页</a></li>
+          <li><a href='/blog.html' id='blog-link' title='Blog'>博客</a></li>
+          <li><a href='/doc/' id='docs-link' title='Docs'>文章</a></li>
+          <li><a href='/about.html' id='about-link' title='About'>关于</a></li>
+          <li><a href='http://github.com/gotgit' target='_blank' title='GitHub' rel='me' id='github-link'>GitHub</a></li>
+          <li><a href='http://weibo.com/gotgit' title='微博' target='_blank' id='weibo-link'>微博</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../04-work-with-others/index.html" title="4. 工作协同"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="040-repo-hooks.html" title="3.4. 版本库钩子扩展"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">3. 项目托管</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.5. 建立主页</a><ul>
+<li><a class="reference internal" href="#id2">3.5.1. 创建个人主页</a></li>
+<li><a class="reference internal" href="#id3">3.5.2. 创建项目主页</a></li>
+<li><a class="reference internal" href="#id4">3.5.3. 使用专有域名</a></li>
+<li><a class="reference internal" href="#jekyll">3.5.4. 使用Jekyll维护网站</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="040-repo-hooks.html"
+                        title="上一章">3.4. 版本库钩子扩展</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="../04-work-with-others/index.html"
+                        title="下一章">4. 工作协同</a></p>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/03-project-hosting/050-homepage.txt"
+           rel="nofollow">显示源代码</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的模块，术语，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>3.5. 建立主页<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>很多开源项目托管平台都支持为托管的项目建立主页，但主页的维护方式都没有GitHub这么酷。大多数托管平台无非是开放一个FTP或类似服务，用户把制作好的网页或脚本上传了事，而在GitHub用户通过创建特殊名称的Git版本库或在Git库中建立特别的分支实现对主页的维护。</p>
+<div class="section" id="id2">
+<h2>3.5.1. 创建个人主页<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GitHub 为每一个用户分配了一个二级域名 <tt class="docutils literal"><span class="pre">&lt;user-id&gt;.github.com</span></tt> ，用户为自己的二级域名创建主页很容易，只要在托管空间下创建一个名为 <tt class="docutils literal"><span class="pre">&lt;user-id&gt;.github.com</span></tt> 的版本库，向其 <tt class="docutils literal"><span class="pre">master</span></tt> 分支提交网站静态页面即可，其中网站首页为 <tt class="docutils literal"><span class="pre">index.html</span></tt> 。下面以 <tt class="docutils literal"><span class="pre">gotgithub</span></tt> 用户为例介绍如何创建个人主页。</p>
+<ul>
+<li><p class="first">用户 <tt class="docutils literal"><span class="pre">gotgithub</span></tt> 创建一个名为 <tt class="docutils literal"><span class="pre">gotgithub.github.com</span></tt> 的Git版本库。</p>
+</li>
+<li><p class="first">在本地克隆新建立的版本库。</p>
+<div class="highlight-python"><pre>$ git clone git@github.com:gotgithub/gotgithub.github.com.git
+$ cd gotgithub.github.com/</pre>
+</div>
+</li>
+<li><p class="first">在版本库根目录中创建文件 <tt class="docutils literal"><span class="pre">index.html</span></tt> 作为首页。</p>
+<div class="highlight-python"><pre>$ printf "&lt;h1&gt;GotGitHub's HomePage&lt;/h1&gt;It works.\n" &gt; index.html</pre>
+</div>
+</li>
+<li><p class="first">建立提交。</p>
+<div class="highlight-python"><pre>$ git add index.html
+$ git commit -m "Homepage test version."</pre>
+</div>
+</li>
+<li><p class="first">推送到GitHub，完成远程版本库创建。</p>
+<div class="highlight-python"><pre>$ git push origin master</pre>
+</div>
+</li>
+<li><p class="first">访问网址： <a class="reference external" href="http://gotgithub.github.com/">http://gotgithub.github.com/</a> 。</p>
+<p>最多等待10分钟，GitHub就可以完成新网站的部署。注意访问用户二级域名主页要使用HTTP协议非HTTPS协议。</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>3.5.2. 创建项目主页<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>如前所述，GitHub会为每个账号分配一个二级域名 <tt class="docutils literal"><span class="pre">&lt;user-id&gt;.github.com</span></tt> 作为用户的首页地址。实际上还可以为每个项目设计主页，并通过此二级域名访问。例如 <tt class="docutils literal"><span class="pre">gotgithub</span></tt> 用户创建的 <tt class="docutils literal"><span class="pre">helloworld</span></tt> 项目如果启用了项目主页，则可通过网址 <tt class="docutils literal"><span class="pre">http://gotgithub.github.com/helloworld/</span></tt> 访问。</p>
+<p>为项目启用项目主页很简单，只需要在项目版本库中创建一个名为 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 的分支，并向其中添加静态网页即可。也就是说如果项目的Git版本库中包含了名为 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支的话，则表明该项目提供静态网页构成的主页，可以通过网址 <tt class="docutils literal"><span class="pre">http://&lt;user-id&gt;.github.com/&lt;project-name&gt;</span></tt> 访问到。</p>
+<p>下面以用户 <tt class="docutils literal"><span class="pre">gotgithub</span></tt> 的项目 <tt class="docutils literal"><span class="pre">helloworld</span></tt> 为例，介绍如何维护项目主页。</p>
+<p>如果本地尚未建立 <tt class="docutils literal"><span class="pre">helloworld</span></tt> 版本库克隆，执行如下命令。</p>
+<div class="highlight-python"><pre>$ git clone git@github.com:gotgithub/helloworld.git
+$ cd helloworld</pre>
+</div>
+<p>当前版本库只有一个名为 <tt class="docutils literal"><span class="pre">master</span></tt> 的分支，如果直接从 <tt class="docutils literal"><span class="pre">master</span></tt> 分支创建 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支操作非常简单，但是作为保存网页的 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支中的内容和 <tt class="docutils literal"><span class="pre">master</span></tt> 分支中的可能完全不同。如果不希望 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支继承 <tt class="docutils literal"><span class="pre">master</span></tt> 分支的历史和文件，即想要创建一个干净的 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支，需要一点小技巧。可以从下面两个方法任选一种。</p>
+<p>第一种方法用到两个Git底层命令： <tt class="docutils literal"><span class="pre">git</span> <span class="pre">write-tree</span></tt> 和 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit-tree</span></tt> 。步骤如下：</p>
+<ul>
+<li><p class="first">基于 <tt class="docutils literal"><span class="pre">master</span></tt> 分支建立分支 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 。</p>
+<div class="highlight-python"><pre>$ git checkout -b gh-pages</pre>
+</div>
+</li>
+<li><p class="first">删除暂存区文件，即相当于清空暂存区。</p>
+<div class="highlight-python"><pre>$ rm .git/index</pre>
+</div>
+</li>
+<li><p class="first">创建项目首页 <tt class="docutils literal"><span class="pre">index.html</span></tt> 。</p>
+<div class="highlight-python"><pre>$ printf "hello world.\n" &gt; index.html</pre>
+</div>
+</li>
+<li><p class="first">添加文件 <tt class="docutils literal"><span class="pre">index.html</span></tt> 到暂存区。</p>
+<div class="highlight-python"><pre>$ git add index.html</pre>
+</div>
+</li>
+<li><p class="first">用Git底层命令创建新的根提交，并将分支 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 重置。</p>
+<div class="highlight-python"><pre>$ git reset --hard $(echo "branch gh-pages init." | git commit-tree $(git write-tree))</pre>
+</div>
+</li>
+<li><p class="first">执行推送命令，在GitHub远程版本库创建分支 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 。</p>
+<div class="highlight-python"><pre>$ git push -u origin gh-pages</pre>
+</div>
+</li>
+</ul>
+<p>第二种方法用到Git底层命令： <tt class="docutils literal"><span class="pre">git</span> <span class="pre">symbolic-ref</span></tt> 。步骤如下：</p>
+<ul>
+<li><p class="first">用 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">symbolic-ref</span></tt> 命令将当前工作分支由 <tt class="docutils literal"><span class="pre">master</span></tt> 切换到一个尚不存在的分支 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 。</p>
+<div class="highlight-python"><pre>$ git symbolic-ref HEAD refs/heads/gh-pages</pre>
+</div>
+</li>
+<li><p class="first">删除暂存区文件，即相当于清空暂存区。</p>
+<div class="highlight-python"><pre>$ rm .git/index</pre>
+</div>
+</li>
+<li><p class="first">创建项目首页 <tt class="docutils literal"><span class="pre">index.html</span></tt> 。</p>
+<div class="highlight-python"><pre>$ printf "hello world.\n" &gt; index.html</pre>
+</div>
+</li>
+<li><p class="first">添加文件 <tt class="docutils literal"><span class="pre">index.html</span></tt> 到暂存区。</p>
+<div class="highlight-python"><pre>$ git add index.html</pre>
+</div>
+</li>
+<li><p class="first">执行提交。提交完毕分支 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 完成创建。</p>
+<div class="highlight-python"><pre>$ git commit -m "branch gh-pages init."</pre>
+</div>
+</li>
+<li><p class="first">执行推送命令，在GitHub远程版本库创建分支 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 。</p>
+<div class="highlight-python"><pre>$ git push -u origin gh-pages</pre>
+</div>
+</li>
+</ul>
+<p>无论哪种方法，一旦在GitHub远程版本库中创建分支 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> ，项目的主页就已经建立。稍后（不超过10分钟），用浏览器访问下面的地址即可看到刚刚提交的项目首页： <a class="reference external" href="http://gotgithub.github.com/helloworld/">http://gotgithub.github.com/helloworld/</a> 。</p>
+<p>除了以上通过命令行创建 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支为项目设定主页之外，GitHub还提供了图形操作界面。如图3-19所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/github-pages.png"><img alt="../images/github-pages.png" src="../images/github-pages.png" /></a>
+<p class="caption">图3-19：项目管理页面中的GitHub Pages选项</p>
+</div>
+<p>当在项目管理页面中勾选“GitHub Pages”选项，并按照提示操作，会自动在项目版本库中创建 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支。然后执行下面命令从版本库检出 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支，对项目主页进行相应定制。</p>
+<div class="highlight-python"><pre>$ git fetch
+$ git checkout gh-pages</pre>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>3.5.3. 使用专有域名<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>无论是用户主页还是项目主页，除了使用 <tt class="docutils literal"><span class="pre">github.com</span></tt> 下的二级域名访问之外，还可以使用专有域名。实现起来也非常简单，只要在 <tt class="docutils literal"><span class="pre">master</span></tt> 分支（用户主页所在版本库）或 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支（项目版本库）的根目录下检入一个名为 <tt class="docutils literal"><span class="pre">CNAME</span></tt> 的文件，内容为相应的专有域名。当然还要更改专有域名的域名解析，使得该专有域名的IP地址指向相应的GitHub二级域名的IP地址。</p>
+<p>例如 <tt class="docutils literal"><span class="pre">worldhello.net</span></tt> <a class="footnote-reference" href="#id8" id="id5">[1]</a> 是我的个人网站，若计划将网站改为由GitHub托管，并由账号 <tt class="docutils literal"><span class="pre">gotgit</span></tt> 通过个人主页提供服务，可做如下操作。</p>
+<p>首先按照前面章节介绍的步骤，为账号 <tt class="docutils literal"><span class="pre">gotgit</span></tt> 设置账户主页。</p>
+<ol class="arabic">
+<li><p class="first">在账户 <tt class="docutils literal"><span class="pre">gotgit</span></tt> 下创建版本库 <tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt> 以维护该账号主页。</p>
+<p>地址： <a class="reference external" href="https://github.com/gotgit/gotgit.github.com/">https://github.com/gotgit/gotgit.github.com/</a></p>
+</li>
+<li><p class="first">将网站内容提交并推送到该版本库 <tt class="docutils literal"><span class="pre">master</span></tt> 分支中。</p>
+<p>即在 <tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt> 版本库的根目录下至少包含一个 index 文件，如 <tt class="docutils literal"><span class="pre">index.html</span></tt> 。
+还可以使用下节将要介绍到的 Jekyll 技术，让网页有统一的显示风格，此时首页文件可能并非一个完整的HTML文档，而是套用了页面模版。</p>
+</li>
+<li><p class="first">至此当访问网址 <tt class="docutils literal"><span class="pre">http://gotgit.github.com</span></tt> 时，会将账号 <tt class="docutils literal"><span class="pre">gotgit</span></tt> 的版本库 <tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt> 中的内容作为网站内容显示出来。</p>
+</li>
+</ol>
+<p>接下来进行如下操作，使得该网站能够使用专有域名 <tt class="docutils literal"><span class="pre">www.worldhello.net</span></tt> 提供服务。</p>
+<ol class="arabic">
+<li><p class="first">在账号 <tt class="docutils literal"><span class="pre">gotgit</span></tt> 的版本库 <tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt> 根目录下添加文件 <tt class="docutils literal"><span class="pre">CNAME</span></tt> ，文件内容为： <tt class="docutils literal"><span class="pre">www.worldhello.net</span></tt> 。</p>
+<p>参见： <a class="reference external" href="https://github.com/gotgit/gotgit.github.com/blob/master/CNAME">https://github.com/gotgit/gotgit.github.com/blob/master/CNAME</a></p>
+</li>
+<li><p class="first">然后更改域名 <tt class="docutils literal"><span class="pre">www.worldhello.net</span></tt> 的IP地址，指向域名 <tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt> 对应的IP地址（注意不是 <tt class="docutils literal"><span class="pre">github.com</span></tt> 的IP地址）。</p>
+<p>完成域名的DNS指向后，可试着用 <tt class="docutils literal"><span class="pre">ping</span></tt> 或 <tt class="docutils literal"><span class="pre">dig</span></tt> 命令确认域名 <tt class="docutils literal"><span class="pre">www.worldhello.net</span></tt> 和 <tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt> 指向同一IP地址。</p>
+<div class="highlight-python"><pre>$ dig @8.8.8.8 -t a www.worldhello.net
+...
+; ANSWER SECTION:
+www.worldhello.net.     81078   IN      A       207.97.227.245
+
+$ dig @8.8.8.8 -t a gotgit.github.com
+...
+; ANSWER SECTION:
+gotgit.github.com.      43200   IN      A       207.97.227.245</pre>
+</div>
+</li>
+</ol>
+<p>设置完成后用浏览器访问 <a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a> 即可看到由账号 <tt class="docutils literal"><span class="pre">gotgit</span></tt> 的版本库 <tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt> 维护的页面。若将域名 <tt class="docutils literal"><span class="pre">worldhello.net</span></tt> （不带www前缀）也指向IP地址 <tt class="docutils literal"><span class="pre">207.97.227.245</span></tt> ，则访问网址 <a class="reference external" href="http://worldhello.net/">http://worldhello.net/</a> 会发现GitHub体贴地将该网址重定向到正确的地址 <a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a> 。</p>
+<p>在账号 <tt class="docutils literal"><span class="pre">gotgit</span></tt> 下的其他版本库，若包含了 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支，亦可由域名 <tt class="docutils literal"><span class="pre">www.worldhello.net</span></tt> 访问到。</p>
+<ul class="simple">
+<li>网址 <a class="reference external" href="http://www.worldhello.net/doc">http://www.worldhello.net/doc</a> 实际对应于版本库 <a class="reference external" href="https://github.com/gotgit/doc">gotgit/doc</a> 。</li>
+<li>网址 <a class="reference external" href="http://www.worldhello.net/gotgit">http://www.worldhello.net/gotgit</a> 实际对应于版本库 <a class="reference external" href="https://github.com/gotgit/gotgit">gotgit/gotgit</a> 。</li>
+<li>网址 <a class="reference external" href="http://www.worldhello.net/gotgithub">http://www.worldhello.net/gotgithub</a> 实际对应于版本库 <a class="reference external" href="https://github.com/gotgit/gotgithub">gotgit/gotgithub</a> 。</li>
+</ul>
+</div>
+<div class="section" id="jekyll">
+<h2>3.5.4. 使用Jekyll维护网站<a class="headerlink" href="#jekyll" title="永久链接至标题">¶</a></h2>
+<p>Jekyll是一个支持Textile、Markdown等标记语言的静态网站生成软件，还支持博客和网页模版，由Tom Preston-Werner（GitHub创始人之一）开发。Jekyll用Ruby语言实现，项目在GitHub的托管地址： <a class="reference external" href="http://github.com/mojombo/jekyll/">http://github.com/mojombo/jekyll/</a> ，专有的URL地址为： <a class="reference external" href="http://jekyllrb.com/">http://jekyllrb.com/</a> 。</p>
+<p>GitHub为用户账号或项目提供主页服务，会从相应版本库的 <tt class="docutils literal"><span class="pre">master</span></tt> 分支或 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支检出网页文件，然后执行 Jekyll 相应的命令对网页进行编译。因此在设计GitHub的用户主页和项目主页时都可以利用Jekyll，实现用Markdown等标记语言撰写网页及博客，并用页面模版实现网页风格的统一。</p>
+<p>安装Jekyll最简单的方法是通过RubyGems安装，会自动将Jekyll依赖的directory_watcher、liquid、open4、maruku和classifier等Gem包一并安装。</p>
+<div class="highlight-python"><pre>$ gem install jekyll</pre>
+</div>
+<p>如果安装过程因编译扩展模组遇到错误，可能是因为尚未安装所需的头文件，需要进行如下操作：</p>
+<ul>
+<li><p class="first">对于Debian Linux、Ubuntu等可以用如下方法安装所需软件包：</p>
+<div class="highlight-python"><pre>$ sudo apt-get install ruby1.8-dev</pre>
+</div>
+</li>
+<li><p class="first">如果是Red Hat、CentOS或Fedora等系统，使用如下命令安装：</p>
+<div class="highlight-python"><pre>$ sudo yum install ruby-devel</pre>
+</div>
+</li>
+<li><p class="first">对于Mac OSX，可能需要更新RubyGems，如下：</p>
+<div class="highlight-python"><pre>$ sudo gem update --system</pre>
+</div>
+</li>
+</ul>
+<p>Jekyll安装完毕，执行下面的命令显示软件版本：</p>
+<div class="highlight-python"><pre>$ jekyll -v
+Jekyll 0.11.0</pre>
+</div>
+<p>要学习如何用Jekyll设计网站，可以先看一下作者Tom Preston-Werner在GitHub上的个人网站是如何用Jekyll制作出来的。</p>
+<p>克隆版本库：</p>
+<div class="highlight-python"><pre>$ git clone git://github.com/mojombo/mojombo.github.com.git</pre>
+</div>
+<p>版本库包含的文件如下：</p>
+<div class="highlight-python"><pre>$ cd mojombo.github.com
+$ ls -F
+CNAME           _config.yml     _posts/         css/            index.html
+README.textile  _layouts/       atom.xml        images/         random/</pre>
+</div>
+<p>版本库根目录下的 <tt class="docutils literal"><span class="pre">index.html</span></tt> 文件不是一个普通的HTML文件，而是使用 Liquid 模版语言 <a class="footnote-reference" href="#id9" id="id6">[2]</a> 定义的页面。</p>
+<div class="highlight-python"><pre> 1 ---
+ 2 layout: default
+ 3 title: Tom Preston-Werner
+ 4 ---
+ 5
+ 6 &lt;div id="home"&gt;
+ 7   &lt;h1&gt;Blog Posts&lt;/h1&gt;
+ 8   &lt;ul class="posts"&gt;
+ 9     {% for post in site.posts %}
+10       &lt;li&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;raquo; &lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+11     {% endfor %}
+12   &lt;/ul&gt;
+   ...
+63 &lt;/div&gt;</pre>
+</div>
+<p>为方便描述为内容添加了行号，说明如下：</p>
+<ul>
+<li><p class="first">第1-4行是YAML格式的文件头，设定了该文件所使用的模版文件及模版中要用到的变量。</p>
+<p>凡是设置有YAML文件头的文件（目录 <tt class="docutils literal"><span class="pre">_layouts</span></tt> 除外）无论文件扩展名是什么，都会在Jekyll编译时进行转换。若源文件由Markdown等标记语言撰写（扩展名为 <tt class="docutils literal"><span class="pre">.md</span></tt> 、 <tt class="docutils literal"><span class="pre">.textile</span></tt> 等），Jekyll还会将编译后的文件还将以扩展名 <tt class="docutils literal"><span class="pre">.html</span></tt> 来保存。</p>
+</li>
+<li><p class="first">其中第2行含义为使用default模版。</p>
+<p>对应的模版文件为 <tt class="docutils literal"><span class="pre">_layouts/default.html</span></tt> 。</p>
+</li>
+<li><p class="first">第3行设定本页面的标题。</p>
+<p>在模版文件 <tt class="docutils literal"><span class="pre">_layouts/default.html</span></tt> 中用 <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">page.title</span> <span class="pre">}}</span></tt> 语法嵌入所设置的标题。下面是模版文件中部分内容：</p>
+<div class="highlight-python"><pre>&lt;head&gt;
+   &lt;meta http-equiv="content-type" content="text/html; charset=utf-8" /&gt;
+   &lt;title&gt;{{ page.title }}&lt;/title&gt;</pre>
+</div>
+</li>
+<li><p class="first">第6行开始的内容绝大多数是标准的HTML语法，其中夹杂少量Liquid模版特有的语法。</p>
+</li>
+<li><p class="first">第9行和第11行，对于有着Liquid或其他模版编程经验的用户，不难理解其中出现的由“{%”和“%}”标识的指令是一个循环指令（for循环），用于逐条对博客进行相关操作。</p>
+</li>
+<li><p class="first">第10行中由“{{”和“}}”标识的表达式则用于显示博文的日期、链接和标题。</p>
+</li>
+</ul>
+<p>非下划线（_）开头的文件（包括子目录中文件），如果包含YAML文件头，就会使用Jekyll进行编译，并将编译后的文件复制到目标文件夹（默认为 <tt class="docutils literal"><span class="pre">_site</span></tt> 目录）下。对于包含YAML文件头并用标记语言Markdown等撰写的文件，还会将编译后的文件以 <tt class="docutils literal"><span class="pre">.html</span></tt> 扩展名保存。而以下划线开头的文件和目录有的直接忽略不予处理（如 <tt class="docutils literal"><span class="pre">_layouts</span></tt> 、 <tt class="docutils literal"><span class="pre">_site</span></tt> 目录等），有的则需要特殊处理（如 <tt class="docutils literal"><span class="pre">_post</span></tt> 目录）。</p>
+<p>目录 <tt class="docutils literal"><span class="pre">_post</span></tt> 用于保存博客条目，每个博客条目都以 <tt class="docutils literal"><span class="pre">&lt;YYYY&gt;-&lt;MM&gt;-&lt;DD&gt;-&lt;blog-tiltle&gt;</span></tt> 格式的文件名命名。扩展名为 <tt class="docutils literal"><span class="pre">.md</span></tt> 的为Markdown格式，扩展名为 <tt class="docutils literal"><span class="pre">.textile</span></tt> 的为Textile格式。这些文件都包含类似的文件头：</p>
+<div class="highlight-python"><pre>---
+layout: post
+title: How I Turned Down $300,000 from Microsoft to go Full-Time on GitHub
+---</pre>
+</div>
+<p>即博客使用文件 <tt class="docutils literal"><span class="pre">_layouts/post.html</span></tt> 作为页面模版，而不是 <tt class="docutils literal"><span class="pre">index.html</span></tt> 等文件所使用的 <tt class="docutils literal"><span class="pre">_layouts/default.html</span></tt> 模版。这些模版文件都采用Liquid模版语法。保存于 <tt class="docutils literal"><span class="pre">_post</span></tt> 目录下的博客文件编译后会以 <tt class="docutils literal"><span class="pre">&lt;YYYY&gt;/&lt;MM&gt;/&lt;DD&gt;/&lt;blog-title&gt;.html</span></tt> 文件名保存在输出目录中。</p>
+<p>在根目录下还有一个配置文件 <tt class="docutils literal"><span class="pre">_config.yml</span></tt> 用于覆盖Jekyll的默认设置，例如本版本库中的设置。</p>
+<div class="highlight-python"><pre>markdown: rdiscount
+pygments: true</pre>
+</div>
+<p>第1行设置使用rdiscount软件包作为Markdown的解析引擎，而非默认的Maruku。第2行开启pygments支持。对于中文用户强烈建议通过配置文件 <tt class="docutils literal"><span class="pre">_config.yml</span></tt> 重设 markdown 解析引擎，默认的 Maruku 对中文支持不好，而使用 rdiscount 或 kramdown 均可。关于该配置文件的更多参数详见Jekyll项目维基 <a class="footnote-reference" href="#id10" id="id7">[3]</a>  。</p>
+<p>编译Jekyll编辑网站只需在根目录执行 <tt class="docutils literal"><span class="pre">jekyll</span></tt> 命令，下面的命令是GitHub更新网站所使用的默认指令。</p>
+<div class="highlight-python"><pre>$ jekyll --pygments --safe</pre>
+</div>
+<p>现在执行这条命令，就会将整个网站创建在目录 <tt class="docutils literal"><span class="pre">_site</span></tt> 下。</p>
+<p>如果没有安装Apache等Web服务器，还可以使用Jekyll的内置Web服务器。</p>
+<div class="highlight-python"><pre>$ jekyll --server</pre>
+</div>
+<p>默认在端口4000开启Web服务器。</p>
+<p>网址 <a class="reference external" href="http://gitready.com/">http://gitready.com/</a> 是一个提供Git使用小窍门的网站，如图3-20所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gitready.png"><img alt="../images/gitready.png" src="../images/gitready.png" /></a>
+<p class="caption">图3-20：Git Ready 网站</p>
+</div>
+<p>你相信这是一个用Jekyll制作的网站么？看看该网站对应的IP，会发现其指向的正是GitHub。研究GitHub上 <a class="reference external" href="https://github.com/gitready">gitready</a> 用户托管的版本库，会发现 <tt class="docutils literal"><span class="pre">en</span></tt> 版本库的 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支负责生成 <tt class="docutils literal"><span class="pre">gitready.com</span></tt> 网站， <tt class="docutils literal"><span class="pre">de</span></tt> 版本库的 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支负责生成德文网站 <tt class="docutils literal"><span class="pre">de.gitready.com</span></tt> ，等等。而 <tt class="docutils literal"><span class="pre">gitready</span></tt> 版本库则是各种语种网站的汇总。</p>
+<p>我的个人网站也使用Jekyll构建并托管在GitHub上，网址： <a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a> 。</p>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[1]</a></td><td>“Hello, world”最为程序员所熟知，2002年申请不到helloworld相关域名便退而求其次，申请了 worldhello.net。</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[2]</a></td><td><a class="reference external" href="http://liquidmarkup.org/">http://liquidmarkup.org/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[3]</a></td><td><a class="reference external" href="https://github.com/mojombo/jekyll/wiki/configuration">https://github.com/mojombo/jekyll/wiki/configuration</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../04-work-with-others/index.html" title="4. 工作协同"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="040-repo-hooks.html" title="3.4. 版本库钩子扩展"
+             >上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" >3. 项目托管</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      <br />
+      全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
+      <br />
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/26。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+
+    </div>
+  </body>
+</html>

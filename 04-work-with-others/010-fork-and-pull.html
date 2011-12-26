@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.1. Fork + Pull模式 &mdash; GotGitHub</title>
+    
+    <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="../static/worldhello.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="GotGitHub" href="../index.html" />
+    <link rel="up" title="4. 工作协同" href="index.html" />
+    <link rel="next" title="4.2. 共享版本库" href="020-shared-repo.html" />
+    <link rel="prev" title="4. 工作协同" href="index.html" /> 
+  </head>
+  <body>
+    <div id='header'>
+      <h1><a href='/'>World Hello</a></h1>
+
+      <div id='menu'>
+        <ul>
+          <li><a href='/' id='home-link' title='Home'>首页</a></li>
+          <li><a href='/blog.html' id='blog-link' title='Blog'>博客</a></li>
+          <li><a href='/doc/' id='docs-link' title='Docs'>文章</a></li>
+          <li><a href='/about.html' id='about-link' title='About'>关于</a></li>
+          <li><a href='http://github.com/gotgit' target='_blank' title='GitHub' rel='me' id='github-link'>GitHub</a></li>
+          <li><a href='http://weibo.com/gotgit' title='微博' target='_blank' id='weibo-link'>微博</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="020-shared-repo.html" title="4.2. 共享版本库"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="4. 工作协同"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">4. 工作协同</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.1. Fork + Pull模式</a><ul>
+<li><a class="reference internal" href="#id1">4.1.1. 版本库派生</a></li>
+<li><a class="reference internal" href="#pull-request">4.1.2. Pull Request</a></li>
+<li><a class="reference internal" href="#id7">4.1.3. 手工合并</a></li>
+<li><a class="reference internal" href="#id8">4.1.4. 在线编辑</a></li>
+<li><a class="reference internal" href="#fork-pull-request">4.1.5. 简化的 Fork + Pull Request</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="index.html"
+                        title="上一章">4. 工作协同</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="020-shared-repo.html"
+                        title="下一章">4.2. 共享版本库</a></p>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/04-work-with-others/010-fork-and-pull.txt"
+           rel="nofollow">显示源代码</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的模块，术语，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fork-pull">
+<h1>4.1. Fork + Pull模式<a class="headerlink" href="#fork-pull" title="永久链接至标题">¶</a></h1>
+<p>参与GitHub中的项目开发，最常用和推荐的首选方式是“Fork + Pull”模式。在“Fork + Pull”模式下，项目参与者不必向项目创建者申请提交权限，而是在自己的托管空间下建立项目的派生（Fork）。</p>
+<p>如果一个开源项目派生出另外的项目，通常意味着项目的分裂和开发团队的削弱，而GitHub中的项目派生则不会，而且正好相反，GitHub中的项目派生是项目壮大的体现。所有的派生项目都会有链接指向原始项目，派生项目没有独立的缺陷追踪系统（ISSUE），而是必须利用创建者本人的项目中的缺陷追踪系统。至于在派生项目中创建的提交，可以非常方便地利用GitHub的Pull Request工具向原始项目的维护者发送Pull Request。</p>
+<p>下面以GotGit版本库为例，介绍如何利用GitHub提供的Fork和Pull Request工具实现工作协同。</p>
+<div class="section" id="id1">
+<h2>4.1.1. 版本库派生<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>GotGit版本库 <a class="footnote-reference" href="#id11" id="id2">[1]</a> 用于维护《Git权威指南》一书的官网和勘误，下面演示的勘误表修改是由王胜 <a class="footnote-reference" href="#id12" id="id3">[2]</a>
+通过GitHub之外的一个缺陷追踪平台报告的 <a class="footnote-reference" href="#id13" id="id4">[3]</a> 。他在报告中，甚至直接用GNU diff格式告诉我该如何修改。</p>
+<p>下面就以用户gotgithub身份，访问版本库 <a class="reference external" href="https://github.com/gotgit/gotgit/">https://github.com/gotgit/gotgit/</a> ，添加新的勘误。如图4-1所示，gotgit项目在之前的示例中已经被我们关注但尚未Fork。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-before-fork.png"><img alt="../images/gotgit-repo-before-fork.png" src="../images/gotgit-repo-before-fork.png" /></a>
+<p class="caption">图4-1：原gotgit项目</p>
+</div>
+<p>点击项目名称右侧的Fork按钮，便在gotgithub用户自己的托管空间下创建项目派生，派生项目版本库出现在版本库列表中，如图4-2。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-in-repo-list.png"><img alt="../images/gotgit-in-repo-list.png" src="../images/gotgit-in-repo-list.png" /></a>
+<p class="caption">图4-2：gotgithub用户的项目列表</p>
+</div>
+<p>访问派生后的版本库，会发现和派生前的几乎相同，除了没有缺陷跟踪（ISSUE），以及标识了该项目派生之前的原路径等。如图4-3所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-repo-forked.png"><img alt="../images/gotgit-repo-forked.png" src="../images/gotgit-repo-forked.png" /></a>
+<p class="caption">图4-3：派生的gotgit项目</p>
+</div>
+<p>现在gotgithub用户就在本地派生的版本库中提交。</p>
+<ul>
+<li><p class="first">克隆 gotgithub/gotgit 版本库。</p>
+<div class="highlight-python"><pre>$ git clone git@github.com:gotgithub/gotgit.git
+$ cd gotgit</pre>
+</div>
+</li>
+<li><p class="first">为了向问题的发现者致敬，并经王胜同意，以他的身份进行提交。</p>
+<div class="highlight-python"><pre>$ git config user.name "Wang Sheng"
+$ git config user.email wangsheng@ossxp.com</pre>
+</div>
+</li>
+<li><p class="first">编辑 <tt class="docutils literal"><span class="pre">errata.mkd</span></tt> 文件 <a class="footnote-reference" href="#id14" id="id5">[4]</a> ，录入新发现的书中的文字错误。</p>
+<div class="highlight-python"><pre>$ vi errata.mkd</pre>
+</div>
+</li>
+<li><p class="first">对 <tt class="docutils literal"><span class="pre">error.mkd</span></tt> 的改动如下：</p>
+<div class="highlight-python"><pre>$ git diff
+diff --git a/errata.mkd b/errata.mkd
+index b0b68fb..29e40cf 100644
+--- a/errata.mkd
++++ b/errata.mkd
+@@ -14,5 +14,6 @@
+ |     66 | 倒数第11行                | Author（提交者）             |  Author（作者）              | [Github#2](http://github.com/gotgit/gotgit/issues/2)    |
+ |    144 | 第1行                     | \`$ **git rev-parse  A^{tree}  A:**  | $ **git rev-parse  A^{tree}  A:**              | [#153](http://redmine.ossxp.com/redmine/issues/153)  |
+ |    218 | 第8行                     | 况下，Gits标识出合并冲突，           | 况下，Git标识出合并冲突，                      | [#159](http://redmine.ossxp.com/redmine/issues/159)  |
++|    369 | 第21行                    | 但 `-i` 参数仅当对一个项执行时才有效。 | 但 `-i` 参数仅当对一个项目执行时才有效。     | [Github#3](http://github.com/gotgit/gotgit/issues/3)    |
+ |    516 | 倒数第15行                | **oldtag="cat"**             | **oldtag=\`cat\`**           | [#151](http://redmine.ossxp.com/redmine/issues/151)  |</pre>
+</div>
+</li>
+<li><p class="first">提交修改。至于提交说明中出现的编号，是为了和缺陷跟踪系统关联，会在后面章节介绍。</p>
+<div class="highlight-python"><pre>$ git add -u
+$ git commit -m "Fixed #3: should be 项目, not 项."</pre>
+</div>
+</li>
+<li><p class="first">推送提交到GitHub。</p>
+<div class="highlight-python"><pre>$ git push</pre>
+</div>
+</li>
+</ul>
+<p>访问GitHub上的派生项目页面，会看到以用户whangsheng在 <tt class="docutils literal"><span class="pre">master</span></tt> 分支 <a class="footnote-reference" href="#id15" id="id6">[5]</a> 创建的提交。如图4-4所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/gotgit-new-commit.png"><img alt="../images/gotgit-new-commit.png" src="../images/gotgit-new-commit.png" /></a>
+<p class="caption">图4-4：派生版本库中的新提交</p>
+</div>
+</div>
+<div class="section" id="pull-request">
+<h2>4.1.2. Pull Request<a class="headerlink" href="#pull-request" title="永久链接至标题">¶</a></h2>
+<p>那么如何能够让gotgit原始项目的创建者知道这个派生项目及新的提交呢？GitHub提供的工具就是“Pull Request”。注意到图4-3右上方“Pull Request”按钮了么？点击该按钮进入Pull Request创建界面。</p>
+<p>在弹出的Pull Request创建界面中，点击菜单中的“Commits”，查看所包含的提交。如图4-5所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/pull-request-form-commit.png"><img alt="../images/pull-request-form-commit.png" src="../images/pull-request-form-commit.png" /></a>
+<p class="caption">图4-5：Pull Request包含的提交</p>
+</div>
+<p>点击菜单中的“Files Changed”，查看所包含的提交。如图4-6所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/pull-request-form-file.png"><img alt="../images/pull-request-form-file.png" src="../images/pull-request-form-file.png" /></a>
+<p class="caption">图4-6：Pull Request包含的改动差异</p>
+</div>
+<p>点击菜单中的“Preview Discussion”，填写Pull Request的标题和内容，完成Pull Request的创建。如图4-7所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/pull-request-form-discuss.png"><img alt="../images/pull-request-form-discuss.png" src="../images/pull-request-form-discuss.png" /></a>
+<p class="caption">图4-7：Pull Request的提交界面</p>
+</div>
+<p>当Pull Request发出后，项目gotgit的开发者会收到通知邮件，如图4-8所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/pull-request-email.png"><img alt="../images/pull-request-email.png" src="../images/pull-request-email.png" /></a>
+<p class="caption">图4-8：Pull Request的通知邮件</p>
+</div>
+<p>点击邮件中的URL链接，以项目gotgit的开发者（如ossxp-com）身份登录，看到如图4-9的视图。之所以看到有两个用户参与到此Pull Request，是因为Pull Request创建者和提交的作者是不同的用户。图4-9下方的表单可以向Pull Request追加评论，或者关闭此Pull Request。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/pull-request-owner-view.png"><img alt="../images/pull-request-owner-view.png" src="../images/pull-request-owner-view.png" /></a>
+<p class="caption">图4-9：Pull Request接收者视图</p>
+</div>
+<p>GitHub如果检测到Pull Request中包含的提交可以直接合并，会显示自动合并的提示信息，点击图4-9中提示信息中的自动合并按钮，显示图4-10的自动合并对话框。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/pull-request-auto-merge.png"><img alt="../images/pull-request-auto-merge.png" src="../images/pull-request-auto-merge.png" /></a>
+<p class="caption">图4-10：Pull Request的通知邮件</p>
+</div>
+<p>点击“Confirm Merge”按钮即完成Pull Request中所含提交的自动合并。自动合并完成后，Pull Request页面下方会以评论的形式出现相关提示，并自动关闭Pull Request。如图4-11所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/pull-request-closed.png"><img alt="../images/pull-request-closed.png" src="../images/pull-request-closed.png" /></a>
+<p class="caption">图4-11：Pull Request关闭</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>4.1.3. 手工合并<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>Pull Request提供的自动合并显示在提交日志中是什么样子的呢？以用户ossxp-com身份检出版本库，会看到用户wangsheng的提交已经合并到版本库中。</p>
+<div class="highlight-python"><pre>$ git clone git@github.com:gotgit/gotgit.git
+$ cd gotgit
+$ git log --graph -3
+*   commit 6c1f1ee152629fd2f8d00ebe92c27a32d068d756
+|\  Merge: 00c6c4b 7ecdfe7
+| | Author: OpenSourceXpress &lt;worldhello.net@gmail.com&gt;
+| | Date:   Tue Aug 16 01:23:47 2011 -0700
+| |
+| |     Merge pull request #4 from gotgithub/master
+| |
+| |     Find a typo in the book
+| |
+| * commit 7ecdfe7451412cfb2e65bb47c12cf2162e21c841
+|/  Author: Wang Sheng &lt;wangsheng@ossxp.com&gt;
+|   Date:   Tue Aug 16 10:17:53 2011 +0800
+|
+|       Fixed #3: should be 项目, not 项.
+|
+* commit 00c6c4bfab9824bd967440902ce87440f9e87852
+| Author: Jiang Xin &lt;worldhello.net@gmail.com&gt;
+| Date:   Wed Aug 3 11:50:31 2011 +0800
+|
+|     Change font color for stronger text from red to brown.</pre>
+</div>
+<p>可以看出GitHub的自动合并产生了一个合并提交，类似执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--no-ff</span></tt> 命令。也就是说即使用户wangsheng的提交是一个“快进式提交”（基于gotgit/gotgit版本库最新提交所做的提交），也要产生一个合并提交。</p>
+<p>可能有人并不喜欢这种用 <tt class="docutils literal"><span class="pre">--no-ff</span></tt> 参数的非标准的合并方式，因为这种合并产生了一个多余的提交，可能增加代码评审的负担。若要取消GitHub的自动合并也很简单，因为Git无所不能：</p>
+<div class="highlight-python"><pre>$ git reset --hard HEAD^  # 回退一个提交，即回退到当前提交的第一个父提交
+$ git rev-parse HEAD      # 检查是否正确的回退
+00c6c4bfab9824bd967440902ce87440f9e87852
+$ git push -f             # 强制推送回退的 master 分支</pre>
+</div>
+<p>下面就演示一下当收到他人的Pull Request后，该如何手动合并。实际上在很多情况下，Pull Request所含提交有可能造成合并冲突，那样的话GitHub不再、也不能提供自动合并功能，就必须采用手工合并的方式。</p>
+<ul>
+<li><p class="first">将Pull Request发出者的派生版本库添加为一个新的源。</p>
+<p>例如收到来自gotgithub用户的Pull Request，不妨以gotgithub为名添加新的源。</p>
+<div class="highlight-python"><pre>$ git remote add gotgithub https://github.com/gotgithub/gotgit.git</pre>
+</div>
+</li>
+<li><p class="first">此时版本库中有两个源，一个克隆时自动建立的origin，另外一个就是新增加的gotgithub。</p>
+<div class="highlight-python"><pre>$ git remote -v
+gotgithub       https://github.com/gotgithub/gotgit.git (fetch)
+gotgithub       https://github.com/gotgithub/gotgit.git (push)
+origin  git@github.com:gotgit/gotgit.git (fetch)
+origin  git@github.com:gotgit/gotgit.git (push)</pre>
+</div>
+</li>
+<li><p class="first">获取远程版本库gotgithub的分支和提交。</p>
+<div class="highlight-python"><pre>$ git fetch gotgithub
+From https://github.com/gotgithub/gotgit
+ * [new branch]      gh-pages   -&gt; gotgithub/gh-pages
+ * [new branch]      master     -&gt; gotgithub/master</pre>
+</div>
+</li>
+<li><p class="first">现在除了本地分支 <tt class="docutils literal"><span class="pre">master</span></tt> 外，还有若干远程分支，如下：</p>
+<div class="highlight-python"><pre>$ git branch -a
+* master
+  remotes/gotgithub/gh-pages
+  remotes/gotgithub/master
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/gh-pages
+  remotes/origin/master</pre>
+</div>
+</li>
+<li><p class="first">将远程分支 <tt class="docutils literal"><span class="pre">remotes/gotgithub/master</span></tt> （可简写为 <tt class="docutils literal"><span class="pre">gotgithub/master</span></tt> ）合并到当前分支中。</p>
+<div class="highlight-python"><pre>$ git merge gotgithub/master
+Updating 00c6c4b..7ecdfe7
+Fast-forward
+ errata.mkd |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)</pre>
+</div>
+</li>
+<li><p class="first">查看提交说明，看到此次合并没有产生不必要的合并提交。</p>
+<div class="highlight-python"><pre>$ git log --graph -2
+* commit 7ecdfe7451412cfb2e65bb47c12cf2162e21c841
+| Author: Wang Sheng &lt;wangsheng@ossxp.com&gt;
+| Date:   Tue Aug 16 10:17:53 2011 +0800
+|
+|     Fixed #3: should be 项目, not 项.
+|
+* commit 00c6c4bfab9824bd967440902ce87440f9e87852
+| Author: Jiang Xin &lt;worldhello.net@gmail.com&gt;
+| Date:   Wed Aug 3 11:50:31 2011 +0800
+|
+|     Change font color for stronger text from red to brown.</pre>
+</div>
+</li>
+<li><p class="first">将合并推送到GitHub版本库中。</p>
+<div class="highlight-python"><pre>$ git push</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>4.1.4. 在线编辑<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>GitHub提供了在线编辑功能，这样可以无需克隆版本库、无需使用Git即可完成对版本库中文件的修改，甚至可以在你的iPad甚至iPhone上完成对文件的修改。</p>
+<p>以gotgithub账户身份登录GitHub，访问之前派生而来的版本库 gotgithub/gotgit 中的文件，例如文件 <tt class="docutils literal"><span class="pre">errata.md</span></tt> <a class="footnote-reference" href="#id16" id="id9">[6]</a> ，会看到其中一个“Edit this file”的按钮，如图4-12所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/edit-this-file-btn.png"><img alt="../images/edit-this-file-btn.png" src="../images/edit-this-file-btn.png" /></a>
+<p class="caption">图4-12：浏览自己版本库中文件</p>
+</div>
+<p>点击图4-12中的“Edit this file”按钮，开始在线编辑文件 <tt class="docutils literal"><span class="pre">errata.md</span></tt> ，编辑器还支持语法加亮，如图4-13所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/edit-this-file-form.png"><img alt="../images/edit-this-file-form.png" src="../images/edit-this-file-form.png" /></a>
+<p class="caption">图4-13：编辑文件</p>
+</div>
+</div>
+<div class="section" id="fork-pull-request">
+<h2>4.1.5. 简化的 Fork + Pull Request<a class="headerlink" href="#fork-pull-request" title="永久链接至标题">¶</a></h2>
+<p>到目前，我们已经了解了GitHub的三大武器：Fork、Pull Request和在线编辑。对于最常用的“Fork + Pull Request”操作，GitHub还提供了一个快捷模式。即GitHub对于无权更改的他人版本库中的文件，提供了一个类似在线编辑的按钮，名为“Fork and edit this file”按钮，自动完成版本库派生和在线编辑，即将三大武器一勺烩。</p>
+<p>访问他人版本库（尚未在自己空间派生）中的文件，例如访问下面地址： <a class="reference external" href="http://git.io/hello-world-makefile">http://git.io/hello-world-makefile</a> <a class="footnote-reference" href="#id17" id="id10">[7]</a> 。显示他人（ossxp-com）版本库 <tt class="docutils literal"><span class="pre">hello-world</span></tt> 中的 <tt class="docutils literal"><span class="pre">src/Makefile</span></tt> 文件，如图4-14所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/fork-and-edit-btn.png"><img alt="../images/fork-and-edit-btn.png" src="../images/fork-and-edit-btn.png" /></a>
+<p class="caption">图4-14：浏览他人版本库中文件</p>
+</div>
+<p>点击图4-14中的“Fork and edit this file”按钮，会自动在自己托管空间创建派生版本库，并开始在线编辑文件 <tt class="docutils literal"><span class="pre">src/Makefile</span></tt> ，如图4-15所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/fork-and-edit-form.png"><img alt="../images/fork-and-edit-form.png" src="../images/fork-and-edit-form.png" /></a>
+<p class="caption">图4-15：派生并编辑文件</p>
+</div>
+<p>文件修改完毕，点击“Propose File Change”按钮，会将改动作提交到派生的版本库中，并马上开启一个新的Pull Request。如图4-16所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/fork-and-edit-pull-request.png"><img alt="../images/fork-and-edit-pull-request.png" src="../images/fork-and-edit-pull-request.png" /></a>
+<p class="caption">图4-16：编辑完毕自动开启Pull Request</p>
+</div>
+<p>点击“Send pull request”按钮完成Pull Request的创建。如果仔细查看图4-16，会发现Pull Request所包含的修改发生在 <tt class="docutils literal"><span class="pre">gotgithub/hello-world</span></tt> 派生版本库中的 <tt class="docutils literal"><span class="pre">patch-1</span></tt> 分支中，并非通常的 <tt class="docutils literal"><span class="pre">master</span></tt> 分支。</p>
+<p>原版本库 <tt class="docutils literal"><span class="pre">ossxp-com/hello-world</span></tt> 的开发者会收到一封邮件，通知有新的Pull Request，如下所示（前四行为信头）：</p>
+<div class="highlight-python"><pre>From: GotGitHub &lt;reply+i-...@reply.github.com&gt;
+Date: 2011/12/17
+Subject: [hello-world] Bugfix: build target when version.h changed.  (#1)
+To: Jiang Xin &lt;worldhello.net@gmail.com&gt;
+
+
+Without this fix, when version changed only version.h update, target rebuild needs a second `make`.
+
+You can merge this Pull Request by running:
+
+ git pull https://github.com/gotgithub/hello-world patch-1
+
+Or you can view, comment on it, or merge it online at:
+
+ https://github.com/ossxp-com/hello-world/pull/1
+
+-- Commit Summary --
+
+* Bugfix: build target when version.h changed.
+
+-- File Changes --
+
+M src/Makefile (3)
+
+-- Patch Links --
+
+ https://github.com/ossxp-com/hello-world/pull/1.patch
+ https://github.com/ossxp-com/hello-world/pull/1.diff
+
+---
+Reply to this email directly or view it on GitHub:
+https://github.com/ossxp-com/hello-world/pull/1</pre>
+</div>
+<p>版本库 <tt class="docutils literal"><span class="pre">ossxp-com/hello-world</span></tt> 的管理员既可以通过GitHub提供的图形化界面完成对 Pull Request 的审核和合并，也可以在命令行下完成。正如邮件中所述若使用命令行，操作如下：</p>
+<div class="highlight-python"><pre>$ git pull https://github.com/gotgithub/hello-world patch-1</pre>
+</div>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="https://github.com/gotgit/gotgit/">https://github.com/gotgit/gotgit/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="https://github.com/wangsheng/">https://github.com/wangsheng/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td><a class="reference external" href="http://redmine.ossxp.com/redmine/issues/161">http://redmine.ossxp.com/redmine/issues/161</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td>版本库 gotgit/gotgit 已将勘误文件重命名为 <tt class="docutils literal"><span class="pre">errata.md</span></tt> 。</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id15" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td>版本库 gotgit/gotgit 原 <tt class="docutils literal"><span class="pre">master</span></tt> 分支内容已转移至 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支，通过GitHub提供的网站部署机制完成网页的编译和部署。</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id16" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[6]</a></td><td>版本库 gotgit/gotgit 已重构。分支 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 中文件 <tt class="docutils literal"><span class="pre">errata.md</span></tt> 文件来自于原 <tt class="docutils literal"><span class="pre">master</span></tt> 分支的 <tt class="docutils literal"><span class="pre">errata.mkd</span></tt> 文件，地址： <a class="reference external" href="https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md">https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md</a> 。</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id17" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[7]</a></td><td>即地址 <a class="reference external" href="https://github.com/ossxp-com/hello-world/blob/master/src/Makefile">https://github.com/ossxp-com/hello-world/blob/master/src/Makefile</a> 。</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="020-shared-repo.html" title="4.2. 共享版本库"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="4. 工作协同"
+             >上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" >4. 工作协同</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      <br />
+      全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
+      <br />
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/26。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+
+    </div>
+  </body>
+</html>

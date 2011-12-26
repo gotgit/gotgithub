@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>6.2.2. 用Hg操作GitHub &mdash; GotGitHub</title>
+    
+    <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="../static/worldhello.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="GotGitHub" href="../index.html" />
+    <link rel="up" title="6.2. 其他版本控制工具支持" href="other-scm.html" />
+    <link rel="next" title="6.3. 客户端工具" href="tools.html" />
+    <link rel="prev" title="6.2.1. 用SVN操作GitHub" href="svn.html" /> 
+  </head>
+  <body>
+    <div id='header'>
+      <h1><a href='/'>World Hello</a></h1>
+
+      <div id='menu'>
+        <ul>
+          <li><a href='/' id='home-link' title='Home'>首页</a></li>
+          <li><a href='/blog.html' id='blog-link' title='Blog'>博客</a></li>
+          <li><a href='/doc/' id='docs-link' title='Docs'>文章</a></li>
+          <li><a href='/about.html' id='about-link' title='About'>关于</a></li>
+          <li><a href='http://github.com/gotgit' target='_blank' title='GitHub' rel='me' id='github-link'>GitHub</a></li>
+          <li><a href='http://weibo.com/gotgit' title='微博' target='_blank' id='weibo-link'>微博</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="tools.html" title="6.3. 客户端工具"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="svn.html" title="6.2.1. 用SVN操作GitHub"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" >6. GitHub副产品</a> &raquo;</li>
+          <li><a href="other-scm.html" accesskey="U">6.2. 其他版本控制工具支持</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="svn.html"
+                        title="上一章">6.2.1. 用SVN操作GitHub</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="tools.html"
+                        title="下一章">6.3. 客户端工具</a></p>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/06-side-projects/hg-git.txt"
+           rel="nofollow">显示源代码</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的模块，术语，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="hggithub">
+<h1>6.2.2. 用Hg操作GitHub<a class="headerlink" href="#hggithub" title="永久链接至标题">¶</a></h1>
+<p>Hg（又称Mercurial）和 Git 一样也是一个被广泛使用的分布式版本库控制工具。如果一个熟悉 Hg 的开发者参与托管在 GitHub 上的项目，大可不必为更换版本控制工具而苦恼，GitHub 上的一个名为 hg-git <a class="footnote-reference" href="#id2" id="id1">[1]</a> 的开源项目可以帮上忙。</p>
+<p>得益于 Hg 的强大的插件扩展机制，安装 hg-git 并将其注册为Hg 插件后可提供 Hg 操作 Git 版本库的能力。安装 hg-git 可以直接使用 <strong class="program">easy_install</strong> 命令：</p>
+<div class="highlight-python"><pre>$ sudo easy_install hg-git</pre>
+</div>
+<p>还可以直接从GitHub上下载hg-git最新代码进行安装：</p>
+<div class="highlight-python"><pre>$ curl -L -k -o hg-git.zip https://github.com/schacon/hg-git/zipball/master
+$ unzip hg-git.zip
+$ cd schacon-hg-git-*
+$ sudo easy_install .</pre>
+</div>
+<p>插件 hg-git 依赖于 Dulwich 项目，如果在安装过程遇到 Dulwich 无法编译，可能是因为缺乏 C 编译器，或者尚未安装 python-dev 软件包。Dulwich 是一个 Python 语言的 Git 实现，因此 hg-git 在运行过程中无需 Git 命令行。</p>
+<p>和其他 Hg 插件类似，安装完毕后需要修改Hg配置文件（如文件 <tt class="file docutils literal"><span class="pre">~/.hgrc</span></tt> ）如下，以启用 hg-git 插件以及另外一个必须的 Hg 内置插件 —— bookmarks 插件。</p>
+<div class="highlight-python"><pre>[extensions]
+bookmarks =
+hggit =</pre>
+</div>
+<p>对 hg-git 安装配置完毕，就可以使用 Hg 操作 Git 版本库了。</p>
+<ul>
+<li><p class="first">克隆 Git 版本库。</p>
+<div class="highlight-python"><pre>$ hg clone git://github.com/ossxp-com/hello-world.git
+$ cd hello-world</pre>
+</div>
+</li>
+<li><p class="first">Git 版本库的分支转换为 Hg 版本库中的 bookmarks。</p>
+<p>新克隆的 Hg 版本库默认会更新到最新提交（即 tip 版本），未必处于所需的分支上。用命令 <strong class="command">hg bookmarks</strong> 显示分支列表，命令 <strong class="command">hg parents</strong> 显示工作区对应的版本。</p>
+<div class="highlight-python"><pre>$ hg bookmarks
+   helper/master             10:2767ad9d7008
+   helper/v1.x               8:994c2f0adc0b
+   master                    1:dcd365e3175c
+
+$ hg parents
+修改集:      12:928384ca1e87
+标签:        jx/v1.0-i18n
+标签:        tip
+用户:        Jiang Xin &lt;jiangxin@ossxp.com&gt;
+日期:        Fri Dec 31 12:12:42 2010 +0800
+摘要:        Translate for Chinese.</pre>
+</div>
+</li>
+<li><p class="first">切换到所需的工作分支（如 <tt class="docutils literal"><span class="pre">master</span></tt> 分支）。</p>
+<p>用 <cite>hg update -r</cite> 命令切换分支。之后执行 <strong class="command">hg bookmarks</strong> 命令会看到当前工作分支用星号标识出来。</p>
+<div class="highlight-python"><pre>$ hg update -r master
+$ hg book
+   helper/master             10:2767ad9d7008
+   helper/v1.x               8:994c2f0adc0b
+ * master                    1:dcd365e3175c</pre>
+</div>
+</li>
+<li><p class="first">Git 的里程碑也被记录，并可被 <strong class="command">hg tags</strong> 命令显示。</p>
+<div class="highlight-python"><pre>$ hg tags
+tip                               12:928384ca1e87
+jx/v1.0-i18n                      12:928384ca1e87
+jx/v2.3                           10:2767ad9d7008
+...</pre>
+</div>
+</li>
+<li><p class="first">使用 <strong class="command">hg pull</strong> 命令和 <strong class="command">hg push</strong> 命令可以实现和 Git 版本库的同步。</p>
+</li>
+<li><p class="first">有的命令如 <strong class="command">hg outgoing</strong> 可在 1.7 版本的 Hg 中运行正常，但对于高版本库的 Hg 存在兼容性问题。</p>
+</li>
+</ul>
+<p>实际上 hg-git 插件并非只针对 GitHub 的版本库，而是可以支持任意 Git 版本库包括本地 Git 版本库。为了提供对 Git 版本库的透明支持，对 Git 版本库的 URL 的写法有特殊要求，即要能够从协议名称区分开 Git 版本库和默认的 Hg 版本库。</p>
+<ul>
+<li><p class="first">Git协议：</p>
+<p><cite>git://example.com[:port]/path/to/repo.git</cite></p>
+</li>
+<li><p class="first">SSH协议：</p>
+<p><cite>git+ssh://[user&#64;]example.com[:port]/path/to/repo.git</cite></p>
+</li>
+<li><p class="first">HTTP协议：</p>
+<p><cite>git+http://[user&#64;]example.com[:port]/path/to/repo.git</cite></p>
+</li>
+<li><p class="first">HTTPS协议：</p>
+<p><cite>git+https://[user&#64;]example.com[:port]/path/to/repo.git</cite></p>
+</li>
+<li><p class="first">本地协议：</p>
+<p><cite>/path/to/repo.git</cite></p>
+</li>
+</ul>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://github.com/schacon/hg-git">https://github.com/schacon/hg-git</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="tools.html" title="6.3. 客户端工具"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="svn.html" title="6.2.1. 用SVN操作GitHub"
+             >上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" >6. GitHub副产品</a> &raquo;</li>
+          <li><a href="other-scm.html" >6.2. 其他版本控制工具支持</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      <br />
+      全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
+      <br />
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/26。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+
+    </div>
+  </body>
+</html>

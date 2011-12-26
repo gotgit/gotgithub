@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.2. 操作版本库 &mdash; GotGitHub</title>
+    
+    <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="../static/worldhello.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="GotGitHub" href="../index.html" />
+    <link rel="up" title="3. 项目托管" href="index.html" />
+    <link rel="next" title="3.3. 公钥认证管理" href="030-repo-authz.html" />
+    <link rel="prev" title="3.1. 创建新项目" href="010-new-project.html" /> 
+  </head>
+  <body>
+    <div id='header'>
+      <h1><a href='/'>World Hello</a></h1>
+
+      <div id='menu'>
+        <ul>
+          <li><a href='/' id='home-link' title='Home'>首页</a></li>
+          <li><a href='/blog.html' id='blog-link' title='Blog'>博客</a></li>
+          <li><a href='/doc/' id='docs-link' title='Docs'>文章</a></li>
+          <li><a href='/about.html' id='about-link' title='About'>关于</a></li>
+          <li><a href='http://github.com/gotgit' target='_blank' title='GitHub' rel='me' id='github-link'>GitHub</a></li>
+          <li><a href='http://weibo.com/gotgit' title='微博' target='_blank' id='weibo-link'>微博</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="030-repo-authz.html" title="3.3. 公钥认证管理"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="010-new-project.html" title="3.1. 创建新项目"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">3. 项目托管</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.2. 操作版本库</a><ul>
+<li><a class="reference internal" href="#id2">3.2.1. 强制推送</a></li>
+<li><a class="reference internal" href="#id3">3.2.2. 新建分支</a></li>
+<li><a class="reference internal" href="#id4">3.2.3. 设置默认分支</a></li>
+<li><a class="reference internal" href="#id5">3.2.4. 删除分支</a></li>
+<li><a class="reference internal" href="#id6">3.2.5. 里程碑管理</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="010-new-project.html"
+                        title="上一章">3.1. 创建新项目</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="030-repo-authz.html"
+                        title="下一章">3.3. 公钥认证管理</a></p>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/03-project-hosting/020-repo-operation.txt"
+           rel="nofollow">显示源代码</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的模块，术语，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>3.2. 操作版本库<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>3.2.1. 强制推送<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>细心的读者可能从图3-4已经看出，显示的提交者并非gotgithub用户，而是一个名为ossxp-com的用户，这是因为GitHub是通过提交中的邮件地址来对应到GitHub用户的。看看提交说明：</p>
+<div class="highlight-python"><pre>$ git log --pretty=fuller
+commit 92dee9b8125afc9a606394ed463f9f264f2d3d58
+Author:     Jiang Xin &lt;worldhello.net@gmail.com&gt;
+AuthorDate: Wed Dec 14 14:52:40 2011 +0800
+Commit:     Jiang Xin &lt;worldhello.net@gmail.com&gt;
+CommitDate: Wed Dec 14 14:52:40 2011 +0800
+
+    README for this project.</pre>
+</div>
+<p>原来提交用户设置的邮件地址并非gotgithub用户设置的邮件地址。补救办法就是对此提交进行修改，然后强制推送到GitHub。</p>
+<ul>
+<li><p class="first">重新设置 <tt class="docutils literal"><span class="pre">user.name</span></tt> 和 <tt class="docutils literal"><span class="pre">user.email</span></tt> 配置变量。</p>
+<p>因为gotgithub是一个仅在本书使用的示例账号，我可不想影响本地其他项目的提交，因此下面的设置命令没有使用 <tt class="docutils literal"><span class="pre">--global</span></tt> 参数，只对本地 <tt class="docutils literal"><span class="pre">helloworld</span></tt> 版本库进行设置。</p>
+<div class="highlight-python"><pre>$ git config user.name "Jiang Xin"
+$ git config user.email "gotgithub@gmail.com"</pre>
+</div>
+</li>
+<li><p class="first">执行Git修补提交命令。</p>
+<p>注意使用 <tt class="docutils literal"><span class="pre">--reset-author</span></tt> 会将提交信息中的属性 <tt class="docutils literal"><span class="pre">Author</span></tt> 连同 <tt class="docutils literal"><span class="pre">AuthorDate</span></tt> 一并修改，否则只修改 <tt class="docutils literal"><span class="pre">Commit</span></tt> 和 <tt class="docutils literal"><span class="pre">CommitDate</span></tt> 。参数 <tt class="docutils literal"><span class="pre">-C</span> <span class="pre">HEAD</span></tt> 维持提交说明不变。</p>
+<div class="highlight-python"><pre>$ git commit --amend --reset-author -C HEAD</pre>
+</div>
+</li>
+<li><p class="first">查看提交日志，发现提交者信息和作者信息都已经更改。</p>
+<div class="highlight-python"><pre>$ git log --pretty=fuller
+commit e1e52d99fa71fd6f606903efa9da04fd0055fca9
+Author:     Jiang Xin &lt;gotgithub@gmail.com&gt;
+AuthorDate: Wed Dec 14 15:05:47 2011 +0800
+Commit:     Jiang Xin &lt;gotgithub@gmail.com&gt;
+CommitDate: Wed Dec 14 15:05:47 2011 +0800
+
+    README for this project.</pre>
+</div>
+</li>
+<li><p class="first">直接推送会报错。</p>
+<div class="highlight-python"><pre>$ git push
+To git@github.com:gotgithub/helloworld.git
+ ! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:gotgithub/helloworld.git'
+To prevent you from losing history, non-fast-forward updates were rejected
+Merge the remote changes (e.g. 'git pull') before pushing again.  See the
+'Note about fast-forwards' section of 'git push --help' for details.</pre>
+</div>
+</li>
+<li><p class="first">使用强制推送。</p>
+<p>对于此例，考虑到还没有其他人关注 <tt class="docutils literal"><span class="pre">helloworld</span></tt> 这个刚刚建立的示例项目，显然不需要向上面命令错误信息中提示那样先执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt> 合并上游版本库再推送，而是选择强制推送。</p>
+<div class="highlight-python"><pre>$ git push -f
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 629 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:gotgithub/helloworld.git
+ + 92dee9b...e1e52d9 master -&gt; master (forced update)</pre>
+</div>
+</li>
+</ul>
+<p>完成强制推送后，再查看GitHub项目页面，会发现提交者已经显示为gotgithub用户。如图3-7所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/force-push.png"><img alt="../images/force-push.png" src="../images/force-push.png" /></a>
+<p class="caption">图3-7：强制更新后，提交者已更改</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>3.2.2. 新建分支<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>现在版本库中只有一个默认分支 <tt class="docutils literal"><span class="pre">master</span></tt> ，如果希望在GitHub版本库中再创建分支，可以采用如下方法：</p>
+<ul>
+<li><p class="first">本地版本库中建立分支 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 。</p>
+<p>创建分支有多种方法，最为便捷的就是 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></tt> 命令，同时完成分支创建和分支切换。</p>
+<div class="highlight-python"><pre>$ git checkout -b mybranch1
+Switched to a new branch 'mybranch1'</pre>
+</div>
+</li>
+<li><p class="first">为了易于识别，添加一个新文件 <tt class="docutils literal"><span class="pre">hello1</span></tt> ，并提交。</p>
+<div class="highlight-python"><pre>$ touch hello1
+$ git add hello1
+$ git commit -m "add hello1 for mark."
+[mybranch1 f46a284] add hello1 for mark.
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hello1</pre>
+</div>
+</li>
+<li><p class="first">通过推送命令，将本地分支 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 推送到GitHub远程版本库，完成在GitHub上的新分支创建。</p>
+<div class="highlight-python"><pre>$ git push -u origin mybranch1
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 281 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:gotgithub/helloworld.git
+ * [new branch]      mybranch1 -&gt; mybranch1
+Branch mybranch1 set up to track remote branch mybranch1 from origin.</pre>
+</div>
+</li>
+</ul>
+<p>在GitHub上查看版本库，会看到新增了一个分支 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> ，不过默认分支仍为 <tt class="docutils literal"><span class="pre">master</span></tt> ，如图3-8所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/new-branch.png"><img alt="../images/new-branch.png" src="../images/new-branch.png" /></a>
+<p class="caption">图3-8：版本库新增了一个分支</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>3.2.3. 设置默认分支<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>如果希望版本库的默认分支为 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> ，点击项目名称旁边的”Admin“按钮，修改项目的默认分支，如图3-9所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/set-default-branch.png"><img alt="../images/set-default-branch.png" src="../images/set-default-branch.png" /></a>
+<p class="caption">图3-9：设置缺省分支</p>
+</div>
+<p>设置了GitHub默认分支后，如果再从GitHub克隆版本库，本地克隆后版本库的默认分支也将改变。</p>
+<div class="highlight-python"><pre>$ git clone git@github.com:gotgithub/helloworld.git helloworld-nb
+Cloning into 'helloworld-nb'...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 6 (delta 0)
+Receiving objects: 100% (6/6), done.
+$ cd helloworld-nb
+$ git branch
+* mybranch1</pre>
+</div>
+<p>之所以本地缺省分支不再是 <tt class="docutils literal"><span class="pre">master</span></tt> ，是因为远程（GitHub）版本库中的特殊引用 <tt class="docutils literal"><span class="pre">HEAD</span></tt> 指向 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 分支。这可以从下面命令看出。</p>
+<div class="highlight-python"><pre>$ git branch -r
+  origin/HEAD -&gt; origin/mybranch1
+  origin/master
+  origin/mybranch1</pre>
+</div>
+<p>也可以从 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span></tt> 命令看出引用 <tt class="docutils literal"><span class="pre">HEAD</span></tt> 和 <tt class="docutils literal"><span class="pre">refs/heads/mybranch1</span></tt> 指向同一个对象的哈希值。</p>
+<div class="highlight-python"><pre>$ git ls-remote
+From git@github.com:gotgithub/helloworld.git
+f46a28484adb6c1b4830eb4df582325c740e9d6c        HEAD
+e1e52d99fa71fd6f606903efa9da04fd0055fca9        refs/heads/master
+f46a28484adb6c1b4830eb4df582325c740e9d6c        refs/heads/mybranch1</pre>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>3.2.4. 删除分支<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>删除本地版本库的分支 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> ，用如下命令：</p>
+<div class="highlight-python"><pre>$ git branch -d mybranch1
+error: Cannot delete the branch 'mybranch1' which you are currently on.</pre>
+</div>
+<p>错误信息显示不能删除当前工作分支。因此先切换到其他分支，例如从GitHub版本库中取出 <tt class="docutils literal"><span class="pre">master</span></tt> 分支并切换。</p>
+<div class="highlight-python"><pre>$ git checkout master</pre>
+</div>
+<p>可以看出新的工作分支为 <tt class="docutils literal"><span class="pre">master</span></tt> 分支。</p>
+<div class="highlight-python"><pre>$ git branch
+* master
+  mybranch1</pre>
+</div>
+<p>现在删除 <tt class="docutils literal"><span class="pre">mybanch1</span></tt> 分支。之所以使用 <tt class="docutils literal"><span class="pre">-D</span></tt> 参数，而非 <tt class="docutils literal"><span class="pre">-d</span></tt> 参数，是因为为了防止 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 的提交丢失，Git缺省禁止删除尚未合并的分支。</p>
+<div class="highlight-python"><pre>$ git branch -D mybranch1
+Deleted branch mybranch1 (was f46a284).</pre>
+</div>
+<p>现在只是本地分支被删除了，远程GitHub服务器上的 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 分支尚在。删除远程GitHub版本库中的分支就不能使用 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></tt> 命令，而是要使用 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> 命令，不过在使用推送分支命令时要使用一个特殊的引用表达式（冒号前为空）。如下：</p>
+<div class="highlight-python"><pre>$ git push origin :mybranch1
+remote: error: refusing to delete the current branch: refs/heads/mybranch1
+To git@github.com:gotgithub/helloworld.git
+ ! [remote rejected] mybranch1 (deletion of the current branch prohibited)
+error: failed to push some refs to 'git@github.com:gotgithub/helloworld.git'</pre>
+</div>
+<p>为什么删除远程分支出错了呢？是因为没有使用强制推送么？</p>
+<p>实际上即使使用强制推送也会遇到上面的错误。GitHub发现要删除的 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 分支是远程版本库的缺省分支，因而禁止删除。重新访问GitHub的项目管理页面，将缺省分支设置回 <tt class="docutils literal"><span class="pre">master</span></tt> 分支，参照图3-9。然后再执行上述命令，即可成功删除分支。</p>
+<div class="highlight-python"><pre>$ git push origin :mybranch1
+To git@github.com:gotgithub/helloworld.git
+ - [deleted]         mybranch1</pre>
+</div>
+<p>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span></tt> 命令可以看到GitHub远程分支 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 已删除。</p>
+<div class="highlight-python"><pre>$ git ls-remote git@github.com:gotgithub/helloworld.git
+From git@github.com:gotgithub/helloworld.git
+e1e52d99fa71fd6f606903efa9da04fd0055fca9        HEAD
+e1e52d99fa71fd6f606903efa9da04fd0055fca9        refs/heads/master</pre>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>3.2.5. 里程碑管理<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>里程碑管理和分支管理极其类似。</p>
+<ul>
+<li><p class="first">先在本地创建一个新提交。</p>
+<div class="highlight-python"><pre>$ touch hello1
+$ git add hello1
+$ git commit -m "add hello1 for mark."</pre>
+</div>
+</li>
+<li><p class="first">本地创建里程碑 <tt class="docutils literal"><span class="pre">mytag1</span></tt> 、 <tt class="docutils literal"><span class="pre">mytag2</span></tt> 和 <tt class="docutils literal"><span class="pre">mytag3</span></tt> 。</p>
+<div class="highlight-python"><pre>$ git tag -m "Tag on initial commit" mytag1 HEAD^
+$ git tag -m "Tag on new commit"     mytag2
+$ git tag mytag3</pre>
+</div>
+</li>
+<li><p class="first">查看新建立的里程碑。</p>
+<div class="highlight-python"><pre>$ git tag -l -n1
+mytag1          Tag on initial commit
+mytag2          Tag on new commit
+mytag3          add hello1 for mark.</pre>
+</div>
+</li>
+<li><p class="first">将本地里程碑推送到GitHub远程版本库。</p>
+<div class="highlight-python"><pre>$ git push origin refs/tags/*
+Counting objects: 6, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 548 bytes, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To git@github.com:gotgithub/helloworld.git
+ * [new tag]         mytag1 -&gt; mytag1
+ * [new tag]         mytag2 -&gt; mytag2
+ * [new tag]         mytag3 -&gt; mytag3</pre>
+</div>
+</li>
+<li><p class="first">删除本地里程碑。</p>
+<div class="highlight-python"><pre>$ git tag -d mytag3
+Deleted tag 'mytag3' (was c71231c)</pre>
+</div>
+</li>
+<li><p class="first">删除GitHub远程版本库中的里程碑。</p>
+<div class="highlight-python"><pre>$ git push origin :mytag3
+To git@github.com:gotgithub/helloworld.git
+  [deleted]         mytag3</pre>
+</div>
+</li>
+</ul>
+<p>此时查看GitHub上的项目页，会看到已有两个里程碑，如图3-10所示。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../images/tags-list.png"><img alt="../images/tags-list.png" src="../images/tags-list.png" /></a>
+<p class="caption">图3-10：里程碑列表</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="030-repo-authz.html" title="3.3. 公钥认证管理"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="010-new-project.html" title="3.1. 创建新项目"
+             >上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" >3. 项目托管</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      <br />
+      全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
+      <br />
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/26。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>6.4.4. GitHub Open Source &mdash; GotGitHub</title>
+    
+    <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="../static/worldhello.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="GotGitHub" href="../index.html" />
+    <link rel="up" title="6.4. 其他" href="others.html" />
+    <link rel="next" title="7. 附录：GitHub支持的标记语言" href="../20-appendix/index.html" />
+    <link rel="prev" title="6.4.3. GitHub短网址服务" href="short-url.html" /> 
+  </head>
+  <body>
+    <div id='header'>
+      <h1><a href='/'>World Hello</a></h1>
+
+      <div id='menu'>
+        <ul>
+          <li><a href='/' id='home-link' title='Home'>首页</a></li>
+          <li><a href='/blog.html' id='blog-link' title='Blog'>博客</a></li>
+          <li><a href='/doc/' id='docs-link' title='Docs'>文章</a></li>
+          <li><a href='/about.html' id='about-link' title='About'>关于</a></li>
+          <li><a href='http://github.com/gotgit' target='_blank' title='GitHub' rel='me' id='github-link'>GitHub</a></li>
+          <li><a href='http://weibo.com/gotgit' title='微博' target='_blank' id='weibo-link'>微博</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../20-appendix/index.html" title="7. 附录：GitHub支持的标记语言"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="short-url.html" title="6.4.3. GitHub短网址服务"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" >6. GitHub副产品</a> &raquo;</li>
+          <li><a href="others.html" accesskey="U">6.4. 其他</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">6.4.4. GitHub Open Source</a><ul>
+<li><a class="reference internal" href="#api">API接口</a></li>
+<li><a class="reference internal" href="#id1">官方手册</a></li>
+<li><a class="reference internal" href="#grit">Grit</a></li>
+<li><a class="reference internal" href="#github-services">GitHub Services</a></li>
+<li><a class="reference internal" href="#hubot-hubot-scripts">Hubot 和 Hubot Scripts</a></li>
+<li><a class="reference internal" href="#gollum">Gollum</a></li>
+<li><a class="reference internal" href="#jekyll">Jekyll</a></li>
+<li><a class="reference internal" href="#linguist">Linguist</a></li>
+<li><a class="reference internal" href="#markup">Markup</a></li>
+<li><a class="reference internal" href="#resque">Resque</a></li>
+<li><a class="reference internal" href="#gitpad">GitPad</a></li>
+<li><a class="reference internal" href="#maven-plugins">Maven Plugins</a></li>
+<li><a class="reference internal" href="#gitignore">Gitignore</a></li>
+<li><a class="reference internal" href="#media">Media</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="short-url.html"
+                        title="上一章">6.4.3. GitHub短网址服务</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="../20-appendix/index.html"
+                        title="下一章">7. 附录：GitHub支持的标记语言</a></p>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/06-side-projects/opensource.txt"
+           rel="nofollow">显示源代码</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的模块，术语，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="github-open-source">
+<h1>6.4.4. GitHub Open Source<a class="headerlink" href="#github-open-source" title="永久链接至标题">¶</a></h1>
+<p>GitHub已成为新的开源项目大本营，而且GitHub也将其API开放，并将部分模块开源，借助社区的力量让GitHub变得更好。</p>
+<p>GitHub大部分的开源项目托管在其官方账号下： <a class="reference external" href="https://github.com/github">https://github.com/github</a> 。</p>
+<div class="section" id="api">
+<h2>API接口<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h2>
+<p>GitHub通过域名 <tt class="docutils literal"><span class="pre">api.github.com</span></tt> 提供API接口，数据以JSON格式传递。</p>
+<p>详细的API参考手册参见网址： <a class="reference external" href="http://developer.github.com/">http://developer.github.com/</a> 。API手册的版本库地址： <a class="reference external" href="https://github.com/github/developer.github.com">https://github.com/github/developer.github.com</a> 。</p>
+</div>
+<div class="section" id="id1">
+<h2>官方手册<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>GitHub官方手册参见 <a class="reference external" href="http://help.github.com/">http://help.github.com/</a> ，使用 Jekyll 维护。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/github/help.github.com">https://github.com/github/help.github.com</a> 。</p>
+</div>
+<div class="section" id="grit">
+<h2>Grit<a class="headerlink" href="#grit" title="永久链接至标题">¶</a></h2>
+<p>Grit是Git的Ruby封装和实现，是GitHub调用Git的接口。部分是通过封装对 <tt class="docutils literal"><span class="pre">git</span></tt> 命令的调用实现的，部分则是纯Ruby实现。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/mojombo/grit">https://github.com/mojombo/grit</a> 。</p>
+</div>
+<div class="section" id="github-services">
+<h2>GitHub Services<a class="headerlink" href="#github-services" title="永久链接至标题">¶</a></h2>
+<p>Git版本库推送会触发服务器端 <tt class="docutils literal"><span class="pre">post-receive</span></tt> 钩子脚本。此项目将GitHub的服务器端钩子脚本开源，用户可以开发针对特定应用的钩子。GitHub还为其他GitHub应用提供了事件接口，如问题变更、Pull Request、维基页面修改等 <a class="footnote-reference" href="#id7" id="id2">[1]</a> 。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/github/github-services">https://github.com/github/github-services</a> 。</p>
+</div>
+<div class="section" id="hubot-hubot-scripts">
+<h2>Hubot 和 Hubot Scripts<a class="headerlink" href="#hubot-hubot-scripts" title="永久链接至标题">¶</a></h2>
+<p>可以把 hubot <a class="footnote-reference" href="#id8" id="id3">[2]</a> 看做是GitHub的Siri（最早出现于iPhone 4S 的智能语音助理）或是新浪微博上的饮水姬 <a class="footnote-reference" href="#id9" id="id4">[3]</a> 。GitHub将hobot和Campfire聊天室整合，hobot被聊天室会话触发可以实现诸如：打开办公室的门、根据wifi使用情况列出公司中的人、通过公司喇叭读一段信息等等许多好玩的事情 <a class="footnote-reference" href="#id10" id="id5">[4]</a> ，而实现GitHub自动化部署则证明 hubot 可以完成更严肃的事情，在公司工作流中扮演举足轻重的地位 <a class="footnote-reference" href="#id11" id="id6">[5]</a> 。</p>
+<p>Hobot已经开源，项目库地址： <a class="reference external" href="https://github.com/github/hubot">https://github.com/github/hubot</a> 和 <a class="reference external" href="https://github.com/github/hubot-scripts">https://github.com/github/hubot-scripts</a> （脚本）。</p>
+</div>
+<div class="section" id="gollum">
+<h2>Gollum<a class="headerlink" href="#gollum" title="永久链接至标题">¶</a></h2>
+<p>GitHub以Git为后端的维基系统就是由Gollum实现的。关于GitHub维基参见本书“第4.6节维基”。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/github/gollum">https://github.com/github/gollum</a> 。</p>
+</div>
+<div class="section" id="jekyll">
+<h2>Jekyll<a class="headerlink" href="#jekyll" title="永久链接至标题">¶</a></h2>
+<p>Jekyll 是一个简单的、支持博客的静态网站编译器，支持Markdown和Textile标记语言并使用Liquid模版。实际上GitHub为托管项目生成静态网页使用的就是Jekyll。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/mojombo/jekyll">https://github.com/mojombo/jekyll</a> 。</p>
+</div>
+<div class="section" id="linguist">
+<h2>Linguist<a class="headerlink" href="#linguist" title="永久链接至标题">¶</a></h2>
+<p>Linguist 是一个Ruby模块，GitHub使用该模块对数据文件进行语义分析，检测文件的语言种类，代码加亮，对二进制文件进行忽略，限制非必须的差异显示，以及生成语言分类图等。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/github/linguist">https://github.com/github/linguist</a> 。</p>
+</div>
+<div class="section" id="markup">
+<h2>Markup<a class="headerlink" href="#markup" title="永久链接至标题">¶</a></h2>
+<p>GitHub通过这个ruby包实现对 <tt class="docutils literal"><span class="pre">README</span></tt> 文件的解析和显示。支持 Markdown、texttile、rdoc、org、creole、mediawiki、rst、asciidoc、pod 等标记语言。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/github/markup">https://github.com/github/markup</a> 。</p>
+<p>关于GitHub扩展的Markdown语法，参见： <a class="reference external" href="http://github.github.com/github-flavored-markdown">http://github.github.com/github-flavored-markdown</a> 。</p>
+</div>
+<div class="section" id="resque">
+<h2>Resque<a class="headerlink" href="#resque" title="永久链接至标题">¶</a></h2>
+<p>Resque（发音类似 &#8220;rescue&#8221;）是一个以Redis为后端的Ruby包，用于创建和管理后台任务。可创建任务，将任务分配到多个队列，并在后台执行任务。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/defunkt/resque">https://github.com/defunkt/resque</a> 。</p>
+</div>
+<div class="section" id="gitpad">
+<h2>GitPad<a class="headerlink" href="#gitpad" title="永久链接至标题">¶</a></h2>
+<p>这是一个运行于Windows下类似 <tt class="docutils literal"><span class="pre">Notepad.exe</span></tt> 的应用程序，安装此应用后在Windows下做Git提交操作会调用类似记事本（Notepad）的应用撰写提交说明。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/github/GitPad">https://github.com/github/GitPad</a> 。</p>
+</div>
+<div class="section" id="maven-plugins">
+<h2>Maven Plugins<a class="headerlink" href="#maven-plugins" title="永久链接至标题">¶</a></h2>
+<p>GitHub的Maven插件。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/github/maven-plugins">https://github.com/github/maven-plugins</a> 。</p>
+</div>
+<div class="section" id="gitignore">
+<h2>Gitignore<a class="headerlink" href="#gitignore" title="永久链接至标题">¶</a></h2>
+<p>集合了针对各种语言环境的 <tt class="docutils literal"><span class="pre">.gitignore</span></tt> （忽略文件）模版。例如其中针对VisualStudio的忽略文件模版 <tt class="docutils literal"><span class="pre">Global/VisualStudio.gitignore</span></tt> 部分内容如下：</p>
+<div class="highlight-python"><pre># User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/</pre>
+</div>
+<p>项目地址： <a class="reference external" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a> 。</p>
+</div>
+<div class="section" id="media">
+<h2>Media<a class="headerlink" href="#media" title="永久链接至标题">¶</a></h2>
+<p>提供GitHub网站Logo和吉祥物 Octocat 的图片，只能在授权范围内使用。</p>
+<p>项目地址： <a class="reference external" href="https://github.com/github/media">https://github.com/github/media</a> 。</p>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="https://github.com/blog/964-all-of-the-hooks">https://github.com/blog/964-all-of-the-hooks</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://hubot.github.com/">http://hubot.github.com/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td><a class="reference external" href="http://weibo.com/u/2625288792">http://weibo.com/u/2625288792</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td><a class="reference external" href="http://zachholman.com/posts/why-github-hacks-on-side-projects/">http://zachholman.com/posts/why-github-hacks-on-side-projects/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td><a class="reference external" href="http://scottchacon.com/2011/08/31/github-flow.html#6__deploy_immediately_after_review">http://scottchacon.com/2011/08/31/github-flow.html#6__deploy_immediately_after_review</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../20-appendix/index.html" title="7. 附录：GitHub支持的标记语言"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="short-url.html" title="6.4.3. GitHub短网址服务"
+             >上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li>
+          <li><a href="index.html" >6. GitHub副产品</a> &raquo;</li>
+          <li><a href="others.html" >6.4. 其他</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      <br />
+      全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
+      <br />
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/26。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+
+    </div>
+  </body>
+</html>
