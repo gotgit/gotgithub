@@ -1,7 +1,7 @@
 版本库钩子扩展
 ==================
 
-通过钩子扩展，GitHub托管的版本库可以和外部应用实现整合。整合的接口完全开放，开发者可以访问GitHub的开源项目 `github/github-services`_ 开发新的应用整合。目前GitHub已经支持超过50个外部应用的整合，在这里恕不一一列举，仅以 ``helloworld`` 项目为例，介绍几个常见应用的整合。
+通过钩子扩展，GitHub托管的版本库可以和外部应用实现整合。整合的接口完全开放，开发者可以访问GitHub的开源项目 `github/github-services`_ 开发新的应用整合脚本。目前GitHub已经支持超过50个外部应用的整合，在这里恕不一一列举，仅以 ``helloworld`` 项目为例，介绍几个常见应用的整合。
 
 .. _github/github-services: https://github.com/github/github-services
 
@@ -25,7 +25,7 @@
 和Redmine整合
 ---------------
 
-Redmine是一个开源的项目管理平台，实现需求管理和缺陷跟踪，并整合了版本库浏览和关联功能。Redmine通常以计划任务方式检查版本库更新，即版本更新反映到Redmine要有一定的延迟，GitHub提供的Redmine整合的钩子脚本能够在GitHub版本库更新后，通过WebService触发Redmine主动检查版本库更新。
+Redmine是一个开源的项目管理平台，实现需求管理和缺陷跟踪，并整合了版本库浏览和关联功能。Redmine通常以计划任务（crontab）方式检查版本库更新，使得版本更新反映到Redmine会有一定的延迟，而GitHub提供的Redmine整合的钩子脚本能够在GitHub版本库更新后，通过WebService触发Redmine主动扫描Git版本库获取更新。
 
 GitHub提供的Redmine整合的配置界面如图3-17所示。
 

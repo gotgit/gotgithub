@@ -1,14 +1,14 @@
 建立主页
 =================
 
-很多开源项目托管平台都支持为托管的项目建立主页，但主页的维护方式都没有GitHub这么酷。大多数托管平台无非是开放一个FTP或类似服务，用户把制作好的网页或脚本上传了事，而GitHub采用创建特殊名称的Git版本库或在Git库中建立特别的分支实现主页的创建。
+很多开源项目托管平台都支持为托管的项目建立主页，但主页的维护方式都没有GitHub这么酷。大多数托管平台无非是开放一个FTP或类似服务，用户把制作好的网页或脚本上传了事，而在GitHub用户通过创建特殊名称的Git版本库或在Git库中建立特别的分支实现对主页的维护。
 
 创建个人主页
 --------------
 
-为自己在GitHub的账号创建主页很容易，只要在托管空间下创建一个名为 ``<userid>.github.com`` 的版本库，在其中提交网站页面即可。以 ``gotgithub`` 用户为例。
+GitHub 为每一个用户分配了一个二级域名 ``<user-id>.github.com`` ，用户为自己的二级域名创建主页很容易，只要在托管空间下创建一个名为 ``<user-id>.github.com`` 的版本库，向其 ``master`` 分支提交网站静态页面即可，其中网站首页为 ``index.html`` 。下面以 ``gotgithub`` 用户为例介绍如何创建个人主页。
 
-* 创建一个名为 ``gotgithub.github.com`` 的Git版本库。
+* 用户 ``gotgithub`` 创建一个名为 ``gotgithub.github.com`` 的Git版本库。
 
 * 在本地克隆新建立的版本库。
 
@@ -38,12 +38,16 @@
 
 * 访问网址： http://gotgithub.github.com/ 。
 
-  最多等待10分钟，GitHub就可以完成新网站的部署。注意个人首页使用HTTP协议非HTTPS协议。
+  最多等待10分钟，GitHub就可以完成新网站的部署。注意访问用户二级域名主页要使用HTTP协议非HTTPS协议。
 
 创建项目主页
 ---------------
 
-GitHub会为每个用户分配一个子域名作为用户主页，同样用户创建的每一个项目也会在用户主页下创建一个子网站。例如 ``gotgithub`` 用户创建的 ``helloworld`` 项目经过简单的定制，会在地址 ``http://gotgithub.github.com/helloworld/`` 下创建项目首页。为项目建立自定义项目首页只需要在项目版本库中创建一个名为 ``gh-pages`` 的分支，并把网页提交到该分支即可。
+如前所述，GitHub会为每个账号分配一个二级域名 ``<user-id>.github.com`` 作为用户的首页地址。实际上还可以为每个项目设计主页，并通过此二级域名访问。例如 ``gotgithub`` 用户创建的 ``helloworld`` 项目如果启用了项目主页，则可通过网址 ``http://gotgithub.github.com/helloworld/`` 访问。
+
+为项目启用项目主页很简单，只需要在项目版本库中创建一个名为 ``gh-pages`` 的分支，并向其中添加静态网页即可。也就是说如果项目的Git版本库中包含了名为 ``gh-pages`` 分支的话，则表明该项目提供静态网页构成的主页，可以通过网址 ``http://<user-id>.github.com/<project-name>`` 访问到。
+
+下面以用户 ``gotgithub`` 的项目 ``helloworld`` 为例，介绍如何维护项目主页。
 
 如果本地尚未建立 ``helloworld`` 版本库克隆，执行如下命令。
 
@@ -123,7 +127,7 @@ GitHub会为每个用户分配一个子域名作为用户主页，同样用户�
 
   ::
 
-    $ git commit --m "branch gh-pages init."
+    $ git commit -m "branch gh-pages init."
 
 * 执行推送命令，在GitHub远程版本库创建分支 ``gh-pages`` 。
 
@@ -131,65 +135,65 @@ GitHub会为每个用户分配一个子域名作为用户主页，同样用户�
 
     $ git push origin gh-pages
 
-无论哪种方法，一旦在GitHub远程版本库中创建分支 ``gh-pages`` ，项目的主页就已经建立。稍后（不超过10分钟），用浏览器访问下面的地址即可看到刚刚提交的项目首页。
+无论哪种方法，一旦在GitHub远程版本库中创建分支 ``gh-pages`` ，项目的主页就已经建立。稍后（不超过10分钟），用浏览器访问下面的地址即可看到刚刚提交的项目首页： http://gotgithub.github.com/helloworld/ 。
 
-* http://gotgithub.github.com/helloworld/
-
-除了以上用命令行方式创建 ``gh-pages`` 分支的方式为项目设定主页外，GitHub还在项目管理界面还提供了图形操作界面。如图3-19所示。
+除了以上通过命令行创建 ``gh-pages`` 分支为项目设定主页之外，GitHub还提供了图形操作界面。如图3-19所示。
 
 .. figure:: /images/project-hosting/github-pages.png
    :scale: 100
 
    图3-19：项目管理页面中的GitHub Pages选项
 
-当在项目管理页面中勾选”GitHub Pages“选项，并按照提示操作，自动在项目版本库中创建 ``gh-pages`` 分支。然后执行下面命令从版本库检出 ``gh-pages`` 分支，对项目主页进行相应定制。
+当在项目管理页面中勾选“GitHub Pages”选项，并按照提示操作，会自动在项目版本库中创建 ``gh-pages`` 分支。然后执行下面命令从版本库检出 ``gh-pages`` 分支，对项目主页进行相应定制。
 
 ::
 
-  $ cd helloworld
   $ git fetch
-  $ git clone -b gh-pages origin/gh-pages
+  $ git checkout gh-pages
 
 使用专有域名
 ---------------
 
-无论是用户主页还是项目主页，除了使用 ``github.com`` 下的子域名访问之外，还可以使用指定的专有域名。实现起来也非常简单，只要在 ``master`` 分支（用户主页所在版本库）或 ``gh-pages`` 分支（项目版本库）的根目录下检入一个名为 ``CNAME`` 的文件，内容为相应的专有域名。
+无论是用户主页还是项目主页，除了使用 ``github.com`` 下的二级域名访问之外，还可以使用专有域名。实现起来也非常简单，只要在 ``master`` 分支（用户主页所在版本库）或 ``gh-pages`` 分支（项目版本库）的根目录下检入一个名为 ``CNAME`` 的文件，内容为相应的专有域名。当然还要更改专有域名的域名解析，使得该专有域名的IP地址指向相应的GitHub二级域名的IP地址。
 
-例如 ``worldhello.net`` [#]_ 是我的个人域名，若计划将网站改为由GitHub托管，即将账号 ``gotgit`` 的用户主页作为网站 ``worldhello.net`` 的首页，首先按照上节介绍的步骤，为GitHub账号（如 ``gotgit`` ）设置账户主页。
+例如 ``worldhello.net`` [#]_ 是我的个人网站，若计划将网站改为由GitHub托管，并由账号 ``gotgit`` 通过个人主页提供服务，可做如下操作。
 
-* 在账户 ``gotgit`` 下创建版本库 ``gotgit.github.com`` 以维护该账号主页。
+首先按照前面章节介绍的步骤，为账号 ``gotgit`` 设置账户主页。
 
-  地址： https://github.com/gotgit/gotgit.github.com/
+1. 在账户 ``gotgit`` 下创建版本库 ``gotgit.github.com`` 以维护该账号主页。
 
-* 将网站内容提交并推送到该版本库中。即在 ``gotgit.github.com`` 版本库的根目录下至少包含一个 index 文件，如 ``index.html`` 。
+   地址： https://github.com/gotgit/gotgit.github.com/
 
-  还可以使用下节将要介绍到的 Jekyll 技术，让网页有统一的显示风格，此时首页文件可能并非一个完整的HTML文档，而是套用了页面模版。
+2. 将网站内容提交并推送到该版本库 ``master`` 分支中。
 
-* 至此当访问网址 ``http://gotgit.github.com`` 时，会以版本库 ``gotgit.github.com`` 中 ``index.html`` 文件作为首页显示出来。
+   即在 ``gotgit.github.com`` 版本库的根目录下至少包含一个 index 文件，如 ``index.html`` 。
+   还可以使用下节将要介绍到的 Jekyll 技术，让网页有统一的显示风格，此时首页文件可能并非一个完整的HTML文档，而是套用了页面模版。
+
+3. 至此当访问网址 ``http://gotgit.github.com`` 时，会将账号 ``gotgit`` 的版本库 ``gotgit.github.com`` 中的内容作为网站内容显示出来。
 
 接下来进行如下操作，使得该网站能够使用专有域名 ``www.worldhello.net`` 提供服务。
 
-* 在版本库 ``gotgit.github.com`` 根目录下添加文件 ``CNAME`` ，文件内容为： ``www.worldhello.net`` 。
+1. 在账号 ``gotgit`` 的版本库 ``gotgit.github.com`` 根目录下添加文件 ``CNAME`` ，文件内容为： ``www.worldhello.net`` 。
 
-  参见： https://github.com/gotgit/gotgit.github.com/blob/master/CNAME
+   参见： https://github.com/gotgit/gotgit.github.com/blob/master/CNAME
 
-* 然后将域名 ``www.worldhello.net`` 的IP指向 ``gotgit.github.com`` 的IP地址（注意不是 ``github.com`` 的IP地址）。
+2. 然后更改域名 ``www.worldhello.net`` 的IP地址，指向域名 ``gotgit.github.com`` 对应的IP地址（注意不是 ``github.com`` 的IP地址）。
 
-  当完成域名的DNS指向后，使用 ``ping`` 或 ``dig`` 命令确认域名 ``www.worldhello.net`` 和 ``gotgit.github.com`` 指向同一IP。
+   完成域名的DNS指向后，可试着用 ``ping`` 或 ``dig`` 命令确认域名 ``www.worldhello.net`` 和 ``gotgit.github.com`` 指向同一IP地址。
 
-  ::
+   ::
 
-    $ dig @8.8.8.8 -t a www.worldhello.net
-    ...
-    ; ANSWER SECTION:
-    www.worldhello.net.     81078   IN      A       207.97.227.245
-    
-    $ dig @8.8.8.8 -t a gotgit.github.com
-    ...
-    ; ANSWER SECTION:
-    gotgit.github.com.      43200   IN      A       207.97.227.245
+     $ dig @8.8.8.8 -t a www.worldhello.net
+     ...
+     ; ANSWER SECTION:
+     www.worldhello.net.     81078   IN      A       207.97.227.245
+     
+     $ dig @8.8.8.8 -t a gotgit.github.com
+     ...
+     ; ANSWER SECTION:
+     gotgit.github.com.      43200   IN      A       207.97.227.245
 
-设置完成后用浏览器访问 http://www.worldhello.net/ 即可看到由账号 ``gotgit`` 的 ``gotgit.github.com`` 版本库设置的首页。若将域名 ``worldhello.net`` （不带www前缀）也指向IP地址 ``207.97.227.245`` ，访问 http://worldhello.net/ 会看到GitHub体贴地将该网址重定向到正确的地址 http://www.worldhello.net/ 。
+设置完成后用浏览器访问 http://www.worldhello.net/ 即可看到由账号 ``gotgit`` 的版本库 ``gotgit.github.com`` 维护的页面。若将域名 ``worldhello.net`` （不带www前缀）也指向IP地址 ``207.97.227.245`` ，则访问网址 http://worldhello.net/ 会看到GitHub体贴地将该网址重定向到正确的地址 http://www.worldhello.net/ 。
 
 在账号 ``gotgit`` 下的其他版本库，若包含了 ``gh-pages`` 分支，亦可由域名 ``www.worldhello.net`` 访问到。
 
@@ -201,9 +205,9 @@ GitHub会为每个用户分配一个子域名作为用户主页，同样用户�
 使用Jekyll维护网站
 -------------------------
 
-Jekyll是由Tom Preston-Werner（GitHub创始人之一）开发的静态网站生成软件，支持博客及网页模版。使用Jekyll，可以直接使用Markdown或其他标记语言撰写页面及博客，当GitHub托管的版本库更新后，GitHub会自动运行Jekyll将标记语言撰写的文件转换为网页。
+Jekyll是一个支持Textile、Markdown等标记语言的静态网站生成软件，还支持博客和网页模版，由Tom Preston-Werner（GitHub创始人之一）开发。Jekyll用Ruby语言实现，项目在GitHub的托管地址： http://github.com/mojombo/jekyll/ ，专有的URL地址为： http://jekyllrb.com/ 。
 
-Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/mojombo/jekyll/ ，专有的URL地址为： http://jekyllrb.com/ 。
+GitHub为用户账号或项目提供主页服务，会从相应版本库的 ``master`` 分支或 ``gh-pages`` 分支检出网页文件，然后执行 Jekyll 相应的命令对网页进行编译。因此在设计GitHub的用户主页和项目主页时都可以利用Jekyll，实现用Markdown等标记语言撰写网页及博客，并用页面模版实现网页风格的统一。
 
 安装Jekyll最简单的方法是通过RubyGems安装，会自动将Jekyll依赖的directory_watcher、liquid、open4、maruku和classifier等Gem包一并安装。
 
@@ -231,14 +235,14 @@ Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/
   
     $ sudo gem update --system
 
-安装完毕，执行下面的命令显示Jekyll的版本：
+Jekyll安装完毕，执行下面的命令显示软件版本：
 
 ::
 
   $ jekyll -v
   Jekyll 0.11.0
 
-先来看一下作者Tom Preston-Werner在GitHub上的个人网站，看看是如何用Jekyll制作出来的。
+要学习如何用Jekyll设计网站，可以先看一下作者Tom Preston-Werner在GitHub上的个人网站是如何用Jekyll制作出来的。
 
 克隆版本库：
 
@@ -276,9 +280,9 @@ Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/
 
 为方便描述为内容添加了行号，说明如下：
 
-* 第1-4行是YAML格式的文件头，确定模版的对应关系并设定相关属性。
+* 第1-4行是YAML格式的文件头，设定了该文件所使用的模版文件及模版中要用到的变量。
 
-  凡是设置有YAML文件头的文件（目录 ``_layouts`` 除外）无论文件扩展名为何，都会在Jekyll编译时转换为对应的HTML文件。
+  凡是设置有YAML文件头的文件（目录 ``_layouts`` 除外）无论文件扩展名是什么，都会在Jekyll编译时进行转换。若源文件由Markdown等标记语言撰写（扩展名为 ``.md`` 、 ``.textile`` 等），Jekyll还会将编译后的文件还将以扩展名 ``.html`` 来保存。
 
 * 其中第2行含义为使用default模版。
 
@@ -296,11 +300,11 @@ Jekyll用Ruby语言开发，项目在GitHub的托管地址： http://github.com/
 
 * 第6行开始的内容绝大多数是标准的HTML语法，其中夹杂少量Liquid模版特有的语法。
 
-* 第9行和第11行，对于有着Liquid或其他模版编程经验的用户，不难理解其中出现的由”{%“和”%}“标识的指令是一个循环指令（for循环），用于逐条对博客进行相关操作。
+* 第9行和第11行，对于有着Liquid或其他模版编程经验的用户，不难理解其中出现的由“{%”和“%}”标识的指令是一个循环指令（for循环），用于逐条对博客进行相关操作。
 
-* 第10行中由”{{“和”}}“标识的表达式则用于显示博文的日期、链接和标题。
+* 第10行中由“{{”和“}}”标识的表达式则用于显示博文的日期、链接和标题。
 
-非下划线（_）开头的文件和目录在编译时会直接进行编译，并将编译后的网页复制到目标文件夹（默认为 ``_site`` 目录）下。而以下划线开头的文件和目录有的直接忽略不予处理（如 ``_layouts`` 、 ``_site`` 目录等），有的则需要特殊处理（如 ``_post`` 目录）。
+非下划线（_）开头的文件（包括子目录中文件），如果包含YAML文件头，就会使用Jekyll进行编译，并将编译后的文件复制到目标文件夹（默认为 ``_site`` 目录）下。对于包含YAML文件头并用标记语言Markdown等撰写的文件，还会将编译后的文件以 ``.html`` 扩展名保存。而以下划线开头的文件和目录有的直接忽略不予处理（如 ``_layouts`` 、 ``_site`` 目录等），有的则需要特殊处理（如 ``_post`` 目录）。
 
 目录 ``_post`` 用于保存博客条目，每个博客条目都以 ``<YYYY>-<MM>-<DD>-<blog-tiltle>`` 格式的文件名命名。扩展名为 ``.md`` 的为Markdown格式，扩展名为 ``.textile`` 的为Textile格式。这些文件都包含类似的文件头：
 
