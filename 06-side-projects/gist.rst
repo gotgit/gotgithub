@@ -36,7 +36,7 @@ Gist作为一个粘贴数据的工具，就像 Pastie 网站 [#]_ 一样，可�
 
    图6-4：新创建的Gist
 
-点击其中的“embed”（嵌入）按钮，就会显示一段用于嵌入的JavaScript代码，如图6-5所示。
+点击其中的“embed”（嵌入）按钮，就会显示一段用于嵌入其他网页的JavaScript代码，如图6-5所示。
 
 .. figure:: /images/side-projects/gist-embed.png
    :scale: 100
@@ -51,7 +51,7 @@ Gist作为一个粘贴数据的工具，就像 Pastie 网站 [#]_ 一样，可�
   <script src="https://gist.github.com/1202870.js?file=countdown.rb"></script>
 
 
-将上面的JavaScript代码嵌入到网页（如博客 [#]_ ）中，即可在网页中嵌入Gist中粘贴的数据，并保持语法加亮等功能，如图6-6所示。
+将上面的JavaScript代码嵌入到网页（如博客 [#]_ ）中，即可在相应的网页中嵌入来自Gist的数据，并保持语法加亮等功能，如图6-6所示。
 
 .. figure:: /images/side-projects/gist-embed-in-blog.png
    :scale: 100
@@ -139,7 +139,7 @@ https://gist.github.com/1084591 ，如图6-8所示。
 
    图6-8：保存Greasemonkey用户端脚本的Gist
 
-该Greasemonkey脚本的文件名为 ``click_more.user.js`` ，该文件的文件头使用特殊的注释语句为Greasemonkey提供相关的安装和注册信息，内容如下（为方便计添加了行号）：
+该Greasemonkey脚本的文件名为 ``click_more.user.js`` ，该文件的文件头使用特殊的注释语句为Greasemonkey提供相关的安装和注册信息，内容如下（为方便描述添加了行号）：
 
 ::
 
@@ -176,13 +176,13 @@ https://gist.github.com/1084591 ，如图6-8所示。
 
    图6-11：应用用户端JavaScript脚本后的网页内容
 
-如果查看网页源码，会发现该网页中根本没有包含和调用任何JavaScript脚本，只是在页面源码中包含着若干个没有任何实质输出的标签：
+如果查看网页源码，会发现该网页中根本没有包含和调用任何JavaScript脚本，只是在页面源码中包含着一个没有任何实质输出的标签：
 
 ::
 
   <p><a class="click-more"></a></p>
 
-实际上正是这些特殊的标签被Greasemonkey自动加载的用户端脚本识别，对HTML网页添加了特效。
+实际上正是这个特殊的标签被Greasemonkey所加载的用户端脚本识别，为HTML网页添加了特效。
 
 
 命令行操作Gist

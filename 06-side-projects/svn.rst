@@ -20,7 +20,7 @@
   $ svn ls https://github.com/gotgit/gotgithub/branches
   gh-pages/
 
-SVN 支持部分检出，下面命令将整个主线 ``trunk`` （对应于 Git 版本库的 ``master`` 分支）检出。
+SVN 支持部分检出，下面命令将整个主线 ``trunk`` （相当于 Git 版本库的 ``master`` 分支）检出。
 
 ::
 

@@ -56,7 +56,7 @@ GitHub 为每一个用户分配了一个二级域名 ``<user-id>.github.com`` �
   $ git clone git@github.com:gotgithub/helloworld.git
   $ cd helloworld
 
-当前版本库只有一个名为 ``master`` 的分支，如果直接从 ``master`` 分支创建 ``gh-pages`` 分支操作非常简单，但是作为保存网页的 ``gh-pages`` 分支中的内容和 ``master`` 分支中的完全不同。如果不希望 ``gh-pages`` 分支继承 ``master`` 分支的历史和文件，即想要创建一个干净的 ``gh-pages`` 分支，需要一点小技巧。可以从下面两个方法任选一种。
+当前版本库只有一个名为 ``master`` 的分支，如果直接从 ``master`` 分支创建 ``gh-pages`` 分支操作非常简单，但是作为保存网页的 ``gh-pages`` 分支中的内容和 ``master`` 分支中的可能完全不同。如果不希望 ``gh-pages`` 分支继承 ``master`` 分支的历史和文件，即想要创建一个干净的 ``gh-pages`` 分支，需要一点小技巧。可以从下面两个方法任选一种。
 
 第一种方法用到两个Git底层命令： ``git write-tree`` 和 ``git commit-tree`` 。步骤如下：
 
@@ -94,7 +94,7 @@ GitHub 为每一个用户分配了一个二级域名 ``<user-id>.github.com`` �
 
   ::
 
-    $ git push origin gh-pages
+    $ git push -u origin gh-pages
 
 第二种方法用到Git底层命令： ``git symbolic-ref`` 。步骤如下：
 
@@ -133,7 +133,7 @@ GitHub 为每一个用户分配了一个二级域名 ``<user-id>.github.com`` �
 
   ::
 
-    $ git push origin gh-pages
+    $ git push -u origin gh-pages
 
 无论哪种方法，一旦在GitHub远程版本库中创建分支 ``gh-pages`` ，项目的主页就已经建立。稍后（不超过10分钟），用浏览器访问下面的地址即可看到刚刚提交的项目首页： http://gotgithub.github.com/helloworld/ 。
 
@@ -193,13 +193,13 @@ GitHub 为每一个用户分配了一个二级域名 ``<user-id>.github.com`` �
      ; ANSWER SECTION:
      gotgit.github.com.      43200   IN      A       207.97.227.245
 
-设置完成后用浏览器访问 http://www.worldhello.net/ 即可看到由账号 ``gotgit`` 的版本库 ``gotgit.github.com`` 维护的页面。若将域名 ``worldhello.net`` （不带www前缀）也指向IP地址 ``207.97.227.245`` ，则访问网址 http://worldhello.net/ 会看到GitHub体贴地将该网址重定向到正确的地址 http://www.worldhello.net/ 。
+设置完成后用浏览器访问 http://www.worldhello.net/ 即可看到由账号 ``gotgit`` 的版本库 ``gotgit.github.com`` 维护的页面。若将域名 ``worldhello.net`` （不带www前缀）也指向IP地址 ``207.97.227.245`` ，则访问网址 http://worldhello.net/ 会发现GitHub体贴地将该网址重定向到正确的地址 http://www.worldhello.net/ 。
 
 在账号 ``gotgit`` 下的其他版本库，若包含了 ``gh-pages`` 分支，亦可由域名 ``www.worldhello.net`` 访问到。
 
-* 网址 http://www.worldhello.net/doc 实际对应于版本库 https://github.com/gotgit/doc 。
-* 网址 http://www.worldhello.net/gotgit 实际对应于版本库 https://github.com/gotgit/gotgit 。
-* 网址 http://www.worldhello.net/gotgithub 实际对应于版本库 https://github.com/gotgit/gotgithub 。
+* 网址 http://www.worldhello.net/doc 实际对应于版本库 `gotgit/doc <https://github.com/gotgit/doc>`_ 。
+* 网址 http://www.worldhello.net/gotgit 实际对应于版本库 `gotgit/gotgit <https://github.com/gotgit/gotgit>`_ 。
+* 网址 http://www.worldhello.net/gotgithub 实际对应于版本库 `gotgit/gotgithub <https://github.com/gotgit/gotgithub>`_ 。
 
 
 使用Jekyll维护网站

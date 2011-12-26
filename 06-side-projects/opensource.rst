@@ -31,7 +31,7 @@ Git版本库推送会触发服务器端 ``post-receive`` 钩子脚本。此项�
 
 Hubot 和 Hubot Scripts
 ----------------------
-可以把 hubot [#]_ 看做是GitHub的Siri（最早出现于iPhone 4S 的智能语音助理），GitHub将hobot和Campfire聊天室整合，hobot被聊天室会话触发可以实现诸如：打开办公室的门、根据wifi使用情况列出公司中的人、通过公司喇叭读一段信息等等许多好玩的事情 [#]_ ，而实现GitHub自动化部署则证明 hubot 可以完成更严肃的事情，在公司工作流中扮演举足轻重的地位 [#]_ 。
+可以把 hubot [#]_ 看做是GitHub的Siri（最早出现于iPhone 4S 的智能语音助理）或是新浪微博上的饮水姬 [#]_ 。GitHub将hobot和Campfire聊天室整合，hobot被聊天室会话触发可以实现诸如：打开办公室的门、根据wifi使用情况列出公司中的人、通过公司喇叭读一段信息等等许多好玩的事情 [#]_ ，而实现GitHub自动化部署则证明 hubot 可以完成更严肃的事情，在公司工作流中扮演举足轻重的地位 [#]_ 。
 
 Hobot已经开源，项目库地址： https://github.com/github/hubot 和 https://github.com/github/hubot-scripts （脚本）。
 
@@ -107,5 +107,6 @@ Media
 
 .. [#] https://github.com/blog/964-all-of-the-hooks
 .. [#] http://hubot.github.com/
+.. [#] http://weibo.com/u/2625288792
 .. [#] http://zachholman.com/posts/why-github-hacks-on-side-projects/
 .. [#] http://scottchacon.com/2011/08/31/github-flow.html#6__deploy_immediately_after_review

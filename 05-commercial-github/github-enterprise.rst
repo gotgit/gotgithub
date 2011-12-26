@@ -18,4 +18,4 @@ GitHub企业版根据用户数量收取年费，入门级的价格为20用户每
 ----
 
 .. [#] https://github.com/blog/978-introducing-github-enterprise
-.. [#] GitHub:FI是GitHub Firewall Install的缩写，含义为在企业的防火墙内部架设GitHub服务，现已被GitHub Enterprise产品替换。
+.. [#] GitHub:FI是GitHub Firewall Install的缩写，含义为在企业的防火墙内部架设GitHub服务，现已升级为GitHub Enterprise。

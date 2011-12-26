@@ -3,7 +3,7 @@ Fork + Pull模式
 
 参与GitHub中的项目开发，最常用和推荐的首选方式是“Fork + Pull”模式。在“Fork + Pull”模式下，项目参与者不必向项目创建者申请提交权限，而是在自己的托管空间下建立项目的派生（Fork）。
 
-如果一个开源项目产生派生出另外的项目，通常意味着项目的分裂和开发团队的削弱，而GitHub中的项目派生则不会，而且正好相反，GitHub中的项目派生是项目壮大的体现。所有的派生项目都会有链接指向原始项目，派生项目没有独立的缺陷追踪系统（ISSUE），而是必须利用创建者本人的项目中的缺陷追踪系统。至于在派生项目中创建的提交，可以非常方便的利用GitHub的Pull Request工具向原始项目的维护者发送Pull Request。
+如果一个开源项目派生出另外的项目，通常意味着项目的分裂和开发团队的削弱，而GitHub中的项目派生则不会，而且正好相反，GitHub中的项目派生是项目壮大的体现。所有的派生项目都会有链接指向原始项目，派生项目没有独立的缺陷追踪系统（ISSUE），而是必须利用创建者本人的项目中的缺陷追踪系统。至于在派生项目中创建的提交，可以非常方便地利用GitHub的Pull Request工具向原始项目的维护者发送Pull Request。
 
 下面以GotGit版本库为例，介绍如何利用GitHub提供的Fork和Pull Request工具实现工作协同。
 
@@ -109,14 +109,14 @@ Pull Request
 .. figure:: /images/work-with-others/pull-request-form-file.png
    :scale: 100
 
-   图4-6：Pull Request包含的文件修改
+   图4-6：Pull Request包含的改动差异
 
 点击菜单中的“Preview Discussion”，填写Pull Request的标题和内容，完成Pull Request的创建。如图4-7所示。
 
 .. figure:: /images/work-with-others/pull-request-form-discuss.png
    :scale: 100
 
-   图4-7：Pull Request包含的文件差异
+   图4-7：Pull Request的提交界面
 
 当Pull Request发出后，项目gotgit的开发者会收到通知邮件，如图4-8所示。
 
@@ -125,7 +125,7 @@ Pull Request
 
    图4-8：Pull Request的通知邮件
 
-点击邮件中的URL链接，以项目gotgit的开发者（如ossxp-com）身份登录，看到如图4-9的视图。之所以看到有两个用户参与到此Pull Request，是因为Pull Request和提交是以不同用户身份创建的。图4-9下方的表单可以向Pull Request追加评论，或者关闭此Pull Request。
+点击邮件中的URL链接，以项目gotgit的开发者（如ossxp-com）身份登录，看到如图4-9的视图。之所以看到有两个用户参与到此Pull Request，是因为Pull Request创建者和提交的作者是不同的用户。图4-9下方的表单可以向Pull Request追加评论，或者关闭此Pull Request。
 
 .. figure:: /images/work-with-others/pull-request-owner-view.png
    :scale: 100
@@ -268,7 +268,7 @@ Pull Request提供的自动合并显示在提交日志中是什么样子的呢�
 
 GitHub提供了在线编辑功能，这样可以无需克隆版本库、无需使用Git即可完成对版本库中文件的修改，甚至可以在你的iPad甚至iPhone上完成对文件的修改。
 
-以gotgithub用户登录GitHub，访问之前派生而来的版本库 gotgithub/gotgit 中的文件，例如文件 ``errata.md`` [#]_ ，会看到其中一个“Edit this file”的按钮，如图4-12所示。
+以gotgithub账户身份登录GitHub，访问之前派生而来的版本库 gotgithub/gotgit 中的文件，例如文件 ``errata.md`` [#]_ ，会看到其中一个“Edit this file”的按钮，如图4-12所示。
 
 
 .. figure:: /images/work-with-others/edit-this-file-btn.png
@@ -286,7 +286,7 @@ GitHub提供了在线编辑功能，这样可以无需克隆版本库、无需�
 简化的 Fork + Pull Request
 --------------------------------
 
-到目前，我们已经了解了GitHub的三大武器：Fork、Pull Request和在线编辑。对于最常用的“Fork + Pull Request”操作，GitHub还提供了一个快捷模式。即GitHub对于无权更改的他人版本库中的文件，也提供了一个类似在线编辑的按钮，名为“Fork and edit this file”按钮，自动完成版本库派生和在线编辑，即将三大武器一勺烩。
+到目前，我们已经了解了GitHub的三大武器：Fork、Pull Request和在线编辑。对于最常用的“Fork + Pull Request”操作，GitHub还提供了一个快捷模式。即GitHub对于无权更改的他人版本库中的文件，提供了一个类似在线编辑的按钮，名为“Fork and edit this file”按钮，自动完成版本库派生和在线编辑，即将三大武器一勺烩。
 
 访问他人版本库（尚未在自己空间派生）中的文件，例如访问下面地址： http://git.io/hello-world-makefile [#]_ 。显示他人（ossxp-com）版本库 ``hello-world`` 中的 ``src/Makefile`` 文件，如图4-14所示。
 
@@ -311,7 +311,7 @@ GitHub提供了在线编辑功能，这样可以无需克隆版本库、无需�
 
 点击“Send pull request”按钮完成Pull Request的创建。如果仔细查看图4-16，会发现Pull Request所包含的修改发生在 ``gotgithub/hello-world`` 派生版本库中的 ``patch-1`` 分支中，并非通常的 ``master`` 分支。
 
-原版本库 ``ossxp-com/hello-world`` 的管理员会收到一封邮件，通知有新的Pull Request，如下所示（前四行为信头）：
+原版本库 ``ossxp-com/hello-world`` 的开发者会收到一封邮件，通知有新的Pull Request，如下所示（前四行为信头）：
 
 ::
 

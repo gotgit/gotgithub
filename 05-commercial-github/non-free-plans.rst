@@ -30,7 +30,7 @@ GitHub收费方案
 
 选择适合的收费方案并付款后，即可完成服务方案的升级。
 
-当 gotgithub 用户升级为付费账号后，创建新版本库时就可以通过新的选项创建私有版本库了。即在创建版本库时，不选择默认的“Anyone”，而是选择“Only the people I specify”可以创建私有版本库，如图5-4所示。
+当 gotgithub 用户升级为付费账号后，创建新版本库时就可以通过新的选项创建私有版本库了。即在创建版本库时，如果不选择默认的“Anyone”，而是选择“Only the people I specify”可以创建私有版本库，如图5-4所示。
 
 .. figure:: /images/commercial-products/new-private-repository.png
    :scale: 100
@@ -65,7 +65,7 @@ GitHub收费方案
 
    图5-8：团队账号更换方案
 
-当为组织账号选择一个付费方案后，就可以在组织的账号下创建私有版本库，并以团队方式管理该私有版本库的授权。图5-9就是一个私有版本库 ``GotGitOrg/NonPublicRepo`` 的设置界面。
+为组织账号选择一个付费方案后，就可以在组织的账号下创建私有版本库，并以团队方式管理该私有版本库的授权。图5-9就是一个私有版本库 ``GotGitOrg/NonPublicRepo`` 的设置界面。
 
 .. figure:: /images/commercial-products/org-private-repo-settings.png
    :scale: 100
