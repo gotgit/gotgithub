@@ -37,13 +37,15 @@ Hobot已经开源，项目库地址： https://github.com/github/hubot 和 https
 
 Gollum
 ------
-GitHub以Git为后端的维基系统就是由Gollum实现的。关于GitHub维基参见本书“第4.6节维基”。
+GitHub以Git为后端的维基系统就是由Gollum实现的。每一个维基网页对应于一个文件，文件格式可以是 Markdown、textile、rdoc、org、creole、mediawiki、reStructuredText、asciidoc、pod 等。Gollum 调用名为 github-markup 的 Ruby gem 包（来自于下面要介绍的 Markup 项目）完成文件到网页的格式转换。
 
 项目地址： https://github.com/github/gollum 。
 
+关于GitHub维基参见本书“第4.6节维基”。
+
 Jekyll
 ------
-Jekyll 是一个简单的、支持博客的静态网站编译器，支持Markdown和Textile标记语言并使用Liquid模版。实际上GitHub为托管项目生成静态网页使用的就是Jekyll。
+Jekyll 是一个简单的、支持博客的静态网站编译器。可以使用Markdown和Textile两种标记语言或者HTML撰写网页，并支持Liquid模版。实际上GitHub为托管项目生成静态网页使用的就是Jekyll。
 
 项目地址： https://github.com/mojombo/jekyll 。
 
@@ -55,11 +57,11 @@ Linguist 是一个Ruby模块，GitHub使用该模块对数据文件进行语义�
 
 Markup
 ------
-GitHub通过这个ruby包实现对 ``README`` 文件的解析和显示。支持 Markdown、texttile、rdoc、org、creole、mediawiki、rst、asciidoc、pod 等标记语言。
+GitHub通过这个ruby包对项目版本库根目录下的 ``README`` 文件，以及维基页面等文件进行解析、转换为网页显示。支持 Markdown、textile、rdoc、org、creole、mediawiki、reStructuredText、asciidoc、pod 等标记语言。实际上在对上述标记语言的解析和转换中，还依赖其他软件包，例如对于 Markdown 格式首选 Redcarpet [#]_ ，对 textile 格式使用 RedCloth，对 reStructuredText 格式调用外部命令 ``rst2html`` ，对 asciidoc 格式调用外部命令 ``asciidoc`` 等。
 
 项目地址： https://github.com/github/markup 。
 
-关于GitHub扩展的Markdown语法，参见： http://github.github.com/github-flavored-markdown 。
+关于Markup软件包以及其他GitHub扩展的Markdown语法，参见： http://github.github.com/github-flavored-markdown 。
 
 Resque
 ------
@@ -110,3 +112,4 @@ Media
 .. [#] http://weibo.com/u/2625288792
 .. [#] http://zachholman.com/posts/why-github-hacks-on-side-projects/
 .. [#] http://scottchacon.com/2011/08/31/github-flow.html#6__deploy_immediately_after_review
+.. [#] Redcarpet 是对一个高效的Markdown解析器，通过对C语言的 Sundown 库封装实现。项目地址： https://github.com/tanoku/redcarpet 。
