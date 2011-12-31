@@ -146,6 +146,16 @@ gh-pages: clean html
 	fi; \
 	git rm --cached -r -q _build/html
 
+gh-pages-shift:
+	@if ! git rev-parse refs/heads/gh-pages^ >/dev/null 2>&1 ; then \
+		echo "Branch gh-pages not exists or only one commit, forgot check it out?" >&2; \
+		exit 1; \
+	fi
+	if git update-ref -m "shift from $$(git rev-parse refs/heads/gh-pages)" refs/heads/gh-pages $$(git rev-parse refs/heads/gh-pages^); then \
+		echo "gh-pages branch shift to last commit."; \
+	fi
+	
+
 doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
