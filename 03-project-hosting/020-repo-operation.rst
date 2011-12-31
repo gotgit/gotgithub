@@ -4,7 +4,9 @@
 强制推送
 ----------
 
-细心的读者可能从图3-4已经看出，显示的提交者并非gotgithub用户，而是一个名为ossxp-com的用户，这是因为GitHub是通过提交中的邮件地址来对应到GitHub用户的。看看提交说明：
+细心的读者可能从图3-4已经看出，显示的提交者并非gotgithub用户，而是一个名为\
+ossxp-com的用户，这是因为GitHub是通过提交中的邮件地址来对应到GitHub用户的。\
+看看提交说明：
 
 ::
 
@@ -17,11 +19,14 @@
   
       README for this project.
 
-原来提交用户设置的邮件地址并非gotgithub用户设置的邮件地址。补救办法就是对此提交进行修改，然后强制推送到GitHub。
+原来提交用户设置的邮件地址并非gotgithub用户设置的邮件地址。补救办法就是对此\
+提交进行修改，然后强制推送到GitHub。
 
 * 重新设置\ ``user.name``\ 和\ ``user.email``\ 配置变量。
 
-  因为gotgithub是一个仅在本书使用的示例账号，我可不想影响本地其他项目的提交，因此下面的设置命令没有使用\ ``--global``\ 参数，只对本地\ ``helloworld``\ 版本库进行设置。
+  因为gotgithub是一个仅在本书使用的示例账号，我可不想影响本地其他项目的提交，\
+  因此下面的设置命令没有使用\ ``--global``\ 参数，只对本地\ ``helloworld``\
+  版本库进行设置。
 
   ::
 
@@ -30,7 +35,9 @@
 
 * 执行Git修补提交命令。
 
-  注意使用\ ``--reset-author``\ 会将提交信息中的属性\ ``Author``\ 连同\ ``AuthorDate``\ 一并修改，否则只修改\ ``Commit``\ 和\ ``CommitDate``\ 。参数\ ``-C HEAD``\ 维持提交说明不变。
+  注意使用\ ``--reset-author``\ 会将提交信息中的属性\ ``Author``\ 连同\
+  ``AuthorDate``\ 一并修改，否则只修改\ ``Commit``\ 和\ ``CommitDate``\ 。\
+  参数\ ``-C HEAD``\ 维持提交说明不变。
 
   ::
 
@@ -63,7 +70,9 @@
 
 * 使用强制推送。
 
-  对于此例，考虑到还没有其他人关注\ ``helloworld``\ 这个刚刚建立的示例项目，显然不需要向上面命令错误信息中提示那样先执行\ ``git pull``\ 合并上游版本库再推送，而是选择强制推送。
+  对于此例，考虑到还没有其他人关注\ ``helloworld``\ 这个刚刚建立的示例项目，\
+  显然不需要向上面命令错误信息中提示那样先执行\ ``git pull``\ 合并上游版本库\
+  再推送，而是选择强制推送。
 
   ::
 
@@ -76,7 +85,8 @@
     To git@github.com:gotgithub/helloworld.git
      + 92dee9b...e1e52d9 master -> master (forced update)
 
-完成强制推送后，再查看GitHub项目页面，会发现提交者已经显示为gotgithub用户。如图3-7所示。
+完成强制推送后，再查看GitHub项目页面，会发现提交者已经显示为gotgithub用户。\
+如图3-7所示。
 
 .. figure:: /images/project-hosting/force-push.png
    :scale: 100
@@ -86,11 +96,13 @@
 新建分支
 ---------
 
-现在版本库中只有一个默认分支\ ``master``\ ，如果希望在GitHub版本库中再创建分支，可以采用如下方法：
+现在版本库中只有一个默认分支\ ``master``\ ，如果希望在GitHub版本库中再创建分支，\
+可以采用如下方法：
 
 * 本地版本库中建立分支\ ``mybranch1``\ 。
 
-  创建分支有多种方法，最为便捷的就是\ ``git checkout -b``\ 命令，同时完成分支创建和分支切换。
+  创建分支有多种方法，最为便捷的就是\ ``git checkout -b``\ 命令，同时完成分支\
+  创建和分支切换。
 
   ::
 
@@ -108,7 +120,8 @@
      0 files changed, 0 insertions(+), 0 deletions(-)
      create mode 100644 hello1
 
-* 通过推送命令，将本地分支\ ``mybranch1``\ 推送到GitHub远程版本库，完成在GitHub上的新分支创建。
+* 通过推送命令，将本地分支\ ``mybranch1``\ 推送到GitHub远程版本库，完成在GitHub\
+  上的新分支创建。
 
   ::
 
@@ -122,7 +135,8 @@
      * [new branch]      mybranch1 -> mybranch1
     Branch mybranch1 set up to track remote branch mybranch1 from origin.
 
-在GitHub上查看版本库，会看到新增了一个分支\ ``mybranch1``\ ，不过默认分支仍为\ ``master``\ ，如图3-8所示。
+在GitHub上查看版本库，会看到新增了一个分支\ ``mybranch1``\ ，不过默认分支仍为\
+``master``\ ，如图3-8所示。
 
 .. figure:: /images/project-hosting/new-branch.png
    :scale: 100
@@ -132,14 +146,16 @@
 设置默认分支
 ---------------
 
-如果希望版本库的默认分支为\ ``mybranch1``\ ，点击项目名称旁边的”Admin“按钮，修改项目的默认分支，如图3-9所示。
+如果希望版本库的默认分支为\ ``mybranch1``\ ，点击项目名称旁边的”Admin“按钮，\
+修改项目的默认分支，如图3-9所示。
 
 .. figure:: /images/project-hosting/set-default-branch.png
    :scale: 100
 
    图3-9：设置缺省分支
 
-设置了GitHub默认分支后，如果再从GitHub克隆版本库，本地克隆后版本库的默认分支也将改变。
+设置了GitHub默认分支后，如果再从GitHub克隆版本库，本地克隆后版本库的默认分支\
+也将改变。
 
 ::
 
@@ -153,7 +169,8 @@
   $ git branch
   * mybranch1
 
-之所以本地缺省分支不再是\ ``master``\ ，是因为远程（GitHub）版本库中的特殊引用\ ``HEAD``\ 指向\ ``mybranch1``\ 分支。这可以从下面命令看出。
+之所以本地缺省分支不再是\ ``master``\ ，是因为远程（GitHub）版本库中的特殊\
+引用\ ``HEAD``\ 指向\ ``mybranch1``\ 分支。这可以从下面命令看出。
 
 ::
 
@@ -162,7 +179,8 @@
     origin/master
     origin/mybranch1
 
-也可以从\ ``git ls-remote``\ 命令看出引用\ ``HEAD``\ 和\ ``refs/heads/mybranch1``\ 指向同一个对象的哈希值。
+也可以从\ ``git ls-remote``\ 命令看出引用\ ``HEAD``\ 和\ ``refs/heads/mybranch1``\
+指向同一个对象的哈希值。
 
 ::
 
@@ -182,7 +200,8 @@
   $ git branch -d mybranch1
   error: Cannot delete the branch 'mybranch1' which you are currently on.
 
-错误信息显示不能删除当前工作分支。因此先切换到其他分支，例如从GitHub版本库中取出\ ``master``\ 分支并切换。  
+错误信息显示不能删除当前工作分支。因此先切换到其他分支，例如从GitHub版本库\
+中取出\ ``master``\ 分支并切换。  
 
 ::
 
@@ -196,14 +215,18 @@
   * master
     mybranch1
 
-现在删除\ ``mybanch1``\ 分支。之所以使用\ ``-D``\ 参数，而非\ ``-d``\ 参数，是因为为了防止\ ``mybranch1``\ 的提交丢失，Git缺省禁止删除尚未合并的分支。
+现在删除\ ``mybanch1``\ 分支。之所以使用\ ``-D``\ 参数，而非\ ``-d``\ 参数，\
+是因为为了防止\ ``mybranch1``\ 的提交丢失，Git缺省禁止删除尚未合并的分支。
 
 ::
  
   $ git branch -D mybranch1
   Deleted branch mybranch1 (was f46a284).
 
-现在只是本地分支被删除了，远程GitHub服务器上的\ ``mybranch1``\ 分支尚在。删除远程GitHub版本库中的分支就不能使用\ ``git branch``\ 命令，而是要使用\ ``git push``\ 命令，不过在使用推送分支命令时要使用一个特殊的引用表达式（冒号前为空）。如下：
+现在只是本地分支被删除了，远程GitHub服务器上的\ ``mybranch1``\ 分支尚在。\
+删除远程GitHub版本库中的分支就不能使用\ ``git branch``\ 命令，而是要使用\
+``git push``\ 命令，不过在使用推送分支命令时要使用一个特殊的引用表达式\
+（冒号前为空）。如下：
 
 ::
 
@@ -215,7 +238,10 @@
 
 为什么删除远程分支出错了呢？是因为没有使用强制推送么？
 
-实际上即使使用强制推送也会遇到上面的错误。GitHub发现要删除的\ ``mybranch1``\ 分支是远程版本库的缺省分支，因而禁止删除。重新访问GitHub的项目管理页面，将缺省分支设置回\ ``master``\ 分支，参照图3-9。然后再执行上述命令，即可成功删除分支。
+实际上即使使用强制推送也会遇到上面的错误。GitHub发现要删除的\ ``mybranch1``\
+分支是远程版本库的缺省分支，因而禁止删除。重新访问GitHub的项目管理页面，\
+将缺省分支设置回\ ``master``\ 分支，参照图3-9。然后再执行上述命令，即可成功\
+删除分支。
 
 ::
 
@@ -298,5 +324,3 @@
    :scale: 100
 
    图3-10：里程碑列表
-
-
