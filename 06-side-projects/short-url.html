@@ -107,11 +107,11 @@
 <div class="highlight-python"><pre>https://github.com/cameronmcefee/Image-Diff-View-Modes/commit/8e95f70c9c47168305970e91021072673d7cdad8</pre>
 </div>
 <p>很自然地想到了Google短网址服务，于是由上面的长网址生成出一个短小精干的网址： <a class="reference external" href="http://goo.gl/Gy85b">http://goo.gl/Gy85b</a> ，访问该短网址会自动重定向到对应的长网址。</p>
-<p>2011年11月，GitHub也推出了自己的短网址服务 <a class="footnote-reference" href="#id2" id="id1">[1]</a> ，为GitHub自身网址提供短网址转换服务。GitHub短网址服务没有像Google短网址服务那样提供基于Web的图形化转换界面，而是需要用命令行进行网址转换。</p>
-<p>例如对于网址 <a class="reference external" href="https://github.com/blog/985-git-io-github-url-shortener">https://github.com/blog/985-git-io-github-url-shortener</a> 的转换，使用 <tt class="docutils literal"><span class="pre">curl</span></tt> 命令如下操作。</p>
+<p>2011年11月，GitHub也推出了自己的短网址服务<a class="footnote-reference" href="#id2" id="id1">[1]</a>，为GitHub自身网址提供短网址转换服务。GitHub短网址服务没有像Google短网址服务那样提供基于Web的图形化转换界面，而是需要用命令行进行网址转换。</p>
+<p>例如对于网址 <a class="reference external" href="https://github.com/blog/985-git-io-github-url-shortener">https://github.com/blog/985-git-io-github-url-shortener</a> 的转换，使用<tt class="docutils literal"><span class="pre">curl</span></tt>命令如下操作。</p>
 <ul>
 <li><p class="first">将长网址转换为短网址。</p>
-<p>命令 <tt class="docutils literal"><span class="pre">curl</span></tt> 输出中的 <tt class="docutils literal"><span class="pre">Location:</span></tt> 语句即是转换后的短网址。</p>
+<p>命令<tt class="docutils literal"><span class="pre">curl</span></tt>输出中的<tt class="docutils literal"><span class="pre">Location:</span></tt>语句即是转换后的短网址。</p>
 <div class="highlight-python"><pre>$ curl -i http://git.io -F 'url=https://github.com/blog/985-git-io-github-url-shortener'
 ...
 HTTP/1.1 201 Created
@@ -119,8 +119,8 @@ HTTP/1.1 201 Created
 Location: http://git.io/help</pre>
 </div>
 </li>
-<li><p class="first">查看短网址对应的原网址，同样使用 <tt class="docutils literal"><span class="pre">curl</span></tt> 命令。</p>
-<p>命令 <tt class="docutils literal"><span class="pre">curl</span></tt> 输出302重定向地址即为原始网址。</p>
+<li><p class="first">查看短网址对应的原网址，同样使用<tt class="docutils literal"><span class="pre">curl</span></tt>命令。</p>
+<p>命令<tt class="docutils literal"><span class="pre">curl</span></tt>输出302重定向地址即为原始网址。</p>
 <div class="highlight-python"><pre>$ curl -i http://git.io/help
 HTTP/1.1 302 Found
 ...
@@ -128,7 +128,7 @@ Location: https://github.com/blog/985-git-io-github-url-shortener</pre>
 </div>
 </li>
 </ul>
-<p>为使转换的短网址更易于记忆和识别，可在 <tt class="docutils literal"><span class="pre">curl</span></tt> 命令中用 code 参数设定期望的短网址。例如下面命令将本节一开始提到的长网址转换为短网址： <a class="reference external" href="http://git.io/image-diff">http://git.io/image-diff</a> 。</p>
+<p>为使转换的短网址更易于记忆和识别，可在<tt class="docutils literal"><span class="pre">curl</span></tt>命令中用 code 参数设定期望的短网址。例如下面命令将本节一开始提到的长网址转换为短网址： <a class="reference external" href="http://git.io/image-diff">http://git.io/image-diff</a> 。</p>
 <div class="highlight-python"><pre>$ curl -i http://git.io -F 'url=https://github.com/cameronmcefee/Image-Diff-View-Modes/commit/8e95f70c9c47168305970e91021072673d7cdad8' \
   -F 'code=image-diff'
 ...
@@ -173,7 +173,7 @@ Location: http://git.io/image-diff</pre>
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2011/12/26。
+      最后更新于 2011/12/31。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>

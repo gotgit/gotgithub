@@ -39,7 +39,7 @@
 
    图4-40：提交评注
 
-GitHub还支持Git自身提供的评注功能 [#]_ ，如图4-41所示的是提交 http://git.io/git-notes [#]_ 的评注，这个评注并非通过GitHub添加的，而是由 ``git-note`` 命令提交的评注。这种评注针对一个特定提交只能有一个，GitHub只能显示不能编辑和删除。关于如何通过命令行查看 ``git-note`` 格式的评注，参见《Git权威指南》第570页“41.5 Git评注”。
+GitHub还支持Git自身提供的评注功能\ [#]_\ ，如图4-41所示的是提交 http://git.io/git-notes\ [#]_\ 的评注，这个评注并非通过GitHub添加的，而是由\ ``git-note``\ 命令提交的评注。这种评注针对一个特定提交只能有一个，GitHub只能显示不能编辑和删除。关于如何通过命令行查看\ ``git-note``\ 格式的评注，参见《Git权威指南》第570页“41.5 Git评注”。
 
 .. figure:: /images/work-with-others/commit-note-by-git-note.png
    :scale: 100
@@ -50,7 +50,7 @@ GitHub还支持Git自身提供的评注功能 [#]_ ，如图4-41所示的是提�
 逐行评注
 ------------
 
-还是以 ``gotgithub/helloworld`` 版本库中的提交为例，看一下GitHub支持的逐行评注功能，即针对提交中的任意一行添加评注。浏览提交，如图4-42所示，当鼠标至于任意一行代码时，在该行代码的左侧会显示一个添加注释的图标。
+还是以\ ``gotgithub/helloworld``\ 版本库中的提交为例，看一下GitHub支持的逐行评注功能，即针对提交中的任意一行添加评注。浏览提交，如图4-42所示，当鼠标至于任意一行代码时，在该行代码的左侧会显示一个添加注释的图标。
 
 .. figure:: /images/work-with-others/commit-line-note-btn.png
    :scale: 100
@@ -71,7 +71,7 @@ GitHub还支持Git自身提供的评注功能 [#]_ ，如图4-41所示的是提�
 
    图4-44：逐行评注和提交评注
 
-更有意思的评注可以围观 ``MrMEEE/bumblebee`` 项目的一个bug修正提交（被戏称一个空格引发的惨案）。地址： http://git.io/giant-bug [#]_ 。
+更有意思的评注可以围观\ ``MrMEEE/bumblebee``\ 项目的一个bug修正提交（被戏称一个空格引发的惨案）。地址： http://git.io/giant-bug\ [#]_\ 。
 
 ----
 

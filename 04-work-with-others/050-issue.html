@@ -167,7 +167,7 @@
 <a class="reference internal image-reference" href="../images/issue-created.png"><img alt="../images/issue-created.png" src="../images/issue-created.png" /></a>
 <p class="caption">图4-52：新创建的问题尚未添加标签等</p>
 </div>
-<p>普通贡献者创建问题时只能录入问题的标题和描述，而不能设置问题的指派（谁来负责）、添加标签和设置里程碑。如果希望问题通知到特定的开发者，可以在问题描述中以“&#64;用户名”的方式通知到该用户 <a class="footnote-reference" href="#id6" id="id4">[1]</a> ，这也是众多社交软件通行的做法。</p>
+<p>普通贡献者创建问题时只能录入问题的标题和描述，而不能设置问题的指派（谁来负责）、添加标签和设置里程碑。如果希望问题通知到特定的开发者，可以在问题描述中以“&#64;用户名”的方式通知到该用户<a class="footnote-reference" href="#id6" id="id4">[1]</a>，这也是众多社交软件通行的做法。</p>
 <p>项目成员创建问题时，拥有更大权限，也有更多的可选项。如图4-53所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/issue-new-by-member.png"><img alt="../images/issue-new-by-member.png" src="../images/issue-new-by-member.png" /></a>
@@ -188,7 +188,7 @@
 <a class="reference internal image-reference" href="../images/issue-list-with-milestone.png"><img alt="../images/issue-list-with-milestone.png" src="../images/issue-list-with-milestone.png" /></a>
 <p class="caption">图4-56：通过里程碑筛选问题</p>
 </div>
-<p>邮件通知功能是缺陷跟踪系统推动工作流的重要工具，GitHub的Issues模块也具有邮件通知功能。除了像其他缺陷跟踪系统在收到邮件通知后，访问Web界面参与问题的讨论外，还可以直接以邮件回复的功能参与到工作流中 <a class="footnote-reference" href="#id7" id="id5">[2]</a> 。</p>
+<p>邮件通知功能是缺陷跟踪系统推动工作流的重要工具，GitHub的Issues模块也具有邮件通知功能。除了像其他缺陷跟踪系统在收到邮件通知后，访问Web界面参与问题的讨论外，还可以直接以邮件回复的功能参与到工作流中<a class="footnote-reference" href="#id7" id="id5">[2]</a>。</p>
 <p>GitHub还支持版本库提交和问题建立关联，只要提交说明中出现“#xxx”（Issue编号）字样。如果在提交说明中的问题编号前出现特定关键字，还可以关闭问题。支持的关键字有：</p>
 <ul class="simple">
 <li>fixes #xxx</li>
@@ -198,14 +198,14 @@
 <li>close #xxx</li>
 <li>closed #xxx</li>
 </ul>
-<p>下面就以 <tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt> 版本库为例，关闭编号为“#1”的问题。</p>
+<p>下面就以<tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt>版本库为例，关闭编号为“#1”的问题。</p>
 <ul>
 <li><p class="first">克隆版本库，若本地工作区尚不存在。</p>
 <div class="highlight-python"><pre>$ git clone git@github.com:gotgithub/helloworld.git
 $ cd helloworld</pre>
 </div>
 </li>
-<li><p class="first">编辑文件 <cite>src/main.c</cite> ，改正“问题#1”发现的文字错误。</p>
+<li><p class="first">编辑文件<cite>src/main.c</cite>，改正“问题#1”发现的文字错误。</p>
 <div class="highlight-python"><pre>$ vi src/main.c
 $ git diff
 diff --git a/src/main.c b/src/main.c
@@ -227,7 +227,7 @@ index 3daf9fe..f974b49 100644
 <div class="highlight-python"><pre>$ git add -u</pre>
 </div>
 </li>
-<li><p class="first">提交，并在提交说明中用 <tt class="docutils literal"><span class="pre">fixed</span> <span class="pre">#xxx</span></tt> 关键字关闭相关问题。</p>
+<li><p class="first">提交，并在提交说明中用<tt class="docutils literal"><span class="pre">fixed</span> <span class="pre">#xxx</span></tt>关键字关闭相关问题。</p>
 <div class="highlight-python"><pre>$ git commit -m "Fixed #1: -help should be --help."</pre>
 </div>
 </li>
@@ -256,12 +256,12 @@ index 3daf9fe..f974b49 100644
 <h2>4.5.4. Pull Requst也是Issue<a class="headerlink" href="#pull-requstissue" title="永久链接至标题">¶</a></h2>
 <p>Pull Request和Issue一样，也是一种对项目的反馈，而且是更为主动的反馈。GitHub的Issues模块将Pull Request也纳入到问题的管理之中，完美地将Pull Request整合到问题追踪的框架之中。</p>
 <p>为了弄清二者之间的关联，首先创建一个Pull Request。</p>
-<p>以非项目成员（如用户 omnidroid）的账号访问 <tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt> 项目，查看文件 <tt class="docutils literal"><span class="pre">src/Makefile</span></tt> ，点击“Fork and edit this file”按钮快速创建派生项目，如图4-60所示。</p>
+<p>以非项目成员（如用户 omnidroid）的账号访问<tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt>项目，查看文件<tt class="docutils literal"><span class="pre">src/Makefile</span></tt>，点击“Fork and edit this file”按钮快速创建派生项目，如图4-60所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/fork-and-edit-btn-for-issue.png"><img alt="../images/fork-and-edit-btn-for-issue.png" src="../images/fork-and-edit-btn-for-issue.png" /></a>
 <p class="caption">图4-60：在线编辑并创建派生项目</p>
 </div>
-<p>通过GitHub提供的在线编辑功能修改 <tt class="docutils literal"><span class="pre">src/Makefile</span></tt> 文件，修改完毕后撰写提交说明，点击“Propose File Change”按钮提交。如图4-61所示。</p>
+<p>通过GitHub提供的在线编辑功能修改<tt class="docutils literal"><span class="pre">src/Makefile</span></tt>文件，修改完毕后撰写提交说明，点击“Propose File Change”按钮提交。如图4-61所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/fork-and-edit-form-for-issue.png"><img alt="../images/fork-and-edit-form-for-issue.png" src="../images/fork-and-edit-form-for-issue.png" /></a>
 <p class="caption">图4-61：在线编辑并提交</p>
@@ -352,7 +352,7 @@ index 3daf9fe..f974b49 100644
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2011/12/26。
+      最后更新于 2011/12/31。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>

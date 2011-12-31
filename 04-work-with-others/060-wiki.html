@@ -117,12 +117,12 @@
 <li>快速更改。修改网页无需复杂的后台修改和网页部署流程，浏览的网页直接提供编辑按钮，任何查看网页的用户均可在线编辑网页。</li>
 <li>简洁语法。编写网页不需要学习复杂的HTML，取而代之的是易学易用的格式化文本（维基语法），有的维基还提供图形化编辑界面。</li>
 <li>版本控制。熟悉Git的人，可以把维基看作是Web的版本控制。历次修改都记录在案，历史修订可进行比较，可恢复到历史版本等。</li>
-<li>维基链接。页面链接使用 <tt class="docutils literal"><span class="pre">[[页面名称]]</span></tt> 语法，可以非常方便地创建新页面，并实现页面间的互联。</li>
+<li>维基链接。页面链接使用<tt class="docutils literal"><span class="pre">[[页面名称]]</span></tt>语法，可以非常方便地创建新页面，并实现页面间的互联。</li>
 </ul>
 <p>GitHub提供了维基模块，方便项目团队创建社区驱动和维护的项目文档。</p>
 <div class="section" id="id2">
 <h2>4.6.1. 维基初始化<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>GitHub的维基模块可以通过项目管理页面控制开启或关闭，默认开启，如图4-70所示。因为GitHub提供了项目展示的多种途径，一些小项目如果觉得用 <tt class="docutils literal"><span class="pre">README</span></tt> 文件构建项目说明，或者用 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支维护项目主页就足够了，大可关闭维基模块。</p>
+<p>GitHub的维基模块可以通过项目管理页面控制开启或关闭，默认开启，如图4-70所示。因为GitHub提供了项目展示的多种途径，一些小项目如果觉得用<tt class="docutils literal"><span class="pre">README</span></tt>文件构建项目说明，或者用<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支维护项目主页就足够了，大可关闭维基模块。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/project-admin-features-wiki.png"><img alt="../images/project-admin-features-wiki.png" src="../images/project-admin-features-wiki.png" /></a>
 <p class="caption">图4-70：开启或关闭Wiki模块</p>
@@ -164,15 +164,15 @@
 <a class="reference internal image-reference" href="../images/wiki-edit-save.png"><img alt="../images/wiki-edit-save.png" src="../images/wiki-edit-save.png" /></a>
 <p class="caption">图4-75：填写提交说明保存更改</p>
 </div>
-<p>注意图4-75的维基内容中有 <tt class="docutils literal"><span class="pre">[[页面名称]]</span></tt> 样式的语法，这个语法是维基特色的页面链接语法，指向另外的维基页面。实际页面输出如图4-76所示。</p>
+<p>注意图4-75的维基内容中有<tt class="docutils literal"><span class="pre">[[页面名称]]</span></tt>样式的语法，这个语法是维基特色的页面链接语法，指向另外的维基页面。实际页面输出如图4-76所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/wiki-home-simple-wiki-links.png"><img alt="../images/wiki-home-simple-wiki-links.png" src="../images/wiki-home-simple-wiki-links.png" /></a>
 <p class="caption">图4-76：保存更改后的维基首页</p>
 </div>
-<p>如果对维基语法 <tt class="docutils literal"><span class="pre">[[页面名称]]</span></tt> 生成的链接标题不满意，还可以用 <tt class="docutils literal"><span class="pre">[[链接标题|页面名称]]</span></tt> 格式创建维基链接。对首页重新做一次修改，修改如下：</p>
+<p>如果对维基语法<tt class="docutils literal"><span class="pre">[[页面名称]]</span></tt>生成的链接标题不满意，还可以用<tt class="docutils literal"><span class="pre">[[链接标题|页面名称]]</span></tt>格式创建维基链接。对首页重新做一次修改，修改如下：</p>
 <ul class="simple">
-<li>将 <tt class="docutils literal"><span class="pre">[[HowtoClone]]</span></tt> 改为 <tt class="docutils literal"><span class="pre">[[how</span> <span class="pre">to</span> <span class="pre">clone|HowtoClone]]</span></tt> 。</li>
-<li>将 <tt class="docutils literal"><span class="pre">[[HowtoContribute]]</span></tt> 改为 <tt class="docutils literal"><span class="pre">[[how</span> <span class="pre">to</span> <span class="pre">contribute|HowtoContribute]]</span></tt> 。</li>
+<li>将<tt class="docutils literal"><span class="pre">[[HowtoClone]]</span></tt>改为<tt class="docutils literal"><span class="pre">[[how</span> <span class="pre">to</span> <span class="pre">clone|HowtoClone]]</span></tt>。</li>
+<li>将<tt class="docutils literal"><span class="pre">[[HowtoContribute]]</span></tt>改为<tt class="docutils literal"><span class="pre">[[how</span> <span class="pre">to</span> <span class="pre">contribute|HowtoContribute]]</span></tt>。</li>
 </ul>
 <p>修改后的首页效果如图4-77所示。</p>
 <div class="figure">
@@ -194,7 +194,7 @@
 <a class="reference internal image-reference" href="../images/wiki-reverted.png"><img alt="../images/wiki-reverted.png" src="../images/wiki-reverted.png" /></a>
 <p class="caption">图4-80：包含回退记录的页面修订历史</p>
 </div>
-<p>在维基中创建新页面有多种方法，可以点击页面中的“New Page”按钮，也可以像我们之前做的那样先在页面中用 <tt class="docutils literal"><span class="pre">[[页面名称]]</span></tt> 格式嵌入维基链接，然后在生成的页面中可以看到指向新页面的链接，当然这些链接所指向的页面并不存在。</p>
+<p>在维基中创建新页面有多种方法，可以点击页面中的“New Page”按钮，也可以像我们之前做的那样先在页面中用<tt class="docutils literal"><span class="pre">[[页面名称]]</span></tt>格式嵌入维基链接，然后在生成的页面中可以看到指向新页面的链接，当然这些链接所指向的页面并不存在。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/wiki-newpage.png"><img alt="../images/wiki-newpage.png" src="../images/wiki-newpage.png" /></a>
 <p class="caption">图4-81：页面中的维基链接</p>
@@ -209,8 +209,8 @@
 <a class="reference internal image-reference" href="../images/wiki-newpage-created.png"><img alt="../images/wiki-newpage-created.png" src="../images/wiki-newpage-created.png" /></a>
 <p class="caption">图4-83：生成的新页面</p>
 </div>
-<p>如果当前用户对页面具有写权限，则在页面左下角会看到一个删除本页面的链接。点击“Delete this page”链接并经确认后会删除页面。然后继续在维基中操作，如创建另外一个新页面 <tt class="docutils literal"><span class="pre">HowtoContribute</span></tt> 。</p>
-<p>如果对之前删除页面 <tt class="docutils literal"><span class="pre">Howtoclone</span></tt> 的操作后悔，可以通过下面方法找回。</p>
+<p>如果当前用户对页面具有写权限，则在页面左下角会看到一个删除本页面的链接。点击“Delete this page”链接并经确认后会删除页面。然后继续在维基中操作，如创建另外一个新页面<tt class="docutils literal"><span class="pre">HowtoContribute</span></tt>。</p>
+<p>如果对之前删除页面<tt class="docutils literal"><span class="pre">Howtoclone</span></tt>的操作后悔，可以通过下面方法找回。</p>
 <ul>
 <li><p class="first">访问菜单中的“Wiki History”项，显示整个维基的修订记录（不是某个页面的修订记录）。如图4-84所示。</p>
 <div class="figure">
@@ -218,7 +218,7 @@
 <p class="caption">图4-84：维基修订记录</p>
 </div>
 </li>
-<li><p class="first">从图4-84可见上面第二条记录就是删除 <tt class="docutils literal"><span class="pre">HowtoClone</span></tt> 页面的操作，选择该记录及前一次记录，执行版本比较，如图4-85所示。</p>
+<li><p class="first">从图4-84可见上面第二条记录就是删除<tt class="docutils literal"><span class="pre">HowtoClone</span></tt>页面的操作，选择该记录及前一次记录，执行版本比较，如图4-85所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/wiki-compare-drop-page.png"><img alt="../images/wiki-compare-drop-page.png" src="../images/wiki-compare-drop-page.png" /></a>
 <p class="caption">图4-85：版本比较</p>
@@ -230,7 +230,7 @@
 <p class="caption">图4-86：还原修订后的维基修订记录</p>
 </div>
 </li>
-<li><p class="first">查看维基页面列表，可以看到页面 <tt class="docutils literal"><span class="pre">Howtoclone</span></tt> 已经被找回。</p>
+<li><p class="first">查看维基页面列表，可以看到页面<tt class="docutils literal"><span class="pre">Howtoclone</span></tt>已经被找回。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/wiki-pages.png"><img alt="../images/wiki-pages.png" src="../images/wiki-pages.png" /></a>
 <p class="caption">图4-87：维基页面列表</p>
@@ -246,24 +246,24 @@
 <a class="reference internal image-reference" href="../images/wiki-git-access.png"><img alt="../images/wiki-git-access.png" src="../images/wiki-git-access.png" /></a>
 <p class="caption">图4-88：用Git访问维基</p>
 </div>
-<p>对于项目 <tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt> 来说，用Git克隆其维基，用如下命令：</p>
+<p>对于项目<tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt>来说，用Git克隆其维基，用如下命令：</p>
 <div class="highlight-python"><pre>$ git clone git@github.com:gotgithub/helloworld.wiki.git</pre>
 </div>
-<p>进入到刚刚克隆的 <tt class="docutils literal"><span class="pre">helloworld.wiki</span></tt> 工作区中，查看包含的文件，会看到有三个文件。</p>
+<p>进入到刚刚克隆的<tt class="docutils literal"><span class="pre">helloworld.wiki</span></tt>工作区中，查看包含的文件，会看到有三个文件。</p>
 <div class="highlight-python"><pre>$ cd helloworld.wiki
 $ ls
 Home.md            Howtoclone.creole  Howtocontribute.md</pre>
 </div>
-<p>三个文件对应于三个维基页面，文件名就是维基的页面名称，而扩展名对应于采用的维基语法。以 <tt class="docutils literal"><span class="pre">.md</span></tt> 扩展名结尾的页面采用Markdown语法，而以 <tt class="docutils literal"><span class="pre">.creole</span></tt> 结尾的文件采用Creole标准维基语法。</p>
+<p>三个文件对应于三个维基页面，文件名就是维基的页面名称，而扩展名对应于采用的维基语法。以<tt class="docutils literal"><span class="pre">.md</span></tt>扩展名结尾的页面采用Markdown语法，而以<tt class="docutils literal"><span class="pre">.creole</span></tt>结尾的文件采用Creole标准维基语法。</p>
 <p>下面就通过Git在维基版本库中添加一个图片。添加图片的操作只通过GitHub维基的Web界面是很难实现的，而使用Git则易如反掌。</p>
 <ul>
-<li><p class="first">创建一个名为 <tt class="docutils literal"><span class="pre">images</span></tt> 目录。这个目录并非必须，只是为了易于管理。</p>
+<li><p class="first">创建一个名为<tt class="docutils literal"><span class="pre">images</span></tt>目录。这个目录并非必须，只是为了易于管理。</p>
 <div class="highlight-python"><pre>$ mkdir images
 $ cd images</pre>
 </div>
 </li>
-<li><p class="first">在 <tt class="docutils literal"><span class="pre">images</span></tt> 目录中添加图片。</p>
-<p>下面的操作从GitHub官方版本库中下载图片 <tt class="docutils literal"><span class="pre">octocat.png</span></tt> 并进行适当缩放。</p>
+<li><p class="first">在<tt class="docutils literal"><span class="pre">images</span></tt>目录中添加图片。</p>
+<p>下面的操作从GitHub官方版本库中下载图片<tt class="docutils literal"><span class="pre">octocat.png</span></tt>并进行适当缩放。</p>
 <div class="highlight-python"><pre>$ wget https://github.com/github/media/raw/master/octocats/octocat.png
 $ mogrify -resize '200' octocat.png</pre>
 </div>
@@ -281,7 +281,7 @@ $ git commit -m "add sample image."</pre>
 <p>完成推送后，访问下面的网址可以看到刚刚上传的图片：</p>
 <div class="highlight-python"><pre>https://github.com/gotgithub/helloworld/wiki/images/octocat.png</pre>
 </div>
-<p>接下来在维基页面中引用图片。嵌入图片的Markdown语法是： <tt class="docutils literal"><span class="pre">![Alt</span> <span class="pre">text</span> <span class="pre">here](Image</span> <span class="pre">URL</span> <span class="pre">here)</span></tt> 。当然可以通过编辑本地版本库 <tt class="docutils literal"><span class="pre">gotgithub/helloworld.wiki.git</span></tt> 中的文件，但通过GitHub维基编辑界面嵌入图片无需记忆复杂的语法。如图4-89所示。</p>
+<p>接下来在维基页面中引用图片。嵌入图片的Markdown语法是：<tt class="docutils literal"><span class="pre">![Alt</span> <span class="pre">text</span> <span class="pre">here](Image</span> <span class="pre">URL</span> <span class="pre">here)</span></tt>。当然可以通过编辑本地版本库<tt class="docutils literal"><span class="pre">gotgithub/helloworld.wiki.git</span></tt>中的文件，但通过GitHub维基编辑界面嵌入图片无需记忆复杂的语法。如图4-89所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/wiki-insert-image.png"><img alt="../images/wiki-insert-image.png" src="../images/wiki-insert-image.png" /></a>
 <p class="caption">图4-89：在维基页面中嵌入图片</p>
@@ -297,7 +297,7 @@ $ git commit -m "add sample image."</pre>
 <p class="caption">图4-91：编辑冲突</p>
 </div>
 <p>GitHub的维基编辑界面没有提供冲突解决的工具，而利用Git本身强大的冲突解决功能可以很容易地解决这一难题。</p>
-<p>例如用户 <tt class="docutils literal"><span class="pre">gotgithub</span></tt> 编辑维基首页 <tt class="docutils literal"><span class="pre">Home</span></tt> 遇到编辑冲突，为防止数据丢失，先将编辑框中的维基文本拷贝并粘贴到一个临时文件中，如文件中 <tt class="docutils literal"><span class="pre">/path/to/draft.md</span></tt> 。然后进行如下操作将 <tt class="docutils literal"><span class="pre">draft.md</span></tt> 中内容合并到维基页面中。</p>
+<p>例如用户<tt class="docutils literal"><span class="pre">gotgithub</span></tt>编辑维基首页<tt class="docutils literal"><span class="pre">Home</span></tt>遇到编辑冲突，为防止数据丢失，先将编辑框中的维基文本拷贝并粘贴到一个临时文件中，如文件中<tt class="docutils literal"><span class="pre">/path/to/draft.md</span></tt>。然后进行如下操作将<tt class="docutils literal"><span class="pre">draft.md</span></tt>中内容合并到维基页面中。</p>
 <ul>
 <li><p class="first">如果本地已经克隆维基版本库，则执行下面命令更新。</p>
 <div class="highlight-python"><pre>$ cd helloworld.wiki
@@ -310,7 +310,7 @@ $ cd helloworld.wiki</pre>
 </div>
 </li>
 <li><p class="first">用Git命令查看版本库的历史，以便找出发生冲突的原始版本。</p>
-<p>从下面的输出可以看出我们编辑的版本是基于提交 <tt class="docutils literal"><span class="pre">fbb4bb4</span></tt> ，由于用户 <tt class="docutils literal"><span class="pre">incredible</span></tt> 先于我们完成了对维基页面的修改以致发生了冲突。</p>
+<p>从下面的输出可以看出我们编辑的版本是基于提交<tt class="docutils literal"><span class="pre">fbb4bb4</span></tt>，由于用户<tt class="docutils literal"><span class="pre">incredible</span></tt>先于我们完成了对维基页面的修改以致发生了冲突。</p>
 <div class="highlight-python"><pre>$ git log -3 --pretty=short
 commit 5ff5d998bb6cf99337813915282df94701d17ea0
 Author: incredible &lt;incredible@ossxp.com&gt;
@@ -328,11 +328,11 @@ Author: gotgithub &lt;gotgithub@gmail.com&gt;
     add sample image.</pre>
 </div>
 </li>
-<li><p class="first">基于提交 <tt class="docutils literal"><span class="pre">fbb4bb4</span></tt> 建立分支，如分支 <tt class="docutils literal"><span class="pre">mywiki</span></tt> 。</p>
+<li><p class="first">基于提交<tt class="docutils literal"><span class="pre">fbb4bb4</span></tt>建立分支，如分支<tt class="docutils literal"><span class="pre">mywiki</span></tt>。</p>
 <div class="highlight-python"><pre>$ git checkout -b mywiki fbb4bb4</pre>
 </div>
 </li>
-<li><p class="first">将保存的 <tt class="docutils literal"><span class="pre">draft.md</span></tt> 覆盖欲修改的文件，如 <tt class="docutils literal"><span class="pre">Home.md</span></tt> 。</p>
+<li><p class="first">将保存的<tt class="docutils literal"><span class="pre">draft.md</span></tt>覆盖欲修改的文件，如<tt class="docutils literal"><span class="pre">Home.md</span></tt>。</p>
 <div class="highlight-python"><pre>$ cp /path/to/draft.md Home.md</pre>
 </div>
 </li>
@@ -341,11 +341,11 @@ Author: gotgithub &lt;gotgithub@gmail.com&gt;
 $ git commit -m "Use absolute image link."</pre>
 </div>
 </li>
-<li><p class="first">切换到 <tt class="docutils literal"><span class="pre">master</span></tt> 分支。</p>
+<li><p class="first">切换到<tt class="docutils literal"><span class="pre">master</span></tt>分支。</p>
 <div class="highlight-python"><pre>$ git checkout master</pre>
 </div>
 </li>
-<li><p class="first">合并我们在 <tt class="docutils literal"><span class="pre">mywiki</span></tt> 分支的修改。</p>
+<li><p class="first">合并我们在<tt class="docutils literal"><span class="pre">mywiki</span></tt>分支的修改。</p>
 <div class="highlight-python"><pre>$ git merge mywiki
 Auto-merging Home.md
 CONFLICT (content): Merge conflict in Home.md
@@ -367,7 +367,7 @@ $ git log --oneline --graph -4
 * fbb4bb4 Insert image in page.</pre>
 </div>
 </li>
-<li><p class="first">查看用户 <tt class="docutils literal"><span class="pre">incredible</span></tt> 的修改。</p>
+<li><p class="first">查看用户<tt class="docutils literal"><span class="pre">incredible</span></tt>的修改。</p>
 <div class="highlight-python"><pre>$ git show --oneline HEAD^1
 5ff5d99 Add a note as image link broken if url without a end slash.
 diff --git a/Home.md b/Home.md
@@ -384,7 +384,7 @@ index 6ada8e8..0bca3ec 100644
  ## HOWTOs</pre>
 </div>
 </li>
-<li><p class="first">查看用户 <tt class="docutils literal"><span class="pre">gotgithub</span></tt> 的修改。</p>
+<li><p class="first">查看用户<tt class="docutils literal"><span class="pre">gotgithub</span></tt>的修改。</p>
 <div class="highlight-python"><pre>$ git show --oneline HEAD^2
 121c3b2 Use absolute image link.
 diff --git a/Home.md b/Home.md
@@ -411,7 +411,7 @@ index 6ada8e8..cdb9167 100644
 <a class="reference internal image-reference" href="../images/wiki-pushed-history.png"><img alt="../images/wiki-pushed-history.png" src="../images/wiki-pushed-history.png" /></a>
 <p class="caption">图4-92：推送后的维基修订历史</p>
 </div>
-<p>GitHub维基背后的引擎名为Gollum，GitHub已将其开源，项目网址： <a class="reference external" href="https://github.com/github/gollum">https://github.com/github/gollum</a> 。安装Gollum，在克隆的维基版本库中运行 <tt class="docutils literal"><span class="pre">gollum</span></tt> 就可以在本地启动维基服务。</p>
+<p>GitHub维基背后的引擎名为Gollum，GitHub已将其开源，项目网址： <a class="reference external" href="https://github.com/github/gollum">https://github.com/github/gollum</a> 。安装Gollum，在克隆的维基版本库中运行<tt class="docutils literal"><span class="pre">gollum</span></tt>就可以在本地启动维基服务。</p>
 </div>
 </div>
 
@@ -443,7 +443,7 @@ index 6ada8e8..cdb9167 100644
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2011/12/26。
+      最后更新于 2011/12/31。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>

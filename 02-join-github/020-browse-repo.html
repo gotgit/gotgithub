@@ -105,12 +105,12 @@
 <p>GitHub的账户已经建立好了，在建立自己的项目托管之前，看看别人是怎么做的。在GitHub中搜索字符串“GotGit”，可以搜索到我建立的一个项目，项目地址是: <a class="reference external" href="https://github.com/gotgit/gotgit/">https://github.com/gotgit/gotgit/</a> 。由上至下，GotGit项目首页可以分为如下几个区域。</p>
 <ul>
 <li><p class="first">区域一：项目概要介绍及版本库URL等。</p>
-<p>项目GotGit托管在组织账号 gotgit 之下 <a class="footnote-reference" href="#id7" id="id2">[1]</a> ，并且已经有若干关注用户和派生项目。最下面一行显示版本库的访问地址，只显示了HTTP和Git-daemon两个协议的URL地址，这是因为当前用户对该版本库只具有只读权限，因此没有显示SSH协议的URL地址。</p>
+<p>项目GotGit托管在组织账号 gotgit 之下<a class="footnote-reference" href="#id7" id="id2">[1]</a>，并且已经有若干关注用户和派生项目。最下面一行显示版本库的访问地址，只显示了HTTP和Git-daemon两个协议的URL地址，这是因为当前用户对该版本库只具有只读权限，因此没有显示SSH协议的URL地址。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gotgit-repo-tree-1.png"><img alt="../images/gotgit-repo-tree-1.png" src="../images/gotgit-repo-tree-1.png" /></a>
 <p class="caption">图2-10：版本库概要信息</p>
 </div>
-<p>使用任意一种协议均可克隆该Git版本库，但要注意只有Git 1.6.6及以上版本才支持智能HTTP协议，低版本Git则无法用HTTP协议克隆GitHub上的版本库 <a class="footnote-reference" href="#id8" id="id3">[2]</a> 。</p>
+<p>使用任意一种协议均可克隆该Git版本库，但要注意只有Git 1.6.6及以上版本才支持智能HTTP协议，低版本Git则无法用HTTP协议克隆GitHub上的版本库<a class="footnote-reference" href="#id8" id="id3">[2]</a>。</p>
 <div class="highlight-python"><pre>$ git clone https://github.com/gotgit/gotgit.git</pre>
 </div>
 <p>或者使用Git-daemon协议。</p>
@@ -118,7 +118,7 @@
 </div>
 </li>
 <li><p class="first">区域二：代码浏览子菜单及分支切换对话框。</p>
-<p>默认项目代码页（即项目首页）显示项目文件列表（即 <tt class="docutils literal"><span class="pre">Files</span></tt> 子菜单）。在图2-11的右侧还显示了项目 <tt class="docutils literal"><span class="pre">gotgit/gotgit</span></tt> 默认的分支为 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 而非常见的 <tt class="docutils literal"><span class="pre">master</span></tt> 分支。关于 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支，在“第3.5节 建立主页”会介绍该分支的神奇用途。</p>
+<p>默认项目代码页（即项目首页）显示项目文件列表（即<tt class="docutils literal"><span class="pre">Files</span></tt>子菜单）。在图2-11的右侧还显示了项目<tt class="docutils literal"><span class="pre">gotgit/gotgit</span></tt>默认的分支为<tt class="docutils literal"><span class="pre">gh-pages</span></tt>而非常见的<tt class="docutils literal"><span class="pre">master</span></tt>分支。关于<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支，在“第3.5节 建立主页”会介绍该分支的神奇用途。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gotgit-repo-tree-1-submenu.png"><img alt="../images/gotgit-repo-tree-1-submenu.png" src="../images/gotgit-repo-tree-1-submenu.png" /></a>
 <p class="caption">图2-11：代码浏览子菜单及分支</p>
@@ -136,8 +136,8 @@
 <p class="caption">图2-13：目录树</p>
 </div>
 </li>
-<li><p class="first">区域五：根目录下的文件 <tt class="docutils literal"><span class="pre">README.md</span></tt> 格式化为HTML输出。</p>
-<p>GitHub内置了多种文本标记语言的支持，如Markdown、Textile、reStructuredText、asciidoc、Wiki等。当发现根目录下的 <tt class="docutils literal"><span class="pre">README</span></tt> 文件后，会根据其扩展名判断所用的标记语言类型，自动转换为HTML格式显示。</p>
+<li><p class="first">区域五：根目录下的文件<tt class="docutils literal"><span class="pre">README.md</span></tt>格式化为HTML输出。</p>
+<p>GitHub内置了多种文本标记语言的支持，如Markdown、Textile、reStructuredText、asciidoc、Wiki等。当发现根目录下的<tt class="docutils literal"><span class="pre">README</span></tt>文件后，会根据其扩展名判断所用的标记语言类型，自动转换为HTML格式显示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gotgit-repo-tree-4.png"><img alt="../images/gotgit-repo-tree-4.png" src="../images/gotgit-repo-tree-4.png" /></a>
 <p class="caption">图2-14：README文件</p>
@@ -166,7 +166,7 @@
 <p class="caption">图2-18：文本文件改动差异</p>
 </div>
 <p>在文本文件的差异比较中，不但将有差异的行标识出来，还将行内具体改动的字词用特殊颜色进行了标识，不由得感叹GitHub的细致入微。</p>
-<p>GitHub还支持对图形文件的差异比较，并提供四种比较方式。在如下地址: <a class="reference external" href="http://git.io/image-diff">http://git.io/image-diff</a> <a class="footnote-reference" href="#id9" id="id4">[3]</a> 提供了一个示例提交。您可以去尝试一下不同的图形文件比较方式，以便更直观地观察图形文件前后的改动。</p>
+<p>GitHub还支持对图形文件的差异比较，并提供四种比较方式。在如下地址: <a class="reference external" href="http://git.io/image-diff">http://git.io/image-diff</a><a class="footnote-reference" href="#id9" id="id4">[3]</a>提供了一个示例提交。您可以去尝试一下不同的图形文件比较方式，以便更直观地观察图形文件前后的改动。</p>
 <ul>
 <li><p class="first">默认修改前后的两幅图片左右并排显示，如图2-19所示。</p>
 <div class="figure">
@@ -183,7 +183,7 @@
 <li><p class="first">还提供洋葱皮和色差比较，自己动手试试吧。</p>
 </li>
 </ul>
-<p>网络图是GitHub的一大特色，显示一个项目的版本库被不同用户派生（Fork）后，各个版本库的派生关系。这个网络图最早使用Flash实现的，目前已经改为HTML5实现 <a class="footnote-reference" href="#id10" id="id5">[4]</a> 。图2-21的示例网络图来自于Gitosis项目 <a class="footnote-reference" href="#id11" id="id6">[5]</a> 。</p>
+<p>网络图是GitHub的一大特色，显示一个项目的版本库被不同用户派生（Fork）后，各个版本库的派生关系。这个网络图最早使用Flash实现的，目前已经改为HTML5实现<a class="footnote-reference" href="#id10" id="id5">[4]</a>。图2-21的示例网络图来自于Gitosis项目<a class="footnote-reference" href="#id11" id="id6">[5]</a>。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/network-graph.png"><img alt="../images/network-graph.png" src="../images/network-graph.png" /></a>
 <p class="caption">图2-21：Gitosis项目网络图</p>
@@ -275,7 +275,7 @@
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2011/12/26。
+      最后更新于 2011/12/31。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>

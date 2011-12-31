@@ -4,9 +4,9 @@ GitHub企业版
 
 网址： https://enterprise.github.com/ 。
 
-GitHub企业版搭建在企业本地网络中，因此企业拥有对版本库和项目完整的控制权限。GitHub企业版包含了GitHub上所有的好东西：提交历史、代码浏览、比较视图、Pull Requests、问题追踪、维基、Gists、组织和团队管理、强大的API，和漂亮的界面，因此会使用GitHub就会使用GitHub企业版。此外企业版还增加了对LDAP和CAS支持功能，以便和企业现有的认证系统整合等等 [#]_ 。
+GitHub企业版搭建在企业本地网络中，因此企业拥有对版本库和项目完整的控制权限。GitHub企业版包含了GitHub上所有的好东西：提交历史、代码浏览、比较视图、Pull Requests、问题追踪、维基、Gists、组织和团队管理、强大的API，和漂亮的界面，因此会使用GitHub就会使用GitHub企业版。此外企业版还增加了对LDAP和CAS支持功能，以便和企业现有的认证系统整合等等\ [#]_\ 。
 
-GitHub企业版不像它的前身GitHub:FI [#]_ 那样通过下载软件包进行安装和部署，而是提供基于虚拟机的解决方案。即GitHub企业版以OVF虚拟机文件格式发布，可以运行在多种虚拟机平台，如：VMWare、VirtualBox、Oracle VM、Red Hat Enterprise Virtualization和IBM POWER。使用OVF格式让GitHub企业版的部署更加轻松。
+GitHub企业版不像它的前身GitHub:FI\ [#]_\ 那样通过下载软件包进行安装和部署，而是提供基于虚拟机的解决方案。即GitHub企业版以OVF虚拟机文件格式发布，可以运行在多种虚拟机平台，如：VMWare、VirtualBox、Oracle VM、Red Hat Enterprise Virtualization和IBM POWER。使用OVF格式让GitHub企业版的部署更加轻松。
 
 GitHub企业版根据用户数量收取年费，入门级的价格为20用户每年5,000美金。如果用户数少，建议采用付费的GitHub托管账号。购买更多用户许可，访问GitHub企业版网站，那儿有一个报价生成器，如图5-10所示。
 

@@ -103,44 +103,44 @@
             
   <div class="section" id="hub">
 <h1>6.3.2. hub<a class="headerlink" href="#hub" title="永久链接至标题">¶</a></h1>
-<p>对于命令行用户，GitHub提供了名为 <tt class="docutils literal"><span class="pre">hub</span></tt> 的命令行工具，对Git进行了简单的封装。该项目在GitHub上的地址为： <a class="reference external" href="https://github.com/defunkt/hub">https://github.com/defunkt/hub</a> 。</p>
-<p>使用 <tt class="docutils literal"><span class="pre">hub</span></tt> 可以在命令行中简化对GitHub的操作。例如克隆本电子书的版本库，若用 <tt class="docutils literal"><span class="pre">hub</span></tt> 命令，地址可大大简化：</p>
+<p>对于命令行用户，GitHub提供了名为<tt class="docutils literal"><span class="pre">hub</span></tt>的命令行工具，对Git进行了简单的封装。该项目在GitHub上的地址为： <a class="reference external" href="https://github.com/defunkt/hub">https://github.com/defunkt/hub</a> 。</p>
+<p>使用<tt class="docutils literal"><span class="pre">hub</span></tt>可以在命令行中简化对GitHub的操作。例如克隆本电子书的版本库，若用<tt class="docutils literal"><span class="pre">hub</span></tt>命令，地址可大大简化：</p>
 <div class="highlight-python"><pre>$ hub clone gotgit/gotgithub</pre>
 </div>
 <p>若要在自己账号下创建派生项目，无需登录GitHub网站，直接通过命令行即可实现：</p>
 <div class="highlight-python"><pre>$ cd gotgithub
 $ hub fork</pre>
 </div>
-<p>安装 <tt class="docutils literal"><span class="pre">hub</span></tt> 很简单，可使用如下方法任意一种方法。</p>
+<p>安装<tt class="docutils literal"><span class="pre">hub</span></tt>很简单，可使用如下方法任意一种方法。</p>
 <ul>
-<li><p class="first">克隆 <tt class="docutils literal"><span class="pre">hub</span></tt> 的版本库，从源码安装。安装步骤如下：</p>
+<li><p class="first">克隆<tt class="docutils literal"><span class="pre">hub</span></tt>的版本库，从源码安装。安装步骤如下：</p>
 <div class="highlight-python"><pre>$ git clone git://github.com/defunkt/hub.git
 $ cd hub
 $ rake install prefix=/usr/local</pre>
 </div>
 </li>
 <li><p class="first">用 RubyGems 包方式安装。</p>
-<p><tt class="docutils literal"><span class="pre">hub</span></tt> 用 Ruby 开发，也可用 RubyGems 包方式安装。需要注意，在安装完毕后最好将 <tt class="docutils literal"><span class="pre">hub</span></tt> 打包为一独立运行脚本，以便运行时不再靠 RubyGems 加载，提高加载速度。安装步骤如下：</p>
+<p><tt class="docutils literal"><span class="pre">hub</span></tt>用 Ruby 开发，也可用 RubyGems 包方式安装。需要注意，在安装完毕后最好将<tt class="docutils literal"><span class="pre">hub</span></tt>打包为一独立运行脚本，以便运行时不再靠 RubyGems 加载，提高加载速度。安装步骤如下：</p>
 <div class="highlight-python"><pre>$ gem install hub
 $ hub hub standalone &gt; ~/bin/hub &amp;&amp; chmod 755 ~/bin/hub</pre>
 </div>
 </li>
 </ul>
-<p>安装完毕后，还需要对 <tt class="docutils literal"><span class="pre">hub</span></tt> 进行设置。定义两个Git风格的配置变量，以便 <tt class="docutils literal"><span class="pre">hub</span></tt> 命令能确定当前GitHub用户账号，并能够完成所需的 GitHub API 认证。</p>
+<p>安装完毕后，还需要对<tt class="docutils literal"><span class="pre">hub</span></tt>进行设置。定义两个Git风格的配置变量，以便<tt class="docutils literal"><span class="pre">hub</span></tt>命令能确定当前GitHub用户账号，并能够完成所需的 GitHub API 认证。</p>
 <div class="highlight-python"><pre>$ git config --global github.user "your-github-username"
 $ git config --global github.token "your-github-token"</pre>
 </div>
-<p>其中 <tt class="docutils literal"><span class="pre">github.token</span></tt> 中保存的是用户的API TOKEN，这在“2.1 创建GitHub账号”一节有过介绍。</p>
-<p>在使用 <tt class="docutils literal"><span class="pre">hub</span></tt> 过程中，如果要为区分哪些命令是 <tt class="docutils literal"><span class="pre">git</span></tt> 的，哪些是 <tt class="docutils literal"><span class="pre">hub</span></tt> 的，而不断在两个命令间切换显然太不方便了。
-<tt class="docutils literal"><span class="pre">hub</span></tt> 命令支持以系统别名 <tt class="docutils literal"><span class="pre">git</span></tt> 的方式运行，即设置 <tt class="docutils literal"><span class="pre">hub</span></tt> 的系统别名为 <tt class="docutils literal"><span class="pre">git</span></tt> ，然后只需执行 <tt class="docutils literal"><span class="pre">git</span></tt> 命令，这样无论是 <tt class="docutils literal"><span class="pre">git</span></tt> 本身的命令还是 <tt class="docutils literal"><span class="pre">hub</span></tt> 扩展的命令都可正常运行。但要注意要用系统提供的别名方式，而不能把 <tt class="docutils literal"><span class="pre">hub</span></tt> 脚本改名为 <tt class="docutils literal"><span class="pre">git</span></tt> ，因为 <tt class="docutils literal"><span class="pre">hub</span></tt> 只是简单地对Git进行封装，运行时仍依赖 <tt class="docutils literal"><span class="pre">git</span></tt> 命令。在 bash 环境下建立别名可运行如下命令：</p>
+<p>其中<tt class="docutils literal"><span class="pre">github.token</span></tt>中保存的是用户的API TOKEN，这在“2.1 创建GitHub账号”一节有过介绍。</p>
+<p>在使用<tt class="docutils literal"><span class="pre">hub</span></tt>过程中，如果要为区分哪些命令是<tt class="docutils literal"><span class="pre">git</span></tt>的，哪些是<tt class="docutils literal"><span class="pre">hub</span></tt>的，而不断在两个命令间切换显然太不方便了。
+<tt class="docutils literal"><span class="pre">hub</span></tt> 命令支持以系统别名<tt class="docutils literal"><span class="pre">git</span></tt>的方式运行，即设置<tt class="docutils literal"><span class="pre">hub</span></tt>的系统别名为<tt class="docutils literal"><span class="pre">git</span></tt>，然后只需执行<tt class="docutils literal"><span class="pre">git</span></tt>命令，这样无论是<tt class="docutils literal"><span class="pre">git</span></tt>本身的命令还是<tt class="docutils literal"><span class="pre">hub</span></tt>扩展的命令都可正常运行。但要注意要用系统提供的别名方式，而不能把<tt class="docutils literal"><span class="pre">hub</span></tt>脚本改名为<tt class="docutils literal"><span class="pre">git</span></tt>，因为<tt class="docutils literal"><span class="pre">hub</span></tt>只是简单地对Git进行封装，运行时仍依赖<tt class="docutils literal"><span class="pre">git</span></tt>命令。在 bash 环境下建立别名可运行如下命令：</p>
 <div class="highlight-python"><pre>$ alias git=hub</pre>
 </div>
-<p>其他 shell 环境下如何建立系统别名呢？运行 <tt class="docutils literal"><span class="pre">hub</span> <span class="pre">alias</span> <span class="pre">&lt;shell&gt;</span></tt> 命令查看相关 shell 环境下建立别名的方法。例如对于 csh：</p>
+<p>其他 shell 环境下如何建立系统别名呢？运行<tt class="docutils literal"><span class="pre">hub</span> <span class="pre">alias</span> <span class="pre">&lt;shell&gt;</span></tt>命令查看相关 shell 环境下建立别名的方法。例如对于 csh：</p>
 <div class="highlight-python"><pre>$ hub alias csh
 Run this in your shell to start using `hub` as `git`:
   alias git hub</pre>
 </div>
-<p>下面介绍 <tt class="docutils literal"><span class="pre">hub</span></tt> 的常用命令，节选自 <tt class="docutils literal"><span class="pre">hub</span></tt> 的项目页 <a class="footnote-reference" href="#id2" id="id1">[1]</a> 。示例使用了别名命令 <tt class="docutils literal"><span class="pre">git</span></tt> 调用，并把对应的原始的 <tt class="docutils literal"><span class="pre">git</span></tt> 命令写在命令的下面（用提示符 <tt class="docutils literal"><span class="pre">&gt;</span></tt> 表示，方括号中是说明）。</p>
+<p>下面介绍<tt class="docutils literal"><span class="pre">hub</span></tt>的常用命令，节选自<tt class="docutils literal"><span class="pre">hub</span></tt>的项目页<a class="footnote-reference" href="#id2" id="id1">[1]</a>。示例使用了别名命令<tt class="docutils literal"><span class="pre">git</span></tt>调用，并把对应的原始的<tt class="docutils literal"><span class="pre">git</span></tt>命令写在命令的下面（用提示符<tt class="docutils literal"><span class="pre">&gt;</span></tt>表示，方括号中是说明）。</p>
 <ul>
 <li><p class="first">git create</p>
 <p>在GitHub上创建项目。</p>
@@ -153,7 +153,7 @@ $ git create recipes
 &gt; git remote add origin git@github.com:YOUR_USER/recipes.git
 
 $ git create sinatra/recipes
-&gt; [ 在组织账号 ``sinatra`` 下创建版本库 ]
+&gt; [ 在组织账号 sinatra 下创建版本库 ]
 &gt; git remote add origin git@github.com:sinatra/recipes.git</pre>
 </div>
 </li>
@@ -180,7 +180,7 @@ $ git clone resque
 <p>打开编辑器输入标题和内容，然后在 GitHub 上创建 Pull Request。</p>
 </li>
 <li><p class="first">git remote add</p>
-<p>设置远程版本库。和 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></tt> 命令一样支持URL简写。</p>
+<p>设置远程版本库。和<tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></tt>命令一样支持URL简写。</p>
 <div class="highlight-python"><pre>$ git remote add rtomayko
 &gt; git remote add rtomayko git://github.com/rtomayko/CURRENT_REPO.git
 
@@ -239,7 +239,7 @@ $ git browse schacon/ticgit commit/SHA
 </div>
 </li>
 <li><p class="first">git help hub</p>
-<p>查看 <tt class="docutils literal"><span class="pre">hub</span></tt> 命令的帮助。</p>
+<p>查看<tt class="docutils literal"><span class="pre">hub</span></tt>命令的帮助。</p>
 </li>
 </ul>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
@@ -279,7 +279,7 @@ $ git browse schacon/ticgit commit/SHA
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2011/12/26。
+      最后更新于 2011/12/31。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>

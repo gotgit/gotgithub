@@ -1,7 +1,7 @@
 用Hg操作GitHub
 ===============
 
-Hg（又称Mercurial）和 Git 一样也是一个被广泛使用的分布式版本库控制工具。如果一个熟悉 Hg 的开发者参与托管在 GitHub 上的项目，大可不必为更换版本控制工具而苦恼，GitHub 上的一个名为 hg-git [#]_ 的开源项目可以帮上忙。
+Hg（又称Mercurial）和 Git 一样也是一个被广泛使用的分布式版本库控制工具。如果一个熟悉 Hg 的开发者参与托管在 GitHub 上的项目，大可不必为更换版本控制工具而苦恼，GitHub 上的一个名为 hg-git\ [#]_\ 的开源项目可以帮上忙。
 
 得益于 Hg 的强大的插件扩展机制，安装 hg-git 并将其注册为Hg 插件后可提供 Hg 操作 Git 版本库的能力。安装 hg-git 可以直接使用 :program:`easy_install` 命令：
 
@@ -57,9 +57,9 @@ Hg（又称Mercurial）和 Git 一样也是一个被广泛使用的分布式版�
     日期:        Fri Dec 31 12:12:42 2010 +0800
     摘要:        Translate for Chinese.
 
-* 切换到所需的工作分支（如 ``master`` 分支）。
+* 切换到所需的工作分支（如\ ``master``\ 分支）。
 
-  用 `hg update -r` 命令切换分支。之后执行 :command:`hg bookmarks` 命令会看到当前工作分支用星号标识出来。
+  用\ `hg update -r`\ 命令切换分支。之后执行 :command:`hg bookmarks` 命令会看到当前工作分支用星号标识出来。
 
   ::
 

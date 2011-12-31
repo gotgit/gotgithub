@@ -148,14 +148,14 @@ Permission denied (publickey).</pre>
 <p class="caption">图2-7：SSH公钥管理</p>
 </div>
 <p>要想向GitHub添加SSH公钥，首先要确保正确生成了对应的公钥/私钥对。关于SSH公钥认证，在我的《Git权威指南》一书的“第29章使用SSH协议”中有详细介绍，这里仅做简要的介绍。</p>
-<p>GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac OS X、或Cygwin下的 <tt class="docutils literal"><span class="pre">ssh-keygen</span></tt> 命令创建公钥/私钥对。命令如下：</p>
+<p>GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac OS X、或Cygwin下的<tt class="docutils literal"><span class="pre">ssh-keygen</span></tt>命令创建公钥/私钥对。命令如下：</p>
 <div class="highlight-python"><pre>$ ssh-keygen</pre>
 </div>
-<p>然后根据提示在用户主目录下的 <tt class="docutils literal"><span class="pre">.ssh</span></tt> 目录中创建默认的公钥/私钥对文件，其中 <tt class="docutils literal"><span class="pre">~/.ssh/id_rsa</span></tt> 是私钥文件， <tt class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></tt> 是公钥文件。注意私钥文件要严加保护，不能泄露给任何人。如果在执行 <tt class="docutils literal"><span class="pre">ssh-keygen</span></tt> 命令时选择了使用口令保护私钥，私钥文件是经过加密的。至于公钥文件 <tt class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></tt> 则可以放心地公开给他人。</p>
-<p>也可以用 <tt class="docutils literal"><span class="pre">ssh-keygen</span></tt> 命令以不同的名称创建多个公钥，当拥有多个GitHub账号时，非常重要。这是因为虽然一个GitHub账号允许使用多个不同的SSH公钥，但反过来，一个SSH公钥只能对应于一个GitHub账号。下面的命令在 <tt class="docutils literal"><span class="pre">~/.ssh</span></tt> 目录下创建名为 <tt class="docutils literal"><span class="pre">gotgithub</span></tt> 的私钥和名为 <tt class="docutils literal"><span class="pre">gotgithub.pub</span></tt> 的公钥文件。</p>
+<p>然后根据提示在用户主目录下的<tt class="docutils literal"><span class="pre">.ssh</span></tt>目录中创建默认的公钥/私钥对文件，其中<tt class="docutils literal"><span class="pre">~/.ssh/id_rsa</span></tt>是私钥文件，<tt class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></tt>是公钥文件。注意私钥文件要严加保护，不能泄露给任何人。如果在执行<tt class="docutils literal"><span class="pre">ssh-keygen</span></tt>命令时选择了使用口令保护私钥，私钥文件是经过加密的。至于公钥文件<tt class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></tt>则可以放心地公开给他人。</p>
+<p>也可以用<tt class="docutils literal"><span class="pre">ssh-keygen</span></tt>命令以不同的名称创建多个公钥，当拥有多个GitHub账号时，非常重要。这是因为虽然一个GitHub账号允许使用多个不同的SSH公钥，但反过来，一个SSH公钥只能对应于一个GitHub账号。下面的命令在<tt class="docutils literal"><span class="pre">~/.ssh</span></tt>目录下创建名为<tt class="docutils literal"><span class="pre">gotgithub</span></tt>的私钥和名为<tt class="docutils literal"><span class="pre">gotgithub.pub</span></tt>的公钥文件。</p>
 <div class="highlight-python"><pre>$ ssh-keygen -C "gotgithub@gmail.com" -f ~/.ssh/gotgithub</pre>
 </div>
-<p>当生成的公钥/私钥对不在缺省位置（~/.ssh/id_rsa等）时，使用 <tt class="docutils literal"><span class="pre">ssh</span></tt> 命令连接远程主机时需要使用参数 <tt class="docutils literal"><span class="pre">-i</span> <span class="pre">&lt;filename&gt;</span></tt> 指定公钥/私钥对。或者在配置文件 <tt class="docutils literal"><span class="pre">~/.ssh/config</span></tt> 中针对相应主机进行设定。例如对于上例创建了非缺省公钥/私钥对 <tt class="docutils literal"><span class="pre">~/.ssh/gotgithub</span></tt> ，可以在 <tt class="docutils literal"><span class="pre">~/.ssh/config</span></tt> 配置文件中写入如下配置。</p>
+<p>当生成的公钥/私钥对不在缺省位置（~/.ssh/id_rsa等）时，使用<tt class="docutils literal"><span class="pre">ssh</span></tt>命令连接远程主机时需要使用参数<tt class="docutils literal"><span class="pre">-i</span> <span class="pre">&lt;filename&gt;</span></tt>指定公钥/私钥对。或者在配置文件<tt class="docutils literal"><span class="pre">~/.ssh/config</span></tt>中针对相应主机进行设定。例如对于上例创建了非缺省公钥/私钥对<tt class="docutils literal"><span class="pre">~/.ssh/gotgithub</span></tt>，可以在<tt class="docutils literal"><span class="pre">~/.ssh/config</span></tt>配置文件中写入如下配置。</p>
 <div class="highlight-python"><pre>Host github.com
   User git
   Hostname github.com
@@ -170,11 +170,11 @@ Permission denied (publickey).</pre>
 <a class="reference internal image-reference" href="../images/setting-ssh-gotgithub.png"><img alt="../images/setting-ssh-gotgithub.png" src="../images/setting-ssh-gotgithub.png" /></a>
 <p class="caption">图2-8：添加SSH公钥认证</p>
 </div>
-<p>设置成功后，再用 <tt class="docutils literal"><span class="pre">ssh</span></tt> 命令访问 github.com，会显示一条认证成功信息并退出。在认证成功的信息中还会显示该公钥对应的用户名。</p>
+<p>设置成功后，再用<tt class="docutils literal"><span class="pre">ssh</span></tt>命令访问 github.com，会显示一条认证成功信息并退出。在认证成功的信息中还会显示该公钥对应的用户名。</p>
 <div class="highlight-python"><pre>$ ssh -T git@github.com
 Hi gotgithub! You've successfully authenticated, but GitHub does not provide shell access.</pre>
 </div>
-<p>如果您未能看到类似的成功信息，可以通过在 <tt class="docutils literal"><span class="pre">ssh</span></tt> 命令后面添加 <tt class="docutils literal"><span class="pre">-v</span></tt> 参数加以诊断，会在冗长的会话中看到认证所使用的公钥文件等信息。</p>
+<p>如果您未能看到类似的成功信息，可以通过在<tt class="docutils literal"><span class="pre">ssh</span></tt>命令后面添加<tt class="docutils literal"><span class="pre">-v</span></tt>参数加以诊断，会在冗长的会话中看到认证所使用的公钥文件等信息。</p>
 <div class="highlight-python"><pre>$ ssh -Tv git@github.com
 ...
 debug1: Authentications that can continue: publickey
@@ -220,7 +220,7 @@ Hi gotgithub! You've successfully authenticated, but GitHub does not provide she
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2011/12/26。
+      最后更新于 2011/12/31。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>

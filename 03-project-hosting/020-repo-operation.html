@@ -128,14 +128,14 @@ CommitDate: Wed Dec 14 14:52:40 2011 +0800
 </div>
 <p>原来提交用户设置的邮件地址并非gotgithub用户设置的邮件地址。补救办法就是对此提交进行修改，然后强制推送到GitHub。</p>
 <ul>
-<li><p class="first">重新设置 <tt class="docutils literal"><span class="pre">user.name</span></tt> 和 <tt class="docutils literal"><span class="pre">user.email</span></tt> 配置变量。</p>
-<p>因为gotgithub是一个仅在本书使用的示例账号，我可不想影响本地其他项目的提交，因此下面的设置命令没有使用 <tt class="docutils literal"><span class="pre">--global</span></tt> 参数，只对本地 <tt class="docutils literal"><span class="pre">helloworld</span></tt> 版本库进行设置。</p>
+<li><p class="first">重新设置<tt class="docutils literal"><span class="pre">user.name</span></tt>和<tt class="docutils literal"><span class="pre">user.email</span></tt>配置变量。</p>
+<p>因为gotgithub是一个仅在本书使用的示例账号，我可不想影响本地其他项目的提交，因此下面的设置命令没有使用<tt class="docutils literal"><span class="pre">--global</span></tt>参数，只对本地<tt class="docutils literal"><span class="pre">helloworld</span></tt>版本库进行设置。</p>
 <div class="highlight-python"><pre>$ git config user.name "Jiang Xin"
 $ git config user.email "gotgithub@gmail.com"</pre>
 </div>
 </li>
 <li><p class="first">执行Git修补提交命令。</p>
-<p>注意使用 <tt class="docutils literal"><span class="pre">--reset-author</span></tt> 会将提交信息中的属性 <tt class="docutils literal"><span class="pre">Author</span></tt> 连同 <tt class="docutils literal"><span class="pre">AuthorDate</span></tt> 一并修改，否则只修改 <tt class="docutils literal"><span class="pre">Commit</span></tt> 和 <tt class="docutils literal"><span class="pre">CommitDate</span></tt> 。参数 <tt class="docutils literal"><span class="pre">-C</span> <span class="pre">HEAD</span></tt> 维持提交说明不变。</p>
+<p>注意使用<tt class="docutils literal"><span class="pre">--reset-author</span></tt>会将提交信息中的属性<tt class="docutils literal"><span class="pre">Author</span></tt>连同<tt class="docutils literal"><span class="pre">AuthorDate</span></tt>一并修改，否则只修改<tt class="docutils literal"><span class="pre">Commit</span></tt>和<tt class="docutils literal"><span class="pre">CommitDate</span></tt>。参数<tt class="docutils literal"><span class="pre">-C</span> <span class="pre">HEAD</span></tt>维持提交说明不变。</p>
 <div class="highlight-python"><pre>$ git commit --amend --reset-author -C HEAD</pre>
 </div>
 </li>
@@ -161,7 +161,7 @@ Merge the remote changes (e.g. 'git pull') before pushing again.  See the
 </div>
 </li>
 <li><p class="first">使用强制推送。</p>
-<p>对于此例，考虑到还没有其他人关注 <tt class="docutils literal"><span class="pre">helloworld</span></tt> 这个刚刚建立的示例项目，显然不需要向上面命令错误信息中提示那样先执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt> 合并上游版本库再推送，而是选择强制推送。</p>
+<p>对于此例，考虑到还没有其他人关注<tt class="docutils literal"><span class="pre">helloworld</span></tt>这个刚刚建立的示例项目，显然不需要向上面命令错误信息中提示那样先执行<tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt>合并上游版本库再推送，而是选择强制推送。</p>
 <div class="highlight-python"><pre>$ git push -f
 Counting objects: 3, done.
 Delta compression using up to 2 threads.
@@ -181,15 +181,15 @@ To git@github.com:gotgithub/helloworld.git
 </div>
 <div class="section" id="id3">
 <h2>3.2.2. 新建分支<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>现在版本库中只有一个默认分支 <tt class="docutils literal"><span class="pre">master</span></tt> ，如果希望在GitHub版本库中再创建分支，可以采用如下方法：</p>
+<p>现在版本库中只有一个默认分支<tt class="docutils literal"><span class="pre">master</span></tt>，如果希望在GitHub版本库中再创建分支，可以采用如下方法：</p>
 <ul>
-<li><p class="first">本地版本库中建立分支 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 。</p>
-<p>创建分支有多种方法，最为便捷的就是 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></tt> 命令，同时完成分支创建和分支切换。</p>
+<li><p class="first">本地版本库中建立分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>。</p>
+<p>创建分支有多种方法，最为便捷的就是<tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></tt>命令，同时完成分支创建和分支切换。</p>
 <div class="highlight-python"><pre>$ git checkout -b mybranch1
 Switched to a new branch 'mybranch1'</pre>
 </div>
 </li>
-<li><p class="first">为了易于识别，添加一个新文件 <tt class="docutils literal"><span class="pre">hello1</span></tt> ，并提交。</p>
+<li><p class="first">为了易于识别，添加一个新文件<tt class="docutils literal"><span class="pre">hello1</span></tt>，并提交。</p>
 <div class="highlight-python"><pre>$ touch hello1
 $ git add hello1
 $ git commit -m "add hello1 for mark."
@@ -198,7 +198,7 @@ $ git commit -m "add hello1 for mark."
  create mode 100644 hello1</pre>
 </div>
 </li>
-<li><p class="first">通过推送命令，将本地分支 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 推送到GitHub远程版本库，完成在GitHub上的新分支创建。</p>
+<li><p class="first">通过推送命令，将本地分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>推送到GitHub远程版本库，完成在GitHub上的新分支创建。</p>
 <div class="highlight-python"><pre>$ git push -u origin mybranch1
 Counting objects: 4, done.
 Delta compression using up to 2 threads.
@@ -211,7 +211,7 @@ Branch mybranch1 set up to track remote branch mybranch1 from origin.</pre>
 </div>
 </li>
 </ul>
-<p>在GitHub上查看版本库，会看到新增了一个分支 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> ，不过默认分支仍为 <tt class="docutils literal"><span class="pre">master</span></tt> ，如图3-8所示。</p>
+<p>在GitHub上查看版本库，会看到新增了一个分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>，不过默认分支仍为<tt class="docutils literal"><span class="pre">master</span></tt>，如图3-8所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/new-branch.png"><img alt="../images/new-branch.png" src="../images/new-branch.png" /></a>
 <p class="caption">图3-8：版本库新增了一个分支</p>
@@ -219,7 +219,7 @@ Branch mybranch1 set up to track remote branch mybranch1 from origin.</pre>
 </div>
 <div class="section" id="id4">
 <h2>3.2.3. 设置默认分支<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>如果希望版本库的默认分支为 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> ，点击项目名称旁边的”Admin“按钮，修改项目的默认分支，如图3-9所示。</p>
+<p>如果希望版本库的默认分支为<tt class="docutils literal"><span class="pre">mybranch1</span></tt>，点击项目名称旁边的”Admin“按钮，修改项目的默认分支，如图3-9所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/set-default-branch.png"><img alt="../images/set-default-branch.png" src="../images/set-default-branch.png" /></a>
 <p class="caption">图3-9：设置缺省分支</p>
@@ -235,13 +235,13 @@ $ cd helloworld-nb
 $ git branch
 * mybranch1</pre>
 </div>
-<p>之所以本地缺省分支不再是 <tt class="docutils literal"><span class="pre">master</span></tt> ，是因为远程（GitHub）版本库中的特殊引用 <tt class="docutils literal"><span class="pre">HEAD</span></tt> 指向 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 分支。这可以从下面命令看出。</p>
+<p>之所以本地缺省分支不再是<tt class="docutils literal"><span class="pre">master</span></tt>，是因为远程（GitHub）版本库中的特殊引用<tt class="docutils literal"><span class="pre">HEAD</span></tt>指向<tt class="docutils literal"><span class="pre">mybranch1</span></tt>分支。这可以从下面命令看出。</p>
 <div class="highlight-python"><pre>$ git branch -r
   origin/HEAD -&gt; origin/mybranch1
   origin/master
   origin/mybranch1</pre>
 </div>
-<p>也可以从 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span></tt> 命令看出引用 <tt class="docutils literal"><span class="pre">HEAD</span></tt> 和 <tt class="docutils literal"><span class="pre">refs/heads/mybranch1</span></tt> 指向同一个对象的哈希值。</p>
+<p>也可以从<tt class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span></tt>命令看出引用<tt class="docutils literal"><span class="pre">HEAD</span></tt>和<tt class="docutils literal"><span class="pre">refs/heads/mybranch1</span></tt>指向同一个对象的哈希值。</p>
 <div class="highlight-python"><pre>$ git ls-remote
 From git@github.com:gotgithub/helloworld.git
 f46a28484adb6c1b4830eb4df582325c740e9d6c        HEAD
@@ -251,23 +251,23 @@ f46a28484adb6c1b4830eb4df582325c740e9d6c        refs/heads/mybranch1</pre>
 </div>
 <div class="section" id="id5">
 <h2>3.2.4. 删除分支<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<p>删除本地版本库的分支 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> ，用如下命令：</p>
+<p>删除本地版本库的分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>，用如下命令：</p>
 <div class="highlight-python"><pre>$ git branch -d mybranch1
 error: Cannot delete the branch 'mybranch1' which you are currently on.</pre>
 </div>
-<p>错误信息显示不能删除当前工作分支。因此先切换到其他分支，例如从GitHub版本库中取出 <tt class="docutils literal"><span class="pre">master</span></tt> 分支并切换。</p>
+<p>错误信息显示不能删除当前工作分支。因此先切换到其他分支，例如从GitHub版本库中取出<tt class="docutils literal"><span class="pre">master</span></tt>分支并切换。</p>
 <div class="highlight-python"><pre>$ git checkout master</pre>
 </div>
-<p>可以看出新的工作分支为 <tt class="docutils literal"><span class="pre">master</span></tt> 分支。</p>
+<p>可以看出新的工作分支为<tt class="docutils literal"><span class="pre">master</span></tt>分支。</p>
 <div class="highlight-python"><pre>$ git branch
 * master
   mybranch1</pre>
 </div>
-<p>现在删除 <tt class="docutils literal"><span class="pre">mybanch1</span></tt> 分支。之所以使用 <tt class="docutils literal"><span class="pre">-D</span></tt> 参数，而非 <tt class="docutils literal"><span class="pre">-d</span></tt> 参数，是因为为了防止 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 的提交丢失，Git缺省禁止删除尚未合并的分支。</p>
+<p>现在删除<tt class="docutils literal"><span class="pre">mybanch1</span></tt>分支。之所以使用<tt class="docutils literal"><span class="pre">-D</span></tt>参数，而非<tt class="docutils literal"><span class="pre">-d</span></tt>参数，是因为为了防止<tt class="docutils literal"><span class="pre">mybranch1</span></tt>的提交丢失，Git缺省禁止删除尚未合并的分支。</p>
 <div class="highlight-python"><pre>$ git branch -D mybranch1
 Deleted branch mybranch1 (was f46a284).</pre>
 </div>
-<p>现在只是本地分支被删除了，远程GitHub服务器上的 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 分支尚在。删除远程GitHub版本库中的分支就不能使用 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></tt> 命令，而是要使用 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> 命令，不过在使用推送分支命令时要使用一个特殊的引用表达式（冒号前为空）。如下：</p>
+<p>现在只是本地分支被删除了，远程GitHub服务器上的<tt class="docutils literal"><span class="pre">mybranch1</span></tt>分支尚在。删除远程GitHub版本库中的分支就不能使用<tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></tt>命令，而是要使用<tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt>命令，不过在使用推送分支命令时要使用一个特殊的引用表达式（冒号前为空）。如下：</p>
 <div class="highlight-python"><pre>$ git push origin :mybranch1
 remote: error: refusing to delete the current branch: refs/heads/mybranch1
 To git@github.com:gotgithub/helloworld.git
@@ -275,12 +275,12 @@ To git@github.com:gotgithub/helloworld.git
 error: failed to push some refs to 'git@github.com:gotgithub/helloworld.git'</pre>
 </div>
 <p>为什么删除远程分支出错了呢？是因为没有使用强制推送么？</p>
-<p>实际上即使使用强制推送也会遇到上面的错误。GitHub发现要删除的 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 分支是远程版本库的缺省分支，因而禁止删除。重新访问GitHub的项目管理页面，将缺省分支设置回 <tt class="docutils literal"><span class="pre">master</span></tt> 分支，参照图3-9。然后再执行上述命令，即可成功删除分支。</p>
+<p>实际上即使使用强制推送也会遇到上面的错误。GitHub发现要删除的<tt class="docutils literal"><span class="pre">mybranch1</span></tt>分支是远程版本库的缺省分支，因而禁止删除。重新访问GitHub的项目管理页面，将缺省分支设置回<tt class="docutils literal"><span class="pre">master</span></tt>分支，参照图3-9。然后再执行上述命令，即可成功删除分支。</p>
 <div class="highlight-python"><pre>$ git push origin :mybranch1
 To git@github.com:gotgithub/helloworld.git
  - [deleted]         mybranch1</pre>
 </div>
-<p>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span></tt> 命令可以看到GitHub远程分支 <tt class="docutils literal"><span class="pre">mybranch1</span></tt> 已删除。</p>
+<p>执行<tt class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span></tt>命令可以看到GitHub远程分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>已删除。</p>
 <div class="highlight-python"><pre>$ git ls-remote git@github.com:gotgithub/helloworld.git
 From git@github.com:gotgithub/helloworld.git
 e1e52d99fa71fd6f606903efa9da04fd0055fca9        HEAD
@@ -297,7 +297,7 @@ $ git add hello1
 $ git commit -m "add hello1 for mark."</pre>
 </div>
 </li>
-<li><p class="first">本地创建里程碑 <tt class="docutils literal"><span class="pre">mytag1</span></tt> 、 <tt class="docutils literal"><span class="pre">mytag2</span></tt> 和 <tt class="docutils literal"><span class="pre">mytag3</span></tt> 。</p>
+<li><p class="first">本地创建里程碑<tt class="docutils literal"><span class="pre">mytag1</span></tt>、<tt class="docutils literal"><span class="pre">mytag2</span></tt>和<tt class="docutils literal"><span class="pre">mytag3</span></tt>。</p>
 <div class="highlight-python"><pre>$ git tag -m "Tag on initial commit" mytag1 HEAD^
 $ git tag -m "Tag on new commit"     mytag2
 $ git tag mytag3</pre>
@@ -371,7 +371,7 @@ To git@github.com:gotgithub/helloworld.git
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2011/12/26。
+      最后更新于 2011/12/31。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>

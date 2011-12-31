@@ -8,7 +8,7 @@
 
 GitHub可以通过多种途径为版本库授权，让版本库成为多人共享的版本库，从而让项目管理者围绕项目创建一个核心开发团队。下面以gotgithub账号下的helloworld版本库为例，介绍如何设置版本库的多人共享。
 
-进入 ``gotgithub/helloworld`` 项目的管理界面，点击左侧导航条中的“Collaborators”，可以查看及添加项目的合作者，如图4-17所示。
+进入\ ``gotgithub/helloworld``\ 项目的管理界面，点击左侧导航条中的“Collaborators”，可以查看及添加项目的合作者，如图4-17所示。
 
 .. figure:: /images/work-with-others/collaborators.png
    :scale: 100
@@ -22,21 +22,21 @@ GitHub可以通过多种途径为版本库授权，让版本库成为多人共�
 
    图4-18：合作者项目列表
 
-从图4-18可以看出GitHub用户incredible自己创建的项目托管在自己的空间下，而作为合作者参与的项目仍然托管在原创建者（gotgithub）的空间下，这一点明显和派生（Fork）而来的项目不同。图4-19是以incredible登录GitHub访问 ``gotgithub/helloworld`` 的界面。
+从图4-18可以看出GitHub用户incredible自己创建的项目托管在自己的空间下，而作为合作者参与的项目仍然托管在原创建者（gotgithub）的空间下，这一点明显和派生（Fork）而来的项目不同。图4-19是以incredible登录GitHub访问\ ``gotgithub/helloworld``\ 的界面。
 
 .. figure:: /images/work-with-others/collab-view-helloworld.png
    :scale: 100
 
    图4-19：以合作者身份访问项目
 
-用户incredible对版本库 ``gotgithub/helloworld`` 拥有写入权限。和 ``gotgithub`` 用户稍有区别的是没有管理员权限。
+用户incredible对版本库\ ``gotgithub/helloworld``\ 拥有写入权限。和\ ``gotgithub``\ 用户稍有区别的是没有管理员权限。
 
 与传统集中式工作模式的异同
 --------------------------------
 
 传统的集中式版本控制系统，如CVS、SVN，所有用户都访问同一个版本库。采用集中式工作模式的GitHub用户也同样是访问同一版本库。
 
-对于由用户gotgithub创建的 ``helloworld`` 版本库，添加了合作者supergirl和incredible，三个人克隆版本库使用如下命令。
+对于由用户gotgithub创建的\ ``helloworld``\ 版本库，添加了合作者supergirl和incredible，三个人克隆版本库使用如下命令。
 
 * 用户 gotgithub 克隆版本库。
 
@@ -60,7 +60,7 @@ GitHub可以通过多种途径为版本库授权，让版本库成为多人共�
 
 对于像Git这样的分布式版本控制系统，提交总是会成功，这是因为提交并不涉及和共享服务器的交互，是针对本地克隆版本库进行的本地操作。采用集中式的工作模式，共享版本库作为各个用户各自本地版本库数据交换、沟通的中介，只有在本地克隆版本库需要和共享版本库同步的时候才要和服务器建立连接。例如将本地所做的一个或多个提交推送到共享服务器，或者将服务器上新的提交获取到本地克隆版本库。
 
-实际上无论采用分布式还是集中式的工作模式，Git都好像工作在一个独立的分支上（克隆即分支），即使共享版本库和本地克隆版本库的分支名都叫做 ``master`` 。如图4-20，三个用户克隆 ``gitgithub/helloworld`` 版本库后，各自在本地执行了一次或多次提交。
+实际上无论采用分布式还是集中式的工作模式，Git都好像工作在一个独立的分支上（克隆即分支），即使共享版本库和本地克隆版本库的分支名都叫做\ ``master``\ 。如图4-20，三个用户克隆\ ``gitgithub/helloworld``\ 版本库后，各自在本地执行了一次或多次提交。
 
 
 .. figure:: /images/work-with-others/workflow-commit.png
@@ -96,7 +96,7 @@ GitHub可以通过多种途径为版本库授权，让版本库成为多人共�
   Merge the remote changes (e.g. 'git pull') before pushing again.  See the
   'Note about fast-forwards' section of 'git push --help' for details.
 
-GitHub并不对强制推送进行限制，但是用户supergirl不要用 ``git push -f`` 命令强制推送，因为那样会覆盖掉共享版本库中用户gotgithub的推送，正确的做法是获取共享版本库中新提交，并在本地版本库中和本地提交合并。即执行：
+GitHub并不对强制推送进行限制，但是用户supergirl不要用\ ``git push -f``\ 命令强制推送，因为那样会覆盖掉共享版本库中用户gotgithub的推送，正确的做法是获取共享版本库中新提交，并在本地版本库中和本地提交合并。即执行：
 
 ::
 
@@ -116,7 +116,7 @@ GitHub并不对强制推送进行限制，但是用户supergirl不要用 ``git p
 
   supergirl$ git pull
 
-即： ``git pull = git fetch + git merge`` 。
+即：\ ``git pull = git fetch + git merge``\ 。
 
 但是合并操作并不总是会成功，如果自动合并失败，会在暂存区对合并前后文件进行标识，工作区进入冲突解决状态，在冲突解决完成之前不能提交。Git支持多种图形工具帮助完成冲突解决，执行如下命令，即可自动调用已安装的冲突解决工具。
 
@@ -124,7 +124,7 @@ GitHub并不对强制推送进行限制，但是用户supergirl不要用 ``git p
 
   supergirl$ git mergetool
 
-冲突解决完毕，执行提交即完成冲突解决。如果在冲突解决过程把本地文件搞得一团糟，随时可以取消合并操作。执行命令 ``git reset --hard`` 会取消冲突的合并让本地版本库回到合并之前的状态。
+冲突解决完毕，执行提交即完成冲突解决。如果在冲突解决过程把本地文件搞得一团糟，随时可以取消合并操作。执行命令\ ``git reset --hard``\ 会取消冲突的合并让本地版本库回到合并之前的状态。
 
 成功完成合并后将本地版本库中的提交推送到共享版本库：
 
@@ -159,7 +159,7 @@ GitHub并不对强制推送进行限制，但是用户supergirl不要用 ``git p
 
     incredible$ git fetch origin
 
-* 执行变基操作，将本地 ``master`` 分支的提交变基到新的远程分支中。
+* 执行变基操作，将本地\ ``master``\ 分支的提交变基到新的远程分支中。
 
   ::
 
@@ -178,19 +178,19 @@ GitHub并不对强制推送进行限制，但是用户supergirl不要用 ``git p
 
    图4-25：变基后推送
 
-如果希望在执行 ``git pull`` 时自动使用 ``git rebase`` 取代默认的 ``git merge`` 操作，可以在 ``git pull`` 命令行添加参数 ``--rebase`` 如下：
+如果希望在执行\ ``git pull``\ 时自动使用\ ``git rebase``\ 取代默认的\ ``git merge``\ 操作，可以在\ ``git pull``\ 命令行添加参数\ ``--rebase``\ 如下：
 
 ::
 
   $ git pull --rebase
 
-或者通过配置变量设置当前分支使用变基策略，即每次执行 ``git pull`` 命令时对于 ``master`` 分支，采用变基操作取代默认的合并操作。
+或者通过配置变量设置当前分支使用变基策略，即每次执行\ ``git pull``\ 命令时对于\ ``master``\ 分支，采用变基操作取代默认的合并操作。
 
 ::
 
   $ git config branch.master.rebase true
 
-如果希望本地所有克隆版本库在执行 ``git pull`` 时都改变默认行为，将变基作为首选，则如下设置全局变量。
+如果希望本地所有克隆版本库在执行\ ``git pull``\ 时都改变默认行为，将变基作为首选，则如下设置全局变量。
 
 ::
 

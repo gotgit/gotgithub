@@ -1,14 +1,14 @@
 版本库钩子扩展
 ==================
 
-通过钩子扩展，GitHub托管的版本库可以和外部应用实现整合。整合的接口完全开放，开发者可以访问GitHub的开源项目 `github/github-services`_ 开发新的应用整合脚本。目前GitHub已经支持超过50个外部应用的整合，在这里恕不一一列举，仅以 ``helloworld`` 项目为例，介绍几个常见应用的整合。
+通过钩子扩展，GitHub托管的版本库可以和外部应用实现整合。整合的接口完全开放，开发者可以访问GitHub的开源项目 `github/github-services`_ 开发新的应用整合脚本。目前GitHub已经支持超过50个外部应用的整合，在这里恕不一一列举，仅以\ ``helloworld``\ 项目为例，介绍几个常见应用的整合。
 
 .. _github/github-services: https://github.com/github/github-services
 
 邮件通知功能
 --------------
 
-配置邮件通知，可以实现新提交推送至版本库时，发送通知邮件。在版本库的管理界面，选择“Service Hooks”中的Email进入邮件通知配置界面，如图3-15所示。配置界面很简单，写上邮件地址，选择激活即可。为了便于整个团队都能收到通知邮件，可以将收件地址设置为一个邮件列表。如果选择“Send From Author”，邮件的发件者显示为提交者的邮件地址，否则发件者为 ``noreply@github.com`` 。
+配置邮件通知，可以实现新提交推送至版本库时，发送通知邮件。在版本库的管理界面，选择“Service Hooks”中的Email进入邮件通知配置界面，如图3-15所示。配置界面很简单，写上邮件地址，选择激活即可。为了便于整个团队都能收到通知邮件，可以将收件地址设置为一个邮件列表。如果选择“Send From Author”，邮件的发件者显示为提交者的邮件地址，否则发件者为\ ``noreply@github.com``\ 。
 
 .. figure:: /images/project-hosting/hooks-email.png
    :scale: 100

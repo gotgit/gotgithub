@@ -103,7 +103,7 @@
             
   <div class="section" id="github-mac">
 <h1>6.3.1. github:mac<a class="headerlink" href="#github-mac" title="永久链接至标题">¶</a></h1>
-<p>GitHub专为Mac用户开发了一款图形化客户端应用 <tt class="docutils literal"><span class="pre">github:mac</span></tt> ，在Mac下操作GitHub更简单。软件下载地址： <a class="reference external" href="http://mac.github.com/">http://mac.github.com/</a> 。</p>
+<p>GitHub专为Mac用户开发了一款图形化客户端应用<tt class="docutils literal"><span class="pre">github:mac</span></tt>，在Mac下操作GitHub更简单。软件下载地址： <a class="reference external" href="http://mac.github.com/">http://mac.github.com/</a> 。</p>
 <p><tt class="docutils literal"><span class="pre">github:mac</span></tt> 可以实现版本库克隆、查看历史、提交、分支管理、与GitHub同步等功能。图6-12展示的是提交界面，在提交界面中同时显示了变更的差异比较，用户可以挑选文件中的部分变更进行提交，显然这个操作要比在命令行中执行 <strong class="command">git add &#8211;patch</strong> 或 <strong class="command">git commit &#8211;patch</strong> 要更加直观。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/mac-partial-commit.png"><img alt="../images/mac-partial-commit.png" src="../images/mac-partial-commit.png" /></a>
@@ -114,12 +114,12 @@
 <a class="reference internal image-reference" href="../images/mac-new-ssh-pubkey.png"><img alt="../images/mac-new-ssh-pubkey.png" src="../images/mac-new-ssh-pubkey.png" /></a>
 <p class="caption">图6-13：在GitHub上自动添加的SSH公钥</p>
 </div>
-<p>同时 <tt class="docutils literal"><span class="pre">github:mac</span></tt> 还在本地将新生成的私钥文件添加到 <tt class="docutils literal"><span class="pre">ssh-agent</span></tt> 认证代理中，这样一旦通过 SSH 协议连接GitHub，首先采用该公钥/私钥对进行身份认证。用下面的命令可以查看添加到 <tt class="docutils literal"><span class="pre">ssh-agent</span></tt> 中的私钥文件。</p>
+<p>同时<tt class="docutils literal"><span class="pre">github:mac</span></tt>还在本地将新生成的私钥文件添加到<tt class="docutils literal"><span class="pre">ssh-agent</span></tt>认证代理中，这样一旦通过 SSH 协议连接GitHub，首先采用该公钥/私钥对进行身份认证。用下面的命令可以查看添加到<tt class="docutils literal"><span class="pre">ssh-agent</span></tt>中的私钥文件。</p>
 <div class="highlight-python"><pre>$ ssh-add -l
 2048 aa:01:4f:d2:14:ba:5f:9f:8c:dc:b5:9d:44:cd:8e:18 /Users/jiangxin/.ssh/github_rsa (RSA)</pre>
 </div>
-<p>这种透明的公钥认证管理非常酷，对于大多数只使用唯一一个GitHub账号的用户来说是非常方便的。但如果用户拥有多个GitHub账号并需要不时切换账号，这种实现却很糟糕，会导致认证错误。因为当 <tt class="docutils literal"><span class="pre">ssh-agent</span></tt> 认证代理缓存了私钥后，连接由文件 <tt class="file docutils literal"><span class="pre">~/.ssh/config</span></tt> 设置的 SSH 别名主机无法使用指定的公钥/私钥对进行认证，导致认证失败。</p>
-<p>遇到 GitHub 账户 SSH 认证问题，可以运行下面命令清空 <tt class="docutils literal"><span class="pre">ssh-agent</span></tt> 缓存的私钥。</p>
+<p>这种透明的公钥认证管理非常酷，对于大多数只使用唯一一个GitHub账号的用户来说是非常方便的。但如果用户拥有多个GitHub账号并需要不时切换账号，这种实现却很糟糕，会导致认证错误。因为当<tt class="docutils literal"><span class="pre">ssh-agent</span></tt>认证代理缓存了私钥后，连接由文件 <tt class="file docutils literal"><span class="pre">~/.ssh/config</span></tt> 设置的 SSH 别名主机无法使用指定的公钥/私钥对进行认证，导致认证失败。</p>
+<p>遇到 GitHub 账户 SSH 认证问题，可以运行下面命令清空<tt class="docutils literal"><span class="pre">ssh-agent</span></tt>缓存的私钥。</p>
 <div class="highlight-python"><pre>$ ssh-add -d ~/.ssh/github_rsa
 Identity removed: /Users/jiangxin/.ssh/github_rsa (/Users/jiangxin/.ssh/github_rsa.pub)</pre>
 </div>
@@ -154,7 +154,7 @@ Identity removed: /Users/jiangxin/.ssh/github_rsa (/Users/jiangxin/.ssh/github_r
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2011/12/26。
+      最后更新于 2011/12/31。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
