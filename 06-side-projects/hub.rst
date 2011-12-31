@@ -1,9 +1,9 @@
 hub
 ------------
 
-对于命令行用户，GitHub提供了名为 ``hub`` 的命令行工具，对Git进行了简单的封装。该项目在GitHub上的地址为： https://github.com/defunkt/hub 。
+对于命令行用户，GitHub提供了名为\ ``hub``\ 的命令行工具，对Git进行了简单的封装。该项目在GitHub上的地址为： https://github.com/defunkt/hub 。
 
-使用 ``hub`` 可以在命令行中简化对GitHub的操作。例如克隆本电子书的版本库，若用 ``hub`` 命令，地址可大大简化：
+使用\ ``hub``\ 可以在命令行中简化对GitHub的操作。例如克隆本电子书的版本库，若用\ ``hub``\ 命令，地址可大大简化：
 
 ::
 
@@ -16,9 +16,9 @@ hub
   $ cd gotgithub
   $ hub fork
 
-安装 ``hub`` 很简单，可使用如下方法任意一种方法。
+安装\ ``hub``\ 很简单，可使用如下方法任意一种方法。
 
-* 克隆 ``hub`` 的版本库，从源码安装。安装步骤如下：
+* 克隆\ ``hub``\ 的版本库，从源码安装。安装步骤如下：
 
   ::
   
@@ -28,30 +28,30 @@ hub
 
 * 用 RubyGems 包方式安装。
 
-  ``hub`` 用 Ruby 开发，也可用 RubyGems 包方式安装。需要注意，在安装完毕后最好将 ``hub`` 打包为一独立运行脚本，以便运行时不再靠 RubyGems 加载，提高加载速度。安装步骤如下：
+  ``hub``\ 用 Ruby 开发，也可用 RubyGems 包方式安装。需要注意，在安装完毕后最好将\ ``hub``\ 打包为一独立运行脚本，以便运行时不再靠 RubyGems 加载，提高加载速度。安装步骤如下：
 
   ::
   
     $ gem install hub
     $ hub hub standalone > ~/bin/hub && chmod 755 ~/bin/hub
 
-安装完毕后，还需要对 ``hub`` 进行设置。定义两个Git风格的配置变量，以便 ``hub`` 命令能确定当前GitHub用户账号，并能够完成所需的 GitHub API 认证。
+安装完毕后，还需要对\ ``hub``\ 进行设置。定义两个Git风格的配置变量，以便\ ``hub``\ 命令能确定当前GitHub用户账号，并能够完成所需的 GitHub API 认证。
 
 ::
 
   $ git config --global github.user "your-github-username"
   $ git config --global github.token "your-github-token"
 
-其中 ``github.token`` 中保存的是用户的API TOKEN，这在“2.1 创建GitHub账号”一节有过介绍。
+其中\ ``github.token``\ 中保存的是用户的API TOKEN，这在“2.1 创建GitHub账号”一节有过介绍。
 
-在使用 ``hub`` 过程中，如果要为区分哪些命令是 ``git`` 的，哪些是 ``hub`` 的，而不断在两个命令间切换显然太不方便了。
-``hub`` 命令支持以系统别名 ``git`` 的方式运行，即设置 ``hub`` 的系统别名为 ``git`` ，然后只需执行 ``git`` 命令，这样无论是 ``git`` 本身的命令还是 ``hub`` 扩展的命令都可正常运行。但要注意要用系统提供的别名方式，而不能把 ``hub`` 脚本改名为 ``git`` ，因为 ``hub`` 只是简单地对Git进行封装，运行时仍依赖 ``git`` 命令。在 bash 环境下建立别名可运行如下命令：
+在使用\ ``hub``\ 过程中，如果要为区分哪些命令是\ ``git``\ 的，哪些是\ ``hub``\ 的，而不断在两个命令间切换显然太不方便了。
+``hub`` 命令支持以系统别名\ ``git``\ 的方式运行，即设置\ ``hub``\ 的系统别名为\ ``git``\ ，然后只需执行\ ``git``\ 命令，这样无论是\ ``git``\ 本身的命令还是\ ``hub``\ 扩展的命令都可正常运行。但要注意要用系统提供的别名方式，而不能把\ ``hub``\ 脚本改名为\ ``git``\ ，因为\ ``hub``\ 只是简单地对Git进行封装，运行时仍依赖\ ``git``\ 命令。在 bash 环境下建立别名可运行如下命令：
 
 ::
 
   $ alias git=hub
 
-其他 shell 环境下如何建立系统别名呢？运行 ``hub alias <shell>`` 命令查看相关 shell 环境下建立别名的方法。例如对于 csh：
+其他 shell 环境下如何建立系统别名呢？运行\ ``hub alias <shell>``\ 命令查看相关 shell 环境下建立别名的方法。例如对于 csh：
 
 ::
 
@@ -59,7 +59,7 @@ hub
   Run this in your shell to start using `hub` as `git`:
     alias git hub
 
-下面介绍 ``hub`` 的常用命令，节选自 ``hub`` 的项目页 [#]_ 。示例使用了别名命令 ``git`` 调用，并把对应的原始的 ``git`` 命令写在命令的下面（用提示符 ``>`` 表示，方括号中是说明）。
+下面介绍\ ``hub``\ 的常用命令，节选自\ ``hub``\ 的项目页\ [#]_\ 。示例使用了别名命令\ ``git``\ 调用，并把对应的原始的\ ``git``\ 命令写在命令的下面（用提示符\ ``>``\ 表示，方括号中是说明）。
 
 * git create
 
@@ -76,7 +76,7 @@ hub
     > git remote add origin git@github.com:YOUR_USER/recipes.git
 
     $ git create sinatra/recipes
-    > [ 在组织账号 ``sinatra`` 下创建版本库 ]
+    > [ 在组织账号 sinatra 下创建版本库 ]
     > git remote add origin git@github.com:sinatra/recipes.git
 
 * git clone
@@ -111,7 +111,7 @@ hub
 
 * git remote add
 
-  设置远程版本库。和 ``git clone`` 命令一样支持URL简写。
+  设置远程版本库。和\ ``git clone``\ 命令一样支持URL简写。
 
   ::
 
@@ -185,6 +185,6 @@ hub
 
 * git help hub
 
-  查看 ``hub`` 命令的帮助。
+  查看\ ``hub``\ 命令的帮助。
 
 .. [#] https://github.com/defunkt/hub#readme

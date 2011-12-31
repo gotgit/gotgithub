@@ -1,7 +1,7 @@
 探索GitHub
 ===============
 
-打开浏览器，访问网址 https://github.com/ 来探索GitHub吧。GitHub的首页（图1-5所示）特意给出了Git和GitHub的音标，可能不少国人需要据此校准一下Git的读音 [#]_ 。
+打开浏览器，访问网址 https://github.com/ 来探索GitHub吧。GitHub的首页（图1-5所示）特意给出了Git和GitHub的音标，可能不少国人需要据此校准一下Git的读音\ [#]_\ 。
 
 .. figure:: /images/explore-github/github-homepage.png
    :scale: 100
@@ -41,7 +41,7 @@ GitHub通过屏幕截图等方式介绍了GitHub的常见功能，可以通过�
 
    图1-9：GitHub功能介绍
 
-博客也是了解GitHub的一个重要的途径，可以获知GitHub的最新动态，如最新改进等。图1-10显示的是GitHub在感恩节推出的促销活动：收费服务免费试用一个月！ [#]_ 如果及时关注博客就不会错过噢。
+博客也是了解GitHub的一个重要的途径，可以获知GitHub的最新动态，如最新改进等。图1-10显示的是GitHub在感恩节推出的促销活动：收费服务免费试用一个月！\ [#]_\ 如果及时关注博客就不会错过噢。
 
 .. figure:: /images/explore-github/blog.png
    :scale: 100

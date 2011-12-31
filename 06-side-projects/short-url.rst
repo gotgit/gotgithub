@@ -9,13 +9,13 @@ GitHub短网址服务
 
 很自然地想到了Google短网址服务，于是由上面的长网址生成出一个短小精干的网址： http://goo.gl/Gy85b ，访问该短网址会自动重定向到对应的长网址。
 
-2011年11月，GitHub也推出了自己的短网址服务 [#]_ ，为GitHub自身网址提供短网址转换服务。GitHub短网址服务没有像Google短网址服务那样提供基于Web的图形化转换界面，而是需要用命令行进行网址转换。
+2011年11月，GitHub也推出了自己的短网址服务\ [#]_\ ，为GitHub自身网址提供短网址转换服务。GitHub短网址服务没有像Google短网址服务那样提供基于Web的图形化转换界面，而是需要用命令行进行网址转换。
 
-例如对于网址 https://github.com/blog/985-git-io-github-url-shortener 的转换，使用 ``curl`` 命令如下操作。
+例如对于网址 https://github.com/blog/985-git-io-github-url-shortener 的转换，使用\ ``curl``\ 命令如下操作。
 
 * 将长网址转换为短网址。
 
-  命令 ``curl`` 输出中的 ``Location:`` 语句即是转换后的短网址。
+  命令\ ``curl``\ 输出中的\ ``Location:``\ 语句即是转换后的短网址。
 
   ::
 
@@ -25,9 +25,9 @@ GitHub短网址服务
     ...
     Location: http://git.io/help
 
-* 查看短网址对应的原网址，同样使用 ``curl`` 命令。
+* 查看短网址对应的原网址，同样使用\ ``curl``\ 命令。
 
-  命令 ``curl`` 输出302重定向地址即为原始网址。
+  命令\ ``curl``\ 输出302重定向地址即为原始网址。
 
   ::
 
@@ -36,7 +36,7 @@ GitHub短网址服务
     ...
     Location: https://github.com/blog/985-git-io-github-url-shortener
 
-为使转换的短网址更易于记忆和识别，可在 ``curl`` 命令中用 code 参数设定期望的短网址。例如下面命令将本节一开始提到的长网址转换为短网址： http://git.io/image-diff 。
+为使转换的短网址更易于记忆和识别，可在\ ``curl``\ 命令中用 code 参数设定期望的短网址。例如下面命令将本节一开始提到的长网址转换为短网址： http://git.io/image-diff 。
 
 ::
 

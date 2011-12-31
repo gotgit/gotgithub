@@ -65,7 +65,7 @@ GitHub收费方案
 
    图5-8：团队账号更换方案
 
-为组织账号选择一个付费方案后，就可以在组织的账号下创建私有版本库，并以团队方式管理该私有版本库的授权。图5-9就是一个私有版本库 ``GotGitOrg/NonPublicRepo`` 的设置界面。
+为组织账号选择一个付费方案后，就可以在组织的账号下创建私有版本库，并以团队方式管理该私有版本库的授权。图5-9就是一个私有版本库\ ``GotGitOrg/NonPublicRepo``\ 的设置界面。
 
 .. figure:: /images/commercial-products/org-private-repo-settings.png
    :scale: 100

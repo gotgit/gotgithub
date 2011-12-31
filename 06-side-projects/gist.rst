@@ -7,7 +7,7 @@ GitHub:Gist
 
    图6-1：GitHub上的Gist链接
 
-Gist作为一个粘贴数据的工具，就像 Pastie 网站 [#]_ 一样，可以很容易地将数据粘贴在Gist网站中，并在其他网页中引用Gist中粘贴的数据。作为GitHub的一个子网站，很自然地，Gist使用Git版本库对粘贴数据进行维护，这非常酷。
+Gist作为一个粘贴数据的工具，就像 Pastie 网站\ [#]_\ 一样，可以很容易地将数据粘贴在Gist网站中，并在其他网页中引用Gist中粘贴的数据。作为GitHub的一个子网站，很自然地，Gist使用Git版本库对粘贴数据进行维护，这非常酷。
 
 数据的粘贴和引用
 -----------------
@@ -51,7 +51,7 @@ Gist作为一个粘贴数据的工具，就像 Pastie 网站 [#]_ 一样，可�
   <script src="https://gist.github.com/1202870.js?file=countdown.rb"></script>
 
 
-将上面的JavaScript代码嵌入到网页（如博客 [#]_ ）中，即可在相应的网页中嵌入来自Gist的数据，并保持语法加亮等功能，如图6-6所示。
+将上面的JavaScript代码嵌入到网页（如博客\ [#]_\ ）中，即可在相应的网页中嵌入来自Gist的数据，并保持语法加亮等功能，如图6-6所示。
 
 .. figure:: /images/side-projects/gist-embed-in-blog.png
    :scale: 100
@@ -121,15 +121,15 @@ Gist网站并没有像GitHub网站那样对于Git版本库提供完整的、近�
 
    图6-7：Gist版本库简易操作界面
 
-在这个简易的Git版本库操作界面中，左侧是版本库的简介、文件预览以及在线编辑、下载、加注星标 [#]_ 、版本库分支 [#]_ 等相关操作按钮。若以Gist创建者登录，会在右侧看到他人基于该Gist创建分支的情况，但是并不提供GitHub才有的Pull Request等功能。在界面的右侧还显示了Gist修订历史，和之前通过 ``git log`` 命令从Git版本库看到的一样。
+在这个简易的Git版本库操作界面中，左侧是版本库的简介、文件预览以及在线编辑、下载、加注星标\ [#]_\ 、版本库分支\ [#]_\ 等相关操作按钮。若以Gist创建者登录，会在右侧看到他人基于该Gist创建分支的情况，但是并不提供GitHub才有的Pull Request等功能。在界面的右侧还显示了Gist修订历史，和之前通过\ ``git log``\ 命令从Git版本库看到的一样。
 
 Greasemonkey
 -----------------
-Gist除了被用于粘贴数据（如代码块）并在网页中引用之外，还被用户挖掘出了新的应用模式，例如用作Greasemonkey脚本的维护 [#]_ 。
+Gist除了被用于粘贴数据（如代码块）并在网页中引用之外，还被用户挖掘出了新的应用模式，例如用作Greasemonkey脚本的维护\ [#]_\ 。
 
-Greasemonkey [#]_ 或类似插件为浏览器提供用户端JavaScript扩展功能，最早出现于FireFox浏览器中。其他浏览器也陆续增加了对用户端JavaScript的支持，如Safari的 NinjaKit [#]_ 插件，IE的Trixie [#]_ 插件，以及Chrome的Greasemetal插件 [#]_ 。关于如何在浏览器中安装并启用相应的插件，参照相关插件网站的介绍，在此不做过多叙述。
+Greasemonkey\ [#]_\ 或类似插件为浏览器提供用户端JavaScript扩展功能，最早出现于FireFox浏览器中。其他浏览器也陆续增加了对用户端JavaScript的支持，如Safari的 NinjaKit\ [#]_\ 插件，IE的Trixie\ [#]_\ 插件，以及Chrome的Greasemetal插件\ [#]_\ 。关于如何在浏览器中安装并启用相应的插件，参照相关插件网站的介绍，在此不做过多叙述。
 
-当浏览器安装了 Greasemonkey 或类似插件之后，当访问扩展名为 ``.user.js`` 的URL时，会将该URL指向的JavaScript脚本安装在浏览器中，当访问指定的网址时会自动调用相应的JavaScript脚本，修改相关网页内容或添加特效等等。
+当浏览器安装了 Greasemonkey 或类似插件之后，当访问扩展名为\ ``.user.js``\ 的URL时，会将该URL指向的JavaScript脚本安装在浏览器中，当访问指定的网址时会自动调用相应的JavaScript脚本，修改相关网页内容或添加特效等等。
 
 我针对《Git权威指南》官网的测试网页写了一个Greasemonkey示例脚本，可以展示用户端JavaScript的魔法，这个用户端JavaScript脚本保存在Gist中：
 https://gist.github.com/1084591 ，如图6-8所示。
@@ -139,7 +139,7 @@ https://gist.github.com/1084591 ，如图6-8所示。
 
    图6-8：保存Greasemonkey用户端脚本的Gist
 
-该Greasemonkey脚本的文件名为 ``click_more.user.js`` ，该文件的文件头使用特殊的注释语句为Greasemonkey提供相关的安装和注册信息，内容如下（为方便描述添加了行号）：
+该Greasemonkey脚本的文件名为\ ``click_more.user.js``\ ，该文件的文件头使用特殊的注释语句为Greasemonkey提供相关的安装和注册信息，内容如下（为方便描述添加了行号）：
 
 ::
 
@@ -153,7 +153,7 @@ https://gist.github.com/1084591 ，如图6-8所示。
   8  // @require        http://code.jquery.com/jquery-1.6.2.min.js
   9  // ==/UserScript==
 
-其中第5、6、7行三条 `include` 语句限定了此用户端JavaScript脚本的应用范围，即只针对指定的URL（使用通配符）执行该脚本。第8行设定脚本依赖，即该脚本依赖jQuery，会在运行前到指定的URL地址加载jQuery脚本。
+其中第5、6、7行三条\ `include`\ 语句限定了此用户端JavaScript脚本的应用范围，即只针对指定的URL（使用通配符）执行该脚本。第8行设定脚本依赖，即该脚本依赖jQuery，会在运行前到指定的URL地址加载jQuery脚本。
 
 在安装该脚本前，先用浏览器访问网址 http://www.worldhello.net/gotgit/demo.html ，看看不加载用户端JavaScript脚本时网页的模样。该网页中包含一个长长的网上书店列表，如图6-9所示。 
 
@@ -162,7 +162,7 @@ https://gist.github.com/1084591 ，如图6-8所示。
 
    图6-9：应用用户端JavaScript脚本前的网页内容
 
-接下来开始安装该用户端JavaScript脚本。安装非常简单，只要点击图6-8的Gist当中的脚本文件对应的“raw”链接，即点击脚本文件原始内容链接 [#]_ 即可开启安装。这是因为该URL以 ``.user.js`` 结尾，会被Greasemonkey（或类似插件）识别并安装，如图6-10是Greasemonkey弹出的用户端脚本安装界面。
+接下来开始安装该用户端JavaScript脚本。安装非常简单，只要点击图6-8的Gist当中的脚本文件对应的“raw”链接，即点击脚本文件原始内容链接\ [#]_\ 即可开启安装。这是因为该URL以\ ``.user.js``\ 结尾，会被Greasemonkey（或类似插件）识别并安装，如图6-10是Greasemonkey弹出的用户端脚本安装界面。
 
 .. figure:: /images/side-projects/gist-user-js-install.png
    :scale: 100
@@ -196,11 +196,11 @@ GitHub开发者还写了一个名为gist的命令行工具对Gist进行操作，
   $ git config --global github.user "your-github-username"
   $ git config --global github.token "your-github-token"
 
-其中 ``github.token`` 中保存的是用户的API TOKEN，这在“2.1 创建GitHub账号”一节有过介绍。
+其中\ ``github.token``\ 中保存的是用户的API TOKEN，这在“2.1 创建GitHub账号”一节有过介绍。
 
 使用gist命令行工具创建新的Gist非常简单。
 
-* 创建包含一个文件（如 ``script.py`` ）的Gist，使用如下命令。
+* 创建包含一个文件（如\ ``script.py``\ ）的Gist，使用如下命令。
 
   ::
   
@@ -212,7 +212,7 @@ GitHub开发者还写了一个名为gist的命令行工具对Gist进行操作，
   
     $ gist script.js notes.txt
 
-如果对命令行操作方式感兴趣，参考gist工具网站的 `README` 文件。
+如果对命令行操作方式感兴趣，参考gist工具网站的\ `README`\ 文件。
 
 
 ----
