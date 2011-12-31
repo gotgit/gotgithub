@@ -119,8 +119,7 @@
 <p>下面以GotGit版本库为例，介绍如何利用GitHub提供的Fork和Pull Request工具实现工作协同。</p>
 <div class="section" id="id1">
 <h2>4.1.1. 版本库派生<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>GotGit版本库<a class="footnote-reference" href="#id11" id="id2">[1]</a>用于维护《Git权威指南》一书的官网和勘误，下面演示的勘误表修改是由王胜 <a class="footnote-reference" href="#id12" id="id3">[2]</a>
-通过GitHub之外的一个缺陷追踪平台报告的<a class="footnote-reference" href="#id13" id="id4">[3]</a>。他在报告中，甚至直接用GNU diff格式告诉我该如何修改。</p>
+<p>GotGit版本库<a class="footnote-reference" href="#id11" id="id2">[1]</a>用于维护《Git权威指南》一书的官网和勘误，下面演示的勘误表修改是由王胜<a class="footnote-reference" href="#id12" id="id3">[2]</a>通过GitHub之外的一个缺陷追踪平台报告的<a class="footnote-reference" href="#id13" id="id4">[3]</a>。他在报告中，甚至直接用GNU diff格式告诉我该如何修改。</p>
 <p>下面就以用户gotgithub身份，访问版本库 <a class="reference external" href="https://github.com/gotgit/gotgit/">https://github.com/gotgit/gotgit/</a> ，添加新的勘误。如图4-1所示，gotgit项目在之前的示例中已经被我们关注但尚未Fork。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gotgit-repo-before-fork.png"><img alt="../images/gotgit-repo-before-fork.png" src="../images/gotgit-repo-before-fork.png" /></a>
@@ -319,7 +318,7 @@ Fast-forward
 <div class="section" id="id8">
 <h2>4.1.4. 在线编辑<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>GitHub提供了在线编辑功能，这样可以无需克隆版本库、无需使用Git即可完成对版本库中文件的修改，甚至可以在你的iPad甚至iPhone上完成对文件的修改。</p>
-<p>以gotgithub账户身份登录GitHub，访问之前派生而来的版本库 gotgithub/gotgit 中的文件，例如文件<tt class="docutils literal"><span class="pre">errata.md</span></tt><a class="footnote-reference" href="#id16" id="id9">[6]</a>，会看到其中一个“Edit this file”的按钮，如图4-12所示。</p>
+<p>以gotgithub账户身份登录GitHub，访问之前派生而来的版本库gotgithub/gotgit中的文件，例如文件<tt class="docutils literal"><span class="pre">errata.md</span></tt><a class="footnote-reference" href="#id16" id="id9">[6]</a>，会看到其中一个“Edit this file”的按钮，如图4-12所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/edit-this-file-btn.png"><img alt="../images/edit-this-file-btn.png" src="../images/edit-this-file-btn.png" /></a>
 <p class="caption">图4-12：浏览自己版本库中文件</p>
@@ -333,7 +332,7 @@ Fast-forward
 <div class="section" id="fork-pull-request">
 <h2>4.1.5. 简化的 Fork + Pull Request<a class="headerlink" href="#fork-pull-request" title="永久链接至标题">¶</a></h2>
 <p>到目前，我们已经了解了GitHub的三大武器：Fork、Pull Request和在线编辑。对于最常用的“Fork + Pull Request”操作，GitHub还提供了一个快捷模式。即GitHub对于无权更改的他人版本库中的文件，提供了一个类似在线编辑的按钮，名为“Fork and edit this file”按钮，自动完成版本库派生和在线编辑，即将三大武器一勺烩。</p>
-<p>访问他人版本库（尚未在自己空间派生）中的文件，例如访问下面地址： <a class="reference external" href="http://git.io/hello-world-makefile">http://git.io/hello-world-makefile</a><a class="footnote-reference" href="#id17" id="id10">[7]</a>。显示他人（ossxp-com）版本库<tt class="docutils literal"><span class="pre">hello-world</span></tt>中的<tt class="docutils literal"><span class="pre">src/Makefile</span></tt>文件，如图4-14所示。</p>
+<p>访问他人版本库（尚未在自己空间派生）中的文件，例如访问下面地址：<a class="reference external" href="http://git.io/hello-world-makefile">http://git.io/hello-world-makefile</a><a class="footnote-reference" href="#id17" id="id10">[7]</a>。显示他人（ossxp-com）版本库<tt class="docutils literal"><span class="pre">hello-world</span></tt>中的<tt class="docutils literal"><span class="pre">src/Makefile</span></tt>文件，如图4-14所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/fork-and-edit-btn.png"><img alt="../images/fork-and-edit-btn.png" src="../images/fork-and-edit-btn.png" /></a>
 <p class="caption">图4-14：浏览他人版本库中文件</p>
@@ -420,7 +419,7 @@ https://github.com/ossxp-com/hello-world/pull/1</pre>
 <table class="docutils footnote" frame="void" id="id16" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[6]</a></td><td>版本库 gotgit/gotgit 已重构。分支<tt class="docutils literal"><span class="pre">gh-pages</span></tt>中文件<tt class="docutils literal"><span class="pre">errata.md</span></tt>文件来自于原<tt class="docutils literal"><span class="pre">master</span></tt>分支的<tt class="docutils literal"><span class="pre">errata.mkd</span></tt>文件，地址： <a class="reference external" href="https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md">https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md</a> 。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[6]</a></td><td>版本库 gotgit/gotgit 已重构。分支<tt class="docutils literal"><span class="pre">gh-pages</span></tt>中文件<tt class="docutils literal"><span class="pre">errata.md</span></tt>文件来自于原<tt class="docutils literal"><span class="pre">master</span></tt>分支的<tt class="docutils literal"><span class="pre">errata.mkd</span></tt>文件，地址：<a class="reference external" href="https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md">https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md</a> 。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id17" rules="none">

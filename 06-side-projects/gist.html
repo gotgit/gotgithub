@@ -131,8 +131,8 @@
 <a class="reference internal image-reference" href="../images/gist-create-new.png"><img alt="../images/gist-create-new.png" src="../images/gist-create-new.png" /></a>
 <p class="caption">图6-3：创建新的Gist</p>
 </div>
-<p>每一个新的粘贴称为一个Gist，并拥有唯一的URL。如果选择创建公开的Gist，URL中将使用顺序递增的ID号，如本例创建的Gist的URL地址为： <a class="reference external" href="https://gist.github.com/1202870">https://gist.github.com/1202870</a> 。</p>
-<p>若选择创建私有Gist，URL中则采用20位十六进制数字的ID，例如私密Gist： <a class="reference external" href="https://gist.github.com/78d67164131ec9e08dfe">https://gist.github.com/78d67164131ec9e08dfe</a> 。需要指出的是，私有Gist的私密性并不像GitHub私有版本库的私密性那么强，只是其URL没有在用户Gist列表中列出，也不能通过Gist网站搜索到而已。如果用户知道某私密Gist的URL地址，同样可以访问、克隆该私密Gist，甚至创建基于该Gist创建分支（fork）。</p>
+<p>每一个新的粘贴称为一个Gist，并拥有唯一的URL。如果选择创建公开的Gist，URL中将使用顺序递增的ID号，如本例创建的Gist的URL地址为：<a class="reference external" href="https://gist.github.com/1202870">https://gist.github.com/1202870</a>。</p>
+<p>若选择创建私有Gist，URL中则采用20位十六进制数字的ID，例如私密Gist：<a class="reference external" href="https://gist.github.com/78d67164131ec9e08dfe">https://gist.github.com/78d67164131ec9e08dfe</a>。需要指出的是，私有Gist的私密性并不像GitHub私有版本库的私密性那么强，只是其URL没有在用户Gist列表中列出，也不能通过Gist网站搜索到而已。如果用户知道某私密Gist的URL地址，同样可以访问、克隆该私密Gist，甚至创建基于该Gist创建分支（fork）。</p>
 <p>当一个粘贴创建完毕后，会显示新建立的Gist页面，如图6-4所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gist-created.png"><img alt="../images/gist-created.png" src="../images/gist-created.png" /></a>
@@ -156,8 +156,8 @@
 <h2>6.1.2. Gist背后的Git库<a class="headerlink" href="#gistgit" title="永久链接至标题">¶</a></h2>
 <p>创建的每一个Gist的背后都对应着一个Git版本库。例如之前创建的ID为1202870的Gist对应的Git版本库，可以使用两种协议进行访问：</p>
 <ul class="simple">
-<li>Git协议： <tt class="docutils literal"><span class="pre">git://gist.github.com/1202870.git</span></tt></li>
-<li>SSH协议： <tt class="docutils literal"><span class="pre">git&#64;gist.github.com:1202870.git</span></tt></li>
+<li>Git协议：<tt class="docutils literal"><span class="pre">git://gist.github.com/1202870.git</span></tt></li>
+<li>SSH协议：<tt class="docutils literal"><span class="pre">git&#64;gist.github.com:1202870.git</span></tt></li>
 </ul>
 <p>可以通过Git命令克隆和操作该版本库。</p>
 <ul>
@@ -214,8 +214,7 @@ index a9d747b..9045738 100644
 <p>Gist除了被用于粘贴数据（如代码块）并在网页中引用之外，还被用户挖掘出了新的应用模式，例如用作Greasemonkey脚本的维护<a class="footnote-reference" href="#id16" id="id6">[5]</a>。</p>
 <p>Greasemonkey<a class="footnote-reference" href="#id17" id="id7">[6]</a>或类似插件为浏览器提供用户端JavaScript扩展功能，最早出现于FireFox浏览器中。其他浏览器也陆续增加了对用户端JavaScript的支持，如Safari的 NinjaKit<a class="footnote-reference" href="#id18" id="id8">[7]</a>插件，IE的Trixie<a class="footnote-reference" href="#id19" id="id9">[8]</a>插件，以及Chrome的Greasemetal插件<a class="footnote-reference" href="#id20" id="id10">[9]</a>。关于如何在浏览器中安装并启用相应的插件，参照相关插件网站的介绍，在此不做过多叙述。</p>
 <p>当浏览器安装了 Greasemonkey 或类似插件之后，当访问扩展名为<tt class="docutils literal"><span class="pre">.user.js</span></tt>的URL时，会将该URL指向的JavaScript脚本安装在浏览器中，当访问指定的网址时会自动调用相应的JavaScript脚本，修改相关网页内容或添加特效等等。</p>
-<p>我针对《Git权威指南》官网的测试网页写了一个Greasemonkey示例脚本，可以展示用户端JavaScript的魔法，这个用户端JavaScript脚本保存在Gist中：
-<a class="reference external" href="https://gist.github.com/1084591">https://gist.github.com/1084591</a> ，如图6-8所示。</p>
+<p>我针对《Git权威指南》官网的测试网页写了一个Greasemonkey示例脚本，可以展示用户端JavaScript的魔法，这个用户端JavaScript脚本保存在Gist中：<a class="reference external" href="https://gist.github.com/1084591">https://gist.github.com/1084591</a>，如图6-8所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gist-greasemonkey.png"><img alt="../images/gist-greasemonkey.png" src="../images/gist-greasemonkey.png" /></a>
 <p class="caption">图6-8：保存Greasemonkey用户端脚本的Gist</p>
@@ -232,7 +231,7 @@ index a9d747b..9045738 100644
 9  // ==/UserScript==</pre>
 </div>
 <p>其中第5、6、7行三条<cite>include</cite>语句限定了此用户端JavaScript脚本的应用范围，即只针对指定的URL（使用通配符）执行该脚本。第8行设定脚本依赖，即该脚本依赖jQuery，会在运行前到指定的URL地址加载jQuery脚本。</p>
-<p>在安装该脚本前，先用浏览器访问网址 <a class="reference external" href="http://www.worldhello.net/gotgit/demo.html">http://www.worldhello.net/gotgit/demo.html</a> ，看看不加载用户端JavaScript脚本时网页的模样。该网页中包含一个长长的网上书店列表，如图6-9所示。</p>
+<p>在安装该脚本前，先用浏览器访问网址<a class="reference external" href="http://www.worldhello.net/gotgit/demo.html">http://www.worldhello.net/gotgit/demo.html</a>，看看不加载用户端JavaScript脚本时网页的模样。该网页中包含一个长长的网上书店列表，如图6-9所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gist-user-js-apply-before.png"><img alt="../images/gist-user-js-apply-before.png" src="../images/gist-user-js-apply-before.png" /></a>
 <p class="caption">图6-9：应用用户端JavaScript脚本前的网页内容</p>
@@ -242,7 +241,7 @@ index a9d747b..9045738 100644
 <a class="reference internal image-reference" href="../images/gist-user-js-install.png"><img alt="../images/gist-user-js-install.png" src="../images/gist-user-js-install.png" /></a>
 <p class="caption">图6-10：安装用户端JavaScript脚本</p>
 </div>
-<p>用户端脚本安装完毕后，再访问同样的测试网页 <a class="reference external" href="http://www.worldhello.net/gotgit/demo.html">http://www.worldhello.net/gotgit/demo.html</a> ，会发现网页中出现了一个名为“更多”的可点击链接，长长的网上书店列表不见了。如图6-11所示。</p>
+<p>用户端脚本安装完毕后，再访问同样的测试网页<a class="reference external" href="http://www.worldhello.net/gotgit/demo.html">http://www.worldhello.net/gotgit/demo.html</a>，会发现网页中出现了一个名为“更多”的可点击链接，长长的网上书店列表不见了。如图6-11所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gist-user-js-apply-after.png"><img alt="../images/gist-user-js-apply-after.png" src="../images/gist-user-js-apply-after.png" /></a>
 <p class="caption">图6-11：应用用户端JavaScript脚本后的网页内容</p>
@@ -254,7 +253,7 @@ index a9d747b..9045738 100644
 </div>
 <div class="section" id="gist">
 <h2>6.1.4. 命令行操作Gist<a class="headerlink" href="#gist" title="永久链接至标题">¶</a></h2>
-<p>GitHub开发者还写了一个名为gist的命令行工具对Gist进行操作，地址见 <a class="reference external" href="https://github.com/defunkt/gist">https://github.com/defunkt/gist</a> 。</p>
+<p>GitHub开发者还写了一个名为gist的命令行工具对Gist进行操作，地址见<a class="reference external" href="https://github.com/defunkt/gist">https://github.com/defunkt/gist</a>。</p>
 <p>该工具使用Ruby开发，对两个特定的Git风格的配置变量进行如下设置后，即可实现在命令行中自动以特定用户身份登录操作Gist。</p>
 <div class="highlight-python"><pre>$ git config --global github.user "your-github-username"
 $ git config --global github.token "your-github-token"</pre>

@@ -104,12 +104,12 @@
   <div class="section" id="github-mac">
 <h1>6.3.1. github:mac<a class="headerlink" href="#github-mac" title="永久链接至标题">¶</a></h1>
 <p>GitHub专为Mac用户开发了一款图形化客户端应用<tt class="docutils literal"><span class="pre">github:mac</span></tt>，在Mac下操作GitHub更简单。软件下载地址： <a class="reference external" href="http://mac.github.com/">http://mac.github.com/</a> 。</p>
-<p><tt class="docutils literal"><span class="pre">github:mac</span></tt> 可以实现版本库克隆、查看历史、提交、分支管理、与GitHub同步等功能。图6-12展示的是提交界面，在提交界面中同时显示了变更的差异比较，用户可以挑选文件中的部分变更进行提交，显然这个操作要比在命令行中执行 <strong class="command">git add &#8211;patch</strong> 或 <strong class="command">git commit &#8211;patch</strong> 要更加直观。</p>
+<p><tt class="docutils literal"><span class="pre">github:mac</span></tt> 可以实现版本库克隆、查看历史、提交、分支管理、与GitHub同步等功能。图6-12展示的是提交界面，在提交界面中同时显示了变更的差异比较，用户可以挑选文件中的部分变更进行提交，显然这个操作要比在命令行中执行<strong class="command">git add &#8211;patch</strong>或<strong class="command">git commit &#8211;patch</strong>要更加直观。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/mac-partial-commit.png"><img alt="../images/mac-partial-commit.png" src="../images/mac-partial-commit.png" /></a>
 <p class="caption">图6-12：筛选文件中的部分更改进行提交</p>
 </div>
-<p><tt class="docutils literal"><span class="pre">github:mac</span></tt> 和GitHub深度集成，当配置好关联的GitHub账号后，会自动在本地创建专用的SSH公钥/私钥对文件 <tt class="file docutils literal"><span class="pre">~/.ssh/github_rsa</span></tt> （如果该文件不存在的话），然后将公钥文件传递到GitHub网站并自动完成配置。新增的SSH公钥文件显示在GitHub网站的账号设置中，如图6-13所示：</p>
+<p><tt class="docutils literal"><span class="pre">github:mac</span></tt>和GitHub深度集成，当配置好关联的GitHub账号后，会自动在本地创建专用的SSH公钥/私钥对文件 <tt class="file docutils literal"><span class="pre">~/.ssh/github_rsa</span></tt> （如果该文件不存在的话），然后将公钥文件传递到GitHub网站并自动完成配置。新增的SSH公钥文件显示在GitHub网站的账号设置中，如图6-13所示：</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/mac-new-ssh-pubkey.png"><img alt="../images/mac-new-ssh-pubkey.png" src="../images/mac-new-ssh-pubkey.png" /></a>
 <p class="caption">图6-13：在GitHub上自动添加的SSH公钥</p>

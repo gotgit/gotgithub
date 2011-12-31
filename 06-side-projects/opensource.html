@@ -149,11 +149,11 @@
 <div class="section" id="hubot-hubot-scripts">
 <h2>Hubot 和 Hubot Scripts<a class="headerlink" href="#hubot-hubot-scripts" title="永久链接至标题">¶</a></h2>
 <p>可以把 hubot<a class="footnote-reference" href="#id9" id="id3">[2]</a>看做是GitHub的Siri（最早出现于iPhone 4S 的智能语音助理）或是新浪微博上的饮水姬<a class="footnote-reference" href="#id10" id="id4">[3]</a>。GitHub将hobot和Campfire聊天室整合，hobot被聊天室会话触发可以实现诸如：打开办公室的门、根据wifi使用情况列出公司中的人、通过公司喇叭读一段信息等等许多好玩的事情<a class="footnote-reference" href="#id11" id="id5">[4]</a>，而实现GitHub自动化部署则证明 hubot 可以完成更严肃的事情，在公司工作流中扮演举足轻重的地位<a class="footnote-reference" href="#id12" id="id6">[5]</a>。</p>
-<p>Hobot已经开源，项目库地址： <a class="reference external" href="https://github.com/github/hubot">https://github.com/github/hubot</a> 和 <a class="reference external" href="https://github.com/github/hubot-scripts">https://github.com/github/hubot-scripts</a> （脚本）。</p>
+<p>Hobot已经开源，项目库地址：<a class="reference external" href="https://github.com/github/hubot">https://github.com/github/hubot</a>和<a class="reference external" href="https://github.com/github/hubot-scripts">https://github.com/github/hubot-scripts</a>（脚本）。</p>
 </div>
 <div class="section" id="gollum">
 <h2>Gollum<a class="headerlink" href="#gollum" title="永久链接至标题">¶</a></h2>
-<p>GitHub以Git为后端的维基系统就是由Gollum实现的。每一个维基网页对应于一个文件，文件格式可以是 Markdown、textile、rdoc、org、creole、mediawiki、reStructuredText、asciidoc、pod 等。Gollum 调用名为 github-markup 的 Ruby gem 包（来自于下面要介绍的 Markup 项目）完成文件到网页的格式转换。</p>
+<p>GitHub以Git为后端的维基系统就是由Gollum实现的。每一个维基网页对应于一个文件，文件格式可以是 Markdown、textile、rdoc、org、creole、mediawiki、reStructuredText、asciidoc、pod 等。Gollum 调用名为github-markup的Ruby gem包（来自于下面要介绍的 Markup 项目）完成文件到网页的格式转换。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/github/gollum">https://github.com/github/gollum</a> 。</p>
 <p>关于GitHub维基参见本书“第4.6节维基”。</p>
 </div>
@@ -171,7 +171,7 @@
 <h2>Markup<a class="headerlink" href="#markup" title="永久链接至标题">¶</a></h2>
 <p>GitHub通过这个ruby包对项目版本库根目录下的<tt class="docutils literal"><span class="pre">README</span></tt>文件，以及维基页面等文件进行解析、转换为网页显示。支持 Markdown、textile、rdoc、org、creole、mediawiki、reStructuredText、asciidoc、pod 等标记语言。实际上在对上述标记语言的解析和转换中，还依赖其他软件包，例如对于 Markdown 格式首选 Redcarpet<a class="footnote-reference" href="#id13" id="id7">[6]</a>，对 textile 格式使用 RedCloth，对 reStructuredText 格式调用外部命令<tt class="docutils literal"><span class="pre">rst2html</span></tt>，对 asciidoc 格式调用外部命令<tt class="docutils literal"><span class="pre">asciidoc</span></tt>等。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/github/markup">https://github.com/github/markup</a> 。</p>
-<p>关于Markup软件包以及其他GitHub扩展的Markdown语法，参见： <a class="reference external" href="http://github.github.com/github-flavored-markdown">http://github.github.com/github-flavored-markdown</a> 。</p>
+<p>关于Markup软件包以及其他GitHub扩展的Markdown语法，参见：<a class="reference external" href="http://github.github.com/github-flavored-markdown">http://github.github.com/github-flavored-markdown</a>。</p>
 </div>
 <div class="section" id="resque">
 <h2>Resque<a class="headerlink" href="#resque" title="永久链接至标题">¶</a></h2>
@@ -240,7 +240,7 @@
 <table class="docutils footnote" frame="void" id="id13" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[6]</a></td><td>Redcarpet 是对一个高效的Markdown解析器，通过对C语言的 Sundown 库封装实现。项目地址： <a class="reference external" href="https://github.com/tanoku/redcarpet">https://github.com/tanoku/redcarpet</a> 。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[6]</a></td><td>Redcarpet 是对一个高效的Markdown解析器，通过对C语言的 Sundown 库封装实现。项目地址：<a class="reference external" href="https://github.com/tanoku/redcarpet">https://github.com/tanoku/redcarpet</a>。</td></tr>
 </tbody>
 </table>
 </div>

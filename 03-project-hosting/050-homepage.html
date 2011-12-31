@@ -228,8 +228,7 @@ $ git checkout gh-pages</pre>
 <p>地址： <a class="reference external" href="https://github.com/gotgit/gotgit.github.com/">https://github.com/gotgit/gotgit.github.com/</a></p>
 </li>
 <li><p class="first">将网站内容提交并推送到该版本库<tt class="docutils literal"><span class="pre">master</span></tt>分支中。</p>
-<p>即在<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>版本库的根目录下至少包含一个 index 文件，如<tt class="docutils literal"><span class="pre">index.html</span></tt>。
-还可以使用下节将要介绍到的 Jekyll 技术，让网页有统一的显示风格，此时首页文件可能并非一个完整的HTML文档，而是套用了页面模版。</p>
+<p>即在<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>版本库的根目录下至少包含一个 index 文件，如<tt class="docutils literal"><span class="pre">index.html</span></tt>。还可以使用下节将要介绍到的 Jekyll 技术，让网页有统一的显示风格，此时首页文件可能并非一个完整的HTML文档，而是套用了页面模版。</p>
 </li>
 <li><p class="first">至此当访问网址<tt class="docutils literal"><span class="pre">http://gotgit.github.com</span></tt>时，会将账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>的版本库<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>中的内容作为网站内容显示出来。</p>
 </li>
@@ -253,7 +252,7 @@ gotgit.github.com.      43200   IN      A       207.97.227.245</pre>
 </div>
 </li>
 </ol>
-<p>设置完成后用浏览器访问 <a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a> 即可看到由账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>的版本库<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>维护的页面。若将域名<tt class="docutils literal"><span class="pre">worldhello.net</span></tt>（不带www前缀）也指向IP地址<tt class="docutils literal"><span class="pre">207.97.227.245</span></tt>，则访问网址 <a class="reference external" href="http://worldhello.net/">http://worldhello.net/</a> 会发现GitHub体贴地将该网址重定向到正确的地址 <a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a> 。</p>
+<p>设置完成后用浏览器访问 <a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a> 即可看到由账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>的版本库<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>维护的页面。若将域名<tt class="docutils literal"><span class="pre">worldhello.net</span></tt>（不带www前缀）也指向IP地址<tt class="docutils literal"><span class="pre">207.97.227.245</span></tt>，则访问网址<a class="reference external" href="http://worldhello.net/">http://worldhello.net/</a>会发现GitHub体贴地将该网址重定向到正确的地址<a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a>。</p>
 <p>在账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>下的其他版本库，若包含了<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支，亦可由域名<tt class="docutils literal"><span class="pre">www.worldhello.net</span></tt>访问到。</p>
 <ul class="simple">
 <li>网址 <a class="reference external" href="http://www.worldhello.net/doc">http://www.worldhello.net/doc</a> 实际对应于版本库 <a class="reference external" href="https://github.com/gotgit/doc">gotgit/doc</a> 。</li>
@@ -263,7 +262,7 @@ gotgit.github.com.      43200   IN      A       207.97.227.245</pre>
 </div>
 <div class="section" id="jekyll">
 <h2>3.5.4. 使用Jekyll维护网站<a class="headerlink" href="#jekyll" title="永久链接至标题">¶</a></h2>
-<p>Jekyll是一个支持Textile、Markdown等标记语言的静态网站生成软件，还支持博客和网页模版，由Tom Preston-Werner（GitHub创始人之一）开发。Jekyll用Ruby语言实现，项目在GitHub的托管地址： <a class="reference external" href="http://github.com/mojombo/jekyll/">http://github.com/mojombo/jekyll/</a> ，专有的URL地址为： <a class="reference external" href="http://jekyllrb.com/">http://jekyllrb.com/</a> 。</p>
+<p>Jekyll是一个支持Textile、Markdown等标记语言的静态网站生成软件，还支持博客和网页模版，由Tom Preston-Werner（GitHub创始人之一）开发。Jekyll用Ruby语言实现，项目在GitHub的托管地址： <a class="reference external" href="http://github.com/mojombo/jekyll/">http://github.com/mojombo/jekyll/</a> ，专有的URL地址为：<a class="reference external" href="http://jekyllrb.com/">http://jekyllrb.com/</a>。</p>
 <p>GitHub为用户账号或项目提供主页服务，会从相应版本库的<tt class="docutils literal"><span class="pre">master</span></tt>分支或<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支检出网页文件，然后执行 Jekyll 相应的命令对网页进行编译。因此在设计GitHub的用户主页和项目主页时都可以利用Jekyll，实现用Markdown等标记语言撰写网页及博客，并用页面模版实现网页风格的统一。</p>
 <p>安装Jekyll最简单的方法是通过RubyGems安装，会自动将Jekyll依赖的directory_watcher、liquid、open4、maruku和classifier等Gem包一并安装。</p>
 <div class="highlight-python"><pre>$ gem install jekyll</pre>
@@ -297,7 +296,7 @@ $ ls -F
 CNAME           _config.yml     _posts/         css/            index.html
 README.textile  _layouts/       atom.xml        images/         random/</pre>
 </div>
-<p>版本库根目录下的<tt class="docutils literal"><span class="pre">index.html</span></tt>文件不是一个普通的HTML文件，而是使用 Liquid 模版语言<a class="footnote-reference" href="#id9" id="id6">[2]</a>定义的页面。</p>
+<p>版本库根目录下的<tt class="docutils literal"><span class="pre">index.html</span></tt>文件不是一个普通的HTML文件，而是使用Liquid模版语言<a class="footnote-reference" href="#id9" id="id6">[2]</a>定义的页面。</p>
 <div class="highlight-python"><pre> 1 ---
  2 layout: default
  3 title: Tom Preston-Werner
@@ -362,7 +361,7 @@ pygments: true</pre>
 <p class="caption">图3-20：Git Ready 网站</p>
 </div>
 <p>你相信这是一个用Jekyll制作的网站么？看看该网站对应的IP，会发现其指向的正是GitHub。研究GitHub上 <a class="reference external" href="https://github.com/gitready">gitready</a> 用户托管的版本库，会发现<tt class="docutils literal"><span class="pre">en</span></tt>版本库的<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支负责生成<tt class="docutils literal"><span class="pre">gitready.com</span></tt>网站，<tt class="docutils literal"><span class="pre">de</span></tt>版本库的<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支负责生成德文网站<tt class="docutils literal"><span class="pre">de.gitready.com</span></tt>，等等。而<tt class="docutils literal"><span class="pre">gitready</span></tt>版本库则是各种语种网站的汇总。</p>
-<p>我的个人网站也使用Jekyll构建并托管在GitHub上，网址： <a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a> 。</p>
+<p>我的个人网站也使用Jekyll构建并托管在GitHub上，网址：<a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a>。</p>
 <hr class="docutils" />
 <table class="docutils footnote" frame="void" id="id8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>

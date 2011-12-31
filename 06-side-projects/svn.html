@@ -109,7 +109,7 @@
 ce5d3dda9b9ce8ec90def1da10181a094bea152f        refs/heads/gh-pages
 c4d370b1b0bafb103de14e104ca18b8c31d80add        refs/heads/master</pre>
 </div>
-<p>如果使用 SVN 命令访问相同的版本库地址，Git 服务器变身为一个 SVN 服务器，将 Git 的引用对应为 SVN 风格的分支。如下：</p>
+<p>如果使用 SVN 命令访问相同的版本库地址，Git 服务器变身为一个 SVN 服务器，将Git的引用对应为 SVN 风格的分支。如下：</p>
 <div class="highlight-python"><pre>$ svn ls https://github.com/gotgit/gotgithub
 branches/
 trunk/
@@ -123,10 +123,11 @@ A    gotgithub/README.rst
 ...
 Checked out revision 30.</pre>
 </div>
-<p>还可以使用 SVN 命令创建分支，即相当于在 Git 版本库中创建新的引用。测试发现 GitHub 尚不支持 SVN 远程拷贝创建分支，需要通过本地拷贝再提交的方式创建新分支。操作如下：</p>
+<p>还可以使用 SVN 命令创建分支，即相当于在 Git 版本库中创建新的引用。测试发现GitHub 尚不支持 SVN 远程拷贝创建分支，需要通过本地拷贝再提交的方式创建新分支。操作如下：</p>
 <ol class="arabic">
 <li><p class="first">为避免检出版本库所有分支过于耗时，在检出时使用<tt class="docutils literal"><span class="pre">--depth=empty</span></tt>参数。</p>
-<div class="highlight-python"><pre>$ svn checkout --depth=empty https://github.com/gotgit/gotgithub gotgithub-branches
+<div class="highlight-python"><pre>$ svn checkout --depth=empty \
+  https://github.com/gotgit/gotgithub gotgithub-branches
 Checked out revision 30.</pre>
 </div>
 </li>
