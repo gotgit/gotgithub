@@ -1,3 +1,5 @@
+.. _github-signup:
+
 创建GitHub账号
 ===============
 
@@ -64,6 +66,8 @@ GitHub对开源软件的300MB托管空间限制并非硬性限制，可以申请
 
    图2-5：账户管理
 
+.. _api-token:
+
 其中API Token是和用户口令相关的密钥，当用户口令更改时API Token也随之更改。\
 GitHub的某些应用会使用API Token进行身份认证，从而避免直接使用用户口令造成\
 泄露的风险。API Token若泄露的危害要远远小于口令泄露，这因为API Token不能用于\
@@ -78,6 +82,8 @@ API Token。
    :scale: 100
 
    图2-6：邮件地址管理
+
+.. _ssh:
 
 GitHub为托管的Git版本库提供SSH协议支持，即用户可以用公钥认证的方式连接到\
 GitHub的SSH服务器。下面的示例用ssh命令连接github.com的SSH服务，登录用户名为\

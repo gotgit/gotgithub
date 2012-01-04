@@ -1,3 +1,5 @@
+.. _explore-github:
+
 探索GitHub
 ===============
 
@@ -50,9 +52,13 @@ GitHub通过屏幕截图等方式介绍了GitHub的常见功能，可以通过�
 
    图1-9：GitHub功能介绍
 
+.. _blog:
+
 博客也是了解GitHub的一个重要的途径，可以获知GitHub的最新动态，如最新改进等。\
 图1-10显示的是GitHub在感恩节推出的促销活动：收费服务免费试用一个月！\ [#]_\
 如果及时关注博客就不会错过噢。
+
+.. _octocat:
 
 .. figure:: /images/explore-github/blog.png
    :scale: 100

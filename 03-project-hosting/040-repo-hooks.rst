@@ -1,3 +1,5 @@
+.. _hooks:
+
 版本库钩子扩展
 ==================
 
@@ -7,6 +9,8 @@
 ``helloworld``\ 项目为例，介绍几个常见应用的整合。
 
 .. _github/github-services: https://github.com/github/github-services
+
+.. _mail-notify-hook:
 
 邮件通知功能
 --------------
@@ -28,6 +32,8 @@
    :scale: 100
 
    图3-16：提交触发邮件通知
+
+.. _redmine-hook:
 
 和Redmine整合
 ---------------

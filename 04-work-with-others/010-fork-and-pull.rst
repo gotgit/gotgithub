@@ -1,3 +1,5 @@
+.. _fork-and-pull-request:
+
 Fork + Pull模式
 ====================
 
@@ -12,6 +14,8 @@ Fork + Pull模式
 可以非常方便地利用GitHub的Pull Request工具向原始项目的维护者发送Pull Request。
 
 下面以GotGit版本库为例，介绍如何利用GitHub提供的Fork和Pull Request工具实现工作协同。
+
+.. _fork:
 
 版本库派生
 ------------------
@@ -103,6 +107,8 @@ GotGit版本库\ [#]_\ 用于维护《Git权威指南》一书的官网和勘误
 
    图4-4：派生版本库中的新提交
 
+.. _pull-request:
+
 Pull Request
 ------------------
 
@@ -165,6 +171,8 @@ Pull Request页面下方会以评论的形式出现相关提示，并自动关�
    :scale: 100
 
    图4-11：Pull Request关闭
+
+.. _merge-by-hands:
 
 手工合并
 ------------
@@ -291,6 +299,8 @@ Pull Request所含提交有可能造成合并冲突，那样的话GitHub不再�
 
     $ git push
 
+.. _online-edit:
+
 在线编辑
 ---------
 
@@ -314,6 +324,8 @@ GitHub提供了在线编辑功能，这样可以无需克隆版本库、无需�
    :scale: 100
 
    图4-13：编辑文件
+
+.. _quick-fork-edit-pull-request:
 
 简化的 Fork + Pull Request
 --------------------------------

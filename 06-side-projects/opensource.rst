@@ -1,3 +1,5 @@
+_github-opensource:
+
 GitHub Open Source
 ===================
 
@@ -6,6 +8,8 @@ GitHub已成为新的开源项目大本营，而且GitHub也将其API开放，�
 
 GitHub大部分的开源项目托管在其官方账号下： https://github.com/github 。
 
+.. _api:
+
 API接口
 -------
 GitHub通过域名\ ``api.github.com``\ 提供API接口，数据以JSON格式传递。
@@ -13,11 +17,15 @@ GitHub通过域名\ ``api.github.com``\ 提供API接口，数据以JSON格式传
 详细的API参考手册参见网址： http://developer.github.com/ 。API手册的版本库\
 地址： https://github.com/github/developer.github.com 。
 
+.. _help-project:
+
 官方手册
 --------
 GitHub官方手册参见 http://help.github.com/ ，使用 Jekyll 维护。
 
 项目地址： https://github.com/github/help.github.com 。
+
+.. _grit:
 
 Grit
 ----
@@ -26,6 +34,8 @@ Grit是Git的Ruby封装和实现，是GitHub调用Git的接口。部分是通过
 
 项目地址： https://github.com/mojombo/grit 。
 
+.. _services-project:
+
 GitHub Services
 ---------------
 Git版本库推送会触发服务器端\ ``post-receive``\ 钩子脚本。此项目将GitHub的\
@@ -33,6 +43,8 @@ Git版本库推送会触发服务器端\ ``post-receive``\ 钩子脚本。此项
 应用提供了事件接口，如问题变更、Pull Request、维基页面修改等\ [#]_\ 。
 
 项目地址： https://github.com/github/github-services 。
+
+.. _hobot:
 
 Hubot 和 Hubot Scripts
 ----------------------
@@ -45,6 +57,8 @@ hobot被聊天室会话触发可以实现诸如：打开办公室的门、根据
 Hobot已经开源，项目库地址：\ https://github.com/github/hubot\ 和\
 https://github.com/github/hubot-scripts\ （脚本）。
 
+.. _gollum:
+
 Gollum
 ------
 GitHub以Git为后端的维基系统就是由Gollum实现的。每一个维基网页对应于一个文件，\
@@ -56,6 +70,8 @@ reStructuredText、asciidoc、pod 等。Gollum 调用名为github-markup的Ruby 
 
 关于GitHub维基参见本书“第4.6节维基”。
 
+.. _jekyll-project:
+
 Jekyll
 ------
 Jekyll 是一个简单的、支持博客的静态网站编译器。可以使用Markdown和Textile两种\
@@ -64,6 +80,8 @@ Jekyll 是一个简单的、支持博客的静态网站编译器。可以使用M
 
 项目地址： https://github.com/mojombo/jekyll 。
 
+.. _linguist:
+
 Linguist
 --------
 Linguist 是一个Ruby模块，GitHub使用该模块对数据文件进行语义分析，检测文件的\
@@ -71,6 +89,8 @@ Linguist 是一个Ruby模块，GitHub使用该模块对数据文件进行语义�
 分类图等。
 
 项目地址： https://github.com/github/linguist 。
+
+.. _markup:
 
 Markup
 ------
@@ -86,12 +106,16 @@ mediawiki、reStructuredText、asciidoc、pod 等标记语言。实际上在对�
 关于Markup软件包以及其他GitHub扩展的Markdown语法，参见：\
 http://github.github.com/github-flavored-markdown\ 。
 
+.. _resque:
+
 Resque
 ------
 Resque（发音类似 "rescue"）是一个以Redis为后端的Ruby包，用于创建和管理后台\
 任务。可创建任务，将任务分配到多个队列，并在后台执行任务。
 
 项目地址： https://github.com/defunkt/resque 。
+
+.. _gitpad:
 
 GitPad
 ------
@@ -100,11 +124,15 @@ Windows下做Git提交操作会调用类似记事本（Notepad）的应用撰写
 
 项目地址： https://github.com/github/GitPad 。
 
+.. _maven-plugins:
+
 Maven Plugins
 -------------
 GitHub的Maven插件。
 
 项目地址： https://github.com/github/maven-plugins 。
+
+.. _gitignore:
 
 Gitignore
 ---------
@@ -123,6 +151,8 @@ VisualStudio的忽略文件模版\ ``Global/VisualStudio.gitignore``\ 部分内�
   [Rr]elease/
 
 项目地址： https://github.com/github/gitignore 。
+
+.. _media-project:
 
 Media
 -------

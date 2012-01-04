@@ -1,3 +1,5 @@
+.. _homepage:
+
 建立主页
 =================
 
@@ -5,6 +7,8 @@
 这么酷。大多数托管平台无非是开放一个FTP或类似服务，用户把制作好的网页或脚本\
 上传了事，而在GitHub用户通过创建特殊名称的Git版本库或在Git库中建立特别的分支\
 实现对主页的维护。
+
+.. _user-homepage:
 
 创建个人主页
 --------------
@@ -46,6 +50,8 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 
   最多等待10分钟，GitHub就可以完成新网站的部署。注意访问用户二级域名主页\
   要使用HTTP协议非HTTPS协议。
+
+.. _project-homepage:
 
 创建项目主页
 ---------------
@@ -175,6 +181,8 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
   $ git fetch
   $ git checkout gh-pages
 
+.. _dedicate-domain:
+
 使用专有域名
 ---------------
 
@@ -241,6 +249,8 @@ http://www.worldhello.net/\ 。
 * 网址 http://www.worldhello.net/gotgit 实际对应于版本库 `gotgit/gotgit <https://github.com/gotgit/gotgit>`_ 。
 * 网址 http://www.worldhello.net/gotgithub 实际对应于版本库 `gotgit/gotgithub <https://github.com/gotgit/gotgithub>`_ 。
 
+
+.. _jekyll:
 
 使用Jekyll维护网站
 -------------------------
