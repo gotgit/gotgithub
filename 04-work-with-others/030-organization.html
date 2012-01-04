@@ -71,10 +71,10 @@
   <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">4.3. 组织和团队</a><ul>
-<li><a class="reference internal" href="#id2">4.3.1. 创建新组织</a></li>
-<li><a class="reference internal" href="#id3">4.3.2. 组织管理</a></li>
-<li><a class="reference internal" href="#id4">4.3.3. 版本库管理</a></li>
-<li><a class="reference internal" href="#id5">4.3.4. 个人还是组织</a></li>
+<li><a class="reference internal" href="#new-org">4.3.1. 创建新组织</a></li>
+<li><a class="reference internal" href="#org-settings">4.3.2. 组织管理</a></li>
+<li><a class="reference internal" href="#org-repo-mgmt">4.3.3. 版本库管理</a></li>
+<li><a class="reference internal" href="#pros-of-org">4.3.4. 个人还是组织</a></li>
 </ul>
 </li>
 </ul>
@@ -111,8 +111,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="id1">
-<h1>4.3. 组织和团队<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="organizations">
+<span id="id1"></span><h1>4.3. 组织和团队<a class="headerlink" href="#organizations" title="永久链接至标题">¶</a></h1>
 <p>GitHub最早没有专为组织而设的账号，很多企业用户或大的开源组织只好用普通用户账号作为组织的共享账号来使用。GitHub推出了组织这一新的账号管理模式，满足大的开发团队的需要。</p>
 <ul class="simple">
 <li>组织账号是不能登录的账号，包含一个Owner（拥有者）用户组，只有属于这个组的用户在登录后，才能切换为组织的管理者。</li>
@@ -120,8 +120,8 @@
 <li>组织和用户一样可以创建项目，但是组织没有SSH公钥配置，即不能以组织的身份操作版本库。</li>
 <li>组织没有工作描述之类的个人才拥有的属性。</li>
 </ul>
-<div class="section" id="id2">
-<h2>4.3.1. 创建新组织<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="new-org">
+<span id="id2"></span><h2>4.3.1. 创建新组织<a class="headerlink" href="#new-org" title="永久链接至标题">¶</a></h2>
 <p>组织是非登录账号，不能像创建普通登录账号那样直接创建，而是需要以GitHub用户身份登录，然后再创建自己的组织，创建者成为组织天然的管理者。</p>
 <p>图4-26就是用户gotgithub登录后，通过点击右上角的账号设置图标进入账号设置界面，然后再点击菜单中的“Organizations”进入组织管理界面。</p>
 <div class="figure">
@@ -146,8 +146,8 @@
 <p class="caption">图4-29：加入组织后的组织管理界面</p>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>4.3.2. 组织管理<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="org-settings">
+<span id="id3"></span><h2>4.3.2. 组织管理<a class="headerlink" href="#org-settings" title="永久链接至标题">¶</a></h2>
 <p>当用户gotgithub成为新建组织GotGitOrg的一员后，就可以在用户和组织的界面之间切换。点击页面左上角“github”文字图标进入仪表板界面。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/dashboard-header.png"><img alt="../images/dashboard-header.png" src="../images/dashboard-header.png" /></a>
@@ -177,8 +177,8 @@
 </ol>
 <p>其中团队授权中的只读授权对于免费组织账号创建的开源项目没有实际意义，因为开源项目人人可读，只有对于付费的组织账号创建的私密版本库才体现出价值。关于付费账号和私密版本库将在后面的章节介绍。接下来介绍如何在组织账号下创建版本库。</p>
 </div>
-<div class="section" id="id4">
-<h2>4.3.3. 版本库管理<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="org-repo-mgmt">
+<span id="id4"></span><h2>4.3.3. 版本库管理<a class="headerlink" href="#org-repo-mgmt" title="永久链接至标题">¶</a></h2>
 <p>组织拥有独立的项目托管空间，点击页面左上角的“github”文字图标进入组织账号的仪表板界面。刚刚建立的组织账号的版本库尚未创建，点击图4-32所示的“New Repository”按钮，创建版本库（即项目）。</p>
 <p>新建版本库的界面如图4-34所示。</p>
 <div class="figure">
@@ -197,8 +197,8 @@
 <p class="caption">图4-36：项目转移</p>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>4.3.4. 个人还是组织<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="pros-of-org">
+<span id="id5"></span><h2>4.3.4. 个人还是组织<a class="headerlink" href="#pros-of-org" title="永久链接至标题">¶</a></h2>
 <p>若使用“Fork + Pull”的工作模式，通过个人账号还是组织账号托管版本库，几乎没有什么差别。如果一定要找出点不同，那就是在向托管版本库提交Pull Request时，邮件通知的用户范围有所不同。</p>
 <ul class="simple">
 <li>对于个人账号，对其托管空间内的版本库发出Pull Request，通知邮件会发送给该个人账号及该版本库设置的所有协作者（如果有的话）的邮箱。</li>

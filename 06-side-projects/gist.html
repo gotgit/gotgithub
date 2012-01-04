@@ -71,10 +71,10 @@
   <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">6.1. GitHub:Gist</a><ul>
-<li><a class="reference internal" href="#id2">6.1.1. 数据的粘贴和引用</a></li>
+<li><a class="reference internal" href="#paste">6.1.1. 数据的粘贴和引用</a></li>
 <li><a class="reference internal" href="#gistgit">6.1.2. Gist背后的Git库</a></li>
 <li><a class="reference internal" href="#greasemonkey">6.1.3. Greasemonkey</a></li>
-<li><a class="reference internal" href="#gist">6.1.4. 命令行操作Gist</a></li>
+<li><a class="reference internal" href="#gist-cli">6.1.4. 命令行操作Gist</a></li>
 </ul>
 </li>
 </ul>
@@ -112,15 +112,15 @@
           <div class="body">
             
   <div class="section" id="github-gist">
-<h1>6.1. GitHub:Gist<a class="headerlink" href="#github-gist" title="永久链接至标题">¶</a></h1>
+<span id="gist"></span><h1>6.1. GitHub:Gist<a class="headerlink" href="#github-gist" title="永久链接至标题">¶</a></h1>
 <p>在GitHub网站的导航条上就有Gist子网站的链接： <a class="reference external" href="https://gist.github.com/">https://gist.github.com/</a> ，在本节我们就揭开其面纱。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gist-in-github-navbar.png"><img alt="../images/gist-in-github-navbar.png" src="../images/gist-in-github-navbar.png" /></a>
 <p class="caption">图6-1：GitHub上的Gist链接</p>
 </div>
-<p>Gist作为一个粘贴数据的工具，就像 Pastie 网站<a class="footnote-reference" href="#id12" id="id1">[1]</a>一样，可以很容易地将数据粘贴在Gist网站中，并在其他网页中引用Gist中粘贴的数据。作为GitHub的一个子网站，很自然地，Gist使用Git版本库对粘贴数据进行维护，这非常酷。</p>
-<div class="section" id="id2">
-<h2>6.1.1. 数据的粘贴和引用<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>Gist作为一个粘贴数据的工具，就像 Pastie 网站<a class="footnote-reference" href="#id14" id="id1">[1]</a>一样，可以很容易地将数据粘贴在Gist网站中，并在其他网页中引用Gist中粘贴的数据。作为GitHub的一个子网站，很自然地，Gist使用Git版本库对粘贴数据进行维护，这非常酷。</p>
+<div class="section" id="paste">
+<span id="id2"></span><h2>6.1.1. 数据的粘贴和引用<a class="headerlink" href="#paste" title="永久链接至标题">¶</a></h2>
 <p>进入Gist网站的首页，就会看到一个大大的数据粘贴对话框，如图6-2所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gist-homepage.png"><img alt="../images/gist-homepage.png" src="../images/gist-homepage.png" /></a>
@@ -146,14 +146,14 @@
 <p>对应的嵌入JavaScript代码如下：</p>
 <div class="highlight-python"><pre>&lt;script src="https://gist.github.com/1202870.js?file=countdown.rb"&gt;&lt;/script&gt;</pre>
 </div>
-<p>将上面的JavaScript代码嵌入到网页（如博客<a class="footnote-reference" href="#id13" id="id3">[2]</a>）中，即可在相应的网页中嵌入来自Gist的数据，并保持语法加亮等功能，如图6-6所示。</p>
+<p>将上面的JavaScript代码嵌入到网页（如博客<a class="footnote-reference" href="#id15" id="id3">[2]</a>）中，即可在相应的网页中嵌入来自Gist的数据，并保持语法加亮等功能，如图6-6所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gist-embed-in-blog.png"><img alt="../images/gist-embed-in-blog.png" src="../images/gist-embed-in-blog.png" /></a>
 <p class="caption">图6-6：博客中引用Gist数据</p>
 </div>
 </div>
 <div class="section" id="gistgit">
-<h2>6.1.2. Gist背后的Git库<a class="headerlink" href="#gistgit" title="永久链接至标题">¶</a></h2>
+<span id="git-backend-gist"></span><h2>6.1.2. Gist背后的Git库<a class="headerlink" href="#gistgit" title="永久链接至标题">¶</a></h2>
 <p>创建的每一个Gist的背后都对应着一个Git版本库。例如之前创建的ID为1202870的Gist对应的Git版本库，可以使用两种协议进行访问：</p>
 <ul class="simple">
 <li>Git协议：<tt class="docutils literal"><span class="pre">git://gist.github.com/1202870.git</span></tt></li>
@@ -207,12 +207,12 @@ index a9d747b..9045738 100644
 <a class="reference internal image-reference" href="../images/gist-git-repo.png"><img alt="../images/gist-git-repo.png" src="../images/gist-git-repo.png" /></a>
 <p class="caption">图6-7：Gist版本库简易操作界面</p>
 </div>
-<p>在这个简易的Git版本库操作界面中，左侧是版本库的简介、文件预览以及在线编辑、下载、加注星标<a class="footnote-reference" href="#id14" id="id4">[3]</a>、版本库分支<a class="footnote-reference" href="#id15" id="id5">[4]</a>等相关操作按钮。若以Gist创建者登录，会在右侧看到他人基于该Gist创建分支的情况，但是并不提供GitHub才有的Pull Request等功能。在界面的右侧还显示了Gist修订历史，和之前通过<tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt>命令从Git版本库看到的一样。</p>
+<p>在这个简易的Git版本库操作界面中，左侧是版本库的简介、文件预览以及在线编辑、下载、加注星标<a class="footnote-reference" href="#id16" id="id4">[3]</a>、版本库分支<a class="footnote-reference" href="#id17" id="id5">[4]</a>等相关操作按钮。若以Gist创建者登录，会在右侧看到他人基于该Gist创建分支的情况，但是并不提供GitHub才有的Pull Request等功能。在界面的右侧还显示了Gist修订历史，和之前通过<tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt>命令从Git版本库看到的一样。</p>
 </div>
 <div class="section" id="greasemonkey">
-<h2>6.1.3. Greasemonkey<a class="headerlink" href="#greasemonkey" title="永久链接至标题">¶</a></h2>
-<p>Gist除了被用于粘贴数据（如代码块）并在网页中引用之外，还被用户挖掘出了新的应用模式，例如用作Greasemonkey脚本的维护<a class="footnote-reference" href="#id16" id="id6">[5]</a>。</p>
-<p>Greasemonkey<a class="footnote-reference" href="#id17" id="id7">[6]</a>或类似插件为浏览器提供用户端JavaScript扩展功能，最早出现于FireFox浏览器中。其他浏览器也陆续增加了对用户端JavaScript的支持，如Safari的 NinjaKit<a class="footnote-reference" href="#id18" id="id8">[7]</a>插件，IE的Trixie<a class="footnote-reference" href="#id19" id="id9">[8]</a>插件，以及Chrome的Greasemetal插件<a class="footnote-reference" href="#id20" id="id10">[9]</a>。关于如何在浏览器中安装并启用相应的插件，参照相关插件网站的介绍，在此不做过多叙述。</p>
+<span id="id6"></span><h2>6.1.3. Greasemonkey<a class="headerlink" href="#greasemonkey" title="永久链接至标题">¶</a></h2>
+<p>Gist除了被用于粘贴数据（如代码块）并在网页中引用之外，还被用户挖掘出了新的应用模式，例如用作Greasemonkey脚本的维护<a class="footnote-reference" href="#id18" id="id7">[5]</a>。</p>
+<p>Greasemonkey<a class="footnote-reference" href="#id19" id="id8">[6]</a>或类似插件为浏览器提供用户端JavaScript扩展功能，最早出现于FireFox浏览器中。其他浏览器也陆续增加了对用户端JavaScript的支持，如Safari的 NinjaKit<a class="footnote-reference" href="#id20" id="id9">[7]</a>插件，IE的Trixie<a class="footnote-reference" href="#id21" id="id10">[8]</a>插件，以及Chrome的Greasemetal插件<a class="footnote-reference" href="#id22" id="id11">[9]</a>。关于如何在浏览器中安装并启用相应的插件，参照相关插件网站的介绍，在此不做过多叙述。</p>
 <p>当浏览器安装了 Greasemonkey 或类似插件之后，当访问扩展名为<tt class="docutils literal"><span class="pre">.user.js</span></tt>的URL时，会将该URL指向的JavaScript脚本安装在浏览器中，当访问指定的网址时会自动调用相应的JavaScript脚本，修改相关网页内容或添加特效等等。</p>
 <p>我针对《Git权威指南》官网的测试网页写了一个Greasemonkey示例脚本，可以展示用户端JavaScript的魔法，这个用户端JavaScript脚本保存在Gist中：<a class="reference external" href="https://gist.github.com/1084591">https://gist.github.com/1084591</a>，如图6-8所示。</p>
 <div class="figure">
@@ -236,7 +236,7 @@ index a9d747b..9045738 100644
 <a class="reference internal image-reference" href="../images/gist-user-js-apply-before.png"><img alt="../images/gist-user-js-apply-before.png" src="../images/gist-user-js-apply-before.png" /></a>
 <p class="caption">图6-9：应用用户端JavaScript脚本前的网页内容</p>
 </div>
-<p>接下来开始安装该用户端JavaScript脚本。安装非常简单，只要点击图6-8的Gist当中的脚本文件对应的“raw”链接，即点击脚本文件原始内容链接<a class="footnote-reference" href="#id21" id="id11">[10]</a>即可开启安装。这是因为该URL以<tt class="docutils literal"><span class="pre">.user.js</span></tt>结尾，会被Greasemonkey（或类似插件）识别并安装，如图6-10是Greasemonkey弹出的用户端脚本安装界面。</p>
+<p>接下来开始安装该用户端JavaScript脚本。安装非常简单，只要点击图6-8的Gist当中的脚本文件对应的“raw”链接，即点击脚本文件原始内容链接<a class="footnote-reference" href="#id23" id="id12">[10]</a>即可开启安装。这是因为该URL以<tt class="docutils literal"><span class="pre">.user.js</span></tt>结尾，会被Greasemonkey（或类似插件）识别并安装，如图6-10是Greasemonkey弹出的用户端脚本安装界面。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gist-user-js-install.png"><img alt="../images/gist-user-js-install.png" src="../images/gist-user-js-install.png" /></a>
 <p class="caption">图6-10：安装用户端JavaScript脚本</p>
@@ -251,8 +251,8 @@ index a9d747b..9045738 100644
 </div>
 <p>实际上正是这个特殊的标签被Greasemonkey所加载的用户端脚本识别，为HTML网页添加了特效。</p>
 </div>
-<div class="section" id="gist">
-<h2>6.1.4. 命令行操作Gist<a class="headerlink" href="#gist" title="永久链接至标题">¶</a></h2>
+<div class="section" id="gist-cli">
+<span id="id13"></span><h2>6.1.4. 命令行操作Gist<a class="headerlink" href="#gist-cli" title="永久链接至标题">¶</a></h2>
 <p>GitHub开发者还写了一个名为gist的命令行工具对Gist进行操作，地址见<a class="reference external" href="https://github.com/defunkt/gist">https://github.com/defunkt/gist</a>。</p>
 <p>该工具使用Ruby开发，对两个特定的Git风格的配置变量进行如下设置后，即可实现在命令行中自动以特定用户身份登录操作Gist。</p>
 <div class="highlight-python"><pre>$ git config --global github.user "your-github-username"
@@ -272,64 +272,64 @@ $ git config --global github.token "your-github-token"</pre>
 </ul>
 <p>如果对命令行操作方式感兴趣，参考gist工具网站的<cite>README</cite>文件。</p>
 <hr class="docutils" />
-<table class="docutils footnote" frame="void" id="id12" rules="none">
+<table class="docutils footnote" frame="void" id="id14" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://pastie.org/">http://pastie.org/</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id13" rules="none">
+<table class="docutils footnote" frame="void" id="id15" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://www.worldhello.net/2011/09/14/2521.html">http://www.worldhello.net/2011/09/14/2521.html</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id14" rules="none">
+<table class="docutils footnote" frame="void" id="id16" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td>对感兴趣的Gist进行收藏，参见博客 <a class="reference external" href="https://github.com/blog/673-starring-gists">https://github.com/blog/673-starring-gists</a> 。</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id15" rules="none">
+<table class="docutils footnote" frame="void" id="id17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td>访问他人创建的Gist时，提供分支功能按钮。</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id16" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td><a class="reference external" href="https://github.com/blog/302-gist-for-greasemonkey">https://github.com/blog/302-gist-for-greasemonkey</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id17" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[6]</a></td><td><a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/</a></td></tr>
-</tbody>
-</table>
 <table class="docutils footnote" frame="void" id="id18" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[7]</a></td><td><a class="reference external" href="http://ss-o.net/safari/extension/NinjaKit.safariextz">http://ss-o.net/safari/extension/NinjaKit.safariextz</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[5]</a></td><td><a class="reference external" href="https://github.com/blog/302-gist-for-greasemonkey">https://github.com/blog/302-gist-for-greasemonkey</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id19" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[8]</a></td><td><a class="reference external" href="http://www.bhelpuri.net/Trixie/">http://www.bhelpuri.net/Trixie/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[6]</a></td><td><a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id20" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[9]</a></td><td>版本4之后的Chrome内置了Greasemonkey类似功能，无需额外插件。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[7]</a></td><td><a class="reference external" href="http://ss-o.net/safari/extension/NinjaKit.safariextz">http://ss-o.net/safari/extension/NinjaKit.safariextz</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id21" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[10]</a></td><td><a class="reference external" href="https://gist.github.com/raw/1084591/73c3e4dfc827732241ca753fe7bb985c14c9d7ab/click_more.user.js">https://gist.github.com/raw/1084591/73c3e4dfc827732241ca753fe7bb985c14c9d7ab/click_more.user.js</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[8]</a></td><td><a class="reference external" href="http://www.bhelpuri.net/Trixie/">http://www.bhelpuri.net/Trixie/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id22" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[9]</a></td><td>版本4之后的Chrome内置了Greasemonkey类似功能，无需额外插件。</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id23" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[10]</a></td><td><a class="reference external" href="https://gist.github.com/raw/1084591/73c3e4dfc827732241ca753fe7bb985c14c9d7ab/click_more.user.js">https://gist.github.com/raw/1084591/73c3e4dfc827732241ca753fe7bb985c14c9d7ab/click_more.user.js</a></td></tr>
 </tbody>
 </table>
 </div>

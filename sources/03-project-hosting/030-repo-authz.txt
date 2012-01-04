@@ -1,9 +1,13 @@
+.. _pubkey-mgmt:
+
 公钥认证管理
 ================
 
 开发者向GitHub版本库写入最常用到的协议是SSH协议，因为SSH协议使用公钥认证，\
 可以实现无口令访问，而若使用HTTPS协议每次身份认证时都需要提供口令\ [#]_\ 。\
 使用SSH公钥认证，就涉及到公钥的管理。
+
+.. _pubkeys:
 
 用户级公钥管理
 ---------------
@@ -29,6 +33,8 @@
 
   $ ssh -T git@github.com
   Hi gotgithub! You've successfully authenticated, but GitHub does not provide shell access.
+
+.. _deploy-keys:
 
 项目级公钥管理
 ------------------

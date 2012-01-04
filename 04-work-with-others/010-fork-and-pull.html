@@ -71,10 +71,10 @@
   <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">4.1. Fork + Pull模式</a><ul>
-<li><a class="reference internal" href="#id1">4.1.1. 版本库派生</a></li>
+<li><a class="reference internal" href="#fork">4.1.1. 版本库派生</a></li>
 <li><a class="reference internal" href="#pull-request">4.1.2. Pull Request</a></li>
-<li><a class="reference internal" href="#id7">4.1.3. 手工合并</a></li>
-<li><a class="reference internal" href="#id8">4.1.4. 在线编辑</a></li>
+<li><a class="reference internal" href="#merge-by-hands">4.1.3. 手工合并</a></li>
+<li><a class="reference internal" href="#online-edit">4.1.4. 在线编辑</a></li>
 <li><a class="reference internal" href="#fork-pull-request">4.1.5. 简化的 Fork + Pull Request</a></li>
 </ul>
 </li>
@@ -113,13 +113,13 @@
           <div class="body">
             
   <div class="section" id="fork-pull">
-<h1>4.1. Fork + Pull模式<a class="headerlink" href="#fork-pull" title="永久链接至标题">¶</a></h1>
+<span id="fork-and-pull-request"></span><h1>4.1. Fork + Pull模式<a class="headerlink" href="#fork-pull" title="永久链接至标题">¶</a></h1>
 <p>参与GitHub中的项目开发，最常用和推荐的首选方式是“Fork + Pull”模式。在“Fork + Pull”模式下，项目参与者不必向项目创建者申请提交权限，而是在自己的托管空间下建立项目的派生（Fork）。</p>
 <p>如果一个开源项目派生出另外的项目，通常意味着项目的分裂和开发团队的削弱，而GitHub中的项目派生则不会，而且正好相反，GitHub中的项目派生是项目壮大的体现。所有的派生项目都会有链接指向原始项目，派生项目没有独立的缺陷追踪系统（ISSUE），而是必须利用创建者本人的项目中的缺陷追踪系统。至于在派生项目中创建的提交，可以非常方便地利用GitHub的Pull Request工具向原始项目的维护者发送Pull Request。</p>
 <p>下面以GotGit版本库为例，介绍如何利用GitHub提供的Fork和Pull Request工具实现工作协同。</p>
-<div class="section" id="id1">
-<h2>4.1.1. 版本库派生<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>GotGit版本库<a class="footnote-reference" href="#id11" id="id2">[1]</a>用于维护《Git权威指南》一书的官网和勘误，下面演示的勘误表修改是由王胜<a class="footnote-reference" href="#id12" id="id3">[2]</a>通过GitHub之外的一个缺陷追踪平台报告的<a class="footnote-reference" href="#id13" id="id4">[3]</a>。他在报告中，甚至直接用GNU diff格式告诉我该如何修改。</p>
+<div class="section" id="fork">
+<span id="id1"></span><h2>4.1.1. 版本库派生<a class="headerlink" href="#fork" title="永久链接至标题">¶</a></h2>
+<p>GotGit版本库<a class="footnote-reference" href="#id12" id="id2">[1]</a>用于维护《Git权威指南》一书的官网和勘误，下面演示的勘误表修改是由王胜<a class="footnote-reference" href="#id13" id="id3">[2]</a>通过GitHub之外的一个缺陷追踪平台报告的<a class="footnote-reference" href="#id14" id="id4">[3]</a>。他在报告中，甚至直接用GNU diff格式告诉我该如何修改。</p>
 <p>下面就以用户gotgithub身份，访问版本库 <a class="reference external" href="https://github.com/gotgit/gotgit/">https://github.com/gotgit/gotgit/</a> ，添加新的勘误。如图4-1所示，gotgit项目在之前的示例中已经被我们关注但尚未Fork。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gotgit-repo-before-fork.png"><img alt="../images/gotgit-repo-before-fork.png" src="../images/gotgit-repo-before-fork.png" /></a>
@@ -147,7 +147,7 @@ $ cd gotgit</pre>
 $ git config user.email wangsheng@ossxp.com</pre>
 </div>
 </li>
-<li><p class="first">编辑<tt class="docutils literal"><span class="pre">errata.mkd</span></tt>文件<a class="footnote-reference" href="#id14" id="id5">[4]</a>，录入新发现的书中的文字错误。</p>
+<li><p class="first">编辑<tt class="docutils literal"><span class="pre">errata.mkd</span></tt>文件<a class="footnote-reference" href="#id15" id="id5">[4]</a>，录入新发现的书中的文字错误。</p>
 <div class="highlight-python"><pre>$ vi errata.mkd</pre>
 </div>
 </li>
@@ -175,14 +175,14 @@ $ git commit -m "Fixed #3: should be 项目, not 项."</pre>
 </div>
 </li>
 </ul>
-<p>访问GitHub上的派生项目页面，会看到以用户whangsheng在<tt class="docutils literal"><span class="pre">master</span></tt>分支<a class="footnote-reference" href="#id15" id="id6">[5]</a>创建的提交。如图4-4所示。</p>
+<p>访问GitHub上的派生项目页面，会看到以用户whangsheng在<tt class="docutils literal"><span class="pre">master</span></tt>分支<a class="footnote-reference" href="#id16" id="id6">[5]</a>创建的提交。如图4-4所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/gotgit-new-commit.png"><img alt="../images/gotgit-new-commit.png" src="../images/gotgit-new-commit.png" /></a>
 <p class="caption">图4-4：派生版本库中的新提交</p>
 </div>
 </div>
 <div class="section" id="pull-request">
-<h2>4.1.2. Pull Request<a class="headerlink" href="#pull-request" title="永久链接至标题">¶</a></h2>
+<span id="id7"></span><h2>4.1.2. Pull Request<a class="headerlink" href="#pull-request" title="永久链接至标题">¶</a></h2>
 <p>那么如何能够让gotgit原始项目的创建者知道这个派生项目及新的提交呢？GitHub提供的工具就是“Pull Request”。注意到图4-3右上方“Pull Request”按钮了么？点击该按钮进入Pull Request创建界面。</p>
 <p>在弹出的Pull Request创建界面中，点击菜单中的“Commits”，查看所包含的提交。如图4-5所示。</p>
 <div class="figure">
@@ -220,8 +220,8 @@ $ git commit -m "Fixed #3: should be 项目, not 项."</pre>
 <p class="caption">图4-11：Pull Request关闭</p>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>4.1.3. 手工合并<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="merge-by-hands">
+<span id="id8"></span><h2>4.1.3. 手工合并<a class="headerlink" href="#merge-by-hands" title="永久链接至标题">¶</a></h2>
 <p>Pull Request提供的自动合并显示在提交日志中是什么样子的呢？以用户ossxp-com身份检出版本库，会看到用户wangsheng的提交已经合并到版本库中。</p>
 <div class="highlight-python"><pre>$ git clone git@github.com:gotgit/gotgit.git
 $ cd gotgit
@@ -315,10 +315,10 @@ Fast-forward
 </li>
 </ul>
 </div>
-<div class="section" id="id8">
-<h2>4.1.4. 在线编辑<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<div class="section" id="online-edit">
+<span id="id9"></span><h2>4.1.4. 在线编辑<a class="headerlink" href="#online-edit" title="永久链接至标题">¶</a></h2>
 <p>GitHub提供了在线编辑功能，这样可以无需克隆版本库、无需使用Git即可完成对版本库中文件的修改，甚至可以在你的iPad甚至iPhone上完成对文件的修改。</p>
-<p>以gotgithub账户身份登录GitHub，访问之前派生而来的版本库gotgithub/gotgit中的文件，例如文件<tt class="docutils literal"><span class="pre">errata.md</span></tt><a class="footnote-reference" href="#id16" id="id9">[6]</a>，会看到其中一个“Edit this file”的按钮，如图4-12所示。</p>
+<p>以gotgithub账户身份登录GitHub，访问之前派生而来的版本库gotgithub/gotgit中的文件，例如文件<tt class="docutils literal"><span class="pre">errata.md</span></tt><a class="footnote-reference" href="#id17" id="id10">[6]</a>，会看到其中一个“Edit this file”的按钮，如图4-12所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/edit-this-file-btn.png"><img alt="../images/edit-this-file-btn.png" src="../images/edit-this-file-btn.png" /></a>
 <p class="caption">图4-12：浏览自己版本库中文件</p>
@@ -330,9 +330,9 @@ Fast-forward
 </div>
 </div>
 <div class="section" id="fork-pull-request">
-<h2>4.1.5. 简化的 Fork + Pull Request<a class="headerlink" href="#fork-pull-request" title="永久链接至标题">¶</a></h2>
+<span id="quick-fork-edit-pull-request"></span><h2>4.1.5. 简化的 Fork + Pull Request<a class="headerlink" href="#fork-pull-request" title="永久链接至标题">¶</a></h2>
 <p>到目前，我们已经了解了GitHub的三大武器：Fork、Pull Request和在线编辑。对于最常用的“Fork + Pull Request”操作，GitHub还提供了一个快捷模式。即GitHub对于无权更改的他人版本库中的文件，提供了一个类似在线编辑的按钮，名为“Fork and edit this file”按钮，自动完成版本库派生和在线编辑，即将三大武器一勺烩。</p>
-<p>访问他人版本库（尚未在自己空间派生）中的文件，例如访问下面地址：<a class="reference external" href="http://git.io/hello-world-makefile">http://git.io/hello-world-makefile</a><a class="footnote-reference" href="#id17" id="id10">[7]</a>。显示他人（ossxp-com）版本库<tt class="docutils literal"><span class="pre">hello-world</span></tt>中的<tt class="docutils literal"><span class="pre">src/Makefile</span></tt>文件，如图4-14所示。</p>
+<p>访问他人版本库（尚未在自己空间派生）中的文件，例如访问下面地址：<a class="reference external" href="http://git.io/hello-world-makefile">http://git.io/hello-world-makefile</a><a class="footnote-reference" href="#id18" id="id11">[7]</a>。显示他人（ossxp-com）版本库<tt class="docutils literal"><span class="pre">hello-world</span></tt>中的<tt class="docutils literal"><span class="pre">src/Makefile</span></tt>文件，如图4-14所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/fork-and-edit-btn.png"><img alt="../images/fork-and-edit-btn.png" src="../images/fork-and-edit-btn.png" /></a>
 <p class="caption">图4-14：浏览他人版本库中文件</p>
@@ -386,46 +386,46 @@ https://github.com/ossxp-com/hello-world/pull/1</pre>
 <div class="highlight-python"><pre>$ git pull https://github.com/gotgithub/hello-world patch-1</pre>
 </div>
 <hr class="docutils" />
-<table class="docutils footnote" frame="void" id="id11" rules="none">
+<table class="docutils footnote" frame="void" id="id12" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="https://github.com/gotgit/gotgit/">https://github.com/gotgit/gotgit/</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id12" rules="none">
+<table class="docutils footnote" frame="void" id="id13" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="https://github.com/wangsheng/">https://github.com/wangsheng/</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id13" rules="none">
+<table class="docutils footnote" frame="void" id="id14" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td><a class="reference external" href="http://redmine.ossxp.com/redmine/issues/161">http://redmine.ossxp.com/redmine/issues/161</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id14" rules="none">
+<table class="docutils footnote" frame="void" id="id15" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td>版本库 gotgit/gotgit 已将勘误文件重命名为<tt class="docutils literal"><span class="pre">errata.md</span></tt>。</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id15" rules="none">
+<table class="docutils footnote" frame="void" id="id16" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td>版本库 gotgit/gotgit 原<tt class="docutils literal"><span class="pre">master</span></tt>分支内容已转移至<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支，通过GitHub提供的网站部署机制完成网页的编译和部署。</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id16" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[6]</a></td><td>版本库 gotgit/gotgit 已重构。分支<tt class="docutils literal"><span class="pre">gh-pages</span></tt>中文件<tt class="docutils literal"><span class="pre">errata.md</span></tt>文件来自于原<tt class="docutils literal"><span class="pre">master</span></tt>分支的<tt class="docutils literal"><span class="pre">errata.mkd</span></tt>文件，地址：<a class="reference external" href="https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md">https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md</a> 。</td></tr>
-</tbody>
-</table>
 <table class="docutils footnote" frame="void" id="id17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[7]</a></td><td>即地址 <a class="reference external" href="https://github.com/ossxp-com/hello-world/blob/master/src/Makefile">https://github.com/ossxp-com/hello-world/blob/master/src/Makefile</a> 。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[6]</a></td><td>版本库 gotgit/gotgit 已重构。分支<tt class="docutils literal"><span class="pre">gh-pages</span></tt>中文件<tt class="docutils literal"><span class="pre">errata.md</span></tt>文件来自于原<tt class="docutils literal"><span class="pre">master</span></tt>分支的<tt class="docutils literal"><span class="pre">errata.mkd</span></tt>文件，地址：<a class="reference external" href="https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md">https://github.com/gotgithub/gotgit/blob/gh-pages/errata.md</a> 。</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id18" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[7]</a></td><td>即地址 <a class="reference external" href="https://github.com/ossxp-com/hello-world/blob/master/src/Makefile">https://github.com/ossxp-com/hello-world/blob/master/src/Makefile</a> 。</td></tr>
 </tbody>
 </table>
 </div>

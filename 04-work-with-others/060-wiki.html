@@ -71,8 +71,8 @@
   <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">4.6. 维基</a><ul>
-<li><a class="reference internal" href="#id2">4.6.1. 维基初始化</a></li>
-<li><a class="reference internal" href="#id3">4.6.2. 使用维基</a></li>
+<li><a class="reference internal" href="#wiki-init">4.6.1. 维基初始化</a></li>
+<li><a class="reference internal" href="#use-wiki">4.6.2. 使用维基</a></li>
 <li><a class="reference internal" href="#git">4.6.3. 维基与Git</a></li>
 </ul>
 </li>
@@ -110,8 +110,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="id1">
-<h1>4.6. 维基<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="wiki">
+<span id="id1"></span><h1>4.6. 维基<a class="headerlink" href="#wiki" title="永久链接至标题">¶</a></h1>
 <p>维基是Web协同著作平台，可以让任何浏览网页的人都能够方便地参与网页的编辑和创建。这源自于维基如下魔力：</p>
 <ul class="simple">
 <li>快速更改。修改网页无需复杂的后台修改和网页部署流程，浏览的网页直接提供编辑按钮，任何查看网页的用户均可在线编辑网页。</li>
@@ -120,8 +120,8 @@
 <li>维基链接。页面链接使用<tt class="docutils literal"><span class="pre">[[页面名称]]</span></tt>语法，可以非常方便地创建新页面，并实现页面间的互联。</li>
 </ul>
 <p>GitHub提供了维基模块，方便项目团队创建社区驱动和维护的项目文档。</p>
-<div class="section" id="id2">
-<h2>4.6.1. 维基初始化<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="wiki-init">
+<span id="id2"></span><h2>4.6.1. 维基初始化<a class="headerlink" href="#wiki-init" title="永久链接至标题">¶</a></h2>
 <p>GitHub的维基模块可以通过项目管理页面控制开启或关闭，默认开启，如图4-70所示。因为GitHub提供了项目展示的多种途径，一些小项目如果觉得用<tt class="docutils literal"><span class="pre">README</span></tt>文件构建项目说明，或者用<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支维护项目主页就足够了，大可关闭维基模块。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/project-admin-features-wiki.png"><img alt="../images/project-admin-features-wiki.png" src="../images/project-admin-features-wiki.png" /></a>
@@ -138,8 +138,8 @@
 <p class="caption">图4-72：自动创建的维基首页</p>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>4.6.2. 使用维基<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="use-wiki">
+<span id="id3"></span><h2>4.6.2. 使用维基<a class="headerlink" href="#use-wiki" title="永久链接至标题">¶</a></h2>
 <p>自动创建的维基首页只有非常简单的信息，点击编辑按钮，修改维基首页。编辑界面如图4-73所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/wiki-edit-init.png"><img alt="../images/wiki-edit-init.png" src="../images/wiki-edit-init.png" /></a>
@@ -239,7 +239,7 @@
 </ul>
 </div>
 <div class="section" id="git">
-<h2>4.6.3. 维基与Git<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h2>
+<span id="git-backend-wiki"></span><h2>4.6.3. 维基与Git<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h2>
 <p>随着对GitHub维基的深入使用，可能会遇到下面的问题：如何嵌入图片？多人编辑时如何避免冲突？解决这几个问题的办法就是用Git操作维基。在之前查看维基修订历史，以及进行版本间比较时可能已经看出和Git是如何的相似，实际上GitHub的维基页面就是用Git版本库实现的。</p>
 <p>在维基页面访问菜单中的“Git Access”项，会看到用Git访问维基页面的方法。如图4-88所示。</p>
 <div class="figure">

@@ -1,3 +1,5 @@
+.. _github-overview:
+
 探索GitHub
 ********************
 熟悉Git\ [#]_\ 的人几乎都知道并喜欢GitHub\ [#]_\ ，反过来GitHub也吸引更多的\

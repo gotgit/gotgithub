@@ -1,3 +1,5 @@
+.. _github-plans:
+
 GitHub收费方案
 ===============
 

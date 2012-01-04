@@ -73,7 +73,7 @@
   <ul>
 <li><a class="reference internal" href="#">6.4.4. GitHub Open Source</a><ul>
 <li><a class="reference internal" href="#api">API接口</a></li>
-<li><a class="reference internal" href="#id1">官方手册</a></li>
+<li><a class="reference internal" href="#help-project">官方手册</a></li>
 <li><a class="reference internal" href="#grit">Grit</a></li>
 <li><a class="reference internal" href="#github-services">GitHub Services</a></li>
 <li><a class="reference internal" href="#hubot-hubot-scripts">Hubot 和 Hubot Scripts</a></li>
@@ -122,74 +122,75 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="github-open-source">
+  <p>_github-opensource:</p>
+<div class="section" id="github-open-source">
 <h1>6.4.4. GitHub Open Source<a class="headerlink" href="#github-open-source" title="永久链接至标题">¶</a></h1>
 <p>GitHub已成为新的开源项目大本营，而且GitHub也将其API开放，并将部分模块开源，借助社区的力量让GitHub变得更好。</p>
 <p>GitHub大部分的开源项目托管在其官方账号下： <a class="reference external" href="https://github.com/github">https://github.com/github</a> 。</p>
 <div class="section" id="api">
-<h2>API接口<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h2>
+<span id="id1"></span><h2>API接口<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h2>
 <p>GitHub通过域名<tt class="docutils literal"><span class="pre">api.github.com</span></tt>提供API接口，数据以JSON格式传递。</p>
 <p>详细的API参考手册参见网址： <a class="reference external" href="http://developer.github.com/">http://developer.github.com/</a> 。API手册的版本库地址： <a class="reference external" href="https://github.com/github/developer.github.com">https://github.com/github/developer.github.com</a> 。</p>
 </div>
-<div class="section" id="id1">
-<h2>官方手册<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="help-project">
+<span id="id2"></span><h2>官方手册<a class="headerlink" href="#help-project" title="永久链接至标题">¶</a></h2>
 <p>GitHub官方手册参见 <a class="reference external" href="http://help.github.com/">http://help.github.com/</a> ，使用 Jekyll 维护。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/github/help.github.com">https://github.com/github/help.github.com</a> 。</p>
 </div>
 <div class="section" id="grit">
-<h2>Grit<a class="headerlink" href="#grit" title="永久链接至标题">¶</a></h2>
+<span id="id3"></span><h2>Grit<a class="headerlink" href="#grit" title="永久链接至标题">¶</a></h2>
 <p>Grit是Git的Ruby封装和实现，是GitHub调用Git的接口。部分是通过封装对<tt class="docutils literal"><span class="pre">git</span></tt>命令的调用实现的，部分则是纯Ruby实现。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/mojombo/grit">https://github.com/mojombo/grit</a> 。</p>
 </div>
 <div class="section" id="github-services">
-<h2>GitHub Services<a class="headerlink" href="#github-services" title="永久链接至标题">¶</a></h2>
-<p>Git版本库推送会触发服务器端<tt class="docutils literal"><span class="pre">post-receive</span></tt>钩子脚本。此项目将GitHub的服务器端钩子脚本开源，用户可以开发针对特定应用的钩子。GitHub还为其他GitHub应用提供了事件接口，如问题变更、Pull Request、维基页面修改等<a class="footnote-reference" href="#id8" id="id2">[1]</a>。</p>
+<span id="services-project"></span><h2>GitHub Services<a class="headerlink" href="#github-services" title="永久链接至标题">¶</a></h2>
+<p>Git版本库推送会触发服务器端<tt class="docutils literal"><span class="pre">post-receive</span></tt>钩子脚本。此项目将GitHub的服务器端钩子脚本开源，用户可以开发针对特定应用的钩子。GitHub还为其他GitHub应用提供了事件接口，如问题变更、Pull Request、维基页面修改等<a class="footnote-reference" href="#id17" id="id4">[1]</a>。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/github/github-services">https://github.com/github/github-services</a> 。</p>
 </div>
 <div class="section" id="hubot-hubot-scripts">
-<h2>Hubot 和 Hubot Scripts<a class="headerlink" href="#hubot-hubot-scripts" title="永久链接至标题">¶</a></h2>
-<p>可以把 hubot<a class="footnote-reference" href="#id9" id="id3">[2]</a>看做是GitHub的Siri（最早出现于iPhone 4S 的智能语音助理）或是新浪微博上的饮水姬<a class="footnote-reference" href="#id10" id="id4">[3]</a>。GitHub将hobot和Campfire聊天室整合，hobot被聊天室会话触发可以实现诸如：打开办公室的门、根据wifi使用情况列出公司中的人、通过公司喇叭读一段信息等等许多好玩的事情<a class="footnote-reference" href="#id11" id="id5">[4]</a>，而实现GitHub自动化部署则证明 hubot 可以完成更严肃的事情，在公司工作流中扮演举足轻重的地位<a class="footnote-reference" href="#id12" id="id6">[5]</a>。</p>
+<span id="hobot"></span><h2>Hubot 和 Hubot Scripts<a class="headerlink" href="#hubot-hubot-scripts" title="永久链接至标题">¶</a></h2>
+<p>可以把 hubot<a class="footnote-reference" href="#id18" id="id5">[2]</a>看做是GitHub的Siri（最早出现于iPhone 4S 的智能语音助理）或是新浪微博上的饮水姬<a class="footnote-reference" href="#id19" id="id6">[3]</a>。GitHub将hobot和Campfire聊天室整合，hobot被聊天室会话触发可以实现诸如：打开办公室的门、根据wifi使用情况列出公司中的人、通过公司喇叭读一段信息等等许多好玩的事情<a class="footnote-reference" href="#id20" id="id7">[4]</a>，而实现GitHub自动化部署则证明 hubot 可以完成更严肃的事情，在公司工作流中扮演举足轻重的地位<a class="footnote-reference" href="#id21" id="id8">[5]</a>。</p>
 <p>Hobot已经开源，项目库地址：<a class="reference external" href="https://github.com/github/hubot">https://github.com/github/hubot</a>和<a class="reference external" href="https://github.com/github/hubot-scripts">https://github.com/github/hubot-scripts</a>（脚本）。</p>
 </div>
 <div class="section" id="gollum">
-<h2>Gollum<a class="headerlink" href="#gollum" title="永久链接至标题">¶</a></h2>
+<span id="id9"></span><h2>Gollum<a class="headerlink" href="#gollum" title="永久链接至标题">¶</a></h2>
 <p>GitHub以Git为后端的维基系统就是由Gollum实现的。每一个维基网页对应于一个文件，文件格式可以是 Markdown、textile、rdoc、org、creole、mediawiki、reStructuredText、asciidoc、pod 等。Gollum 调用名为github-markup的Ruby gem包（来自于下面要介绍的 Markup 项目）完成文件到网页的格式转换。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/github/gollum">https://github.com/github/gollum</a> 。</p>
 <p>关于GitHub维基参见本书“第4.6节维基”。</p>
 </div>
 <div class="section" id="jekyll">
-<h2>Jekyll<a class="headerlink" href="#jekyll" title="永久链接至标题">¶</a></h2>
+<span id="jekyll-project"></span><h2>Jekyll<a class="headerlink" href="#jekyll" title="永久链接至标题">¶</a></h2>
 <p>Jekyll 是一个简单的、支持博客的静态网站编译器。可以使用Markdown和Textile两种标记语言或者HTML撰写网页，并支持Liquid模版。实际上GitHub为托管项目生成静态网页使用的就是Jekyll。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/mojombo/jekyll">https://github.com/mojombo/jekyll</a> 。</p>
 </div>
 <div class="section" id="linguist">
-<h2>Linguist<a class="headerlink" href="#linguist" title="永久链接至标题">¶</a></h2>
+<span id="id10"></span><h2>Linguist<a class="headerlink" href="#linguist" title="永久链接至标题">¶</a></h2>
 <p>Linguist 是一个Ruby模块，GitHub使用该模块对数据文件进行语义分析，检测文件的语言种类，代码加亮，对二进制文件进行忽略，限制非必须的差异显示，以及生成语言分类图等。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/github/linguist">https://github.com/github/linguist</a> 。</p>
 </div>
 <div class="section" id="markup">
-<h2>Markup<a class="headerlink" href="#markup" title="永久链接至标题">¶</a></h2>
-<p>GitHub通过这个ruby包对项目版本库根目录下的<tt class="docutils literal"><span class="pre">README</span></tt>文件，以及维基页面等文件进行解析、转换为网页显示。支持 Markdown、textile、rdoc、org、creole、mediawiki、reStructuredText、asciidoc、pod 等标记语言。实际上在对上述标记语言的解析和转换中，还依赖其他软件包，例如对于 Markdown 格式首选 Redcarpet<a class="footnote-reference" href="#id13" id="id7">[6]</a>，对 textile 格式使用 RedCloth，对 reStructuredText 格式调用外部命令<tt class="docutils literal"><span class="pre">rst2html</span></tt>，对 asciidoc 格式调用外部命令<tt class="docutils literal"><span class="pre">asciidoc</span></tt>等。</p>
+<span id="id11"></span><h2>Markup<a class="headerlink" href="#markup" title="永久链接至标题">¶</a></h2>
+<p>GitHub通过这个ruby包对项目版本库根目录下的<tt class="docutils literal"><span class="pre">README</span></tt>文件，以及维基页面等文件进行解析、转换为网页显示。支持 Markdown、textile、rdoc、org、creole、mediawiki、reStructuredText、asciidoc、pod 等标记语言。实际上在对上述标记语言的解析和转换中，还依赖其他软件包，例如对于 Markdown 格式首选 Redcarpet<a class="footnote-reference" href="#id22" id="id12">[6]</a>，对 textile 格式使用 RedCloth，对 reStructuredText 格式调用外部命令<tt class="docutils literal"><span class="pre">rst2html</span></tt>，对 asciidoc 格式调用外部命令<tt class="docutils literal"><span class="pre">asciidoc</span></tt>等。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/github/markup">https://github.com/github/markup</a> 。</p>
 <p>关于Markup软件包以及其他GitHub扩展的Markdown语法，参见：<a class="reference external" href="http://github.github.com/github-flavored-markdown">http://github.github.com/github-flavored-markdown</a>。</p>
 </div>
 <div class="section" id="resque">
-<h2>Resque<a class="headerlink" href="#resque" title="永久链接至标题">¶</a></h2>
+<span id="id13"></span><h2>Resque<a class="headerlink" href="#resque" title="永久链接至标题">¶</a></h2>
 <p>Resque（发音类似 &#8220;rescue&#8221;）是一个以Redis为后端的Ruby包，用于创建和管理后台任务。可创建任务，将任务分配到多个队列，并在后台执行任务。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/defunkt/resque">https://github.com/defunkt/resque</a> 。</p>
 </div>
 <div class="section" id="gitpad">
-<h2>GitPad<a class="headerlink" href="#gitpad" title="永久链接至标题">¶</a></h2>
+<span id="id14"></span><h2>GitPad<a class="headerlink" href="#gitpad" title="永久链接至标题">¶</a></h2>
 <p>这是一个运行于Windows下类似<tt class="docutils literal"><span class="pre">Notepad.exe</span></tt>的应用程序，安装此应用后在Windows下做Git提交操作会调用类似记事本（Notepad）的应用撰写提交说明。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/github/GitPad">https://github.com/github/GitPad</a> 。</p>
 </div>
 <div class="section" id="maven-plugins">
-<h2>Maven Plugins<a class="headerlink" href="#maven-plugins" title="永久链接至标题">¶</a></h2>
+<span id="id15"></span><h2>Maven Plugins<a class="headerlink" href="#maven-plugins" title="永久链接至标题">¶</a></h2>
 <p>GitHub的Maven插件。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/github/maven-plugins">https://github.com/github/maven-plugins</a> 。</p>
 </div>
 <div class="section" id="gitignore">
-<h2>Gitignore<a class="headerlink" href="#gitignore" title="永久链接至标题">¶</a></h2>
+<span id="id16"></span><h2>Gitignore<a class="headerlink" href="#gitignore" title="永久链接至标题">¶</a></h2>
 <p>集合了针对各种语言环境的<tt class="docutils literal"><span class="pre">.gitignore</span></tt>（忽略文件）模版。例如其中针对VisualStudio的忽略文件模版<tt class="docutils literal"><span class="pre">Global/VisualStudio.gitignore</span></tt>部分内容如下：</p>
 <div class="highlight-python"><pre># User-specific files
 *.suo
@@ -203,44 +204,44 @@
 <p>项目地址： <a class="reference external" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a> 。</p>
 </div>
 <div class="section" id="media">
-<h2>Media<a class="headerlink" href="#media" title="永久链接至标题">¶</a></h2>
+<span id="media-project"></span><h2>Media<a class="headerlink" href="#media" title="永久链接至标题">¶</a></h2>
 <p>提供GitHub网站Logo和吉祥物 Octocat 的图片，只能在授权范围内使用。</p>
 <p>项目地址： <a class="reference external" href="https://github.com/github/media">https://github.com/github/media</a> 。</p>
 <hr class="docutils" />
-<table class="docutils footnote" frame="void" id="id8" rules="none">
+<table class="docutils footnote" frame="void" id="id17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="https://github.com/blog/964-all-of-the-hooks">https://github.com/blog/964-all-of-the-hooks</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td><a class="reference external" href="https://github.com/blog/964-all-of-the-hooks">https://github.com/blog/964-all-of-the-hooks</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
+<table class="docutils footnote" frame="void" id="id18" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://hubot.github.com/">http://hubot.github.com/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[2]</a></td><td><a class="reference external" href="http://hubot.github.com/">http://hubot.github.com/</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
+<table class="docutils footnote" frame="void" id="id19" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td><a class="reference external" href="http://weibo.com/u/2625288792">http://weibo.com/u/2625288792</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[3]</a></td><td><a class="reference external" href="http://weibo.com/u/2625288792">http://weibo.com/u/2625288792</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id11" rules="none">
+<table class="docutils footnote" frame="void" id="id20" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td><a class="reference external" href="http://zachholman.com/posts/why-github-hacks-on-side-projects/">http://zachholman.com/posts/why-github-hacks-on-side-projects/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[4]</a></td><td><a class="reference external" href="http://zachholman.com/posts/why-github-hacks-on-side-projects/">http://zachholman.com/posts/why-github-hacks-on-side-projects/</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id12" rules="none">
+<table class="docutils footnote" frame="void" id="id21" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td><a class="reference external" href="http://scottchacon.com/2011/08/31/github-flow.html#6__deploy_immediately_after_review">http://scottchacon.com/2011/08/31/github-flow.html#6__deploy_immediately_after_review</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[5]</a></td><td><a class="reference external" href="http://scottchacon.com/2011/08/31/github-flow.html#6__deploy_immediately_after_review">http://scottchacon.com/2011/08/31/github-flow.html#6__deploy_immediately_after_review</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id13" rules="none">
+<table class="docutils footnote" frame="void" id="id22" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[6]</a></td><td>Redcarpet 是对一个高效的Markdown解析器，通过对C语言的 Sundown 库封装实现。项目地址：<a class="reference external" href="https://github.com/tanoku/redcarpet">https://github.com/tanoku/redcarpet</a>。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id12">[6]</a></td><td>Redcarpet 是对一个高效的Markdown解析器，通过对C语言的 Sundown 库封装实现。项目地址：<a class="reference external" href="https://github.com/tanoku/redcarpet">https://github.com/tanoku/redcarpet</a>。</td></tr>
 </tbody>
 </table>
 </div>

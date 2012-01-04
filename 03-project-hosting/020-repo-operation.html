@@ -71,11 +71,11 @@
   <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">3.2. 操作版本库</a><ul>
-<li><a class="reference internal" href="#id2">3.2.1. 强制推送</a></li>
-<li><a class="reference internal" href="#id3">3.2.2. 新建分支</a></li>
-<li><a class="reference internal" href="#id4">3.2.3. 设置默认分支</a></li>
-<li><a class="reference internal" href="#id5">3.2.4. 删除分支</a></li>
-<li><a class="reference internal" href="#id6">3.2.5. 里程碑管理</a></li>
+<li><a class="reference internal" href="#noff-push">3.2.1. 强制推送</a></li>
+<li><a class="reference internal" href="#new-branch">3.2.2. 新建分支</a></li>
+<li><a class="reference internal" href="#default-branch">3.2.3. 设置默认分支</a></li>
+<li><a class="reference internal" href="#del-branch">3.2.4. 删除分支</a></li>
+<li><a class="reference internal" href="#git-tags">3.2.5. 里程碑管理</a></li>
 </ul>
 </li>
 </ul>
@@ -112,10 +112,10 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="id1">
-<h1>3.2. 操作版本库<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>3.2.1. 强制推送<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+  <div class="section" id="git-operations">
+<span id="id1"></span><h1>3.2. 操作版本库<a class="headerlink" href="#git-operations" title="永久链接至标题">¶</a></h1>
+<div class="section" id="noff-push">
+<span id="id2"></span><h2>3.2.1. 强制推送<a class="headerlink" href="#noff-push" title="永久链接至标题">¶</a></h2>
 <p>细心的读者可能从图3-4已经看出，显示的提交者并非gotgithub用户，而是一个名为ossxp-com的用户，这是因为GitHub是通过提交中的邮件地址来对应到GitHub用户的。看看提交说明：</p>
 <div class="highlight-python"><pre>$ git log --pretty=fuller
 commit 92dee9b8125afc9a606394ed463f9f264f2d3d58
@@ -179,8 +179,8 @@ To git@github.com:gotgithub/helloworld.git
 <p class="caption">图3-7：强制更新后，提交者已更改</p>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>3.2.2. 新建分支<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="new-branch">
+<span id="id3"></span><h2>3.2.2. 新建分支<a class="headerlink" href="#new-branch" title="永久链接至标题">¶</a></h2>
 <p>现在版本库中只有一个默认分支<tt class="docutils literal"><span class="pre">master</span></tt>，如果希望在GitHub版本库中再创建分支，可以采用如下方法：</p>
 <ul>
 <li><p class="first">本地版本库中建立分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>。</p>
@@ -217,8 +217,8 @@ Branch mybranch1 set up to track remote branch mybranch1 from origin.</pre>
 <p class="caption">图3-8：版本库新增了一个分支</p>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>3.2.3. 设置默认分支<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="default-branch">
+<span id="id4"></span><h2>3.2.3. 设置默认分支<a class="headerlink" href="#default-branch" title="永久链接至标题">¶</a></h2>
 <p>如果希望版本库的默认分支为<tt class="docutils literal"><span class="pre">mybranch1</span></tt>，点击项目名称旁边的”Admin“按钮，修改项目的默认分支，如图3-9所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/set-default-branch.png"><img alt="../images/set-default-branch.png" src="../images/set-default-branch.png" /></a>
@@ -249,8 +249,8 @@ e1e52d99fa71fd6f606903efa9da04fd0055fca9        refs/heads/master
 f46a28484adb6c1b4830eb4df582325c740e9d6c        refs/heads/mybranch1</pre>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>3.2.4. 删除分支<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="del-branch">
+<span id="id5"></span><h2>3.2.4. 删除分支<a class="headerlink" href="#del-branch" title="永久链接至标题">¶</a></h2>
 <p>删除本地版本库的分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>，用如下命令：</p>
 <div class="highlight-python"><pre>$ git branch -d mybranch1
 error: Cannot delete the branch 'mybranch1' which you are currently on.</pre>
@@ -287,8 +287,8 @@ e1e52d99fa71fd6f606903efa9da04fd0055fca9        HEAD
 e1e52d99fa71fd6f606903efa9da04fd0055fca9        refs/heads/master</pre>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>3.2.5. 里程碑管理<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="git-tags">
+<span id="id6"></span><h2>3.2.5. 里程碑管理<a class="headerlink" href="#git-tags" title="永久链接至标题">¶</a></h2>
 <p>里程碑管理和分支管理极其类似。</p>
 <ul>
 <li><p class="first">先在本地创建一个新提交。</p>

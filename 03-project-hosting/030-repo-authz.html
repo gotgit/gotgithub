@@ -71,8 +71,8 @@
   <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">3.3. 公钥认证管理</a><ul>
-<li><a class="reference internal" href="#id3">3.3.1. 用户级公钥管理</a></li>
-<li><a class="reference internal" href="#id4">3.3.2. 项目级公钥管理</a></li>
+<li><a class="reference internal" href="#pubkeys">3.3.1. 用户级公钥管理</a></li>
+<li><a class="reference internal" href="#deploy-keys">3.3.2. 项目级公钥管理</a></li>
 </ul>
 </li>
 </ul>
@@ -109,11 +109,11 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="id1">
-<h1>3.3. 公钥认证管理<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="pubkey-mgmt">
+<span id="id1"></span><h1>3.3. 公钥认证管理<a class="headerlink" href="#pubkey-mgmt" title="永久链接至标题">¶</a></h1>
 <p>开发者向GitHub版本库写入最常用到的协议是SSH协议，因为SSH协议使用公钥认证，可以实现无口令访问，而若使用HTTPS协议每次身份认证时都需要提供口令<a class="footnote-reference" href="#id5" id="id2">[1]</a>。使用SSH公钥认证，就涉及到公钥的管理。</p>
-<div class="section" id="id3">
-<h2>3.3.1. 用户级公钥管理<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="pubkeys">
+<span id="id3"></span><h2>3.3.1. 用户级公钥管理<a class="headerlink" href="#pubkeys" title="永久链接至标题">¶</a></h2>
 <p>开发者可能会从不止一台电脑访问GitHub中的版本库（用SSH协议），因不同的电脑有不同的公钥/私钥对，这就需要为GitHub账号添加多个公钥。点击账号设置中的“SSH Public Keys”进入SSH公钥管理界面，如图3-11所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/ssh-public-keys.png"><img alt="../images/ssh-public-keys.png" src="../images/ssh-public-keys.png" /></a>
@@ -125,8 +125,8 @@
 Hi gotgithub! You've successfully authenticated, but GitHub does not provide shell access.</pre>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>3.3.2. 项目级公钥管理<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="deploy-keys">
+<span id="id4"></span><h2>3.3.2. 项目级公钥管理<a class="headerlink" href="#deploy-keys" title="永久链接至标题">¶</a></h2>
 <p>多增加一个用户级别的公钥，就意味着可以从另外一台电脑访问该用户所有版本库。但有时只希望从某台电脑上向某一个版本库“写入”，其他版本库则不可写，这可以通过设置版本库级别的公钥认证实现。</p>
 <p>以项目管理者（创建者）身份登录GitHub，例如以gotgithub用户身份访问<tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt>版本库，进入到项目的管理页面，选择菜单中的“Deploy Keys”，即可设置项目级别公钥。如图3-12所示。</p>
 <div class="figure">

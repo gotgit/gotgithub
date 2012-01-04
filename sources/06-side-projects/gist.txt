@@ -1,3 +1,5 @@
+.. _gist:
+
 GitHub:Gist
 ===============
 在GitHub网站的导航条上就有Gist子网站的链接： https://gist.github.com/ ，\
@@ -11,6 +13,8 @@ GitHub:Gist
 Gist作为一个粘贴数据的工具，就像 Pastie 网站\ [#]_\ 一样，可以很容易地将数据\
 粘贴在Gist网站中，并在其他网页中引用Gist中粘贴的数据。作为GitHub的一个子网站，\
 很自然地，Gist使用Git版本库对粘贴数据进行维护，这非常酷。
+
+.. _paste:
 
 数据的粘贴和引用
 -----------------
@@ -69,6 +73,8 @@ https://gist.github.com/78d67164131ec9e08dfe\ 。需要指出的是，私有Gist
    :scale: 100
 
    图6-6：博客中引用Gist数据
+
+.. _git-backend-gist:
 
 Gist背后的Git库
 -----------------
@@ -140,6 +146,8 @@ Gist网站并没有像GitHub网站那样对于Git版本库提供完整的、近�
 会在右侧看到他人基于该Gist创建分支的情况，但是并不提供GitHub才有的Pull Request\
 等功能。在界面的右侧还显示了Gist修订历史，和之前通过\ ``git log``\ 命令\
 从Git版本库看到的一样。
+
+.. _greasemonkey:
 
 Greasemonkey
 -----------------
@@ -223,6 +231,7 @@ http://www.worldhello.net/gotgit/demo.html\ ，会发现网页中出现了\
 实际上正是这个特殊的标签被Greasemonkey所加载的用户端脚本识别，为HTML网页\
 添加了特效。
 
+.. _gist-cli:
 
 命令行操作Gist
 -----------------

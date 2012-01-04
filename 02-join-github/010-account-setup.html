@@ -101,7 +101,7 @@
           <div class="body">
             
   <div class="section" id="github">
-<h1>2.1. 创建GitHub账号<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h1>
+<span id="github-signup"></span><h1>2.1. 创建GitHub账号<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h1>
 <p>注册GitHub账号，只要点击导航条中的“Signup and Pricing”，或者点击首页中那个大大的“Plans, Pricing and Signup”按钮，即进入收费方案介绍及注册页面。</p>
 <p>收费？不必担心，开源软件托管是GitHub的基石，对于开源项目的版本库（即非私有版本库）的托管，GitHub是免费的。在收费方案及注册页面中，最上面的就是针对于开源的免费托管方案，如图2-1所示。</p>
 <div class="figure">
@@ -132,13 +132,13 @@
 <a class="reference internal image-reference" href="../images/setting-admin.png"><img alt="../images/setting-admin.png" src="../images/setting-admin.png" /></a>
 <p class="caption">图2-5：账户管理</p>
 </div>
-<p>其中API Token是和用户口令相关的密钥，当用户口令更改时API Token也随之更改。GitHub的某些应用会使用API Token进行身份认证，从而避免直接使用用户口令造成泄露的风险。API Token若泄露的危害要远远小于口令泄露，这因为API Token不能用于登录GitHub网站等，而且一旦API Token泄露可以很容易通过更改口令的方式更换API Token。</p>
+<p id="api-token">其中API Token是和用户口令相关的密钥，当用户口令更改时API Token也随之更改。GitHub的某些应用会使用API Token进行身份认证，从而避免直接使用用户口令造成泄露的风险。API Token若泄露的危害要远远小于口令泄露，这因为API Token不能用于登录GitHub网站等，而且一旦API Token泄露可以很容易通过更改口令的方式更换API Token。</p>
 <p>点击菜单中的“Email Addresses”，可以添加和删除邮件地址，如图2-6所示。GitHub允许为一个账号绑定多个邮件地址，以便能够将Git版本库中的提交（提交者以 &#8220;用户名 &lt;邮件地址&gt;&#8221; 的格式给出）正确对应到GitHub账户。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/setting-email.png"><img alt="../images/setting-email.png" src="../images/setting-email.png" /></a>
 <p class="caption">图2-6：邮件地址管理</p>
 </div>
-<p>GitHub为托管的Git版本库提供SSH协议支持，即用户可以用公钥认证的方式连接到GitHub的SSH服务器。下面的示例用ssh命令连接github.com的SSH服务，登录用户名为git（所有GitHub用户共享此SSH用户名，不要写成其他）。</p>
+<p id="ssh">GitHub为托管的Git版本库提供SSH协议支持，即用户可以用公钥认证的方式连接到GitHub的SSH服务器。下面的示例用ssh命令连接github.com的SSH服务，登录用户名为git（所有GitHub用户共享此SSH用户名，不要写成其他）。</p>
 <div class="highlight-python"><pre>$ ssh -T git@github.com
 Permission denied (publickey).</pre>
 </div>

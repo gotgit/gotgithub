@@ -102,7 +102,7 @@
           <div class="body">
             
   <div class="section" id="svngithub">
-<h1>6.2.1. 用SVN操作GitHub<a class="headerlink" href="#svngithub" title="永久链接至标题">¶</a></h1>
+<span id="svn-github"></span><h1>6.2.1. 用SVN操作GitHub<a class="headerlink" href="#svngithub" title="永久链接至标题">¶</a></h1>
 <p>2008年4月1日，GitHub宣布推出基于SVN的SVNHub网站，后证实这是一个愚人节玩笑<a class="footnote-reference" href="#id4" id="id1">[1]</a>。2010年愚人节，类似消息再起，可这一次不再是玩笑<a class="footnote-reference" href="#id5" id="id2">[2]</a>。即对于GitHub上的每一个Git版本库，现在都可以用SVN命令进行操作。更酷的是 SVN 版本库使用的是和 Git 版本库同样的地址<a class="footnote-reference" href="#id6" id="id3">[3]</a>。</p>
 <p>例如用下面的 Git 命令访问本书的 Git 版本库，显示版本库包含的引用。其中分支<tt class="docutils literal"><span class="pre">master</span></tt>用于维护书稿，分支<tt class="docutils literal"><span class="pre">gh-pages</span></tt>保存书稿编译后的 HTML 网页用于在 GitHub 上显示。</p>
 <div class="highlight-python"><pre>$ git ls-remote --heads https://github.com/gotgit/gotgithub

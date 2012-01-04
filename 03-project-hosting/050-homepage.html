@@ -71,9 +71,9 @@
   <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">3.5. 建立主页</a><ul>
-<li><a class="reference internal" href="#id2">3.5.1. 创建个人主页</a></li>
-<li><a class="reference internal" href="#id3">3.5.2. 创建项目主页</a></li>
-<li><a class="reference internal" href="#id4">3.5.3. 使用专有域名</a></li>
+<li><a class="reference internal" href="#user-homepage">3.5.1. 创建个人主页</a></li>
+<li><a class="reference internal" href="#project-homepage">3.5.2. 创建项目主页</a></li>
+<li><a class="reference internal" href="#dedicate-domain">3.5.3. 使用专有域名</a></li>
 <li><a class="reference internal" href="#jekyll">3.5.4. 使用Jekyll维护网站</a></li>
 </ul>
 </li>
@@ -111,11 +111,11 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="id1">
-<h1>3.5. 建立主页<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="homepage">
+<span id="id1"></span><h1>3.5. 建立主页<a class="headerlink" href="#homepage" title="永久链接至标题">¶</a></h1>
 <p>很多开源项目托管平台都支持为托管的项目建立主页，但主页的维护方式都没有GitHub这么酷。大多数托管平台无非是开放一个FTP或类似服务，用户把制作好的网页或脚本上传了事，而在GitHub用户通过创建特殊名称的Git版本库或在Git库中建立特别的分支实现对主页的维护。</p>
-<div class="section" id="id2">
-<h2>3.5.1. 创建个人主页<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="user-homepage">
+<span id="id2"></span><h2>3.5.1. 创建个人主页<a class="headerlink" href="#user-homepage" title="永久链接至标题">¶</a></h2>
 <p>GitHub 为每一个用户分配了一个二级域名<tt class="docutils literal"><span class="pre">&lt;user-id&gt;.github.com</span></tt>，用户为自己的二级域名创建主页很容易，只要在托管空间下创建一个名为<tt class="docutils literal"><span class="pre">&lt;user-id&gt;.github.com</span></tt>的版本库，向其<tt class="docutils literal"><span class="pre">master</span></tt>分支提交网站静态页面即可，其中网站首页为<tt class="docutils literal"><span class="pre">index.html</span></tt>。下面以<tt class="docutils literal"><span class="pre">gotgithub</span></tt>用户为例介绍如何创建个人主页。</p>
 <ul>
 <li><p class="first">用户<tt class="docutils literal"><span class="pre">gotgithub</span></tt>创建一个名为<tt class="docutils literal"><span class="pre">gotgithub.github.com</span></tt>的Git版本库。</p>
@@ -143,8 +143,8 @@ $ git commit -m "Homepage test version."</pre>
 </li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h2>3.5.2. 创建项目主页<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="project-homepage">
+<span id="id3"></span><h2>3.5.2. 创建项目主页<a class="headerlink" href="#project-homepage" title="永久链接至标题">¶</a></h2>
 <p>如前所述，GitHub会为每个账号分配一个二级域名<tt class="docutils literal"><span class="pre">&lt;user-id&gt;.github.com</span></tt>作为用户的首页地址。实际上还可以为每个项目设计主页，并通过此二级域名访问。例如<tt class="docutils literal"><span class="pre">gotgithub</span></tt>用户创建的<tt class="docutils literal"><span class="pre">helloworld</span></tt>项目如果启用了项目主页，则可通过网址<tt class="docutils literal"><span class="pre">http://gotgithub.github.com/helloworld/</span></tt>访问。</p>
 <p>为项目启用项目主页很简单，只需要在项目版本库中创建一个名为<tt class="docutils literal"><span class="pre">gh-pages</span></tt>的分支，并向其中添加静态网页即可。也就是说如果项目的Git版本库中包含了名为<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支的话，则表明该项目提供静态网页构成的主页，可以通过网址<tt class="docutils literal"><span class="pre">http://&lt;user-id&gt;.github.com/&lt;project-name&gt;</span></tt>访问到。</p>
 <p>下面以用户<tt class="docutils literal"><span class="pre">gotgithub</span></tt>的项目<tt class="docutils literal"><span class="pre">helloworld</span></tt>为例，介绍如何维护项目主页。</p>
@@ -218,10 +218,10 @@ $ cd helloworld</pre>
 $ git checkout gh-pages</pre>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>3.5.3. 使用专有域名<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="dedicate-domain">
+<span id="id4"></span><h2>3.5.3. 使用专有域名<a class="headerlink" href="#dedicate-domain" title="永久链接至标题">¶</a></h2>
 <p>无论是用户主页还是项目主页，除了使用<tt class="docutils literal"><span class="pre">github.com</span></tt>下的二级域名访问之外，还可以使用专有域名。实现起来也非常简单，只要在<tt class="docutils literal"><span class="pre">master</span></tt>分支（用户主页所在版本库）或<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支（项目版本库）的根目录下检入一个名为<tt class="docutils literal"><span class="pre">CNAME</span></tt>的文件，内容为相应的专有域名。当然还要更改专有域名的域名解析，使得该专有域名的IP地址指向相应的GitHub二级域名的IP地址。</p>
-<p>例如<tt class="docutils literal"><span class="pre">worldhello.net</span></tt><a class="footnote-reference" href="#id8" id="id5">[1]</a>是我的个人网站，若计划将网站改为由GitHub托管，并由账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>通过个人主页提供服务，可做如下操作。</p>
+<p>例如<tt class="docutils literal"><span class="pre">worldhello.net</span></tt><a class="footnote-reference" href="#id9" id="id5">[1]</a>是我的个人网站，若计划将网站改为由GitHub托管，并由账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>通过个人主页提供服务，可做如下操作。</p>
 <p>首先按照前面章节介绍的步骤，为账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>设置账户主页。</p>
 <ol class="arabic">
 <li><p class="first">在账户<tt class="docutils literal"><span class="pre">gotgit</span></tt>下创建版本库<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>以维护该账号主页。</p>
@@ -261,7 +261,7 @@ gotgit.github.com.      43200   IN      A       207.97.227.245</pre>
 </ul>
 </div>
 <div class="section" id="jekyll">
-<h2>3.5.4. 使用Jekyll维护网站<a class="headerlink" href="#jekyll" title="永久链接至标题">¶</a></h2>
+<span id="id6"></span><h2>3.5.4. 使用Jekyll维护网站<a class="headerlink" href="#jekyll" title="永久链接至标题">¶</a></h2>
 <p>Jekyll是一个支持Textile、Markdown等标记语言的静态网站生成软件，还支持博客和网页模版，由Tom Preston-Werner（GitHub创始人之一）开发。Jekyll用Ruby语言实现，项目在GitHub的托管地址： <a class="reference external" href="http://github.com/mojombo/jekyll/">http://github.com/mojombo/jekyll/</a> ，专有的URL地址为：<a class="reference external" href="http://jekyllrb.com/">http://jekyllrb.com/</a>。</p>
 <p>GitHub为用户账号或项目提供主页服务，会从相应版本库的<tt class="docutils literal"><span class="pre">master</span></tt>分支或<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支检出网页文件，然后执行 Jekyll 相应的命令对网页进行编译。因此在设计GitHub的用户主页和项目主页时都可以利用Jekyll，实现用Markdown等标记语言撰写网页及博客，并用页面模版实现网页风格的统一。</p>
 <p>安装Jekyll最简单的方法是通过RubyGems安装，会自动将Jekyll依赖的directory_watcher、liquid、open4、maruku和classifier等Gem包一并安装。</p>
@@ -296,7 +296,7 @@ $ ls -F
 CNAME           _config.yml     _posts/         css/            index.html
 README.textile  _layouts/       atom.xml        images/         random/</pre>
 </div>
-<p>版本库根目录下的<tt class="docutils literal"><span class="pre">index.html</span></tt>文件不是一个普通的HTML文件，而是使用Liquid模版语言<a class="footnote-reference" href="#id9" id="id6">[2]</a>定义的页面。</p>
+<p>版本库根目录下的<tt class="docutils literal"><span class="pre">index.html</span></tt>文件不是一个普通的HTML文件，而是使用Liquid模版语言<a class="footnote-reference" href="#id10" id="id7">[2]</a>定义的页面。</p>
 <div class="highlight-python"><pre> 1 ---
  2 layout: default
  3 title: Tom Preston-Werner
@@ -346,7 +346,7 @@ title: How I Turned Down $300,000 from Microsoft to go Full-Time on GitHub
 <div class="highlight-python"><pre>markdown: rdiscount
 pygments: true</pre>
 </div>
-<p>第1行设置使用rdiscount软件包作为Markdown的解析引擎，而非默认的Maruku。第2行开启pygments支持。对于中文用户强烈建议通过配置文件<tt class="docutils literal"><span class="pre">_config.yml</span></tt>重设 markdown 解析引擎，默认的 Maruku 对中文支持不好，而使用 rdiscount 或 kramdown 均可。关于该配置文件的更多参数详见Jekyll项目维基<a class="footnote-reference" href="#id10" id="id7">[3]</a> 。</p>
+<p>第1行设置使用rdiscount软件包作为Markdown的解析引擎，而非默认的Maruku。第2行开启pygments支持。对于中文用户强烈建议通过配置文件<tt class="docutils literal"><span class="pre">_config.yml</span></tt>重设 markdown 解析引擎，默认的 Maruku 对中文支持不好，而使用 rdiscount 或 kramdown 均可。关于该配置文件的更多参数详见Jekyll项目维基<a class="footnote-reference" href="#id11" id="id8">[3]</a> 。</p>
 <p>编译Jekyll编辑网站只需在根目录执行<tt class="docutils literal"><span class="pre">jekyll</span></tt>命令，下面的命令是GitHub更新网站所使用的默认指令。</p>
 <div class="highlight-python"><pre>$ jekyll --pygments --safe</pre>
 </div>
@@ -363,22 +363,22 @@ pygments: true</pre>
 <p>你相信这是一个用Jekyll制作的网站么？看看该网站对应的IP，会发现其指向的正是GitHub。研究GitHub上 <a class="reference external" href="https://github.com/gitready">gitready</a> 用户托管的版本库，会发现<tt class="docutils literal"><span class="pre">en</span></tt>版本库的<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支负责生成<tt class="docutils literal"><span class="pre">gitready.com</span></tt>网站，<tt class="docutils literal"><span class="pre">de</span></tt>版本库的<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支负责生成德文网站<tt class="docutils literal"><span class="pre">de.gitready.com</span></tt>，等等。而<tt class="docutils literal"><span class="pre">gitready</span></tt>版本库则是各种语种网站的汇总。</p>
 <p>我的个人网站也使用Jekyll构建并托管在GitHub上，网址：<a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a>。</p>
 <hr class="docutils" />
-<table class="docutils footnote" frame="void" id="id8" rules="none">
+<table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id5">[1]</a></td><td>“Hello, world”最为程序员所熟知，2002年申请不到helloworld相关域名便退而求其次，申请了 worldhello.net。</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[2]</a></td><td><a class="reference external" href="http://liquidmarkup.org/">http://liquidmarkup.org/</a></td></tr>
-</tbody>
-</table>
 <table class="docutils footnote" frame="void" id="id10" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[3]</a></td><td><a class="reference external" href="https://github.com/mojombo/jekyll/wiki/configuration">https://github.com/mojombo/jekyll/wiki/configuration</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[2]</a></td><td><a class="reference external" href="http://liquidmarkup.org/">http://liquidmarkup.org/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[3]</a></td><td><a class="reference external" href="https://github.com/mojombo/jekyll/wiki/configuration">https://github.com/mojombo/jekyll/wiki/configuration</a></td></tr>
 </tbody>
 </table>
 </div>

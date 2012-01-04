@@ -1,3 +1,5 @@
+.. _by-products:
+
 GitHub副产品
 ********************
 GitHub最核心的产品是Git版本库（即项目）托管，此外GitHub还提供一些副产品\

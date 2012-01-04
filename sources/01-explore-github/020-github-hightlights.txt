@@ -1,3 +1,5 @@
+.. _github-hightlights:
+
 GitHub亮点
 ===============
 
