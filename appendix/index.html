@@ -1,0 +1,618 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>7. 附录：轻量级标记语言 &mdash; GotGitHub</title>
+    
+    <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="../static/worldhello.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
+    <link rel="top" title="GotGitHub" href="../index.html" />
+    <link rel="prev" title="6.4.4. GitHub Open Source" href="../06-side-projects/opensource.html" /> 
+  </head>
+  <body>
+    <div id='header'>
+      <h1><a href='/'>World Hello</a></h1>
+
+      <div id='menu'>
+        <ul>
+          <li><a href='/' id='home-link' title='Home'>首页</a></li>
+          <li><a href='/blog.html' id='blog-link' title='Blog'>博客</a></li>
+          <li><a href='/doc/' id='docs-link' title='Docs'>文章</a></li>
+          <li><a href='/about.html' id='about-link' title='About'>关于</a></li>
+          <li><a href='http://github.com/gotgit' target='_blank' title='GitHub' rel='me' id='github-link'>GitHub</a></li>
+          <li><a href='http://weibo.com/gotgit' title='微博' target='_blank' id='weibo-link'>微博</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../06-side-projects/opensource.html" title="6.4.4. GitHub Open Source"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="../06-side-projects/opensource.html"
+                        title="上一章">6.4.4. GitHub Open Source</a></p>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/appendix/index.txt"
+           rel="nofollow">显示源代码</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的模块，术语，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>7. 附录：轻量级标记语言<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>没有标记语言就没有Web和丰富多彩的互联网，但创造了Web的HTML语言并非尽善尽美，存在诸如难读、难写、难以向其他格式转换的问题。究其根源是因为HTML语言是一种“重”标记语言，对机器友好而并非对人友好。另外一种用于文档撰写的标记语言DocBook<a class="footnote-reference" href="#id13" id="id2">[1]</a>也存在类似问题，虽然DocBook能实现单一源文件出版（Single-Source Publishing），即一次撰写多种格式输出（Write once, publish many），但复杂的XML标签给写作过程带来不小的负担。</p>
+<p>为用户提供更为便捷的方式创建UGC（用户生成内容）是GitHub流行的因素之一，奥秘就在于使用了轻量级的标记语言。无论是代码提交说明、提交评注、问题描述、项目的README文件、维基页面、用户主页和项目主页都可以使用Markdown<a class="footnote-reference" href="#id14" id="id3">[2]</a>等轻量级标记语言来撰写。轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了我们写电子邮件时的习惯，即使第一次接触用轻量级标记语言撰写的文件，也可以毫无障碍地理解其中的内容。</p>
+<p>虽然GitHub更倾向于使用Markdown标记语言<a class="footnote-reference" href="#id15" id="id4">[3]</a>，但很多地方也提供对其他轻量级标记语言的支持。包括为Python程序员所熟悉的reStructedText<a class="footnote-reference" href="#id16" id="id5">[4]</a>，为Ruby程序员所熟悉的Textile<a class="footnote-reference" href="#id17" id="id6">[5]</a>、RDoc<a class="footnote-reference" href="#id18" id="id7">[6]</a>，为Perl程序员所熟悉的POD<a class="footnote-reference" href="#id19" id="id8">[7]</a>，为Emacs用户所熟悉的Org-mode<a class="footnote-reference" href="#id20" id="id9">[8]</a>，为维基用户所熟悉的MediaWiki<a class="footnote-reference" href="#id21" id="id10">[9]</a>和Creole<a class="footnote-reference" href="#id22" id="id11">[10]</a>，以及可作为DocBook语言前端破有前途的asciidoc<a class="footnote-reference" href="#id23" id="id12">[11]</a>语言。</p>
+<p>下面我们就着重介绍几种经常用到的轻量级标记语言，在需要时可自如地转换。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="33%" />
+<col width="33%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" rowspan="2">类别</th>
+<th class="head" rowspan="2">类别</th>
+<th class="head" rowspan="2">代码示例</th>
+<th class="head" rowspan="2">输出示例</th>
+<th class="head" colspan="5">标记语言</th>
+</tr>
+<tr class="row-even"><th class="head">MD</th>
+<th class="head">TT</th>
+<th class="head">RST</th>
+<th class="head">ASC</th>
+<th class="head">ORG</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2">标题</td>
+<td>Atx风格</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span class="c"># 一级标题</span>
+<span class="c">## 二级标题</span>
+<span class="c">### 三级标题</span>
+<span class="c">#### 四级标题</span>
+<span class="c">##### 五级标题</span>
+<span class="c">###### 六级标题</span>
+</pre></div>
+</div>
+</td>
+<td><p class="first">略</p>
+<p class="last">（说明：标题后可接匹配的井号）</p>
+</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>reST风格</td>
+<td><div class="first last highlight-python"><pre>一级标题
+========
+
+二级标题
+--------
+
+三级标题
+^^^^^^^^</pre>
+</div>
+</td>
+<td><p class="first">略</p>
+<p class="last">（说明：可用下列符号标记标题：
+# * = - ^ ~ ` : . _ + &#8221; 等）</p>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td rowspan="3">段落</td>
+<td>段落</td>
+<td><div class="first last highlight-python"><pre>一个回车不分段，
+本行续上行。
+
+空行开始新段落。</pre>
+</div>
+</td>
+<td><p class="first">一个回车不分段，°本行续上行。</p>
+<p class="last">空行开始新段落。</p>
+</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>无空格续行</td>
+<td><div class="first last highlight-python"><pre>行尾转义字符让\
+续行之间无空格。</pre>
+</div>
+</td>
+<td>行尾转义字符让续行之间无空格。</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>自动换行</td>
+<td><div class="first last highlight-python"><pre>行尾两空格°°
+自动换行。</pre>
+</div>
+</td>
+<td><div class="first last highlight-python"><pre>行尾两空格
+自动换行。</pre>
+</div>
+</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>分隔线</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-python"><pre>----</pre>
+</div>
+</td>
+<td><p class="first">略</p>
+<p class="last">（说明：相当于HTML中的 <tt class="docutils literal"><span class="pre">&lt;hr&gt;</span></tt>）</p>
+</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">字体</td>
+<td>粗体和斜体</td>
+<td><div class="first last highlight-python"><pre>这是 **粗体** ，
+这是 *斜体* 。</pre>
+</div>
+</td>
+<td>这是 <strong>粗体</strong> ，
+这是 <em>斜体</em> 。</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>标记空白</td>
+<td><div class="first last highlight-python"><pre>标记符号前后空白\
+用\ **反斜线**\ 消除</pre>
+</div>
+</td>
+<td>标记符号前后空白用<strong>反斜线</strong>消除</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td rowspan="5">代码块</td>
+<td>缩进风格</td>
+<td><div class="first last highlight-python"><pre>四个空格缩进是命令：
+
+    $ date</pre>
+</div>
+</td>
+<td><p class="first">四个空格缩进是命令：</p>
+<div class="last highlight-python"><pre>$ date</pre>
+</div>
+</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>边界风格</td>
+<td><div class="first last highlight-python"><pre>三个`符号界定代码块。
+
+```ruby
+require 'redcarpet'
+md = Redcarpet.new("Hello World!")
+puts md.to_html
+```</pre>
+</div>
+</td>
+<td><p class="first">三个`符号界定代码块。</p>
+<div class="last highlight-python"><pre>require 'redcarpet'
+md = Redcarpet.new("Hello World!")
+puts md.to_html</pre>
+</div>
+</td>
+<td>gfm</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>双冒号</td>
+<td><div class="first last highlight-python"><pre>双冒号后缩进为命令。
+
+::
+
+    $ date</pre>
+</div>
+</td>
+<td><p class="first">双冒号后缩进为命令。</p>
+<div class="last highlight-python"><pre>$ date</pre>
+</div>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>行内嵌入代码</td>
+<td><div class="first last highlight-python"><pre>行内单引号嵌入代码。
+如: `git status` 。</pre>
+</div>
+</td>
+<td>行内单引号嵌入代码。
+如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>行内嵌入代码</td>
+<td><div class="first last highlight-python"><pre>两个单引号嵌入代码。
+如: ``git status`` 。</pre>
+</div>
+</td>
+<td>两个单引号嵌入代码。
+如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td rowspan="4">列表</td>
+<td>无序列表</td>
+<td><div class="first last highlight-python"><pre>*   无序列表以*/+/- 起始，
+    后接至少一空格。
+    相同缩进自动续行。
+
+*   列表可包含多个段落。
+
+    Markdown要求四个空格
+    缩进列表项段落。</pre>
+</div>
+</td>
+<td><ul class="first last">
+<li><p class="first">无序列表以*/+/- 起始，
+后接至少一空格。
+相同缩进自动续行。</p>
+</li>
+<li><p class="first">列表可包含多个段落。</p>
+<p>Markdown要求四个空格
+缩进列表项段落。</p>
+</li>
+</ul>
+</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>有序列表</td>
+<td><div class="first last highlight-python"><pre>1.  以数字和点起始，
+    后接至少一空格。
+    相同缩进自动续行。
+
+2.  列表可包含多个段落。
+
+    Markdown要求四个空格
+    缩进列表项段落。</pre>
+</div>
+</td>
+<td><ol class="first last arabic">
+<li><p class="first">以数字和点起始，
+后接至少一空格。
+相同缩进自动续行。</p>
+</li>
+<li><p class="first">列表可包含多个段落。</p>
+<p>Markdown要求四个空格
+缩进列表项段落。</p>
+</li>
+</ol>
+</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>列表项中的代码块</td>
+<td><div class="first last highlight-python"><pre>* 列表项可包含代码块。
+
+    八个缩进开始代码块:
+
+        $ date</pre>
+</div>
+</td>
+<td><ul class="first last">
+<li><p class="first">列表项可包含代码块。</p>
+<p>八个缩进开始代码块:</p>
+<div class="highlight-python"><pre>$ date</pre>
+</div>
+</li>
+</ul>
+</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>列表项中的代码块</td>
+<td><div class="first last highlight-python"><pre>* 列表项可包含代码块。
+
+  双引号开始代码块::
+
+    $ date</pre>
+</div>
+</td>
+<td><ul class="first last">
+<li><p class="first">列表项可包含代码块。</p>
+<p>双引号开始代码块:</p>
+<div class="highlight-python"><pre>$ date</pre>
+</div>
+</li>
+</ul>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td rowspan="4">链接</td>
+<td>URL链接</td>
+<td><div class="first last highlight-python"><pre>* 网址 &lt;http://github.com&gt;
+* 邮件 &lt;me@foo.bar&gt;</pre>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>网址 <a class="reference external" href="http://github.com/">http://github.com/</a></li>
+<li>邮件 <a class="reference external" href="mailto:me&#37;&#52;&#48;foo&#46;bar">me<span>&#64;</span>foo<span>&#46;</span>bar</a></li>
+</ul>
+</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>URL自动链接</td>
+<td><div class="first last highlight-python"><pre>* 网址 http://github.com/
+* 邮件 me@foo.bar</pre>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>网址 <a class="reference external" href="http://github.com/">http://github.com/</a></li>
+<li>邮件 <a class="reference external" href="mailto:me&#37;&#52;&#48;foo&#46;bar">me<span>&#64;</span>foo<span>&#46;</span>bar</a></li>
+</ul>
+</td>
+<td>gfm</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>带标题链接</td>
+<td><div class="first last highlight-python"><pre>* 访问 [Google](http://google.com)
+* 访问 [GitHub][1]
+* 访问 [WorldHello][]
+
+ [1]: http://github.com "GitHub Website"
+ [worldhello]: http://www.worldhello.net</pre>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>访问 <a class="reference external" href="http://google.com">Google</a></li>
+<li>访问 <a class="reference external" href="http://github.com">GitHub</a></li>
+<li>访问 <a class="reference external" href="http://www.worldhello.net">WorldHello</a></li>
+</ul>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>内部跳转</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>图片</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-python"><pre>![GitHub](/images/github-32.png "Logo")
+
+GitHub Logo: ![GitHub][logo]
+
+[logo]: /images/github-32.png "Logo"</pre>
+</div>
+</td>
+<td><img alt="../images/github-32.png" class="first" src="../images/github-32.png" />
+<p class="last">GitHub Logo: <img alt="logo" src="../images/github-32.png" /></p>
+</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>说明：md代表Markdown，gfm代表GitHub风格的Markdown，tt代表Texttile，rst代表reStructedText，asc代表aciidoc，org代表Org-mode。</p>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="http://www.docbook.org/">http://www.docbook.org/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id15" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td><a class="reference external" href="http://github.github.com/github-flavored-markdown/">http://github.github.com/github-flavored-markdown/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id16" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td><a class="reference external" href="http://docutils.sourceforge.net/rst.html">http://docutils.sourceforge.net/rst.html</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id17" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td><a class="reference external" href="http://redcloth.org/textile">http://redcloth.org/textile</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id18" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[6]</a></td><td><a class="reference external" href="http://rdoc.sourceforge.net/doc/">http://rdoc.sourceforge.net/doc/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id19" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[7]</a></td><td><a class="reference external" href="http://perldoc.perl.org/perlpod.html">http://perldoc.perl.org/perlpod.html</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id20" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[8]</a></td><td><a class="reference external" href="http://orgmode.org/">http://orgmode.org/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id21" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[9]</a></td><td><a class="reference external" href="http://www.mediawiki.org/wiki/Help:Formatting">http://www.mediawiki.org/wiki/Help:Formatting</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id22" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[10]</a></td><td><a class="reference external" href="http://www.wikicreole.org/">http://www.wikicreole.org/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id23" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[11]</a></td><td><a class="reference external" href="http://www.methods.co.nz/asciidoc">http://www.methods.co.nz/asciidoc</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../06-side-projects/opensource.html" title="6.4.4. GitHub Open Source"
+             >上一页</a> |</li>
+        <li><a href="../index.html">GotGitHub</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      <br />
+      全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
+      <br />
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2012/01/06。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+
+    </div>
+  </body>
+</html>

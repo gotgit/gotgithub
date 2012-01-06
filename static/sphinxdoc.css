@@ -247,6 +247,17 @@ pre {
     background-color: #f8f8f8;
 }
 
+td pre {
+    font-family: 'Consolas', 'Deja Vu Sans Mono',
+                 'Bitstream Vera Sans Mono', monospace;
+    font-size: 1em;
+    letter-spacing: 0.015em;
+    line-height: 120%;
+    padding: 0em;
+    border: 0;
+    background-color: #ffffff;
+}
+
 pre a {
     color: inherit;
     text-decoration: underline;
