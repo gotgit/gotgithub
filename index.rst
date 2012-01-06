@@ -23,7 +23,7 @@ GotGitHub
    04-work-with-others/index
    05-commercial-github/index
    06-side-projects/index
-   20-appendix/index
+   appendix/index
 
 贡献者列表
 ----------
