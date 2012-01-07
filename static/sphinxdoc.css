@@ -375,3 +375,21 @@ div.figure img {
 div.body a.footnote-reference {
     text-decoration: none;
 }
+
+table.classic {
+    border: 2px solid black;
+    border-collapse: collapse;
+    background: white;
+}
+
+table.classic td, table.docutils th {
+    padding: 1px 8px 1px 5px;
+    border: 1px solid #aaa;
+}
+
+table.classic th {
+    background: #aaa;
+    color: white;
+    border: 1px solid black;
+    text-align: center;
+}
