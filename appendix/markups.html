@@ -93,11 +93,11 @@
             
   <div class="section" id="markups">
 <span id="id1"></span><h1>7. 附录：轻量级标记语言<a class="headerlink" href="#markups" title="永久链接至标题">¶</a></h1>
-<p>没有标记语言就没有Web和丰富多彩的互联网，但创造了Web的HTML语言并非尽善尽美，存在诸如难读、难写、难以向其他格式转换的问题。究其根源是因为HTML语言是一种“重”标记语言，对机器友好而并非对人友好。另外一种用于文档撰写的标记语言DocBook<a class="footnote-reference" href="#id36" id="id2">[5]</a>也存在类似问题，虽然DocBook能实现单一源文件出版（Single-Source Publishing），即一次撰写多种格式输出（Write once, publish many），但复杂的XML标签给写作过程带来不小的负担。</p>
-<p>为用户提供更为便捷的方式创建UGC（用户生成内容）是GitHub流行的因素之一，奥秘就在于使用了轻量级的标记语言。无论是代码提交说明、提交评注、问题描述、项目的README文件、维基页面、用户主页和项目主页都可以使用Markdown<a class="footnote-reference" href="#id37" id="id3">[6]</a>等轻量级标记语言来撰写。轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了我们写电子邮件时的习惯，即使第一次接触用轻量级标记语言撰写的文件，也可以毫无障碍地理解其中的内容。</p>
-<p>虽然GitHub更倾向于使用Markdown标记语言<a class="footnote-reference" href="#id38" id="id4">[7]</a>，但很多地方也提供对其他轻量级标记语言的支持。包括为Python程序员所熟悉的reStructedText<a class="footnote-reference" href="#id39" id="id5">[8]</a>，为Ruby程序员所熟悉的Textile<a class="footnote-reference" href="#id40" id="id6">[9]</a>、RDoc<a class="footnote-reference" href="#id41" id="id7">[10]</a>，为Perl程序员所熟悉的POD<a class="footnote-reference" href="#id42" id="id8">[11]</a>，为Emacs用户所熟悉的Org-mode<a class="footnote-reference" href="#id43" id="id9">[12]</a>，为维基用户所熟悉的MediaWiki<a class="footnote-reference" href="#id44" id="id10">[13]</a>和Creole<a class="footnote-reference" href="#id45" id="id11">[14]</a>，以及可作为DocBook语言前端颇有前途的asciidoc<a class="footnote-reference" href="#id46" id="id12">[15]</a>语言。</p>
+<p>没有标记语言就没有Web和丰富多彩的互联网，但创造了Web的HTML语言并非尽善尽美，存在诸如难读、难写、难以向其他格式转换的问题。究其根源是因为HTML语言是一种“重”标记语言，对机器友好而并非对人友好。另外一种用于文档撰写的标记语言DocBook<a class="footnote-reference" href="#id32" id="id2">[6]</a>也存在类似问题，虽然DocBook能实现单一源文件出版（Single-Source Publishing），即一次撰写多种格式输出（Write once, publish many），但复杂的XML标签给写作过程带来不小的负担。</p>
+<p>为用户提供更为便捷的方式创建UGC（用户生成内容）是GitHub流行的因素之一，奥秘就在于使用了轻量级的标记语言。无论是代码提交说明、提交评注、问题描述、项目的README文件、维基页面、用户主页和项目主页都可以使用Markdown<a class="footnote-reference" href="#id33" id="id3">[7]</a>等轻量级标记语言来撰写。轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了我们写电子邮件时的习惯，即使第一次接触用轻量级标记语言撰写的文件，也可以毫无障碍地理解其中的内容。</p>
+<p>虽然GitHub更倾向于使用Markdown标记语言<a class="footnote-reference" href="#id34" id="id4">[8]</a>，但很多地方也提供对其他轻量级标记语言的支持。包括为Python程序员所熟悉的reStructedText<a class="footnote-reference" href="#id35" id="id5">[9]</a>，为Ruby程序员所熟悉的Textile<a class="footnote-reference" href="#id36" id="id6">[10]</a>、RDoc<a class="footnote-reference" href="#id37" id="id7">[11]</a>，为Perl程序员所熟悉的POD<a class="footnote-reference" href="#id38" id="id8">[12]</a>，为Emacs用户所熟悉的Org-mode<a class="footnote-reference" href="#id39" id="id9">[13]</a>，为维基用户所熟悉的MediaWiki<a class="footnote-reference" href="#id40" id="id10">[14]</a>和Creole<a class="footnote-reference" href="#id41" id="id11">[15]</a>，以及可作为DocBook语言前端颇有前途的asciidoc<a class="footnote-reference" href="#id42" id="id12">[16]</a>语言。</p>
 <p>下面我们就着重介绍几种经常用到的轻量级标记语言，在需要时可自如地转换。</p>
-<table border="1" class="classic docutils">
+<table border="1" class="classic docutils" id="tbl-markups">
 <caption>表7-1：常用轻量级标记语言对照</caption>
 <colgroup>
 <col width="7%" />
@@ -194,26 +194,24 @@ h6. 六级标题
 <td><div class="first last highlight-none"><div class="highlight"><pre>* 一级标题
 ** 二级标题
 *** 三级标题
-**** 四级标题
-***** 五级标题
-****** 六级标题
 </pre></div>
 </div>
 </td>
 <td><p class="first">输出略。</p>
 <div class="last admonition note">
 <p class="first admonition-title">注解</p>
-<p class="last">或各级标题均用一个星号但依次向右缩进两个空格。</p>
+<p class="last">为支持更多标题级别需要设置
+<tt class="docutils literal"><span class="pre">#+OPTIONS:</span> <span class="pre">H:6</span></tt>。</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="9">段落</td>
+<tr class="row-odd"><td rowspan="12">段落</td>
 <td>空行分段</td>
 <td>md</td>
 <td>rst</td>
 <td>ttl*</td>
 <td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>org</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>一个回车不分段，
 本行续上行。
 
@@ -238,7 +236,7 @@ h6. 六级标题
 </td>
 <td>行尾转义字符让续行之间无空格。</td>
 </tr>
-<tr class="row-odd"><td rowspan="4">插入换行</td>
+<tr class="row-odd"><td rowspan="6">插入换行</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -305,7 +303,41 @@ h6. 六级标题
 <span class="raw-html"><br /></span>
 本行不再续行。</td>
 </tr>
-<tr class="row-odd"><td rowspan="3">段落缩进</td>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org*</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>行尾两个反斜线\\
+保持段落内换行符。
+</pre></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">行尾两个反斜线</div>
+<div class="line">保持段落内换行符。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>#+BEGIN_VERSE
+ 保持换行符，
+ 本行不续行。
+#+END_VERSE
+</pre></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">保持换行符，</div>
+<div class="line">本行不续行。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="4">段落缩进</td>
 <td>md</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -388,7 +420,35 @@ p. 正常段落不再缩进。
 <p class="last">正常段落不再缩进。</p>
 </td>
 </tr>
-<tr class="row-even"><td colspan="2" rowspan="5">代码块</td>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>Org-mode式段落缩进：
+
+#+BEGIN_QUOTE
+ 第一级段落缩进。
+
+ #+BEGIN_QUOTE
+  第二级段落缩进。
+ #+END_QUOTE
+
+ 返回一级段落缩进。
+#+END_QUOTE
+</pre></div>
+</div>
+</td>
+<td><p class="first">Org-mode式段落缩进：</p>
+<blockquote class="last">
+<div><p>第一级段落缩进。</p>
+<blockquote>
+<div>第二级段落缩进。</div></blockquote>
+<p>返回一级段落缩进。</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td colspan="2" rowspan="6">代码块</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -406,7 +466,7 @@ p. 正常段落不再缩进。
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>gfm</td>
+<tr class="row-even"><td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -429,7 +489,7 @@ puts md.to_html
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -448,7 +508,7 @@ puts md.to_html
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -472,7 +532,7 @@ $ git commit --allow-empty
 <p class="last">本段不再是代码块。</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -495,65 +555,71 @@ p. 恢复正常段落。
 <p class="last">恢复正常段落。</p>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2" rowspan="3">行内代码</td>
-<td>md</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>行内反引号嵌入代码，如: `git status` 。
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>下面是代码块。
+
+#+BEGIN_SRC ruby
+  require &#39;redcarpet&#39;
+  md = Redcarpet.new(&quot;Hello World!&quot;)
+  puts md.to_html
+#+END_SRC
 </pre></div>
 </div>
 </td>
-<td>行内反引号嵌入代码，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
+<td><p class="first">下面是代码块。</p>
+<div class="last highlight-ruby"><div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;redcarpet&#39;</span>
+<span class="n">md</span> <span class="o">=</span> <span class="no">Redcarpet</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">md</span><span class="o">.</span><span class="n">to_html</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td colspan="2" rowspan="3">分隔线</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>ttl</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>三条短线或以上显示为分隔线。
+
+---
+</pre></div>
+</div>
+</td>
+<td>输出略。</td>
 </tr>
 <tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>两个连续反引号嵌入代码，如: ``git status`` 。
+<td><div class="first last highlight-none"><div class="highlight"><pre>四条短线或以上显示为分隔线。
+
+----
 </pre></div>
 </div>
 </td>
-<td><p class="first">两个连续反引号嵌入代码，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</p>
-<div class="last admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">相当于 :literal:`git status` 。
-只用一个反引号则相当于 :title-reference:`引言` 。</p>
-</div>
-</td>
+<td>输出略。</td>
 </tr>
 <tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>行内用@字符嵌入代码，如: @git status@ 。
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>五条短线或以上显示为分隔线。
+
+-----
 </pre></div>
 </div>
 </td>
-<td>行内用&#64;字符嵌入代码，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
+<td>输出略。</td>
 </tr>
-<tr class="row-even"><td colspan="2">分隔线</td>
-<td>md</td>
-<td>rst</td>
-<td>ttl</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>----
-</pre></div>
-</div>
-</td>
-<td><p class="first">输出略。</p>
-<div class="last admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">Markdown、Textile只需三个或三个以上短线即可，而reST需要四个短线或更多。</p>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td rowspan="13">字体</td>
-<td rowspan="3">粗体和斜体</td>
+<tr class="row-even"><td rowspan="23">字体</td>
+<td rowspan="4">粗体和斜体</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -567,7 +633,7 @@ p. 恢复正常段落。
 <td>这是 <strong>粗体</strong> ，
 这是 <em>斜体</em> 。</td>
 </tr>
-<tr class="row-even"><td>md</td>
+<tr class="row-odd"><td>md</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -580,7 +646,7 @@ p. 恢复正常段落。
 <td>这是 <strong>粗体</strong> ，
 这是 <em>斜体</em> 。</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -593,7 +659,20 @@ p. 恢复正常段落。
 <td>这些都是 <strong>粗体</strong> 或 <strong>粗体</strong> ，
 这些都是 <em>斜体</em> 或 <em>斜体</em> 。</td>
 </tr>
-<tr class="row-even"><td rowspan="2">删除线</td>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>这是 *粗体* ，
+这是 /斜体/ 。
+</pre></div>
+</div>
+</td>
+<td>这是 <strong>粗体</strong> ，
+这是 <em>斜体</em> 。</td>
+</tr>
+<tr class="row-even"><td rowspan="4">删除线</td>
 <td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -603,9 +682,23 @@ p. 恢复正常段落。
 </pre></div>
 </div>
 </td>
-<td>&nbsp;</td>
+<td><span class="strike">删除线</span> 效果</td>
 </tr>
 <tr class="row-odd"><td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>.. role:: strike
+   :class: strike
+
+:strike:`删除线`\ 效果
+</pre></div>
+</div>
+</td>
+<td><span class="strike">删除线</span>效果</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -614,9 +707,20 @@ p. 恢复正常段落。
 </pre></div>
 </div>
 </td>
-<td>&nbsp;</td>
+<td><span class="strike">删除线</span> 效果</td>
 </tr>
-<tr class="row-even"><td rowspan="2">下划线</td>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>+删除线+ 效果
+</pre></div>
+</div>
+</td>
+<td><span class="strike">删除线</span> 效果</td>
+</tr>
+<tr class="row-even"><td rowspan="4">下划线</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -626,9 +730,23 @@ p. 恢复正常段落。
 </pre></div>
 </div>
 </td>
-<td>&nbsp;</td>
+<td><span class="underline">下划线</span> 效果</td>
 </tr>
 <tr class="row-odd"><td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>.. role:: ul
+   :class: underline
+
+:ul:`下划线`\ 效果
+</pre></div>
+</div>
+</td>
+<td><span class="underline">下划线</span>效果</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -637,9 +755,20 @@ p. 恢复正常段落。
 </pre></div>
 </div>
 </td>
-<td>&nbsp;</td>
+<td><span class="underline">下划线</span> 效果</td>
 </tr>
-<tr class="row-even"><td rowspan="3">上标、下标</td>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>_下划线_ 效果
+</pre></div>
+</div>
+</td>
+<td><span class="underline">下划线</span> 效果</td>
+</tr>
+<tr class="row-even"><td rowspan="4">上标、下标</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -687,12 +816,81 @@ p. 恢复正常段落。
 </div>
 </td>
 <td><ul class="first last simple">
-<li>Water: H<sub>2</sub>O</li>
+<li>Water: H <sub>2</sub> O</li>
+<li>E = mc <sup>2</sup></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>* Water: H_2 O
+* E = mc^2
+</pre></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>Water: H<sub>2</sub> O</li>
 <li>E = mc<sup>2</sup></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="2">引言</td>
+<tr class="row-even"><td rowspan="4">行内代码</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>行内反引号嵌入代码，如: `git status` 。
+</pre></div>
+</div>
+</td>
+<td>行内反引号嵌入代码，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>两个连续反引号嵌入代码，如: ``git status`` 。
+</pre></div>
+</div>
+</td>
+<td><p class="first">两个连续反引号嵌入代码，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</p>
+<div class="last admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">相当于 :literal:`git status` 。
+只用一个反引号则相当于 :title-reference:`引言` 。</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>ttl</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>行内用字符@嵌入代码，如: @git status@ 。
+</pre></div>
+</div>
+</td>
+<td>行内用字符&#64;嵌入代码，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>行内用字符=或~嵌入代码，如:
+=git status= 和 ~git st~ 。
+</pre></div>
+</div>
+</td>
+<td>行内用字符=或~嵌入代码，如:
+<tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 和 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">st</span></tt> 。</td>
+</tr>
+<tr class="row-even"><td rowspan="2">引言</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -704,7 +902,7 @@ p. 恢复正常段落。
 </td>
 <td><cite>Got GitHub</cite> by Jiang Xin.</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -715,7 +913,7 @@ p. 恢复正常段落。
 </td>
 <td><cite>Got GitHub</cite> by Jiang Xin.</td>
 </tr>
-<tr class="row-odd"><td>清除标记空白</td>
+<tr class="row-even"><td>清除标记空白</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -728,13 +926,13 @@ p. 恢复正常段落。
 </td>
 <td>标记符号前后空白用<strong>反斜线</strong>消除</td>
 </tr>
-<tr class="row-even"><td rowspan="7">列表</td>
+<tr class="row-odd"><td rowspan="10">列表</td>
 <td>无序列表</td>
 <td>md</td>
 <td>rst</td>
 <td>ttl*</td>
 <td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>org*</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>*   无序列表以*/+/- 起始，
     后接至少一空格。
     相同缩进自动续行。
@@ -746,7 +944,7 @@ p. 恢复正常段落。
 </pre></div>
 </div>
 </td>
-<td><ul class="first last">
+<td><ul class="first">
 <li><p class="first">无序列表以*/+/- 起始，
 后接至少一空格。
 相同缩进自动续行。</p>
@@ -756,9 +954,13 @@ p. 恢复正常段落。
 缩进列表项段落。</p>
 </li>
 </ul>
+<div class="last admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">为避免和标题冲突，Org-mode尽量不要用星号标记无序列表。</p>
+</div>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="2">有序列表</td>
+<tr class="row-even"><td rowspan="2">有序列表</td>
 <td>md</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -787,7 +989,7 @@ p. 恢复正常段落。
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -807,12 +1009,12 @@ p. 恢复正常段落。
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="2">多级列表</td>
+<tr class="row-even"><td rowspan="2">多级列表</td>
 <td>md</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>org</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>* Git special commands:
 
   - git clone
@@ -839,7 +1041,7 @@ p. 恢复正常段落。
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -867,7 +1069,7 @@ p. 恢复正常段落。
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="2">列表项中的代码块</td>
+<tr class="row-even"><td rowspan="2">列表项中的代码块</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -891,7 +1093,7 @@ p. 恢复正常段落。
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -914,7 +1116,7 @@ p. 恢复正常段落。
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2" rowspan="2">定义</td>
+<tr class="row-even"><td rowspan="3">定义</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -945,7 +1147,7 @@ subversion
 </dl>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -971,13 +1173,38 @@ Why not Git? =:
 </dl>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="10">链接</td>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>- git :: Simple and beautiful.
+- hg :: Another DVCS.
+- subversion :: VCS with many constrains.
+
+                Why not Git?
+</pre></div>
+</div>
+</td>
+<td><dl class="first last docutils">
+<dt>git</dt>
+<dd>Simple and beautiful.</dd>
+<dt>hg</dt>
+<dd>Another DVCS.</dd>
+<dt>subversion</dt>
+<dd><p class="first">VCS with many constrains.</p>
+<p class="last">Why not Git?</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="13">链接</td>
 <td>URL自动链接</td>
 <td>gmf</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>org</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>* 网址 http://github.com/
 * 邮件 me@foo.bar
 </pre></div>
@@ -989,7 +1216,7 @@ Why not Git? =:
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="3">文字链接</td>
+<tr class="row-even"><td rowspan="4">文字链接</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1016,7 +1243,7 @@ Why not Git? =:
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* 访问 `Google &lt;http://google.com&gt;`_ 。
+<td><div class="first last highlight-none"><div class="highlight"><pre>* 访问 `Google &lt;http://google.com/&gt;`_ 。
 * 上面已定义，直接引用 google_ 链接。
 * 链接地址在后面定义，如： GitHub_ 。
 * 反引号括起多个单词的链接。如 `my blog`_ 。
@@ -1027,8 +1254,8 @@ Why not Git? =:
 </div>
 </td>
 <td><ul class="first last simple">
-<li>访问 <a class="reference external" href="http://google.com">Google</a>。</li>
-<li>上面已定义，直接引用 <a class="reference external" href="http://google.com">google</a> 链接。</li>
+<li>访问 <a class="reference external" href="http://google.com/">Google</a>。</li>
+<li>上面已定义，直接引用 <a class="reference external" href="http://google.com/">google</a> 链接。</li>
 <li>链接地址在后面定义，如： <a class="reference external" href="http://github.com">GitHub</a>。</li>
 <li>反引号括起多个单词的链接。如 <a class="reference external" href="http://www.worldhello.net">my blog</a>。</li>
 </ul>
@@ -1039,7 +1266,7 @@ Why not Git? =:
 <td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* 访问 &quot;Google (Search)&quot;:http://google.com
+<td><div class="first last highlight-none"><div class="highlight"><pre>* 访问 &quot;Google (Search)&quot;:https://google.com
 * 访问 &quot;GitHub (Git host)&quot;:github
 * 访问 &quot;WorldHello&quot;:wh
 
@@ -1049,28 +1276,42 @@ Why not Git? =:
 </div>
 </td>
 <td><ul class="first last simple">
-<li>访问 <a class="reference external" href="http://google.com">Google</a></li>
+<li>访问 <a class="reference external" href="https://google.com">Google</a></li>
 <li>访问 <a class="reference external" href="http://github.com">GitHub</a></li>
 <li>访问 <a class="reference external" href="http://www.worldhello.net">WorldHello</a></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="3">内部跳转</td>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>* 访问 [[http://google.com][Google]]
+</pre></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>访问 <a class="reference external" href="http://google.com">Google</a></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="4">内部跳转</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>&lt;a id=&quot;anchor1&quot;/&gt;
+<td><div class="first last highlight-none"><div class="highlight"><pre>&lt;a name=&quot;md-anchor&quot; id=&quot;md-anchor&quot;&gt;&lt;/a&gt;
 
-跳转 [内部链接1](#anchor1) 。
+跳转至 [文内链接](#md-anchor) 。
 </pre></div>
 </div>
 </td>
-<td><p class="first last" id="anchor1">跳转 <a class="reference external" href="#anchor1">内部链接1</a> 。</p>
+<td><p class="first last" id="md-anchor">跳转至 <a class="reference external" href="#md-anchor">文内链接</a> 。</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1084,7 +1325,7 @@ Why not Git? =:
 上面定义的位置，可以：
 
 * 通过 fig1_ 跳转。
-* 或者 `点击这里 &lt;#fig1&gt;`_ 跳转。
+* 或者 `点击这里 &lt;#fig1&gt;`__ 跳转。
 * 或者参见 :ref:`fig1`\ 。
 </pre></div>
 </div>
@@ -1101,18 +1342,32 @@ Why not Git? =:
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>&lt;a id=&quot;anchor2&quot;/&gt;
+<td><div class="first last highlight-none"><div class="highlight"><pre>&lt;a name=&quot;ttl-anchor&quot; id=&quot;ttl-anchor&quot;&gt;&lt;/a&gt;
 
-跳转 &quot;内部链接2&quot;:#anchor2 。
+跳转至 &quot;文内链接&quot;:#ttl-anchor 。
 </pre></div>
 </div>
 </td>
-<td><p class="first last" id="anchor2">跳转 <a class="reference external" href="#anchor2">内部链接2</a> 。</p>
+<td><p class="first last" id="ttl-anchor">跳转至 <a class="reference external" href="#ttl-anchor">文内链接</a> 。</p>
+</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre># &lt;&lt;org-anchor&gt;&gt;
+
+跳转至 [[#org-anchor][文内链接]]
+</pre></div>
+</div>
+</td>
+<td><p class="first last" id="org-anchor">跳转至 <a class="reference external" href="#org-anchor">文内链接</a> 。</p>
 </td>
 </tr>
 <tr class="row-even"><td>GitHub提交和问题链接</td>
@@ -1137,15 +1392,15 @@ cea00609ca8441c82bc...</li>
 <li>User&#64;SHA ref:
 mojombo&#64;cea00609ca8...</li>
 <li>User/Project&#64;SHA:
-mojombo/god&#64;cea0060... <a class="footnote-reference" href="#id47" id="id21">[16]</a></li>
+mojombo/god&#64;cea0060... <a class="footnote-reference" href="#id43" id="id16">[17]</a></li>
 <li>#Num: #1</li>
 <li>User/#Num: mojombo#1</li>
 <li>User/Project#Num:
-mojombo/god#1 <a class="footnote-reference" href="#id48" id="id22">[17]</a></li>
+mojombo/god#1 <a class="footnote-reference" href="#id44" id="id17">[18]</a></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="2">脚注</td>
+<tr class="row-odd"><td rowspan="3">脚注</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1176,47 +1431,47 @@ mojombo/god#1 <a class="footnote-reference" href="#id48" id="id22">[17]</a></li>
 </td>
 <td><p class="first">reST脚注的多种表示法：</p>
 <ul class="simple">
-<li>脚注即可以手动分配数字<a class="footnote-reference" href="#id30" id="id23">[1]</a>，
-也可以使用井号自动分配<a class="footnote-reference" href="#id31" id="id24">[2]</a>。</li>
-<li>自动分配脚注<a class="footnote-reference" href="#label" id="id25">[3]</a>也可以用添加标签形式<a class="footnote-reference" href="#label" id="id26">[3]</a>多次引用。</li>
+<li>脚注即可以手动分配数字<a class="footnote-reference" href="#id25" id="id18">[1]</a>，
+也可以使用井号自动分配<a class="footnote-reference" href="#id26" id="id19">[2]</a>。</li>
+<li>自动分配脚注<a class="footnote-reference" href="#label" id="id20">[3]</a>也可以用添加标签形式<a class="footnote-reference" href="#label" id="id21">[3]</a>多次引用。</li>
 <li>还支持用星号嵌入符号式脚注，
-如这个<a class="footnote-reference" href="#id32" id="id27">[*]</a>和 这个<a class="footnote-reference" href="#id33" id="id28">[†]</a>。</li>
+如这个<a class="footnote-reference" href="#id27" id="id22">[*]</a>和 这个<a class="footnote-reference" href="#id28" id="id23">[†]</a>。</li>
 <li>使用单词做标识亦可<a class="reference internal" href="#cit2012">[CIT2012]</a>。</li>
 </ul>
-<table class="docutils footnote" frame="void" id="id30" rules="none">
+<table class="docutils footnote" frame="void" id="id25" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id23">[1]</a></td><td>数字编号脚注。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id18">[1]</a></td><td>数字编号脚注。</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id31" rules="none">
+<table class="docutils footnote" frame="void" id="id26" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id24">[2]</a></td><td>井号自动编号。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id19">[2]</a></td><td>井号自动编号。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="label" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id25">1</a>, <a class="fn-backref" href="#id26">2</a>)</em> 井号添加标签以便多次引用。</td></tr>
+<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id20">1</a>, <a class="fn-backref" href="#id21">2</a>)</em> 井号添加标签以便多次引用。</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id32" rules="none">
+<table class="docutils footnote" frame="void" id="id27" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id27">[*]</a></td><td>星号自动用符号做脚注标记。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id22">[*]</a></td><td>星号自动用符号做脚注标记。</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id33" rules="none">
+<table class="docutils footnote" frame="void" id="id28" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id28">[†]</a></td><td>星号自动用符号做脚注标记。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id23">[†]</a></td><td>星号自动用符号做脚注标记。</td></tr>
 </tbody>
 </table>
 <table class="last docutils citation" frame="void" id="cit2012" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id29">[CIT2012]</a></td><td>单词或其他规定格式。</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id24">[CIT2012]</a></td><td>单词或其他规定格式。</td></tr>
 </tbody>
 </table>
 </td>
@@ -1232,16 +1487,40 @@ fn4. http://goo.gl/rGyvs
 </pre></div>
 </div>
 </td>
-<td><p class="first">Textile是Redmine <a class="footnote-reference" href="#id35" id="id34">[4]</a> 内置的标记语言。</p>
-<table class="last docutils footnote" frame="void" id="id35" rules="none">
+<td><p class="first">Textile是Redmine <a class="footnote-reference" href="#id30" id="id29">[4]</a> 内置的标记语言。</p>
+<table class="last docutils footnote" frame="void" id="id30" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id34">[4]</a></td><td><a class="reference external" href="http://goo.gl/rGyvs">http://goo.gl/rGyvs</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id29">[4]</a></td><td><a class="reference external" href="http://goo.gl/rGyvs">http://goo.gl/rGyvs</a></td></tr>
 </tbody>
 </table>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2" rowspan="3">图片</td>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>Twitter widget in Org homepage[fn:org]
+cannot be accessed in Mainland China, which
+caused the homepage load very slowly. &gt;:[
+
+[fn:org] The link is: http://orgmode.org
+</pre></div>
+</div>
+</td>
+<td><p class="first">Twitter widget in Org homepage[5]_
+cannot be accessed in Mainland China, which
+caused the homepage load very slowly. &gt;:[</p>
+<table class="last docutils footnote" frame="void" id="id31" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[5]</td><td>The link is: <a class="reference external" href="http://orgmode.org">http://orgmode.org</a></td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-even"><td colspan="2" rowspan="4">图片</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1259,7 +1538,7 @@ GitHub Logo: ![GitHub][logo]
 <p class="last">GitHub Logo: <img alt="logo" src="../images/github.png" /></p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1301,7 +1580,7 @@ GitHub Logo: ![GitHub][logo]
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1329,7 +1608,25 @@ GitHub Logo: ![GitHub][logo]
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td colspan="2" rowspan="3">表格</td>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>* GitHub Logo: [[file:/images/github.png]]
+* 带链接的图片：
+  [[https://github.com/][file:/images/...]]
+</pre></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>GitHub Logo: <img alt="orgimg" src="../images/github.png" /></li>
+<li>带链接的图片：
+<a class="reference external" href="https://github.com/"><img alt="orgimglink" src="../images/github.png" /></a></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td colspan="2" rowspan="4">表格</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1452,7 +1749,47 @@ left  | center | right
 </table>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="5">其他</td>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>#+CAPTION: 示例表格
+#+LABEL: tblref
+   | head1 | head2 | head3 |
+   |-------+-------+-------|
+   | cell  | cell  | cell  |
+   | cell  | cell  | cell  |
+</pre></div>
+</div>
+</td>
+<td><table border="1" class="classic first last docutils">
+<caption>示例表格</caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">head1</th>
+<th class="head">head2</th>
+<th class="head">head3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cell</td>
+<td>cell</td>
+<td>cell</td>
+</tr>
+<tr class="row-odd"><td>cell</td>
+<td>cell</td>
+<td>cell</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="6">其他</td>
 <td>混用HTML</td>
 <td>md</td>
 <td>&nbsp;</td>
@@ -1467,7 +1804,7 @@ left  | center | right
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
@@ -1481,7 +1818,7 @@ left  | center | right
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-odd"><td rowspan="2">禁止语法解析</td>
+<tr class="row-even"><td rowspan="2">禁止语法解析</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1494,7 +1831,7 @@ left  | center | right
 </td>
 <td>反斜线作为转义字符，禁止对后面 *字符* 做语法解析。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1509,7 +1846,7 @@ notextile. 不进行 *语法解析* 。
 <p class="last">不进行 *语法解析* 。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>注释</td>
+<tr class="row-even"><td rowspan="2">注释</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1522,7 +1859,26 @@ notextile. 不进行 *语法解析* 。
 </pre></div>
 </div>
 </td>
+<td>输出略。</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre># 行首井号是注释。
+
+  #+ 缩进行首用 ``#+`` 标记为注释。
+
+
+  #+BEGIN_COMMENT
+   块注释
+   ...
+  #+END_COMMENT
+</pre></div>
+</div>
+</td>
+<td>输出略。</td>
 </tr>
 </tbody>
 </table>
@@ -1530,86 +1886,86 @@ notextile. 不进行 *语法解析* 。
 <p class="first admonition-title">注解</p>
 <ul class="last simple">
 <li>md代表Markdown，gfm代表GitHub风格的Markdown，ttl代表Textile，rst代表reStructedText，asc代表aciidoc，org代表Org-mode。</li>
-<li>在标记语言后添加星标，含义为该标记语言对该语法实现不完整或稍有差异。</li>
+<li>在标记语言后添加星标，含义为该标记语言对该语法实现不完整或GitHub的实际输出和标准有差异。</li>
 </ul>
 </div>
 <hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id32" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[6]</a></td><td><a class="reference external" href="http://www.docbook.org/">http://www.docbook.org/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id33" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[7]</a></td><td><a class="reference external" href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id34" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[8]</a></td><td><a class="reference external" href="http://github.github.com/github-flavored-markdown/">http://github.github.com/github-flavored-markdown/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id35" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[9]</a></td><td><a class="reference external" href="http://docutils.sourceforge.net/rst.html">http://docutils.sourceforge.net/rst.html</a></td></tr>
+</tbody>
+</table>
 <table class="docutils footnote" frame="void" id="id36" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[5]</a></td><td><a class="reference external" href="http://www.docbook.org/">http://www.docbook.org/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[10]</a></td><td><a class="reference external" href="http://redcloth.org/textile">http://redcloth.org/textile</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id37" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[6]</a></td><td><a class="reference external" href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[11]</a></td><td><a class="reference external" href="http://rdoc.sourceforge.net/doc/">http://rdoc.sourceforge.net/doc/</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id38" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[7]</a></td><td><a class="reference external" href="http://github.github.com/github-flavored-markdown/">http://github.github.com/github-flavored-markdown/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[12]</a></td><td><a class="reference external" href="http://perldoc.perl.org/perlpod.html">http://perldoc.perl.org/perlpod.html</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id39" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[8]</a></td><td><a class="reference external" href="http://docutils.sourceforge.net/rst.html">http://docutils.sourceforge.net/rst.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[13]</a></td><td><a class="reference external" href="http://orgmode.org/">http://orgmode.org/</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id40" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[9]</a></td><td><a class="reference external" href="http://redcloth.org/textile">http://redcloth.org/textile</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[14]</a></td><td><a class="reference external" href="http://www.mediawiki.org/wiki/Help:Formatting">http://www.mediawiki.org/wiki/Help:Formatting</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id41" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[10]</a></td><td><a class="reference external" href="http://rdoc.sourceforge.net/doc/">http://rdoc.sourceforge.net/doc/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id11">[15]</a></td><td><a class="reference external" href="http://www.wikicreole.org/">http://www.wikicreole.org/</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id42" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[11]</a></td><td><a class="reference external" href="http://perldoc.perl.org/perlpod.html">http://perldoc.perl.org/perlpod.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id12">[16]</a></td><td><a class="reference external" href="http://www.methods.co.nz/asciidoc">http://www.methods.co.nz/asciidoc</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id43" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[12]</a></td><td><a class="reference external" href="http://orgmode.org/">http://orgmode.org/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id16">[17]</a></td><td><a class="reference external" href="https://github.com/mojombo/god/commit/cea00609ca8441c82bc9760ae5eea7d7509d85b3">https://github.com/mojombo/god/commit/cea00609ca8441c82bc9760ae5eea7d7509d85b3</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id44" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[13]</a></td><td><a class="reference external" href="http://www.mediawiki.org/wiki/Help:Formatting">http://www.mediawiki.org/wiki/Help:Formatting</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id45" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[14]</a></td><td><a class="reference external" href="http://www.wikicreole.org/">http://www.wikicreole.org/</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id46" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id12">[15]</a></td><td><a class="reference external" href="http://www.methods.co.nz/asciidoc">http://www.methods.co.nz/asciidoc</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id47" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id21">[16]</a></td><td><a class="reference external" href="https://github.com/mojombo/god/commit/cea00609ca8441c82bc9760ae5eea7d7509d85b3">https://github.com/mojombo/god/commit/cea00609ca8441c82bc9760ae5eea7d7509d85b3</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id48" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id22">[17]</a></td><td><a class="reference external" href="https://github.com/mojombo/god/issues/1">https://github.com/mojombo/god/issues/1</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id17">[18]</a></td><td><a class="reference external" href="https://github.com/mojombo/god/issues/1">https://github.com/mojombo/god/issues/1</a></td></tr>
 </tbody>
 </table>
 </div>

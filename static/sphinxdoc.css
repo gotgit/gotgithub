@@ -393,3 +393,11 @@ table.classic th {
     border: 1px solid black;
     text-align: center;
 }
+
+.strike {
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
+}
