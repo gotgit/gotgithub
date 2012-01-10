@@ -95,8 +95,9 @@
 <span id="id1"></span><h1>7. 附录：轻量级标记语言<a class="headerlink" href="#markups" title="永久链接至标题">¶</a></h1>
 <p>没有标记语言就没有Web和丰富多彩的互联网，但创造了Web的HTML语言并非尽善尽美，存在诸如难读、难写、难以向其他格式转换的问题。究其根源是因为HTML语言是一种“重”标记语言，对机器友好而并非对人友好。另外一种用于文档撰写的标记语言DocBook<a class="footnote-reference" href="#id32" id="id2">[6]</a>也存在类似问题，虽然DocBook能实现单一源文件出版（Single-Source Publishing），即一次撰写多种格式输出（Write once, publish many），但复杂的XML标签给写作过程带来不小的负担。</p>
 <p>为用户提供更为便捷的方式创建UGC（用户生成内容）是GitHub流行的因素之一，奥秘就在于使用了轻量级的标记语言。无论是代码提交说明、提交评注、问题描述、项目的README文件、维基页面、用户主页和项目主页都可以使用Markdown<a class="footnote-reference" href="#id33" id="id3">[7]</a>等轻量级标记语言来撰写。轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了我们写电子邮件时的习惯，即使第一次接触用轻量级标记语言撰写的文件，也可以毫无障碍地理解其中的内容。</p>
-<p>虽然GitHub更倾向于使用Markdown标记语言<a class="footnote-reference" href="#id34" id="id4">[8]</a>，但很多地方也提供对其他轻量级标记语言的支持。包括为Python程序员所熟悉的reStructedText<a class="footnote-reference" href="#id35" id="id5">[9]</a>，为Ruby程序员所熟悉的Textile<a class="footnote-reference" href="#id36" id="id6">[10]</a>、RDoc<a class="footnote-reference" href="#id37" id="id7">[11]</a>，为Perl程序员所熟悉的POD<a class="footnote-reference" href="#id38" id="id8">[12]</a>，为Emacs用户所熟悉的Org-mode<a class="footnote-reference" href="#id39" id="id9">[13]</a>，为维基用户所熟悉的MediaWiki<a class="footnote-reference" href="#id40" id="id10">[14]</a>和Creole<a class="footnote-reference" href="#id41" id="id11">[15]</a>，以及可作为DocBook语言前端颇有前途的asciidoc<a class="footnote-reference" href="#id42" id="id12">[16]</a>语言。</p>
-<p>下面我们就着重介绍几种经常用到的轻量级标记语言，在需要时可自如地转换。</p>
+<p>虽然GitHub更倾向于使用Markdown标记语言<a class="footnote-reference" href="#id34" id="id4">[8]</a>，但很多地方也提供对其他轻量级标记语言的支持。包括为Python程序员所熟悉的reStructedText<a class="footnote-reference" href="#id35" id="id5">[9]</a>，为Ruby程序员所熟悉的Textile<a class="footnote-reference" href="#id36" id="id6">[10]</a>、RDoc<a class="footnote-reference" href="#id37" id="id7">[11]</a>，为Perl程序员所熟悉的POD<a class="footnote-reference" href="#id38" id="id8">[12]</a>，为Emacs用户所熟悉的Org-mode<a class="footnote-reference" href="#id39" id="id9">[13]</a>，为维基用户所熟悉的MediaWiki<a class="footnote-reference" href="#id40" id="id10">[14]</a>和Creole<a class="footnote-reference" href="#id41" id="id11">[15]</a>，以及可作为DocBook前端的颇有前途的asciidoc<a class="footnote-reference" href="#id42" id="id12">[16]</a>标记语言。</p>
+<p>下面通过一张表格对几种常用的轻量级标记语言加以对照，供有不同标记语言偏好的用户参考，便于在GitHub某些不能随意更换标记语言而只能使用GFM（GitHub风格的Markdown）的场合可以自如地转换。</p>
+<p>在<a class="reference internal" href="#tbl-markups"><em>表7-1：常用轻量级标记语言对照</em></a>中，为使表格更加紧凑使用代号表示各种标记语言。例如：md为Markdown，gfm是GitHub风格的Markdown，rst为reStructedText，ttl为Textile，asc为aciidoc，org为Org-mode。</p>
 <table border="1" class="classic docutils" id="tbl-markups">
 <caption>表7-1：常用轻量级标记语言对照</caption>
 <colgroup>
@@ -1200,7 +1201,7 @@ Why not Git? =:
 </tr>
 <tr class="row-odd"><td rowspan="13">链接</td>
 <td>URL自动链接</td>
-<td>gmf</td>
+<td>gfm</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1627,7 +1628,7 @@ GitHub Logo: ![GitHub][logo]
 </td>
 </tr>
 <tr class="row-even"><td colspan="2" rowspan="4">表格</td>
-<td>md</td>
+<td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1885,8 +1886,7 @@ notextile. 不进行 *语法解析* 。
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <ul class="last simple">
-<li>md代表Markdown，gfm代表GitHub风格的Markdown，ttl代表Textile，rst代表reStructedText，asc代表aciidoc，org代表Org-mode。</li>
-<li>在标记语言后添加星标，含义为该标记语言对该语法实现不完整或GitHub的实际输出和标准有差异。</li>
+<li>部分标记语言代号后添加了星标，代表该标记语言相应的语法实现稍有区别，或者GitHub的具体实现和标准有出入。</li>
 </ul>
 </div>
 <hr class="docutils" />
@@ -1994,7 +1994,7 @@ notextile. 不进行 *语法解析* 。
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/01/09。
+      最后更新于 2012/01/10。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
