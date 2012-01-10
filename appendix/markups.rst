@@ -22,10 +22,16 @@ README文件、维基页面、用户主页和项目主页都可以使用Markdown
 标记语言的支持。包括为Python程序员所熟悉的reStructedText\ [#]_\ ，为Ruby程序员\
 所熟悉的Textile\ [#]_\ 、RDoc\ [#]_\ ，为Perl程序员所熟悉的POD\ [#]_\ ，\
 为Emacs用户所熟悉的Org-mode\ [#]_\ ，为维基用户所熟悉的MediaWiki\ [#]_\ 和\
-Creole\ [#]_\ ，以及可作为DocBook语言前端颇有前途的asciidoc\ [#]_\ 语言。
+Creole\ [#]_\ ，以及可作为DocBook前端的颇有前途的asciidoc\ [#]_\ 标记语言。
 
-下面我们就着重介绍几种经常用到的轻量级标记语言，在需要时可自如地转换。
+下面通过一张表格对几种常用的轻量级标记语言加以对照，供有不同标记语言偏好的\
+用户参考，便于在GitHub某些不能随意更换标记语言而只能使用GFM（GitHub风格的\
+Markdown）的场合可以自如地转换。
 
+在\ :ref:`tbl-markups`\ 中，为使表格更加紧凑使用代号表示各种标记语言。例如：\
+md为Markdown，gfm是GitHub风格的Markdown，rst为reStructedText，ttl为Textile，\
+asc为aciidoc，org为Org-mode。
+ 
 .. highlight:: none
 .. role:: raw-html(raw)  
    :format: html         
@@ -530,7 +536,7 @@ Creole\ [#]_\ ，以及可作为DocBook语言前端颇有前途的asciidoc\ [#]_
    |          |           |     |     |     |     |     |                                                 |   Why not Git?                                |
    |          |           |     |     |     |     |     |                                                 |                                               |
    +----------+-----------+-----+-----+-----+-----+-----+-------------------------------------------------+-----------------------------------------------+
-   | 链接     | URL\      | gmf | rst |     |     | org | ::                                              |                                               |
+   | 链接     | URL\      | gfm | rst |     |     | org | ::                                              |                                               |
    |          | 自动链接  |     |     |     |     |     |                                                 |                                               |
    |          |           |     |     |     |     |     |   * 网址 http://github.com/                     | * 网址 http://github.com/                     |
    |          |           |     |     |     |     |     |   * 邮件 me@foo.bar                             | * 邮件 me@foo.bar                             |
@@ -716,7 +722,7 @@ Creole\ [#]_\ ，以及可作为DocBook语言前端颇有前途的asciidoc\ [#]_
    |                      |     |     |     |     |     |                                                 | .. _orgimglink: https://github.com/           |
    |                      |     |     |     |     |     |                                                 |                                               |
    +----------------------+-----+-----+-----+-----+-----+-------------------------------------------------+-----------------------------------------------+
-   | 表格                 | md  |     |     |     |     | ::                                              |  .. table::                                   |
+   | 表格                 | gfm |     |     |     |     | ::                                              |  .. table::                                   |
    |                      |     |     |     |     |     |                                                 |     :class: classic                           |
    |                      |     |     |     |     |     |   head1 | head2  | head2                        |                                               |
    |                      |     |     |     |     |     |   ------|:------:|------:                       |     +--------+--------+--------+              |
@@ -824,8 +830,8 @@ Creole\ [#]_\ ，以及可作为DocBook语言前端颇有前途的asciidoc\ [#]_
 
 .. note::
 
-   * md代表Markdown，gfm代表GitHub风格的Markdown，ttl代表Textile，rst代表reStructedText，asc代表aciidoc，org代表Org-mode。
-   * 在标记语言后添加星标，含义为该标记语言对该语法实现不完整或GitHub的实际输出和标准有差异。
+   * 部分标记语言代号后添加了星标，代表该标记语言相应的语法实现稍有区别，\
+     或者GitHub的具体实现和标准有出入。
 
 ----
 
@@ -842,4 +848,3 @@ Creole\ [#]_\ ，以及可作为DocBook语言前端颇有前途的asciidoc\ [#]_
 .. [#] http://www.methods.co.nz/asciidoc
 .. [#] https://github.com/mojombo/god/commit/cea00609ca8441c82bc9760ae5eea7d7509d85b3
 .. [#] https://github.com/mojombo/god/issues/1
-
