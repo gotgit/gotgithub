@@ -95,9 +95,9 @@
 <span id="id1"></span><h1>7. 附录：轻量级标记语言<a class="headerlink" href="#markups" title="永久链接至标题">¶</a></h1>
 <p>没有标记语言就没有Web和丰富多彩的互联网，但创造了Web的HTML语言并非尽善尽美，存在诸如难读、难写、难以向其他格式转换的问题。究其根源是因为HTML语言是一种“重”标记语言，对机器友好而并非对人友好。另外一种用于文档撰写的标记语言DocBook<a class="footnote-reference" href="#id32" id="id2">[6]</a>也存在类似问题，虽然DocBook能实现单一源文件出版（Single-Source Publishing），即一次撰写多种格式输出（Write once, publish many），但复杂的XML标签给写作过程带来不小的负担。</p>
 <p>为用户提供更为便捷的方式创建UGC（用户生成内容）是GitHub流行的因素之一，奥秘就在于使用了轻量级的标记语言。无论是代码提交说明、提交评注、问题描述、项目的README文件、维基页面、用户主页和项目主页都可以使用Markdown<a class="footnote-reference" href="#id33" id="id3">[7]</a>等轻量级标记语言来撰写。轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了我们写电子邮件时的习惯，即使第一次接触用轻量级标记语言撰写的文件，也可以毫无障碍地理解其中的内容。</p>
-<p>虽然GitHub更倾向于使用Markdown标记语言<a class="footnote-reference" href="#id34" id="id4">[8]</a>，但很多地方也提供对其他轻量级标记语言的支持。包括为Python程序员所熟悉的reStructedText<a class="footnote-reference" href="#id35" id="id5">[9]</a>，为Ruby程序员所熟悉的Textile<a class="footnote-reference" href="#id36" id="id6">[10]</a>、RDoc<a class="footnote-reference" href="#id37" id="id7">[11]</a>，为Perl程序员所熟悉的POD<a class="footnote-reference" href="#id38" id="id8">[12]</a>，为Emacs用户所熟悉的Org-mode<a class="footnote-reference" href="#id39" id="id9">[13]</a>，为维基用户所熟悉的MediaWiki<a class="footnote-reference" href="#id40" id="id10">[14]</a>和Creole<a class="footnote-reference" href="#id41" id="id11">[15]</a>，以及可作为DocBook前端的颇有前途的asciidoc<a class="footnote-reference" href="#id42" id="id12">[16]</a>标记语言。</p>
+<p>虽然GitHub更倾向于使用Markdown标记语言<a class="footnote-reference" href="#id34" id="id4">[8]</a>，但很多地方也提供对其他轻量级标记语言的支持。包括为Python程序员所熟悉的reStructedText<a class="footnote-reference" href="#id35" id="id5">[9]</a>，为Ruby程序员所熟悉的Textile<a class="footnote-reference" href="#id36" id="id6">[10]</a>、RDoc<a class="footnote-reference" href="#id37" id="id7">[11]</a>，为Perl程序员所熟悉的POD<a class="footnote-reference" href="#id38" id="id8">[12]</a>，为Emacs用户所熟悉的Org-mode<a class="footnote-reference" href="#id39" id="id9">[13]</a>，为维基用户所熟悉的MediaWiki<a class="footnote-reference" href="#id40" id="id10">[14]</a>和Creole<a class="footnote-reference" href="#id41" id="id11">[15]</a>，以及可作为DocBook前端的颇有前途的AsciiDoc<a class="footnote-reference" href="#id42" id="id12">[16]</a>标记语言。</p>
 <p>下面通过一张表格对几种常用的轻量级标记语言加以对照，供有不同标记语言偏好的用户参考，便于在GitHub某些不能随意更换标记语言而只能使用GFM（GitHub风格的Markdown）的场合可以自如地转换。</p>
-<p>在<a class="reference internal" href="#tbl-markups"><em>表7-1：常用轻量级标记语言对照</em></a>中，为使表格更加紧凑使用代号表示各种标记语言。例如：md为Markdown，gfm是GitHub风格的Markdown，rst为reStructedText，ttl为Textile，asc为aciidoc，org为Org-mode。</p>
+<p>在“<a class="reference internal" href="#tbl-markups"><em>表7-1：常用轻量级标记语言对照</em></a>”中，为使表格更加紧凑使用代号表示各种标记语言。例如：md为Markdown，gfm是GitHub风格的Markdown，rst为reStructedText，ttl为Textile，asc为AsciiDoc，org为Org-mode。</p>
 <table border="1" class="classic docutils" id="tbl-markups">
 <caption>表7-1：常用轻量级标记语言对照</caption>
 <colgroup>
@@ -125,7 +125,7 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-odd"><td colspan="2" rowspan="4">标题</td>
+<tr class="row-odd"><td colspan="2" rowspan="6">标题</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -190,6 +190,53 @@ h6. 六级标题
 <tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>文档标题
+========
+
+一级标题
+--------
+
+二级标题
+~~~~~~~~
+
+三级标题
+^^^^^^^^
+
+四级标题
+++++++++
+
+.BlockTitle
+</pre></div>
+</div>
+</td>
+<td><p class="first">输出略。</p>
+<div class="last admonition note">
+<p class="first admonition-title">注解</p>
+<p>AsciiDoc支持两种风格的标题。另一种单行标题风格参加下面的介绍。</p>
+<p class="last">以点开始的块标题不生成目录。</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>= 文档标题 =
+== 一级标题 ==
+=== 二级标题 ===
+==== 三级标题 ====
+===== 四级标题 =====
+</pre></div>
+</div>
+</td>
+<td>输出略。</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>org</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>* 一级标题
@@ -206,12 +253,12 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="12">段落</td>
+<tr class="row-odd"><td rowspan="13">段落</td>
 <td>空行分段</td>
 <td>md</td>
 <td>rst</td>
 <td>ttl*</td>
-<td>&nbsp;</td>
+<td>asc</td>
 <td>org</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>一个回车不分段，
 本行续上行。
@@ -237,7 +284,7 @@ h6. 六级标题
 </td>
 <td>行尾转义字符让续行之间无空格。</td>
 </tr>
-<tr class="row-odd"><td rowspan="6">插入换行</td>
+<tr class="row-odd"><td rowspan="7">插入换行</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -307,6 +354,22 @@ h6. 六级标题
 <tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>行尾的空格和加号 +
+保持换行。
+</pre></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">行尾的空格和加号</div>
+<div class="line">保持换行。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>org*</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>行尾两个反斜线\\
@@ -320,7 +383,7 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -338,7 +401,7 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="4">段落缩进</td>
+<tr class="row-even"><td rowspan="4">段落缩进</td>
 <td>md</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -363,7 +426,7 @@ h6. 六级标题
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -387,7 +450,7 @@ h6. 六级标题
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -421,7 +484,7 @@ p. 正常段落不再缩进。
 <p class="last">正常段落不再缩进。</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -449,7 +512,7 @@ p. 正常段落不再缩进。
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2" rowspan="6">代码块</td>
+<tr class="row-even"><td colspan="2" rowspan="8">代码块</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -457,17 +520,17 @@ p. 正常段落不再缩进。
 <td>&nbsp;</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>四个空格缩进是代码块：
 
-    $ date
+    $ printf &quot;Hello, world.\n&quot;
 </pre></div>
 </div>
 </td>
 <td><p class="first">四个空格缩进是代码块：</p>
-<div class="last highlight-none"><div class="highlight"><pre>$ date
+<div class="last highlight-none"><div class="highlight"><pre>$ printf &quot;Hello, world.\n&quot;
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>gfm</td>
+<tr class="row-odd"><td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -476,7 +539,7 @@ p. 正常段落不再缩进。
 
 ```ruby
 require &#39;redcarpet&#39;
-md = Redcarpet.new(&quot;Hello World!&quot;)
+md = Redcarpet.new(&quot;Hello, world.&quot;)
 puts md.to_html
 ```
 </pre></div>
@@ -484,13 +547,13 @@ puts md.to_html
 </td>
 <td><p class="first">三个连续的`或~等符号界定代码块。</p>
 <div class="last highlight-ruby"><div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;redcarpet&#39;</span>
-<span class="n">md</span> <span class="o">=</span> <span class="no">Redcarpet</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+<span class="n">md</span> <span class="o">=</span> <span class="no">Redcarpet</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Hello, world.&quot;</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="n">md</span><span class="o">.</span><span class="n">to_html</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -499,17 +562,27 @@ puts md.to_html
 
 ::
 
-    $ date
+  $ printf &quot;Hello, world.\n&quot;
+
+还可声明语言类型实现语法加量。
+
+.. code-block:: sh
+
+   $ printf &quot;Hello, world.\n&quot;
 </pre></div>
 </div>
 </td>
 <td><p class="first">双冒号后缩进为代码块。</p>
-<div class="last highlight-none"><div class="highlight"><pre>$ date
+<div class="highlight-none"><div class="highlight"><pre>$ printf &quot;Hello, world.\n&quot;
+</pre></div>
+</div>
+<p>还可声明语言类型实现语法加量。</p>
+<div class="last highlight-sh"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">printf</span> <span class="s2">&quot;Hello, world.\n&quot;</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -533,7 +606,7 @@ $ git commit --allow-empty
 <p class="last">本段不再是代码块。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -556,7 +629,83 @@ p. 恢复正常段落。
 <p class="last">恢复正常段落。</p>
 </td>
 </tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>四个或更多减号括起代码块，
+还可声明语言种类。
+
+[source, c]
+-----------------------------
+#include &lt;stdio.h&gt;
+
+int main() {
+   printf(&quot;Hello World!\n&quot;);
+   exit(0);
+}
+-----------------------------
+</pre></div>
+</div>
+</td>
+<td><p class="first">四个或更多减号括起代码块，
+还可声明语言种类。</p>
+<div class="last highlight-c"><div class="highlight"><pre><span class="cp">#include &lt;stdio.h&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+   <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>正常段落。
+
+  缩进段落相当于添加&lt;pre&gt;标签，
+  等宽字体，原样输出。
+
+缩进会和其他语法如列表相混淆，
+可用 `[literal]` 显示声明。
+
+[literal]
+原样输出，
+显示为等宽字体。
+
+或用四个以上点组成的定界符标记。
+
+..............................
+原样输出，
+显示为等宽字体。
+..............................
+</pre></div>
+</div>
+</td>
+<td><p class="first">正常段落。</p>
+<div class="highlight-none"><div class="highlight"><pre>缩进段落相当于添加&lt;pre&gt;标签，
+等宽字体，原样输出。
+</pre></div>
+</div>
+<p>缩进会和其他语法如列表相混淆，
+可用 <tt class="docutils literal"><span class="pre">[literal]</span></tt> 显示声明。</p>
+<div class="highlight-none"><div class="highlight"><pre>原样输出，
+显示为等宽字体。
+</pre></div>
+</div>
+<p>或用四个以上点组成的定界符标记。</p>
+<div class="last highlight-none"><div class="highlight"><pre>原样输出，
+显示为等宽字体。
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -565,7 +714,7 @@ p. 恢复正常段落。
 
 #+BEGIN_SRC ruby
   require &#39;redcarpet&#39;
-  md = Redcarpet.new(&quot;Hello World!&quot;)
+  md = Redcarpet.new(&quot;Hello, world.&quot;)
   puts md.to_html
 #+END_SRC
 </pre></div>
@@ -573,13 +722,533 @@ p. 恢复正常段落。
 </td>
 <td><p class="first">下面是代码块。</p>
 <div class="last highlight-ruby"><div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;redcarpet&#39;</span>
-<span class="n">md</span> <span class="o">=</span> <span class="no">Redcarpet</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+<span class="n">md</span> <span class="o">=</span> <span class="no">Redcarpet</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Hello, world.&quot;</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="n">md</span><span class="o">.</span><span class="n">to_html</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2" rowspan="3">分隔线</td>
+<tr class="row-even"><td rowspan="16">列表</td>
+<td rowspan="4">无序列表</td>
+<td>md</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>* 星号、减号、加号开始列表。
+
+  - 列表层级和缩进有关。
+
+    + 和具体符号无关。
+
+* 返回一级列表。
+</pre></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>星号、减号、加号开始列表。<ul>
+<li>列表层级和缩进有关。<ul>
+<li>和具体符号无关。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回一级列表。</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>ttl</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>* 星号开始无序列表。
+** 更多星号代表不同层级。
+*** 三级列表。
+* 返回一级列表。
+</pre></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>星号开始无序列表。<ul>
+<li>更多星号代表不同层级。<ul>
+<li>三级列表。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回一级列表。</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>- 1个减号开始列表。
+* 或1到5个星号开始列表。
+** 三级列表。
+- 返回一级列表。
+</pre></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>1个减号开始列表。<ul>
+<li>或1到5个星号开始列表。<ul>
+<li>三级列表。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回一级列表。</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>列表语法和Markdown、reST类似，
+因星号和列表语法冲突不建议使用。
+
+  - 减号、加号开始列表。
+
+    + 列表层级和缩进有关。
+
+      - 和具体符号无关。
+
+  - 返回一级列表。
+</pre></div>
+</div>
+</td>
+<td><p class="first">列表语法和Markdown、reST类似，
+因星号和列表语法冲突不建议使用。</p>
+<ul class="last simple">
+<li>减号、加号开始列表。<ul>
+<li>列表层级和缩进有关。<ul>
+<li>和具体符号无关。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回一级列表。</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td rowspan="5">有序列表</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>1. 数字和点开始有序列表。
+
+   1. 注意子列表的缩进位置。
+
+      1. 三级列表。
+      1. 编号会自动更正。
+
+   1. 二级列表，编号自动更正为2。
+
+2. 返回一级列表。
+</pre></div>
+</div>
+</td>
+<td><ol class="first last arabic simple">
+<li>数字和点开始有序列表。<ol class="arabic">
+<li>注意子列表的缩进位置。<ol class="arabic">
+<li>三级列表。</li>
+<li>编号会自动更正。</li>
+</ol>
+</li>
+<li>二级列表，编号自动更正为2。</li>
+</ol>
+</li>
+<li>返回一级列表。</li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>1. 数字和点是一种编号方式。
+
+   A. 大写字母编号。
+
+      a. 小写字母编号。
+
+2. 继续一级列表。
+
+   (I) 大写罗马编号。
+
+       i) 小写罗马编号。
+</pre></div>
+</div>
+</td>
+<td><ol class="first last arabic simple">
+<li>数字和点是一种编号方式。<ol class="upperalpha">
+<li>大写字母编号。<ol class="loweralpha">
+<li>小写字母编号。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>继续一级列表。<ol class="upperroman">
+<li>大写罗马编号。<ol class="lowerroman">
+<li>小写罗马编号。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>ttl</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre># 井号开始有序列表。
+# 有序列表自动编号。
+## 更多井号代表不同层级。
+### 三级列表。
+# 返回一级列表。
+</pre></div>
+</div>
+</td>
+<td><ol class="first last arabic simple">
+<li>井号开始有序列表。</li>
+<li>有序列表自动编号。<ol class="arabic">
+<li>更多井号代表不同层级。<ol class="arabic">
+<li>三级列表。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>返回一级列表。</li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first highlight-none"><div class="highlight"><pre>1. 和reST一样支持多种编号方式。
+a. 层级靠列表风格决定，而非缩进。
+A. 三级列表。
+b. 返回二级列表。
+i) 罗马数字列表。
+IX)  大写罗马。编号自动纠正。
+2. 返回一级列表。
+</pre></div>
+</div>
+<div class="last admonition note">
+<p class="first admonition-title">注解</p>
+<p>还可以用1到5个点开始有序列表，
+自动按数字、字母方式编号。如：</p>
+<div class="last highlight-none"><div class="highlight"><pre>. 数字一级列表。
+.. 字母二级列表。
+... 罗马数字三级列表。
+.... 大写字母四级列表。
+..... 大写罗马五级列表。
+</pre></div>
+</div>
+</div>
+</td>
+<td><ol class="first last arabic simple">
+<li>和reST一样支持多种编号方式。<ol class="loweralpha">
+<li>层级靠列表风格决定，而非缩进。<ol class="upperalpha">
+<li>三级列表。</li>
+</ol>
+</li>
+<li>返回二级列表。<ol class="lowerroman">
+<li>罗马数字列表。<ol class="upperroman" start="9">
+<li>大写罗马。编号自动纠正。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>返回一级列表。</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>1. 数字和点或右括号开始有序列表。
+
+   1) 缩进即为子列表。
+
+      1. 三级列表。
+      1. 编号会自动更正。
+
+   2) 二级列表。
+
+2. 返回一级列表。
+</pre></div>
+</div>
+</td>
+<td><ol class="first last arabic simple">
+<li>数字和点或右括号开始有序列表。<ol class="arabic">
+<li>缩进即为子列表。<ol class="arabic">
+<li>三级列表。</li>
+<li>编号会自动更正。</li>
+</ol>
+</li>
+<li>二级列表。</li>
+</ol>
+</li>
+<li>返回一级列表。</li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="4">列表续行、段落和代码块</td>
+<td>md</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>1. 列表项可以折行，
+   对齐则自动续行。
+
+2. 列表项可包含多个段落。
+
+    空行开始的新段落必须缩进四个空格，
+    段落才属于列表项。
+
+3. 列表中的代码块要缩进8个空格。
+
+        $ printf &quot;Hello, world.\n&quot;
+</pre></div>
+</div>
+</td>
+<td><ol class="first last arabic">
+<li><p class="first">列表项可以折行，
+对齐则自动续行。</p>
+</li>
+<li><p class="first">列表项可包含多个段落。</p>
+<p>空行开始的新段落必须缩进四个空格，
+段落才属于列表项。</p>
+</li>
+<li><p class="first">列表中的代码块要缩进8个空格。</p>
+<div class="highlight-none"><div class="highlight"><pre>$ printf &quot;Hello, world.\n&quot;
+</pre></div>
+</div>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>1. 列表项可以折行，
+   对齐则自动续行。
+
+2. 列表项可包含多个段落。
+
+   空行开始的新段落，
+   新段落要和列表项内容对齐。
+
+3. 列表下的代码段注意对齐即可。
+
+   ::
+
+     $ printf &quot;Hello, world.\n&quot;
+</pre></div>
+</div>
+</td>
+<td><ol class="first last arabic">
+<li><p class="first">列表项可以折行，
+对齐则自动续行。</p>
+</li>
+<li><p class="first">列表项可包含多个段落。</p>
+<p>空行开始的新段落，
+新段落要和列表项内容对齐。</p>
+</li>
+<li><p class="first">列表下的代码段注意对齐即可。</p>
+<div class="highlight-none"><div class="highlight"><pre>$ printf &quot;Hello, world.\n&quot;
+</pre></div>
+</div>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>1. 列表项可以折行，
+   对齐则自动续行。
+
+2. 列表项可包含多个段落。
++
+加号代表本段落属于列表。
++
+--
+两个减号包裹的块作为一整体
+属于列表。
+
+其中分段无需再使用加号。
+--
+
+3. 注意列表项内代码段前空行用加号替换。
++
+--------
+$ printf &quot;Hello, world.\n&quot;
+--------
+</pre></div>
+</div>
+</td>
+<td><ol class="first last arabic">
+<li><p class="first">列表项可以折行，
+对齐则自动续行。</p>
+</li>
+<li><p class="first">列表项可包含多个段落。</p>
+<p>加号代表本段落属于列表。</p>
+<p>两个减号包裹的块作为一整体
+属于列表。</p>
+<p>其中分段无需再使用加号。</p>
+</li>
+<li><p class="first">注意列表项内代码段前空行用加号替换。</p>
+<div class="highlight-none"><div class="highlight"><pre>$ printf &quot;Hello, world.\n&quot;
+</pre></div>
+</div>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>1. 列表项可以折行，
+   对齐则自动续行。
+
+2. 列表项可包含多个段落。
+
+   空行开始的新段落，
+   新段落要和列表项内容对齐。
+
+3. 列表下的代码段注意对齐即可。
+
+   #+BEGIN_SRC bash
+     $ printf &quot;Hello, world.\n&quot;
+   #+END_SRC
+</pre></div>
+</div>
+</td>
+<td><ol class="first last arabic">
+<li><p class="first">列表项可以折行，
+对齐则自动续行。</p>
+</li>
+<li><p class="first">列表项可包含多个段落。</p>
+<p>空行开始的新段落，
+新段落要和列表项内容对齐。</p>
+</li>
+<li><p class="first">列表下的代码段注意对齐即可。</p>
+<div class="highlight-none"><div class="highlight"><pre>$ printf &quot;Hello, world.\n&quot;
+</pre></div>
+</div>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="3">定义</td>
+<td>&nbsp;</td>
+<td>rst</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>git
+  Simple and beautiful.
+
+hg
+  Another DVCS.
+
+subversion
+  VCS with many constrains.
+
+  Why not Git?
+</pre></div>
+</div>
+</td>
+<td><dl class="first last docutils">
+<dt>git</dt>
+<dd>Simple and beautiful.</dd>
+<dt>hg</dt>
+<dd>Another DVCS.</dd>
+<dt>subversion</dt>
+<dd><p class="first">VCS with many constrains.</p>
+<p class="last">Why not Git?</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>ttl</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>- git := Simple and beautiful.
+- hg := Another DVCS.
+- subversion :=
+VCS with many constrains.
+
+Why not Git? =:
+</pre></div>
+</div>
+</td>
+<td><dl class="first last docutils">
+<dt>git</dt>
+<dd>Simple and beautiful.</dd>
+<dt>hg</dt>
+<dd>Another DVCS.</dd>
+<dt>subversion</dt>
+<dd><p class="first">VCS with many constrains.</p>
+<p class="last">Why not Git?</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>- git :: Simple and beautiful.
+- hg :: Another DVCS.
+- subversion :: VCS with many constrains.
+
+                Why not Git?
+</pre></div>
+</div>
+</td>
+<td><dl class="first last docutils">
+<dt>git</dt>
+<dd>Simple and beautiful.</dd>
+<dt>hg</dt>
+<dd>Another DVCS.</dd>
+<dt>subversion</dt>
+<dd><p class="first">VCS with many constrains.</p>
+<p class="last">Why not Git?</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td colspan="2" rowspan="4">分隔线</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>ttl</td>
@@ -593,7 +1262,7 @@ p. 恢复正常段落。
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -601,6 +1270,19 @@ p. 恢复正常段落。
 <td><div class="first last highlight-none"><div class="highlight"><pre>四条短线或以上显示为分隔线。
 
 ----
+</pre></div>
+</div>
+</td>
+<td>输出略。</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>三个或更多的单引号作为分割线。
+
+&#39;&#39;&#39;
 </pre></div>
 </div>
 </td>
@@ -619,33 +1301,35 @@ p. 恢复正常段落。
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-even"><td rowspan="23">字体</td>
-<td rowspan="4">粗体和斜体</td>
+<tr class="row-even"><td rowspan="28">字体</td>
+<td rowspan="5">粗体和斜体</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>这是 __粗体__ ，
-这是 _斜体_ 。
+<td><div class="first last highlight-none"><div class="highlight"><pre>这些都是 **粗体** 或 __粗体__ ，
+这写都是 *斜体* 或 _斜体_ 。
 </pre></div>
 </div>
 </td>
-<td>这是 <strong>粗体</strong> ，
-这是 <em>斜体</em> 。</td>
+<td>这些都是 <strong>粗体</strong> 或 <strong>粗体</strong> ，
+这些都是 <em>斜体</em> 或 <em>斜体</em> 。</td>
 </tr>
-<tr class="row-odd"><td>md</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>这是 **粗体** ，
-这是 *斜体* 。
+<td><div class="first last highlight-none"><div class="highlight"><pre>这是 **粗体** ，这是 *斜体* 。
+
+不留白的\ **粗体**\ 和\ *斜体*\ 效果。
 </pre></div>
 </div>
 </td>
-<td>这是 <strong>粗体</strong> ，
-这是 <em>斜体</em> 。</td>
+<td><p class="first">这是 <strong>粗体</strong> ，这是 <em>斜体</em> 。</p>
+<p class="last">不留白的<strong>粗体</strong>和<em>斜体</em>效果。</p>
+</td>
 </tr>
 <tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -663,17 +1347,32 @@ p. 恢复正常段落。
 <tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
+<td>asc</td>
 <td>&nbsp;</td>
-<td>org</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>这是 *粗体* ，
-这是 /斜体/ 。
+这是 _斜体_ 或 &#39;斜体&#39; 。
+
+不留白的**粗体**和__斜体__效果。
 </pre></div>
 </div>
 </td>
-<td>这是 <strong>粗体</strong> ，
-这是 <em>斜体</em> 。</td>
+<td><p class="first">这是 <strong>粗体</strong> ，
+这是 <em>斜体</em> 或 <em>斜体</em> 。</p>
+<p class="last">不留白的<strong>粗体</strong>和<em>斜体</em>效果。</p>
+</td>
 </tr>
-<tr class="row-even"><td rowspan="4">删除线</td>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>这是 *粗体* ，这是 /斜体/ 。
+</pre></div>
+</div>
+</td>
+<td>这是 <strong>粗体</strong> ，这是 <em>斜体</em> 。</td>
+</tr>
+<tr class="row-odd"><td rowspan="5">删除线</td>
 <td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -685,7 +1384,7 @@ p. 恢复正常段落。
 </td>
 <td><span class="strike">删除线</span> 效果</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -693,13 +1392,17 @@ p. 恢复正常段落。
 <td><div class="first last highlight-none"><div class="highlight"><pre>.. role:: strike
    :class: strike
 
-:strike:`删除线`\ 效果
+:strike:`删除线` 效果
+
+不留白的\ :strike:`删除线`\ 效果
 </pre></div>
 </div>
 </td>
-<td><span class="strike">删除线</span>效果</td>
+<td><p class="first"><span class="strike">删除线</span> 效果</p>
+<p class="last">不留白的<span class="strike">删除线</span>效果</p>
+</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -709,6 +1412,21 @@ p. 恢复正常段落。
 </div>
 </td>
 <td><span class="strike">删除线</span> 效果</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>[line-through]#删除线# 效果
+
+不留白的[line-through]##删除线##效果
+</pre></div>
+</div>
+</td>
+<td><p class="first"><span class="strike">删除线</span> 效果</p>
+<p class="last">不留白的<span class="strike">删除线</span>效果</p>
+</td>
 </tr>
 <tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -721,7 +1439,7 @@ p. 恢复正常段落。
 </td>
 <td><span class="strike">删除线</span> 效果</td>
 </tr>
-<tr class="row-even"><td rowspan="4">下划线</td>
+<tr class="row-even"><td rowspan="5">下划线</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -741,11 +1459,15 @@ p. 恢复正常段落。
 <td><div class="first last highlight-none"><div class="highlight"><pre>.. role:: ul
    :class: underline
 
-:ul:`下划线`\ 效果
+:ul:`下划线` 效果
+
+不留白的\ :ul:`下划线`\ 效果
 </pre></div>
 </div>
 </td>
-<td><span class="underline">下划线</span>效果</td>
+<td><p class="first"><span class="underline">下划线</span> 效果</p>
+<p class="last">不留白的<span class="underline">下划线</span>效果</p>
+</td>
 </tr>
 <tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -761,6 +1483,21 @@ p. 恢复正常段落。
 <tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>[underline]#下划线# 效果
+
+不留白的[underline]##下划线##效果
+</pre></div>
+</div>
+</td>
+<td><p class="first"><span class="underline">下划线</span> 效果</p>
+<p class="last">不留白的<span class="underline">下划线</span>效果</p>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>org</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>_下划线_ 效果
@@ -769,7 +1506,7 @@ p. 恢复正常段落。
 </td>
 <td><span class="underline">下划线</span> 效果</td>
 </tr>
-<tr class="row-even"><td rowspan="4">上标、下标</td>
+<tr class="row-odd"><td rowspan="5">上标、下标</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -790,7 +1527,7 @@ p. 恢复正常段落。
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -806,7 +1543,7 @@ p. 恢复正常段落。
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -819,6 +1556,22 @@ p. 恢复正常段落。
 <td><ul class="first last simple">
 <li>Water: H <sub>2</sub> O</li>
 <li>E = mc <sup>2</sup></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>* Water: H~2~O
+* E = mc^2^
+</pre></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>Water: H<sub>2</sub>O</li>
+<li>E = mc<sup>2</sup></li>
 </ul>
 </td>
 </tr>
@@ -838,11 +1591,11 @@ p. 恢复正常段落。
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="4">行内代码</td>
+<tr class="row-even"><td rowspan="5">等宽字体</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>asc</td>
 <td>&nbsp;</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>行内反引号嵌入代码，如: `git status` 。
 </pre></div>
@@ -881,6 +1634,17 @@ p. 恢复正常段落。
 <tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>行内用字符+标识等宽字体，如: +git status+ 。
+</pre></div>
+</div>
+</td>
+<td>行内用字符+标识等宽字，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>org</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>行内用字符=或~嵌入代码，如:
@@ -891,7 +1655,7 @@ p. 恢复正常段落。
 <td>行内用字符=或~嵌入代码，如:
 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 和 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">st</span></tt> 。</td>
 </tr>
-<tr class="row-even"><td rowspan="2">引言</td>
+<tr class="row-odd"><td rowspan="2">引言</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -903,7 +1667,7 @@ p. 恢复正常段落。
 </td>
 <td><cite>Got GitHub</cite> by Jiang Xin.</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -914,7 +1678,7 @@ p. 恢复正常段落。
 </td>
 <td><cite>Got GitHub</cite> by Jiang Xin.</td>
 </tr>
-<tr class="row-even"><td>清除标记空白</td>
+<tr class="row-odd"><td>清除标记空白</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -927,279 +1691,7 @@ p. 恢复正常段落。
 </td>
 <td>标记符号前后空白用<strong>反斜线</strong>消除</td>
 </tr>
-<tr class="row-odd"><td rowspan="10">列表</td>
-<td>无序列表</td>
-<td>md</td>
-<td>rst</td>
-<td>ttl*</td>
-<td>&nbsp;</td>
-<td>org*</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>*   无序列表以*/+/- 起始，
-    后接至少一空格。
-    相同缩进自动续行。
-
-*   列表可包含多个段落。
-
-    Markdown要求四个空格
-    缩进列表项段落。
-</pre></div>
-</div>
-</td>
-<td><ul class="first">
-<li><p class="first">无序列表以*/+/- 起始，
-后接至少一空格。
-相同缩进自动续行。</p>
-</li>
-<li><p class="first">列表可包含多个段落。</p>
-<p>Markdown要求四个空格
-缩进列表项段落。</p>
-</li>
-</ul>
-<div class="last admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">为避免和标题冲突，Org-mode尽量不要用星号标记无序列表。</p>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td rowspan="2">有序列表</td>
-<td>md</td>
-<td>rst</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>1.  以数字和点起始，
-    后接至少一空格。
-    相同缩进自动续行。
-
-2.  列表可包含多个段落。
-
-    Markdown要求四个空格
-    缩进列表项段落。
-</pre></div>
-</div>
-</td>
-<td><ol class="first last arabic">
-<li><p class="first">以数字和点起始，
-后接至少一空格。
-相同缩进自动续行。</p>
-</li>
-<li><p class="first">列表可包含多个段落。</p>
-<p>Markdown要求四个空格
-缩进列表项段落。</p>
-</li>
-</ol>
-</td>
-</tr>
-<tr class="row-odd"><td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>ttl</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>常用版本控制工具：
-# git
-# hg
-# subversion
-</pre></div>
-</div>
-</td>
-<td><p class="first">常用版本控制工具：</p>
-<ol class="last arabic simple">
-<li>git</li>
-<li>hg</li>
-<li>subversion</li>
-</ol>
-</td>
-</tr>
-<tr class="row-even"><td rowspan="2">多级列表</td>
-<td>md</td>
-<td>rst</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>org</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* Git special commands:
-
-  - git clone
-  - git rebase
-
-* SVN special commands:
-
-  - svn switch
-  - svn update
-</pre></div>
-</div>
-</td>
-<td><ul class="first last simple">
-<li>Git special commands:<ul>
-<li>git clone</li>
-<li>git rebase</li>
-</ul>
-</li>
-<li>SVN special commands:<ul>
-<li>svn switch</li>
-<li>svn update</li>
-</ul>
-</li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>ttl</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* Git special commands:
-** git clone
-** git rebase
-* SVN special commands:
-** svn switch
-** svn update
-</pre></div>
-</div>
-</td>
-<td><ul class="first last simple">
-<li>Git special commands:<ul>
-<li>git clone</li>
-<li>git rebase</li>
-</ul>
-</li>
-<li>SVN special commands:<ul>
-<li>svn switch</li>
-<li>svn update</li>
-</ul>
-</li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td rowspan="2">列表项中的代码块</td>
-<td>md</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* 列表项可包含代码块。
-
-    八个缩进开始代码块:
-
-        $ date
-</pre></div>
-</div>
-</td>
-<td><ul class="first last">
-<li><p class="first">列表项可包含代码块。</p>
-<p>八个缩进开始代码块:</p>
-<div class="highlight-none"><div class="highlight"><pre>$ date
-</pre></div>
-</div>
-</li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td>&nbsp;</td>
-<td>rst</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* 列表项可包含代码块。
-
-  双引号开始代码块::
-
-    $ date
-</pre></div>
-</div>
-</td>
-<td><ul class="first last">
-<li><p class="first">列表项可包含代码块。</p>
-<p>双引号开始代码块:</p>
-<div class="highlight-none"><div class="highlight"><pre>$ date
-</pre></div>
-</div>
-</li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td rowspan="3">定义</td>
-<td>&nbsp;</td>
-<td>rst</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>git
-  Simple and beautiful.
-
-hg
-  Another DVCS.
-
-subversion
-  VCS with many constrains.
-
-  Why not Git?
-</pre></div>
-</div>
-</td>
-<td><dl class="first last docutils">
-<dt>git</dt>
-<dd>Simple and beautiful.</dd>
-<dt>hg</dt>
-<dd>Another DVCS.</dd>
-<dt>subversion</dt>
-<dd><p class="first">VCS with many constrains.</p>
-<p class="last">Why not Git?</p>
-</dd>
-</dl>
-</td>
-</tr>
-<tr class="row-odd"><td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>ttl</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>- git := Simple and beautiful.
-- hg := Another DVCS.
-- subversion :=
-VCS with many constrains.
-
-Why not Git? =:
-</pre></div>
-</div>
-</td>
-<td><dl class="first last docutils">
-<dt>git</dt>
-<dd>Simple and beautiful.</dd>
-<dt>hg</dt>
-<dd>Another DVCS.</dd>
-<dt>subversion</dt>
-<dd><p class="first">VCS with many constrains.</p>
-<p class="last">Why not Git?</p>
-</dd>
-</dl>
-</td>
-</tr>
-<tr class="row-even"><td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>org</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>- git :: Simple and beautiful.
-- hg :: Another DVCS.
-- subversion :: VCS with many constrains.
-
-                Why not Git?
-</pre></div>
-</div>
-</td>
-<td><dl class="first last docutils">
-<dt>git</dt>
-<dd>Simple and beautiful.</dd>
-<dt>hg</dt>
-<dd>Another DVCS.</dd>
-<dt>subversion</dt>
-<dd><p class="first">VCS with many constrains.</p>
-<p class="last">Why not Git?</p>
-</dd>
-</dl>
-</td>
-</tr>
-<tr class="row-odd"><td rowspan="13">链接</td>
+<tr class="row-even"><td rowspan="13">链接</td>
 <td>URL自动链接</td>
 <td>gfm</td>
 <td>rst</td>
@@ -1217,7 +1709,7 @@ Why not Git? =:
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="4">文字链接</td>
+<tr class="row-odd"><td rowspan="4">文字链接</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1239,7 +1731,7 @@ Why not Git? =:
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1262,7 +1754,7 @@ Why not Git? =:
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1283,7 +1775,7 @@ Why not Git? =:
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1297,7 +1789,7 @@ Why not Git? =:
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="4">内部跳转</td>
+<tr class="row-odd"><td rowspan="4">内部跳转</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1312,7 +1804,7 @@ Why not Git? =:
 <td><p class="first last" id="md-anchor">跳转至 <a class="reference external" href="#md-anchor">文内链接</a> 。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1343,7 +1835,7 @@ Why not Git? =:
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1357,7 +1849,7 @@ Why not Git? =:
 <td><p class="first last" id="ttl-anchor">跳转至 <a class="reference external" href="#ttl-anchor">文内链接</a> 。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1371,7 +1863,7 @@ Why not Git? =:
 <td><p class="first last" id="org-anchor">跳转至 <a class="reference external" href="#org-anchor">文内链接</a> 。</p>
 </td>
 </tr>
-<tr class="row-even"><td>GitHub提交和问题链接</td>
+<tr class="row-odd"><td>GitHub提交和问题链接</td>
 <td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1401,7 +1893,7 @@ mojombo/god#1 <a class="footnote-reference" href="#id44" id="id17">[18]</a></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="3">脚注</td>
+<tr class="row-even"><td rowspan="3">脚注</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1477,7 +1969,7 @@ mojombo/god#1 <a class="footnote-reference" href="#id44" id="id17">[18]</a></li>
 </table>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1497,7 +1989,7 @@ fn4. http://goo.gl/rGyvs
 </table>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1521,7 +2013,7 @@ caused the homepage load very slowly. &gt;:[</p>
 </table>
 </td>
 </tr>
-<tr class="row-even"><td colspan="2" rowspan="4">图片</td>
+<tr class="row-odd"><td colspan="2" rowspan="4">图片</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1539,7 +2031,7 @@ GitHub Logo: ![GitHub][logo]
 <p class="last">GitHub Logo: <img alt="logo" src="../images/github.png" /></p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1581,7 +2073,7 @@ GitHub Logo: ![GitHub][logo]
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1609,7 +2101,7 @@ GitHub Logo: ![GitHub][logo]
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1627,7 +2119,7 @@ GitHub Logo: ![GitHub][logo]
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td colspan="2" rowspan="4">表格</td>
+<tr class="row-odd"><td colspan="2" rowspan="4">表格</td>
 <td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1790,7 +2282,7 @@ left  | center | right
 </table>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="6">其他</td>
+<tr class="row-even"><td rowspan="7">其他</td>
 <td>混用HTML</td>
 <td>md</td>
 <td>&nbsp;</td>
@@ -1847,7 +2339,7 @@ notextile. 不进行 *语法解析* 。
 <p class="last">不进行 *语法解析* 。</p>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="2">注释</td>
+<tr class="row-even"><td rowspan="3">注释</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1860,9 +2352,23 @@ notextile. 不进行 *语法解析* 。
 </pre></div>
 </div>
 </td>
-<td>输出略。</td>
+<td>无输出。</td>
 </tr>
 <tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>asc</td>
+<td>&nbsp;</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>/////////////////
+四个或更多的斜线包围起来的
+文字块是注释，被忽略。
+/////////////////
+</pre></div>
+</div>
+</td>
+<td>无输出。</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1879,15 +2385,13 @@ notextile. 不进行 *语法解析* 。
 </pre></div>
 </div>
 </td>
-<td>输出略。</td>
+<td>无输出。</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
-<ul class="last simple">
-<li>部分标记语言代号后添加了星标，代表该标记语言相应的语法实现稍有区别，或者GitHub的具体实现和标准有出入。</li>
-</ul>
+<p class="last">部分标记语言代号后添加了星标，代表该标记语言相应的语法实现稍有区别，或者GitHub的具体实现和标准有出入。</p>
 </div>
 <hr class="docutils" />
 <table class="docutils footnote" frame="void" id="id32" rules="none">
@@ -1935,7 +2439,7 @@ notextile. 不进行 *语法解析* 。
 <table class="docutils footnote" frame="void" id="id39" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[13]</a></td><td><a class="reference external" href="http://orgmode.org/">http://orgmode.org/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[13]</a></td><td><a class="reference external" href="http://orgmode.org/org.html">http://orgmode.org/org.html</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id40" rules="none">
