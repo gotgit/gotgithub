@@ -384,7 +384,7 @@ table.classic {
 
 table.classic td, table.docutils th {
     padding: 1px 8px 1px 5px;
-    border: 1px solid #aaa;
+    border: 1px solid black;
 }
 
 table.classic th {
