@@ -93,9 +93,42 @@
             
   <div class="section" id="markups">
 <span id="id1"></span><h1>7. 附录：轻量级标记语言<a class="headerlink" href="#markups" title="永久链接至标题">¶</a></h1>
-<p>没有标记语言就没有Web和丰富多彩的互联网，但创造了Web的HTML语言并非尽善尽美，存在诸如难读、难写、难以向其他格式转换的问题。究其根源是因为HTML语言是一种“重”标记语言，对机器友好而并非对人友好。另外一种用于文档撰写的标记语言DocBook<a class="footnote-reference" href="#id38" id="id2">[8]</a>也存在类似问题，虽然DocBook能实现单一源文件出版（Single-Source Publishing），即一次撰写多种格式输出（Write once, publish many），但复杂的XML标签给写作过程带来不小的负担。</p>
-<p>为用户提供更为便捷的方式创建UGC（用户生成内容）是GitHub流行的因素之一，奥秘就在于使用了轻量级的标记语言。无论是代码提交说明、提交评注、问题描述、项目的README文件、维基页面、用户主页和项目主页都可以使用Markdown<a class="footnote-reference" href="#id39" id="id3">[9]</a>等轻量级标记语言来撰写。轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了我们写电子邮件时的习惯，即使第一次接触用轻量级标记语言撰写的文件，也可以毫无障碍地理解其中的内容。</p>
-<p>虽然GitHub更倾向于使用Markdown标记语言<a class="footnote-reference" href="#id40" id="id4">[10]</a>，但很多地方也提供对其他轻量级标记语言的支持。包括为Python程序员所熟悉的reStructedText<a class="footnote-reference" href="#id41" id="id5">[11]</a>，为Ruby程序员所熟悉的Textile<a class="footnote-reference" href="#id42" id="id6">[12]</a>、RDoc<a class="footnote-reference" href="#id43" id="id7">[13]</a>，为Perl程序员所熟悉的POD<a class="footnote-reference" href="#id44" id="id8">[14]</a>，为Emacs用户所熟悉的Org-mode<a class="footnote-reference" href="#id45" id="id9">[15]</a>，为维基用户所熟悉的MediaWiki<a class="footnote-reference" href="#id46" id="id10">[16]</a>和Creole<a class="footnote-reference" href="#id47" id="id11">[17]</a>，以及可作为DocBook前端的颇有前途的AsciiDoc<a class="footnote-reference" href="#id48" id="id12">[18]</a>标记语言。</p>
+<p>没有标记语言就没有Web和丰富多彩的互联网，但创造了Web的HTML语言并非尽善尽美，存在诸如难读、难写、难以向其他格式转换的问题。究其根源是因为HTML语言是一种“重”标记语言，对机器友好而并非对人友好。</p>
+<p>下面这段HTML源码，非技术控阅读起来会遇到困难。</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+&lt;head&gt;
+  &lt;meta content='application/xhtml+xml;charset=utf-8' http-equiv='Content-type' /&gt;
+  &lt;title&gt;轻量级标记语言&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 id='id1'&gt;轻量级标记语言&lt;/h1&gt;
+
+  &lt;p&gt;&lt;strong&gt;轻量级标记语言&lt;/strong&gt; 是一种 &lt;em&gt;语法简单&lt;/em&gt; 的标记语言。
+  它使用易于理解的格式标记，没有古怪的 &lt;code&gt;&amp;lt;标签&amp;gt;&lt;/code&gt; 。&lt;/p&gt;
+
+  &lt;ul&gt;
+  &lt;li&gt;可以使用最简单的文本编辑器编辑。&lt;/li&gt;
+  &lt;li&gt;所见即所得，非技术控亦可直接阅读源码。&lt;/li&gt;
+  &lt;li&gt;可版本控制。&lt;/li&gt;
+  &lt;li&gt;实现单一源文件出版。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>同样的信息如果换用轻量级标记语言来表达，就非常直观了。如下所示：</p>
+<div class="highlight-python"><pre>轻量级标记语言
+==============
+
+**轻量级标记语言** 是一种 *语法简单* 的标记语言。
+它使用易于理解的格式标记，没有古怪的 `&lt;标签&gt;` 。
+
+- 可以使用最简单的文本编辑器编辑。
+- 所见即所得，非技术控亦可直接阅读源码。
+- 可版本控制。
+- 实现单一源文件出版。</pre>
+</div>
+<p>GitHub另人着迷的一个因素就在于GitHub为用户提供更为便捷地创建UGC（用户生成内容）的方法，其奥秘就在于使用了轻量级标记语言。无论是代码提交说明、提交评注、问题描述、项目的README文件、维基页面、用户主页和项目主页都可以使用Markdown<a class="footnote-reference" href="#id38" id="id2">[8]</a>等轻量级标记语言来撰写。轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了我们写电子邮件时的习惯，即使第一次接触用轻量级标记语言撰写的文件，也可以毫无障碍地理解其中的内容。</p>
+<p>虽然GitHub更倾向于使用Markdown标记语言<a class="footnote-reference" href="#id39" id="id3">[9]</a>，但很多地方也提供对其他轻量级标记语言的支持。包括为Python程序员所熟悉的reStructedText<a class="footnote-reference" href="#id40" id="id4">[10]</a>，为Ruby程序员所熟悉的Textile<a class="footnote-reference" href="#id41" id="id5">[11]</a>、RDoc<a class="footnote-reference" href="#id42" id="id6">[12]</a>，为Perl程序员所熟悉的POD<a class="footnote-reference" href="#id43" id="id7">[13]</a>，为Emacs用户所熟悉的Org-mode<a class="footnote-reference" href="#id44" id="id8">[14]</a>，为维基用户所熟悉的MediaWiki<a class="footnote-reference" href="#id45" id="id9">[15]</a>和Creole<a class="footnote-reference" href="#id46" id="id10">[16]</a>，以及可作为DocBook<a class="footnote-reference" href="#id47" id="id11">[17]</a>前端的颇有前途的AsciiDoc<a class="footnote-reference" href="#id48" id="id12">[18]</a>标记语言。</p>
 <p>下面通过一张表格对几种常用的轻量级标记语言加以对照，供有不同标记语言偏好的用户参考，便于在GitHub某些不能随意更换标记语言而只能使用GFM（GitHub风格的Markdown）的场合可以自如地转换。</p>
 <p>在“<a class="reference internal" href="#tbl-markups"><em>表7-1：常用轻量级标记语言对照</em></a>”中，为使表格更加紧凑使用代号表示各种标记语言。例如：md为Markdown，gfm是GitHub风格的Markdown，rst为reStructedText，ttl为Textile，asc为AsciiDoc，org为Org-mode。</p>
 <table border="1" class="classic docutils" id="tbl-markups">
@@ -2567,61 +2600,61 @@ notextile. 不进行 *语法解析* 。
 <table class="docutils footnote" frame="void" id="id38" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[8]</a></td><td><a class="reference external" href="http://www.docbook.org/">http://www.docbook.org/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[8]</a></td><td><a class="reference external" href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id39" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[9]</a></td><td><a class="reference external" href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[9]</a></td><td><a class="reference external" href="http://github.github.com/github-flavored-markdown/">http://github.github.com/github-flavored-markdown/</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id40" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[10]</a></td><td><a class="reference external" href="http://github.github.com/github-flavored-markdown/">http://github.github.com/github-flavored-markdown/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[10]</a></td><td><a class="reference external" href="http://docutils.sourceforge.net/rst.html">http://docutils.sourceforge.net/rst.html</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id41" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[11]</a></td><td><a class="reference external" href="http://docutils.sourceforge.net/rst.html">http://docutils.sourceforge.net/rst.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[11]</a></td><td><a class="reference external" href="http://redcloth.org/textile">http://redcloth.org/textile</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id42" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[12]</a></td><td><a class="reference external" href="http://redcloth.org/textile">http://redcloth.org/textile</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[12]</a></td><td><a class="reference external" href="http://rdoc.sourceforge.net/doc/">http://rdoc.sourceforge.net/doc/</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id43" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[13]</a></td><td><a class="reference external" href="http://rdoc.sourceforge.net/doc/">http://rdoc.sourceforge.net/doc/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[13]</a></td><td><a class="reference external" href="http://perldoc.perl.org/perlpod.html">http://perldoc.perl.org/perlpod.html</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id44" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[14]</a></td><td><a class="reference external" href="http://perldoc.perl.org/perlpod.html">http://perldoc.perl.org/perlpod.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[14]</a></td><td><a class="reference external" href="http://orgmode.org/org.html">http://orgmode.org/org.html</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id45" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[15]</a></td><td><a class="reference external" href="http://orgmode.org/org.html">http://orgmode.org/org.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[15]</a></td><td><a class="reference external" href="http://www.mediawiki.org/wiki/Help:Formatting">http://www.mediawiki.org/wiki/Help:Formatting</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id46" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[16]</a></td><td><a class="reference external" href="http://www.mediawiki.org/wiki/Help:Formatting">http://www.mediawiki.org/wiki/Help:Formatting</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[16]</a></td><td><a class="reference external" href="http://www.wikicreole.org/">http://www.wikicreole.org/</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id47" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[17]</a></td><td><a class="reference external" href="http://www.wikicreole.org/">http://www.wikicreole.org/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id11">[17]</a></td><td>DocBook是著名的用于文档撰写的标记语言，采用XML文件格式及大量的面向出版的格式标签，能够实现单一源文件出版（Single-Source Publishing），即一次撰写多种格式输出（Write once, publish many）。但复杂的XML标签给写作过程带来不小的负担。网址：<a class="reference external" href="http://www.docbook.org/">http://www.docbook.org/</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id48" rules="none">
