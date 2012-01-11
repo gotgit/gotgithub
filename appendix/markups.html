@@ -300,7 +300,7 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="15">段落</td>
+<tr class="row-even"><td rowspan="14">段落</td>
 <td>空行分段</td>
 <td>md</td>
 <td>rst</td>
@@ -343,7 +343,7 @@ h6. 六级标题
 </td>
 <td>行尾转义字符让续行之间不留白。</td>
 </tr>
-<tr class="row-odd"><td rowspan="7">插入换行</td>
+<tr class="row-odd"><td rowspan="6">插入换行</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -442,25 +442,7 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>org</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>#+BEGIN_VERSE
- 保持换行符，
- 本行不续行。
-#+END_VERSE
-</pre></div>
-</div>
-</td>
-<td><div class="first last line-block">
-<div class="line">保持换行符，</div>
-<div class="line">本行不续行。</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td rowspan="5">段落缩进</td>
+<tr class="row-odd"><td rowspan="5">段落缩进</td>
 <td>md</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -485,7 +467,7 @@ h6. 六级标题
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -509,7 +491,7 @@ h6. 六级标题
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -543,7 +525,7 @@ p. 正常段落不再缩进。
 <p class="last">正常段落不再缩进。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -567,7 +549,7 @@ ______________________________
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -585,7 +567,7 @@ ______________________________
 <div>段落缩进。</div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2" rowspan="8">代码块</td>
+<tr class="row-even"><td colspan="2" rowspan="8">代码块</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -603,7 +585,7 @@ ______________________________
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>gfm</td>
+<tr class="row-odd"><td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -626,7 +608,7 @@ puts md.to_html
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -655,7 +637,7 @@ puts md.to_html
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -679,7 +661,7 @@ $ git commit --allow-empty
 <p class="last">本段不再是代码块。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -702,7 +684,7 @@ p. 恢复正常段落。
 <p class="last">恢复正常段落。</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -734,7 +716,7 @@ int main() {
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -778,7 +760,7 @@ int main() {
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -801,7 +783,7 @@ int main() {
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="17">列表</td>
+<tr class="row-even"><td rowspan="17">列表</td>
 <td rowspan="4">无序列表</td>
 <td>md</td>
 <td>rst</td>
@@ -830,7 +812,7 @@ int main() {
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -854,7 +836,7 @@ int main() {
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -878,7 +860,7 @@ int main() {
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -910,7 +892,7 @@ int main() {
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="5">有序列表</td>
+<tr class="row-even"><td rowspan="5">有序列表</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -943,7 +925,7 @@ int main() {
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -980,7 +962,7 @@ int main() {
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1006,7 +988,7 @@ int main() {
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1052,7 +1034,7 @@ IX)  大写罗马。编号自动纠正。
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1084,7 +1066,7 @@ IX)  大写罗马。编号自动纠正。
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="4">列表续行、段落和代码块</td>
+<tr class="row-odd"><td rowspan="4">列表续行、段落和代码块</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1120,7 +1102,7 @@ IX)  大写罗马。编号自动纠正。
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1157,7 +1139,7 @@ IX)  大写罗马。编号自动纠正。
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1202,7 +1184,7 @@ $ printf &quot;Hello, world.\n&quot;
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1213,9 +1195,9 @@ $ printf &quot;Hello, world.\n&quot;
 2. 列表项可包含多个段落。
 
    空行开始的新段落，
-   新段落要和列表项内容对齐。
+   新段落和列表项内容对齐即可。
 
-3. 列表下的代码段注意对齐即可。
+3. 列表下的代码段注意缩进。
 
    #+BEGIN_SRC bash
      $ printf &quot;Hello, world.\n&quot;
@@ -1229,9 +1211,9 @@ $ printf &quot;Hello, world.\n&quot;
 </li>
 <li><p class="first">列表项可包含多个段落。</p>
 <p>空行开始的新段落，
-新段落要和列表项内容对齐。</p>
+新段落和列表项内容对齐即可。</p>
 </li>
-<li><p class="first">列表下的代码段注意对齐即可。</p>
+<li><p class="first">列表下的代码段注意缩进。</p>
 <div class="highlight-none"><div class="highlight"><pre>$ printf &quot;Hello, world.\n&quot;
 </pre></div>
 </div>
@@ -1239,7 +1221,7 @@ $ printf &quot;Hello, world.\n&quot;
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="4">定义</td>
+<tr class="row-odd"><td rowspan="4">定义</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1270,7 +1252,7 @@ subversion
 </dl>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1296,7 +1278,7 @@ Why not Git? =:
 </dl>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1322,7 +1304,7 @@ subversion :: VCS with many constrains.
 </dl>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1347,7 +1329,7 @@ subversion :: VCS with many constrains.
 </dl>
 </td>
 </tr>
-<tr class="row-even"><td colspan="2" rowspan="4">分隔线</td>
+<tr class="row-odd"><td colspan="2" rowspan="4">分隔线</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>ttl</td>
@@ -1362,7 +1344,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1375,7 +1357,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1388,7 +1370,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1401,7 +1383,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-even"><td rowspan="28">字体</td>
+<tr class="row-odd"><td rowspan="28">字体</td>
 <td rowspan="5">粗体和斜体</td>
 <td>md</td>
 <td>&nbsp;</td>
@@ -1416,7 +1398,7 @@ subversion :: VCS with many constrains.
 <td>这些都是 <strong>粗体</strong> 或 <strong>粗体</strong> ，
 这些都是 <em>斜体</em> 或 <em>斜体</em> 。</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1431,20 +1413,24 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<strong>粗体</strong>和<em>斜体</em>效果。</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>这些都是 *粗体* 或 **粗体** ，
 这些都是 _斜体_ 或 __斜体__ 。
+
+不留白的[*粗体*]和[_斜体_]效果。
 </pre></div>
 </div>
 </td>
-<td>这些都是 <strong>粗体</strong> 或 <strong>粗体</strong> ，
-这些都是 <em>斜体</em> 或 <em>斜体</em> 。</td>
+<td><p class="first">这些都是 <strong>粗体</strong> 或 <strong>粗体</strong> ，
+这些都是 <em>斜体</em> 或 <em>斜体</em> 。</p>
+<p class="last">不留白的<strong>粗体</strong>和<em>斜体</em>效果。</p>
+</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1461,7 +1447,7 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<strong>粗体</strong>和<em>斜体</em>效果。</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1472,7 +1458,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>这是 <strong>粗体</strong> ，这是 <em>斜体</em> 。</td>
 </tr>
-<tr class="row-odd"><td rowspan="5">删除线</td>
+<tr class="row-even"><td rowspan="5">删除线</td>
 <td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1484,7 +1470,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><span class="strike">删除线</span> 效果</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1502,18 +1488,22 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<span class="strike">删除线</span>效果</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>-删除线- 效果
+
+不留白的[-删除线-]效果
 </pre></div>
 </div>
 </td>
-<td><span class="strike">删除线</span> 效果</td>
+<td><p class="first"><span class="strike">删除线</span> 效果</p>
+<p class="last">不留白的<span class="strike">删除线</span>效果</p>
+</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1528,7 +1518,7 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<span class="strike">删除线</span>效果</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1539,7 +1529,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><span class="strike">删除线</span> 效果</td>
 </tr>
-<tr class="row-even"><td rowspan="5">下划线</td>
+<tr class="row-odd"><td rowspan="5">下划线</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1551,7 +1541,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><span class="underline">下划线</span> 效果</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1569,18 +1559,22 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<span class="underline">下划线</span>效果</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>+下划线+ 效果
+
+不留白的[+下划线+]效果
 </pre></div>
 </div>
 </td>
-<td><span class="underline">下划线</span> 效果</td>
+<td><p class="first"><span class="underline">下划线</span> 效果</p>
+<p class="last">不留白的<span class="underline">下划线</span>效果</p>
+</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1595,7 +1589,7 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<span class="underline">下划线</span>效果</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1606,7 +1600,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><span class="underline">下划线</span> 效果</td>
 </tr>
-<tr class="row-odd"><td rowspan="5">上标、下标</td>
+<tr class="row-even"><td rowspan="5">上标、下标</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1627,7 +1621,7 @@ subversion :: VCS with many constrains.
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1643,23 +1637,23 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>- Water: H ~2~ O
-- E = mc ^2^
+<td><div class="first last highlight-none"><div class="highlight"><pre>- Water: H[~2~]O
+- E = mc[^2^]
 </pre></div>
 </div>
 </td>
 <td><ul class="first last simple">
-<li>Water: H <sub>2</sub> O</li>
-<li>E = mc <sup>2</sup></li>
+<li>Water: H<sub>2</sub>O</li>
+<li>E = mc<sup>2</sup></li>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1675,7 +1669,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1691,7 +1685,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="5">等宽字体</td>
+<tr class="row-odd"><td rowspan="5">等宽字体</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1703,7 +1697,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>行内反引号嵌入代码，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1720,7 +1714,7 @@ subversion :: VCS with many constrains.
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1731,18 +1725,26 @@ subversion :: VCS with many constrains.
 </td>
 <td>行内用字符&#64;嵌入代码，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>行内用字符+标识等宽字体，如: +git status+ 。
+<td><div class="first last highlight-none"><div class="highlight"><pre>行内用加号或反引号标识等宽字体，如:
+
+- 命令: +git clone+ 。
+- 命令: `git init` 。
 </pre></div>
 </div>
 </td>
-<td>行内用字符+标识等宽字，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
+<td><p class="first">行内用加号或反引号标识等宽字体，如:</p>
+<ul class="last simple">
+<li>命令: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></tt> 。</li>
+<li>命令: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></tt> 。</li>
+</ul>
+</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1755,7 +1757,7 @@ subversion :: VCS with many constrains.
 <td>行内用字符=或~嵌入代码，如:
 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 和 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">st</span></tt> 。</td>
 </tr>
-<tr class="row-odd"><td rowspan="2">引言</td>
+<tr class="row-even"><td rowspan="2">引言</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1767,7 +1769,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><cite>Got GitHub</cite> by Jiang Xin.</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1778,7 +1780,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><cite>Got GitHub</cite> by Jiang Xin.</td>
 </tr>
-<tr class="row-odd"><td>清除标记空白</td>
+<tr class="row-even"><td>清除标记空白</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1791,7 +1793,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>标记符号前后空白用<strong>反斜线</strong>消除</td>
 </tr>
-<tr class="row-even"><td rowspan="16">链接</td>
+<tr class="row-odd"><td rowspan="16">链接</td>
 <td>URL自动链接</td>
 <td>gfm</td>
 <td>rst</td>
@@ -1809,7 +1811,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="5">文字链接</td>
+<tr class="row-even"><td rowspan="5">文字链接</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1831,7 +1833,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1854,7 +1856,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1875,7 +1877,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1891,7 +1893,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1905,7 +1907,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="5">内部跳转</td>
+<tr class="row-odd"><td rowspan="5">内部跳转</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1920,7 +1922,7 @@ subversion :: VCS with many constrains.
 <td><p class="first last" id="md-anchor">跳转至 <a class="reference external" href="#md-anchor">文内链接</a> 。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1951,7 +1953,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1965,7 +1967,7 @@ subversion :: VCS with many constrains.
 <td><p class="first last" id="ttl-anchor">跳转至 <a class="reference external" href="#ttl-anchor">文内链接</a> 。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1990,7 +1992,7 @@ anchor:alink2[链接标题2]
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2004,7 +2006,7 @@ anchor:alink2[链接标题2]
 <td><p class="first last" id="org-anchor">跳转至 <a class="reference external" href="#org-anchor">文内链接</a> 。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>GitHub提交和问题链接</td>
+<tr class="row-even"><td>GitHub提交和问题链接</td>
 <td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2042,7 +2044,7 @@ anchor:alink2[链接标题2]
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="4">脚注</td>
+<tr class="row-odd"><td rowspan="4">脚注</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -2118,7 +2120,7 @@ anchor:alink2[链接标题2]
 </table>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -2138,7 +2140,7 @@ fn4. http://goo.gl/rGyvs
 </table>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -2169,7 +2171,7 @@ fn4. http://goo.gl/rGyvs
 </table>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2193,7 +2195,7 @@ caused the homepage load very slowly. &gt;:[</p>
 </table>
 </td>
 </tr>
-<tr class="row-even"><td colspan="2" rowspan="5">图片</td>
+<tr class="row-odd"><td colspan="2" rowspan="5">图片</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2211,7 +2213,7 @@ GitHub Logo: ![GitHub][logo]
 <p class="last">GitHub Logo: <img alt="logo" src="../images/github.png" /></p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2253,7 +2255,7 @@ GitHub Logo: ![GitHub][logo]
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -2281,7 +2283,7 @@ GitHub Logo: ![GitHub][logo]
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -2303,7 +2305,7 @@ image::/images/github.png[&quot;Logo&quot;,width=32]
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2321,7 +2323,7 @@ image::/images/github.png[&quot;Logo&quot;,width=32]
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2" rowspan="5">表格</td>
+<tr class="row-even"><td colspan="2" rowspan="5">表格</td>
 <td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2554,14 +2556,14 @@ left  | center | right
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-even"><td rowspan="2">禁止语法解析</td>
+<tr class="row-even"><td rowspan="2">转义</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>asc</td>
 <td>&nbsp;</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>反斜线作为转义字符，\
-禁止对后面 \*字符\* 做语法解析。
+禁止对后面 \*字符* 做语法解析。
 </pre></div>
 </div>
 </td>
@@ -2634,7 +2636,10 @@ notextile. 不进行 *语法解析* 。
 </table>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
-<p class="last">部分标记语言代号后添加了星标，代表该标记语言相应的语法实现稍有区别，或者GitHub的具体实现和标准有出入。</p>
+<ul class="last simple">
+<li>部分标记语言代号后添加了星标，代表该标记语言相应的语法实现稍有区别，或者GitHub的具体实现和标准有出入。</li>
+<li>为突出部分空格，使用符号 <tt class="docutils literal"><span class="pre">°</span></tt> 标记。</li>
+</ul>
 </div>
 <hr class="docutils" />
 <table class="docutils footnote" frame="void" id="id38" rules="none">
