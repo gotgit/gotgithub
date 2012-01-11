@@ -6,15 +6,52 @@
 
 没有标记语言就没有Web和丰富多彩的互联网，但创造了Web的HTML语言并非尽善尽美，\
 存在诸如难读、难写、难以向其他格式转换的问题。究其根源是因为HTML语言是一种\
-“重”标记语言，对机器友好而并非对人友好。另外一种用于文档撰写的标记语言DocBook\ [#]_\
-也存在类似问题，虽然DocBook能实现单一源文件出版（Single-Source Publishing），\
-即一次撰写多种格式输出（Write once, publish many），但复杂的XML标签给写作\
-过程带来不小的负担。
+“重”标记语言，对机器友好而并非对人友好。
 
-为用户提供更为便捷的方式创建UGC（用户生成内容）是GitHub流行的因素之一，奥秘\
-就在于使用了轻量级的标记语言。无论是代码提交说明、提交评注、问题描述、项目的\
-README文件、维基页面、用户主页和项目主页都可以使用Markdown\ [#]_\ 等轻量级\
-标记语言来撰写。轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了\
+下面这段HTML源码，非技术控阅读起来会遇到困难。
+
+::
+
+  <html>
+  <head>
+    <meta content='application/xhtml+xml;charset=utf-8' http-equiv='Content-type' />
+    <title>轻量级标记语言</title>
+  </head>
+  <body>
+    <h1 id='id1'>轻量级标记语言</h1>
+
+    <p><strong>轻量级标记语言</strong> 是一种 <em>语法简单</em> 的标记语言。
+    它使用易于理解的格式标记，没有古怪的 <code>&lt;标签&gt;</code> 。</p>
+    
+    <ul>
+    <li>可以使用最简单的文本编辑器编辑。</li>
+    <li>所见即所得，非技术控亦可直接阅读源码。</li>
+    <li>可版本控制。</li>
+    <li>实现单一源文件出版。</li>
+    </ul>
+  <body>
+  </html>
+
+同样的信息如果换用轻量级标记语言来表达，就非常直观了。如下所示：
+
+::
+
+  轻量级标记语言
+  ==============
+  
+  **轻量级标记语言** 是一种 *语法简单* 的标记语言。
+  它使用易于理解的格式标记，没有古怪的 `<标签>` 。
+  
+  - 可以使用最简单的文本编辑器编辑。
+  - 所见即所得，非技术控亦可直接阅读源码。
+  - 可版本控制。
+  - 实现单一源文件出版。
+
+GitHub另人着迷的一个因素就在于GitHub为用户提供更为便捷地创建UGC\
+（用户生成内容）的方法，其奥秘就在于使用了轻量级标记语言。\
+无论是代码提交说明、提交评注、问题描述、项目的README文件、维基页面、\
+用户主页和项目主页都可以使用Markdown\ [#]_\ 等轻量级标记语言来撰写。\
+轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了\
 我们写电子邮件时的习惯，即使第一次接触用轻量级标记语言撰写的文件，也可以\
 毫无障碍地理解其中的内容。
 
@@ -22,7 +59,7 @@ README文件、维基页面、用户主页和项目主页都可以使用Markdown
 标记语言的支持。包括为Python程序员所熟悉的reStructedText\ [#]_\ ，为Ruby程序员\
 所熟悉的Textile\ [#]_\ 、RDoc\ [#]_\ ，为Perl程序员所熟悉的POD\ [#]_\ ，\
 为Emacs用户所熟悉的Org-mode\ [#]_\ ，为维基用户所熟悉的MediaWiki\ [#]_\ 和\
-Creole\ [#]_\ ，以及可作为DocBook前端的颇有前途的AsciiDoc\ [#]_\ 标记语言。
+Creole\ [#]_\ ，以及可作为DocBook\ [#]_\ 前端的颇有前途的AsciiDoc\ [#]_\ 标记语言。
 
 下面通过一张表格对几种常用的轻量级标记语言加以对照，供有不同标记语言偏好的\
 用户参考，便于在GitHub某些不能随意更换标记语言而只能使用GFM（GitHub风格的\
@@ -31,6 +68,7 @@ Markdown）的场合可以自如地转换。
 在“\ :ref:`tbl-markups`\ ”中，为使表格更加紧凑使用代号表示各种标记语言。\
 例如：md为Markdown，gfm是GitHub风格的Markdown，rst为reStructedText，\
 ttl为Textile，asc为AsciiDoc，org为Org-mode。
+
 
 .. highlight:: none
 .. role:: raw-html(raw)  
@@ -1154,7 +1192,6 @@ ttl为Textile，asc为AsciiDoc，org为Org-mode。
 
 ----
 
-.. [#] http://www.docbook.org/
 .. [#] http://daringfireball.net/projects/markdown/
 .. [#] http://github.github.com/github-flavored-markdown/
 .. [#] http://docutils.sourceforge.net/rst.html
@@ -1164,6 +1201,10 @@ ttl为Textile，asc为AsciiDoc，org为Org-mode。
 .. [#] http://orgmode.org/org.html
 .. [#] http://www.mediawiki.org/wiki/Help:Formatting
 .. [#] http://www.wikicreole.org/
+.. [#] DocBook是著名的用于文档撰写的标记语言，采用XML文件格式及大量的面向出版\
+       的格式标签，能够实现单一源文件出版（Single-Source Publishing），\
+       即一次撰写多种格式输出（Write once, publish many）。但复杂的XML标签给写作\
+       过程带来不小的负担。网址：\ http://www.docbook.org/\ 。
 .. [#] http://www.methods.co.nz/asciidoc
 .. [#] https://github.com/mojombo/god/commit/cea00609ca8441c82bc9760ae5eea7d7509d85b3
 .. [#] https://github.com/mojombo/god/issues/1
