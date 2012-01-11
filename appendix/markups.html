@@ -127,7 +127,7 @@
 - 可版本控制。
 - 实现单一源文件出版。</pre>
 </div>
-<p>GitHub另人着迷的一个因素就在于GitHub为用户提供更为便捷地创建UGC（用户生成内容）的方法，其奥秘就在于使用了轻量级标记语言。无论是代码提交说明、提交评注、问题描述、项目的README文件、维基页面、用户主页和项目主页都可以使用Markdown<a class="footnote-reference" href="#id38" id="id2">[8]</a>等轻量级标记语言来撰写。轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了我们写电子邮件时的习惯，即使第一次接触用轻量级标记语言撰写的文件，也可以毫无障碍地理解其中的内容。</p>
+<p>GitHub令人着迷的一个因素就在于GitHub为用户提供更为便捷地创建UGC（用户生成内容）的方法，其奥秘就在于使用了轻量级标记语言。无论是代码提交说明、提交评注、问题描述、项目的README文件、维基页面、用户主页和项目主页都可以使用Markdown<a class="footnote-reference" href="#id38" id="id2">[8]</a>等轻量级标记语言来撰写。轻量级标记语言如Markdown是对人友好的标记语言，一些语法参照了我们写电子邮件时的习惯，即使第一次接触用轻量级标记语言撰写的文件，也可以毫无障碍地理解其中的内容。</p>
 <p>虽然GitHub更倾向于使用Markdown标记语言<a class="footnote-reference" href="#id39" id="id3">[9]</a>，但很多地方也提供对其他轻量级标记语言的支持。包括为Python程序员所熟悉的reStructedText<a class="footnote-reference" href="#id40" id="id4">[10]</a>，为Ruby程序员所熟悉的Textile<a class="footnote-reference" href="#id41" id="id5">[11]</a>、RDoc<a class="footnote-reference" href="#id42" id="id6">[12]</a>，为Perl程序员所熟悉的POD<a class="footnote-reference" href="#id43" id="id7">[13]</a>，为Emacs用户所熟悉的Org-mode<a class="footnote-reference" href="#id44" id="id8">[14]</a>，为维基用户所熟悉的MediaWiki<a class="footnote-reference" href="#id45" id="id9">[15]</a>和Creole<a class="footnote-reference" href="#id46" id="id10">[16]</a>，以及可作为DocBook<a class="footnote-reference" href="#id47" id="id11">[17]</a>前端的颇有前途的AsciiDoc<a class="footnote-reference" href="#id48" id="id12">[18]</a>标记语言。</p>
 <p>下面通过一张表格对几种常用的轻量级标记语言加以对照，供有不同标记语言偏好的用户参考，便于在GitHub某些不能随意更换标记语言而只能使用GFM（GitHub风格的Markdown）的场合可以自如地转换。</p>
 <p>在“<a class="reference internal" href="#tbl-markups"><em>表7-1：常用轻量级标记语言对照</em></a>”中，为使表格更加紧凑使用代号表示各种标记语言。例如：md为Markdown，gfm是GitHub风格的Markdown，rst为reStructedText，ttl为Textile，asc为AsciiDoc，org为Org-mode。</p>
@@ -169,14 +169,17 @@
 ### 三级标题
 #### 四级标题
 ##### 五级标题
-###### 六级标题
+###### 六级标题 ######
 </pre></div>
 </div>
 </td>
 <td><p class="first">输出略。</p>
 <div class="last admonition note">
 <p class="first admonition-title">注解</p>
-<p class="last">Atx风格标题后面可接匹配的井号。</p>
+<ul class="last simple">
+<li>标题后面可接匹配的井号。</li>
+<li>Markdown的前两级标题还可以使用reST风格，即在标题下衬以等号或减号组成的下划线。</li>
+</ul>
 </div>
 </td>
 </tr>
@@ -192,15 +195,27 @@
 --------
 
 三级标题
+~~~~~~~~
+
+四级标题
 ^^^^^^^^
+
+五级标题
+++++++++
+
+六级标题
+````````
 </pre></div>
 </div>
 </td>
 <td><p class="first">输出略。</p>
 <div class="last admonition note">
 <p class="first admonition-title">注解</p>
-<p class="last">reST标题可用下列符号标记：
-# * = - ^ ~ ` : . _ + &#8221; 等。</p>
+<ul class="last simple">
+<li>标题级别和下划线无对应，文档中保持一致就好。</li>
+<li>reST标题可用下列符号标记：
+# * = - ^ ~ ` : . _ + &#8221; 等。</li>
+</ul>
 </div>
 </td>
 </tr>
@@ -225,9 +240,10 @@ h6. 六级标题
 <td>&nbsp;</td>
 <td>asc</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>AsciiDoc 提供两种风格的标题。
-
-文档标题
+<td><p class="first">AsciiDoc 提供两种风格的标题。</p>
+<ul class="last">
+<li><p class="first">下划线风格标题。</p>
+<div class="highlight-none"><div class="highlight"><pre>文档标题
 ========
 
 一级标题
@@ -241,16 +257,19 @@ h6. 六级标题
 
 四级标题
 ++++++++
-
-或者使用下面单行标题风格进行定义。
-
-= 文档标题 =
+</pre></div>
+</div>
+</li>
+<li><p class="first">单行风格标题。</p>
+<div class="highlight-none"><div class="highlight"><pre>= 文档标题 =
 == 一级标题 ==
 === 二级标题 ===
 ==== 三级标题 ====
 ===== 四级标题 =====
 </pre></div>
 </div>
+</li>
+</ul>
 </td>
 <td><p class="first">输出略。</p>
 <div class="last admonition note">
@@ -281,38 +300,50 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="14">段落</td>
+<tr class="row-even"><td rowspan="15">段落</td>
 <td>空行分段</td>
 <td>md</td>
 <td>rst</td>
-<td>ttl*</td>
+<td>ttl</td>
+<td>asc</td>
+<td>org</td>
+<td><div class="first last highlight-none"><div class="highlight"><pre>第一段内容。
+
+第二段和第一段间有一空行。
+</pre></div>
+</div>
+</td>
+<td><p class="first">第一段内容。</p>
+<p class="last">第二段和第一段间有一空行。</p>
+</td>
+</tr>
+<tr class="row-odd"><td>自动续行</td>
+<td>md</td>
+<td>rst</td>
+<td>&nbsp;</td>
 <td>asc</td>
 <td>org</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>一个回车不分段，
 本行续上行。
-
-空行开始新段落。
 </pre></div>
 </div>
 </td>
-<td><p class="first">一个回车不分段，°本行续上行。</p>
-<p class="last">空行开始新段落。</p>
-</td>
+<td>一个回车不分段，°本行续上行。</td>
 </tr>
-<tr class="row-odd"><td>无空白续行</td>
+<tr class="row-even"><td>不留白续行</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>行尾转义字符让\
-续行之间无空格。
+续行之间不留白。
 </pre></div>
 </div>
 </td>
-<td>行尾转义字符让续行之间无空格。</td>
+<td>行尾转义字符让续行之间不留白。</td>
 </tr>
-<tr class="row-even"><td rowspan="7">插入换行</td>
+<tr class="row-odd"><td rowspan="7">插入换行</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -329,7 +360,7 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>gfm</td>
+<tr class="row-even"><td>gfm</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -345,7 +376,7 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -361,7 +392,7 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -379,7 +410,7 @@ h6. 六级标题
 <span class="raw-html"><br /></span>
 本行不再续行。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -395,7 +426,7 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -411,7 +442,7 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -429,7 +460,7 @@ h6. 六级标题
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="5">段落缩进</td>
+<tr class="row-even"><td rowspan="5">段落缩进</td>
 <td>md</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -454,7 +485,7 @@ h6. 六级标题
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -478,7 +509,7 @@ h6. 六级标题
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -512,7 +543,7 @@ p. 正常段落不再缩进。
 <p class="last">正常段落不再缩进。</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -536,7 +567,7 @@ ______________________________
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -554,7 +585,7 @@ ______________________________
 <div>段落缩进。</div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td colspan="2" rowspan="8">代码块</td>
+<tr class="row-odd"><td colspan="2" rowspan="8">代码块</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -572,7 +603,7 @@ ______________________________
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>gfm</td>
+<tr class="row-even"><td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -595,7 +626,7 @@ puts md.to_html
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -624,7 +655,7 @@ puts md.to_html
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -648,7 +679,7 @@ $ git commit --allow-empty
 <p class="last">本段不再是代码块。</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -671,7 +702,7 @@ p. 恢复正常段落。
 <p class="last">恢复正常段落。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -703,7 +734,7 @@ int main() {
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -747,7 +778,7 @@ int main() {
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -770,7 +801,7 @@ int main() {
 </div>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="17">列表</td>
+<tr class="row-odd"><td rowspan="17">列表</td>
 <td rowspan="4">无序列表</td>
 <td>md</td>
 <td>rst</td>
@@ -799,7 +830,7 @@ int main() {
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -823,7 +854,7 @@ int main() {
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -847,7 +878,7 @@ int main() {
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -879,7 +910,7 @@ int main() {
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="5">有序列表</td>
+<tr class="row-odd"><td rowspan="5">有序列表</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -912,7 +943,7 @@ int main() {
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -949,7 +980,7 @@ int main() {
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -975,7 +1006,7 @@ int main() {
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1021,7 +1052,7 @@ IX)  大写罗马。编号自动纠正。
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1053,7 +1084,7 @@ IX)  大写罗马。编号自动纠正。
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="4">列表续行、段落和代码块</td>
+<tr class="row-even"><td rowspan="4">列表续行、段落和代码块</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1089,7 +1120,7 @@ IX)  大写罗马。编号自动纠正。
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1126,7 +1157,7 @@ IX)  大写罗马。编号自动纠正。
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1171,7 +1202,7 @@ $ printf &quot;Hello, world.\n&quot;
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1208,7 +1239,7 @@ $ printf &quot;Hello, world.\n&quot;
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="4">定义</td>
+<tr class="row-even"><td rowspan="4">定义</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1239,7 +1270,7 @@ subversion
 </dl>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1265,7 +1296,7 @@ Why not Git? =:
 </dl>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1291,7 +1322,7 @@ subversion :: VCS with many constrains.
 </dl>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1316,13 +1347,14 @@ subversion :: VCS with many constrains.
 </dl>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2" rowspan="4">分隔线</td>
+<tr class="row-even"><td colspan="2" rowspan="4">分隔线</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>三条短线或以上显示为分隔线。
+<td><div class="first last highlight-none"><div class="highlight"><pre>三条或更多短线（或星号、下划线）\
+显示为分隔线。
 
 ---
 </pre></div>
@@ -1330,7 +1362,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1343,7 +1375,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1356,7 +1388,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1369,7 +1401,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>输出略。</td>
 </tr>
-<tr class="row-odd"><td rowspan="28">字体</td>
+<tr class="row-even"><td rowspan="28">字体</td>
 <td rowspan="5">粗体和斜体</td>
 <td>md</td>
 <td>&nbsp;</td>
@@ -1384,7 +1416,7 @@ subversion :: VCS with many constrains.
 <td>这些都是 <strong>粗体</strong> 或 <strong>粗体</strong> ，
 这些都是 <em>斜体</em> 或 <em>斜体</em> 。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1399,7 +1431,7 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<strong>粗体</strong>和<em>斜体</em>效果。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1412,7 +1444,7 @@ subversion :: VCS with many constrains.
 <td>这些都是 <strong>粗体</strong> 或 <strong>粗体</strong> ，
 这些都是 <em>斜体</em> 或 <em>斜体</em> 。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1429,7 +1461,7 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<strong>粗体</strong>和<em>斜体</em>效果。</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1440,7 +1472,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>这是 <strong>粗体</strong> ，这是 <em>斜体</em> 。</td>
 </tr>
-<tr class="row-even"><td rowspan="5">删除线</td>
+<tr class="row-odd"><td rowspan="5">删除线</td>
 <td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1452,7 +1484,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><span class="strike">删除线</span> 效果</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1470,7 +1502,7 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<span class="strike">删除线</span>效果</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1481,7 +1513,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><span class="strike">删除线</span> 效果</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1496,7 +1528,7 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<span class="strike">删除线</span>效果</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1507,7 +1539,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><span class="strike">删除线</span> 效果</td>
 </tr>
-<tr class="row-odd"><td rowspan="5">下划线</td>
+<tr class="row-even"><td rowspan="5">下划线</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1519,7 +1551,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><span class="underline">下划线</span> 效果</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1537,7 +1569,7 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<span class="underline">下划线</span>效果</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1548,7 +1580,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><span class="underline">下划线</span> 效果</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1563,7 +1595,7 @@ subversion :: VCS with many constrains.
 <p class="last">不留白的<span class="underline">下划线</span>效果</p>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1574,14 +1606,14 @@ subversion :: VCS with many constrains.
 </td>
 <td><span class="underline">下划线</span> 效果</td>
 </tr>
-<tr class="row-even"><td rowspan="5">上标、下标</td>
+<tr class="row-odd"><td rowspan="5">上标、下标</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* Water: H&lt;sub&gt;2&lt;/sub&gt;O
-* E = mc&lt;sup&gt;2&lt;/sup&gt;
+<td><div class="first last highlight-none"><div class="highlight"><pre>- Water: H&lt;sub&gt;2&lt;/sub&gt;O
+- E = mc&lt;sup&gt;2&lt;/sup&gt;
 </pre></div>
 </div>
 </td>
@@ -1595,13 +1627,13 @@ subversion :: VCS with many constrains.
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* Water: H\ :sub:`2`\ O
-* E = mc\ :sup:`2`
+<td><div class="first last highlight-none"><div class="highlight"><pre>- Water: H\ :sub:`2`\ O
+- E = mc\ :sup:`2`
 </pre></div>
 </div>
 </td>
@@ -1611,13 +1643,13 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* Water: H ~2~ O
-* E = mc ^2^
+<td><div class="first last highlight-none"><div class="highlight"><pre>- Water: H ~2~ O
+- E = mc ^2^
 </pre></div>
 </div>
 </td>
@@ -1627,13 +1659,13 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* Water: H~2~O
-* E = mc^2^
+<td><div class="first last highlight-none"><div class="highlight"><pre>- Water: H~2~O
+- E = mc^2^
 </pre></div>
 </div>
 </td>
@@ -1643,13 +1675,13 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>org</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* Water: H_2 O
-* E = mc^2
+<td><div class="first last highlight-none"><div class="highlight"><pre>- Water: H_2 O
+- E = mc^2
 </pre></div>
 </div>
 </td>
@@ -1659,7 +1691,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="5">等宽字体</td>
+<tr class="row-even"><td rowspan="5">等宽字体</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1671,7 +1703,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>行内反引号嵌入代码，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1688,7 +1720,7 @@ subversion :: VCS with many constrains.
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1699,7 +1731,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>行内用字符&#64;嵌入代码，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1710,7 +1742,7 @@ subversion :: VCS with many constrains.
 </td>
 <td>行内用字符+标识等宽字，如: <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 。</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1723,7 +1755,7 @@ subversion :: VCS with many constrains.
 <td>行内用字符=或~嵌入代码，如:
 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 和 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">st</span></tt> 。</td>
 </tr>
-<tr class="row-even"><td rowspan="2">引言</td>
+<tr class="row-odd"><td rowspan="2">引言</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1735,7 +1767,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><cite>Got GitHub</cite> by Jiang Xin.</td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1746,7 +1778,7 @@ subversion :: VCS with many constrains.
 </td>
 <td><cite>Got GitHub</cite> by Jiang Xin.</td>
 </tr>
-<tr class="row-even"><td>清除标记空白</td>
+<tr class="row-odd"><td>清除标记空白</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -1759,15 +1791,15 @@ subversion :: VCS with many constrains.
 </td>
 <td>标记符号前后空白用<strong>反斜线</strong>消除</td>
 </tr>
-<tr class="row-odd"><td rowspan="16">链接</td>
+<tr class="row-even"><td rowspan="16">链接</td>
 <td>URL自动链接</td>
 <td>gfm</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>asc</td>
 <td>org</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* 网址 http://github.com/
-* 邮件 me@foo.bar
+<td><div class="first last highlight-none"><div class="highlight"><pre>- 网址 http://github.com/
+- 邮件 me@foo.bar
 </pre></div>
 </div>
 </td>
@@ -1777,15 +1809,15 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td rowspan="5">文字链接</td>
+<tr class="row-odd"><td rowspan="5">文字链接</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* 访问 [Google](http://google.com &quot;Search&quot;)
-* 访问 [GitHub][1]
-* 访问 [WorldHello][]
+<td><div class="first last highlight-none"><div class="highlight"><pre>- 访问 [Google](http://google.com &quot;Search&quot;)
+- 访问 [GitHub][1]
+- 访问 [WorldHello][]
 
  [1]: http://github.com &quot;Git host&quot;
  [worldhello]: http://www.worldhello.net
@@ -1799,15 +1831,15 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* 访问 `Google &lt;http://google.com/&gt;`_ 。
-* 上面已定义，直接引用 google_ 链接。
-* 链接地址在后面定义，如： GitHub_ 。
-* 反引号括起多个单词的链接。如 `my blog`_ 。
+<td><div class="first last highlight-none"><div class="highlight"><pre>- 访问 `Google &lt;http://google.com/&gt;`_ 。
+- 上面已定义，直接引用 google_ 链接。
+- 链接地址在后面定义，如： GitHub_ 。
+- 反引号括起多个单词的链接。如 `my blog`_ 。
 
 .. _GitHub: http://github.com
 .. _my blog: http://www.worldhello.net
@@ -1822,14 +1854,14 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* 访问 &quot;Google (Search)&quot;:https://google.com
-* 访问 &quot;GitHub (Git host)&quot;:github
-* 访问 &quot;WorldHello&quot;:wh
+<td><div class="first last highlight-none"><div class="highlight"><pre>- 访问 &quot;Google (Search)&quot;:https://google.com
+- 访问 &quot;GitHub (Git host)&quot;:github
+- 访问 &quot;WorldHello&quot;:wh
 
 [github]http://github.com
 [wh]http://www.worldhello.net
@@ -1843,13 +1875,13 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* 访问 http://google.com[Google]
-* 访问 link:/index.html[首页]
+<td><div class="first last highlight-none"><div class="highlight"><pre>- 访问 http://google.com[Google]
+- 访问 link:/index.html[首页]
 </pre></div>
 </div>
 </td>
@@ -1859,12 +1891,12 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>org</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* 访问 [[http://google.com][Google]]
+<td><div class="first last highlight-none"><div class="highlight"><pre>- 访问 [[http://google.com][Google]]
 </pre></div>
 </div>
 </td>
@@ -1873,7 +1905,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="5">内部跳转</td>
+<tr class="row-even"><td rowspan="5">内部跳转</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1888,7 +1920,7 @@ subversion :: VCS with many constrains.
 <td><p class="first last" id="md-anchor">跳转至 <a class="reference external" href="#md-anchor">文内链接</a> 。</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1901,9 +1933,9 @@ subversion :: VCS with many constrains.
 
 上面定义的位置，可以：
 
-* 通过 fig1_ 跳转。
-* 或者 `点击这里 &lt;#fig1&gt;`__ 跳转。
-* 或者参见 :ref:`fig1`\ 。
+- 通过 fig1_ 跳转。
+- 或者 `点击这里 &lt;#fig1&gt;`__ 跳转。
+- 或者参见 :ref:`fig1`\ 。
 </pre></div>
 </div>
 </td>
@@ -1919,7 +1951,7 @@ subversion :: VCS with many constrains.
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -1933,7 +1965,7 @@ subversion :: VCS with many constrains.
 <td><p class="first last" id="ttl-anchor">跳转至 <a class="reference external" href="#ttl-anchor">文内链接</a> 。</p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -1958,7 +1990,7 @@ anchor:alink2[链接标题2]
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -1972,37 +2004,45 @@ anchor:alink2[链接标题2]
 <td><p class="first last" id="org-anchor">跳转至 <a class="reference external" href="#org-anchor">文内链接</a> 。</p>
 </td>
 </tr>
-<tr class="row-even"><td>GitHub提交和问题链接</td>
+<tr class="row-odd"><td>GitHub提交和问题链接</td>
 <td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* SHA: cea00609ca8441c82bc9760ae5eea...
-* User@SHA ref: mojombo@cea00609ca84...
-* User/Project@SHA:
-  mojombo/god@cea00609ca8441c82bc976...
-* \#Num: #1
-* User/#Num: mojombo#1
-* User/Project#Num: mojombo/god#1
+<td><div class="first last highlight-none"><div class="highlight"><pre>指向同一提交的链接：
+
+- 提交ID（SHA）: cea00609ca8...
+- 用户@提交ID: mojombo@cea00609ca8...
+- 用户名/项目名@提交ID:
+  mojombo/god@cea00609ca8...
+
+指向同一Issue的链接：
+
+- Issue编号: #1
+- 用户名及Issue编号: mojombo#1
+- 用户名/项目名及Issue编号:
+  mojombo/god#1
 </pre></div>
 </div>
 </td>
-<td><ul class="first last simple">
-<li>SHA:
-cea00609ca8441c82bc...</li>
-<li>User&#64;SHA ref:
-mojombo&#64;cea00609ca8...</li>
-<li>User/Project&#64;SHA:
-mojombo/god&#64;cea0060... <a class="footnote-reference" href="#id49" id="id16">[19]</a></li>
-<li>#Num: #1</li>
-<li>User/#Num: mojombo#1</li>
-<li>User/Project#Num:
-mojombo/god#1 <a class="footnote-reference" href="#id50" id="id17">[20]</a></li>
+<td><p class="first">指向同一提交的链接<a class="footnote-reference" href="#id49" id="id16">[19]</a>：</p>
+<ul class="simple">
+<li>提交ID（SHA）: <span class="underline">cea00609ca8...</span></li>
+<li>用户&#64;提交ID: <span class="underline">mojombo&#64;cea00609ca8...</span></li>
+<li>用户名/项目名&#64;提交ID:
+<span class="underline">mojombo/god&#64;cea00609ca8...</span></li>
+</ul>
+<p>指向同一Issue的链接<a class="footnote-reference" href="#id50" id="id17">[20]</a>：</p>
+<ul class="last simple">
+<li>Issue编号: <span class="underline">#1</span></li>
+<li>用户名及Issue编号: <span class="underline">mojombo#1</span></li>
+<li>用户名/项目名及Issue编号:
+<span class="underline">mojombo/god#1</span></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td rowspan="4">脚注</td>
+<tr class="row-even"><td rowspan="4">脚注</td>
 <td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
@@ -2010,16 +2050,16 @@ mojombo/god#1 <a class="footnote-reference" href="#id50" id="id17">[20]</a></li>
 <td>&nbsp;</td>
 <td><div class="first last highlight-none"><div class="highlight"><pre>reST脚注的多种表示法：
 
-* 脚注即可以手动分配数字 [1]_ ，
+- 脚注即可以手动分配数字 [1]_ ，
   也可以使用井号自动分配 [#]_ 。
 
-* 自动分配脚注 [#label]_ 也可以用
+- 自动分配脚注 [#label]_ 也可以用
   添加标签形式 [#label]_ 多次引用。
 
-* 还支持用星号嵌入符号式脚注，
+- 还支持用星号嵌入符号式脚注，
   如这个 [*]_ 和 这个 [*]_ 。
 
-* 使用单词做标识亦可 [CIT2012]_ 。
+- 使用单词做标识亦可 [CIT2012]_ 。
 
 
 .. [1] 数字编号脚注。
@@ -2078,7 +2118,7 @@ mojombo/god#1 <a class="footnote-reference" href="#id50" id="id17">[20]</a></li>
 </table>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
@@ -2098,7 +2138,7 @@ fn4. http://goo.gl/rGyvs
 </table>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -2129,7 +2169,7 @@ fn4. http://goo.gl/rGyvs
 </table>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2153,7 +2193,7 @@ caused the homepage load very slowly. &gt;:[</p>
 </table>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2" rowspan="5">图片</td>
+<tr class="row-even"><td colspan="2" rowspan="5">图片</td>
 <td>md</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2171,7 +2211,7 @@ GitHub Logo: ![GitHub][logo]
 <p class="last">GitHub Logo: <img alt="logo" src="../images/github.png" /></p>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>rst</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2181,10 +2221,10 @@ GitHub Logo: ![GitHub][logo]
 
    图：GitHub Octocat
 
-* GitHub Logo: |octocat|
-* 带链接的图片：
+- GitHub Logo: |octocat|
+- 带链接的图片：
   |imglink|_
-* 下图向右浮动。
+- 下图向右浮动。
    .. image:: /images/github.png
       :align: right
 
@@ -2213,15 +2253,15 @@ GitHub Logo: ![GitHub][logo]
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>ttl</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* GitHub Logo: !/images/github.png(Logo)!
-* 带链接的图片：
+<td><div class="first last highlight-none"><div class="highlight"><pre>- GitHub Logo: !/images/github.png(Logo)!
+- 带链接的图片：
   !/images/github.png!:https://github.com/
-* 下图向右浮动。
+- 下图向右浮动。
   !&gt;/images/github.png!
 </pre></div>
 </div>
@@ -2241,7 +2281,7 @@ GitHub Logo: ![GitHub][logo]
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>asc</td>
@@ -2263,13 +2303,13 @@ image::/images/github.png[&quot;Logo&quot;,width=32]
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>&nbsp;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>org</td>
-<td><div class="first last highlight-none"><div class="highlight"><pre>* GitHub Logo: [[file:/images/github.png]]
-* 带链接的图片：
+<td><div class="first last highlight-none"><div class="highlight"><pre>- GitHub Logo: [[file:/images/github.png]]
+- 带链接的图片：
   [[https://github.com/][file:/images/...]]
 </pre></div>
 </div>
@@ -2281,7 +2321,7 @@ image::/images/github.png[&quot;Logo&quot;,width=32]
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td colspan="2" rowspan="5">表格</td>
+<tr class="row-odd"><td colspan="2" rowspan="5">表格</td>
 <td>gfm</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -2600,55 +2640,55 @@ notextile. 不进行 *语法解析* 。
 <table class="docutils footnote" frame="void" id="id38" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[8]</a></td><td><a class="reference external" href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[8]</a></td><td>Markdown是在Ruby应用中广泛使用的标记语言，语法简洁并可混用HTML。标准的Markdown语法缺乏如表格等关键特性的支持，虽然不同的解析器都对其语法进行了扩展，但实现各有不同，造成一定的混乱。网址：<a class="reference external" href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id39" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[9]</a></td><td><a class="reference external" href="http://github.github.com/github-flavored-markdown/">http://github.github.com/github-flavored-markdown/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[9]</a></td><td>GitHub使用Redcarpet作为Markdown的解析工具，并添加了额外的语法扩展。网址：<a class="reference external" href="http://github.github.com/github-flavored-markdown/">http://github.github.com/github-flavored-markdown/</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id40" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[10]</a></td><td><a class="reference external" href="http://docutils.sourceforge.net/rst.html">http://docutils.sourceforge.net/rst.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[10]</a></td><td>reStructuredText可简写为reST或RST，是在Python中广泛使用的标记语言。reST的语法简洁严谨，本书就是使用Sphinx扩展的reST语法和工具撰写的。网址：<a class="reference external" href="http://docutils.sourceforge.net/rst.html">http://docutils.sourceforge.net/rst.html</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id41" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[11]</a></td><td><a class="reference external" href="http://redcloth.org/textile">http://redcloth.org/textile</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[11]</a></td><td>Textile是在Ruby应用中广泛使用的标记语言，例如Redmine就将Textile作为内置的标记语言。网址：<a class="reference external" href="http://redcloth.org/textile">http://redcloth.org/textile</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id42" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[12]</a></td><td><a class="reference external" href="http://rdoc.sourceforge.net/doc/">http://rdoc.sourceforge.net/doc/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[12]</a></td><td>RDoc是内嵌于Ruby代码中用于维护软件文档的标记语言。网址：<a class="reference external" href="http://rdoc.sourceforge.net/doc/">http://rdoc.sourceforge.net/doc/</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id43" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[13]</a></td><td><a class="reference external" href="http://perldoc.perl.org/perlpod.html">http://perldoc.perl.org/perlpod.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[13]</a></td><td>POD是内嵌于Perl代码中用于维护软件文档的标记语言。网址：<a class="reference external" href="http://perldoc.perl.org/perlpod.html">http://perldoc.perl.org/perlpod.html</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id44" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[14]</a></td><td><a class="reference external" href="http://orgmode.org/org.html">http://orgmode.org/org.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[14]</a></td><td>Org-mode是Emacs的一种编辑模式，除文档外还被广泛应用于维护TODO列表、项目计划等。网址：<a class="reference external" href="http://orgmode.org/org.html">http://orgmode.org/org.html</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id45" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[15]</a></td><td><a class="reference external" href="http://www.mediawiki.org/wiki/Help:Formatting">http://www.mediawiki.org/wiki/Help:Formatting</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[15]</a></td><td>MediaWiki是著名的维基百科（WikiPedia）所使用的维基语言。网址：<a class="reference external" href="http://www.mediawiki.org/wiki/Help:Formatting">http://www.mediawiki.org/wiki/Help:Formatting</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id46" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[16]</a></td><td><a class="reference external" href="http://www.wikicreole.org/">http://www.wikicreole.org/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[16]</a></td><td>维基的实现有上百种，语法各不相同。Creole试图建立统一的维基语法标准。网址：<a class="reference external" href="http://www.wikicreole.org/">http://www.wikicreole.org/</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id47" rules="none">
@@ -2660,7 +2700,7 @@ notextile. 不进行 *语法解析* 。
 <table class="docutils footnote" frame="void" id="id48" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id12">[18]</a></td><td><a class="reference external" href="http://www.methods.co.nz/asciidoc">http://www.methods.co.nz/asciidoc</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id12">[18]</a></td><td>AsciiDoc的轻量级标签和DocBook的XML标签语法有着清晰的对应关系，既解决了DocBook语言标签复杂、难读难写的问题，又可利用DocBook丰富的工具链实现单一源文件向多种格式的输出转换。网址：<a class="reference external" href="http://www.methods.co.nz/asciidoc">http://www.methods.co.nz/asciidoc</a>。</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id49" rules="none">
