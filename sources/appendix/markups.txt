@@ -313,7 +313,7 @@ ttl为Textile，asc为AsciiDoc，org为Org-mode。
    |                      |     |     |     |     |     |                                                 |                                               |
    |                      |     |     |     |     |     |     $ printf "Hello, world.\n"                  |   $ printf "Hello, world.\n"                  |
    |                      |     |     |     |     |     |                                                 |                                               |
-   |                      |     |     |     |     |     |   还可声明语言类型实现语法加量。                | 还可声明语言类型实现语法加量。                |
+   |                      |     |     |     |     |     |   还可声明语言类型实现语法加亮。                | 还可声明语言类型实现语法加亮。                |
    |                      |     |     |     |     |     |                                                 |                                               |
    |                      |     |     |     |     |     |   .. code-block:: sh                            | .. code-block:: sh                            |
    |                      |     |     |     |     |     |                                                 |                                               |
