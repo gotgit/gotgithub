@@ -127,13 +127,14 @@
 </div>
 <div class="section" id="redmine">
 <span id="redmine-hook"></span><h2>3.4.2. 和Redmine整合<a class="headerlink" href="#redmine" title="永久链接至标题">¶</a></h2>
-<p>Redmine是一个开源的项目管理平台，实现需求管理和缺陷跟踪，并整合了版本库浏览和关联功能。Redmine通常以计划任务（crontab）方式检查版本库更新，使得版本更新反映到Redmine会有一定的延迟，而GitHub提供的Redmine整合的钩子脚本能够在GitHub版本库更新后，通过WebService触发Redmine主动扫描Git版本库获取更新。</p>
+<p>Redmine是一个开源的项目管理平台，用于项目的需求管理和缺陷跟踪。Redmine可以和多种版本库（包括Git）整合，可以直接通过Web界面浏览Git提交，还实现了提交和问题的关联。</p>
+<p>Redmine需要周期性地扫描版本库，以便更新内置数据库及建立提交和问题的关联。通常是以计划任务（crontab）的方式实现版本库的周期性扫描，这导致Redmine中版本库更新会存在一定的延迟。GitHub提供的Redmine整合的钩子脚本能够在GitHub版本库更新后，通过WebService触发Redmine主动扫描Git版本库获取更新。</p>
 <p>GitHub提供的Redmine整合的配置界面如图3-17所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/hooks-redmine.png"><img alt="../images/hooks-redmine.png" src="../images/hooks-redmine.png" /></a>
 <p class="caption">图3-17：与Redmine整合</p>
 </div>
-<p>图3-17中的地址是Redmine部署的URL地址，项目ID是Redmine中的相关项目（如果不填写则更新所有项目），而“Api Key”并非GitHub项目中配置的Api Key，而是Redmine中为版本库更新配置的全局Api Key，相应的Redmine配置界面如图3-18所示。</p>
+<p>图3-17中的地址是Redmine部署的URL地址，项目ID是Redmine中的相关项目（如果不填写则更新所有项目），而“Api Key”并非GitHub项目中配置的Api Key，而是Redmine中为版本库更新配置的全局Api Key。相应的Redmine配置界面如图3-18所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/redmine-api-key.png"><img alt="../images/redmine-api-key.png" src="../images/redmine-api-key.png" /></a>
 <p class="caption">图3-18：Redmine中的API Key配置</p>
@@ -169,7 +170,7 @@
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/01/12。
+      最后更新于 2012/01/13。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>

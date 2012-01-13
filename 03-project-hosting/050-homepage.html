@@ -119,6 +119,7 @@
 <p>GitHub 为每一个用户分配了一个二级域名<tt class="docutils literal"><span class="pre">&lt;user-id&gt;.github.com</span></tt>，用户为自己的二级域名创建主页很容易，只要在托管空间下创建一个名为<tt class="docutils literal"><span class="pre">&lt;user-id&gt;.github.com</span></tt>的版本库，向其<tt class="docutils literal"><span class="pre">master</span></tt>分支提交网站静态页面即可，其中网站首页为<tt class="docutils literal"><span class="pre">index.html</span></tt>。下面以<tt class="docutils literal"><span class="pre">gotgithub</span></tt>用户为例介绍如何创建个人主页。</p>
 <ul>
 <li><p class="first">用户<tt class="docutils literal"><span class="pre">gotgithub</span></tt>创建一个名为<tt class="docutils literal"><span class="pre">gotgithub.github.com</span></tt>的Git版本库。</p>
+<p>在GitHub上创建版本库的操作，参见“第3.1节 <a class="reference internal" href="010-new-project.html#new-project"><em>创建新项目</em></a>”。</p>
 </li>
 <li><p class="first">在本地克隆新建立的版本库。</p>
 <div class="highlight-python"><pre>$ git clone git@github.com:gotgithub/gotgithub.github.com.git
@@ -139,20 +140,23 @@ $ git commit -m "Homepage test version."</pre>
 </div>
 </li>
 <li><p class="first">访问网址： <a class="reference external" href="http://gotgithub.github.com/">http://gotgithub.github.com/</a> 。</p>
-<p>最多等待10分钟，GitHub就可以完成新网站的部署。注意访问用户二级域名主页要使用HTTP协议非HTTPS协议。</p>
+<p>最多等待10分钟，GitHub就可以完成新网站的部署。网站完成部署后版本库的所有者会收到邮件通知。</p>
+<p>还有要注意访问用户二级域名的主页要使用HTTP协议非HTTPS协议。</p>
 </li>
 </ul>
 </div>
 <div class="section" id="project-homepage">
 <span id="id3"></span><h2>3.5.2. 创建项目主页<a class="headerlink" href="#project-homepage" title="永久链接至标题">¶</a></h2>
-<p>如前所述，GitHub会为每个账号分配一个二级域名<tt class="docutils literal"><span class="pre">&lt;user-id&gt;.github.com</span></tt>作为用户的首页地址。实际上还可以为每个项目设计主页，并通过此二级域名访问。例如<tt class="docutils literal"><span class="pre">gotgithub</span></tt>用户创建的<tt class="docutils literal"><span class="pre">helloworld</span></tt>项目如果启用了项目主页，则可通过网址<tt class="docutils literal"><span class="pre">http://gotgithub.github.com/helloworld/</span></tt>访问。</p>
+<p>如前所述，GitHub会为每个账号分配一个二级域名<tt class="docutils literal"><span class="pre">&lt;user-id&gt;.github.com</span></tt>作为用户的首页地址。实际上还可以为每个项目设置主页，项目主页也通过此二级域名进行访问。</p>
+<p>例如<tt class="docutils literal"><span class="pre">gotgithub</span></tt>用户创建的<tt class="docutils literal"><span class="pre">helloworld</span></tt>项目如果启用了项目主页，则可通过网址<tt class="docutils literal"><span class="pre">http://gotgithub.github.com/helloworld/</span></tt>访问。</p>
 <p>为项目启用项目主页很简单，只需要在项目版本库中创建一个名为<tt class="docutils literal"><span class="pre">gh-pages</span></tt>的分支，并向其中添加静态网页即可。也就是说如果项目的Git版本库中包含了名为<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支的话，则表明该项目提供静态网页构成的主页，可以通过网址<tt class="docutils literal"><span class="pre">http://&lt;user-id&gt;.github.com/&lt;project-name&gt;</span></tt>访问到。</p>
 <p>下面以用户<tt class="docutils literal"><span class="pre">gotgithub</span></tt>的项目<tt class="docutils literal"><span class="pre">helloworld</span></tt>为例，介绍如何维护项目主页。</p>
-<p>如果本地尚未建立<tt class="docutils literal"><span class="pre">helloworld</span></tt>版本库克隆，执行如下命令。</p>
+<p>如果本地尚未从GitHub克隆<tt class="docutils literal"><span class="pre">helloworld</span></tt>版本库，执行如下命令。</p>
 <div class="highlight-python"><pre>$ git clone git@github.com:gotgithub/helloworld.git
 $ cd helloworld</pre>
 </div>
-<p>当前版本库只有一个名为<tt class="docutils literal"><span class="pre">master</span></tt>的分支，如果直接从<tt class="docutils literal"><span class="pre">master</span></tt>分支创建<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支操作非常简单，但是作为保存网页的<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支中的内容和<tt class="docutils literal"><span class="pre">master</span></tt>分支中的可能完全不同。如果不希望<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支继承<tt class="docutils literal"><span class="pre">master</span></tt>分支的历史和文件，即想要创建一个干净的<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支，需要一点小技巧。可以从下面两个方法任选一种。</p>
+<p>当前版本库只有一个名为<tt class="docutils literal"><span class="pre">master</span></tt>的分支，如果直接从<tt class="docutils literal"><span class="pre">master</span></tt>分支创建<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支操作非常简单，但是作为保存网页的<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支中的内容和<tt class="docutils literal"><span class="pre">master</span></tt>分支中的可能完全不同。如果不希望<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支继承<tt class="docutils literal"><span class="pre">master</span></tt>分支的历史和文件，即想要创建一个干净的<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支，需要一点小技巧。</p>
+<p>若使用命令行创建干净的<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支，可以从下面三个方法任选一种。</p>
 <p>第一种方法用到两个Git底层命令：<tt class="docutils literal"><span class="pre">git</span> <span class="pre">write-tree</span></tt>和<tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit-tree</span></tt>。步骤如下：</p>
 <ul>
 <li><p class="first">基于<tt class="docutils literal"><span class="pre">master</span></tt>分支建立分支<tt class="docutils literal"><span class="pre">gh-pages</span></tt>。</p>
@@ -207,6 +211,40 @@ $ cd helloworld</pre>
 </div>
 </li>
 </ul>
+<p>第三种方法没有使用任何Git底层命令，是从另外的版本库获取提交建立分支。操作如下：</p>
+<ul>
+<li><p class="first">在<tt class="docutils literal"><span class="pre">helloworld</span></tt>版本库之外创建另外一个版本库，例如<tt class="docutils literal"><span class="pre">helloworld-web</span></tt>。</p>
+<div class="highlight-python"><pre>$ git init ../helloworld-web
+$ cd ../helloworld-web</pre>
+</div>
+</li>
+<li><p class="first">在<tt class="docutils literal"><span class="pre">helloworld-web</span></tt>版本库中创建主页文件<tt class="docutils literal"><span class="pre">index.html</span></tt>。</p>
+<div class="highlight-python"><pre>$ printf "hello world.\n" &gt; index.html</pre>
+</div>
+</li>
+<li><p class="first">添加文件<tt class="docutils literal"><span class="pre">index.html</span></tt>到暂存区。</p>
+<div class="highlight-python"><pre>$ git add index.html</pre>
+</div>
+</li>
+<li><p class="first">执行提交。</p>
+<p>实际提交到<tt class="docutils literal"><span class="pre">master</span></tt>分支，虽然提交说明中出现的是<tt class="docutils literal"><span class="pre">gh-pages</span></tt> 。</p>
+<div class="highlight-python"><pre>$ git commit -m "branch gh-pages init."</pre>
+</div>
+</li>
+<li><p class="first">切换到<tt class="docutils literal"><span class="pre">helloworld</span></tt>版本库目录。</p>
+<div class="highlight-python"><pre>$ cd ../helloworld</pre>
+</div>
+</li>
+<li><p class="first">从<tt class="docutils literal"><span class="pre">helloworld-web</span></tt>版本库获取提交，并据此创建<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支。</p>
+<div class="highlight-python"><pre>$ git fetch ../helloworld-web
+$ git checkout -b gh-pages FETCH_HEAD</pre>
+</div>
+</li>
+<li><p class="first">执行推送命令，在GitHub远程版本库创建分支<tt class="docutils literal"><span class="pre">gh-pages</span></tt>。</p>
+<div class="highlight-python"><pre>$ git push -u origin gh-pages</pre>
+</div>
+</li>
+</ul>
 <p>无论哪种方法，一旦在GitHub远程版本库中创建分支<tt class="docutils literal"><span class="pre">gh-pages</span></tt>，项目的主页就已经建立。稍后（不超过10分钟），用浏览器访问下面的地址即可看到刚刚提交的项目首页： <a class="reference external" href="http://gotgithub.github.com/helloworld/">http://gotgithub.github.com/helloworld/</a> 。</p>
 <p>除了以上通过命令行创建<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支为项目设定主页之外，GitHub还提供了图形操作界面。如图3-19所示。</p>
 <div class="figure">
@@ -228,9 +266,9 @@ $ git checkout gh-pages</pre>
 <p>地址： <a class="reference external" href="https://github.com/gotgit/gotgit.github.com/">https://github.com/gotgit/gotgit.github.com/</a></p>
 </li>
 <li><p class="first">将网站内容提交并推送到该版本库<tt class="docutils literal"><span class="pre">master</span></tt>分支中。</p>
-<p>即在<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>版本库的根目录下至少包含一个 index 文件，如<tt class="docutils literal"><span class="pre">index.html</span></tt>。还可以使用下节将要介绍到的 Jekyll 技术，让网页有统一的显示风格，此时首页文件可能并非一个完整的HTML文档，而是套用了页面模版。</p>
+<p>即在<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>版本库的根目录下至少包含一个首页文件，如<tt class="docutils literal"><span class="pre">index.html</span></tt>。还可以使用下节将要介绍到的 Jekyll 技术，让网页有统一的显示风格，此时首页文件可能并非一个完整的HTML文档，而是套用了页面模版。</p>
 </li>
-<li><p class="first">至此当访问网址<tt class="docutils literal"><span class="pre">http://gotgit.github.com</span></tt>时，会将账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>的版本库<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>中的内容作为网站内容显示出来。</p>
+<li><p class="first">至此当访问网址<a class="reference external" href="http://gotgit.github.com">http://gotgit.github.com</a>时，会将账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>的版本库<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>中的内容作为网站内容显示出来。</p>
 </li>
 </ol>
 <p>接下来进行如下操作，使得该网站能够使用专有域名<tt class="docutils literal"><span class="pre">www.worldhello.net</span></tt>提供服务。</p>
@@ -412,7 +450,7 @@ pygments: true</pre>
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/01/12。
+      最后更新于 2012/01/13。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>

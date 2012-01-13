@@ -133,8 +133,8 @@ Hi gotgithub! You've successfully authenticated, but GitHub does not provide she
 <a class="reference internal image-reference" href="../images/deploy-keys.png"><img alt="../images/deploy-keys.png" src="../images/deploy-keys.png" /></a>
 <p class="caption">图3-12：项目级公钥管理</p>
 </div>
-<p>就像一个用户可以设置多个用户级公钥一样，也可以为一个项目设置多个项目级公钥。而且项目级公钥和用户级公钥都有同样的限制：公钥不能重复设置，即一个公钥只能在一处设置一次。</p>
-<p>当使用项目级公钥访问GitHub的SSH服务，在提示信息中显示版本库ID而非用户ID。如下：</p>
+<p>就像一个用户可以设置多个用户级公钥一样，也可以为一个项目设置多个项目级公钥。无论是项目级公钥还是用户级公钥都有同样的限制：一个公钥只能使用一次。</p>
+<p>当使用项目级公钥访问GitHub的SSH服务，会在提示信息中显示版本库ID而非用户ID。如下的命令输出中显示了版本库ID<tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt>。</p>
 <div class="highlight-python"><pre>$ ssh -i ~/.ssh/deploy-key -T git@github.com
 Hi gotgithub/helloworld! You've successfully authenticated, but GitHub does not provide shell access.</pre>
 </div>
@@ -176,7 +176,7 @@ Hi gotgithub/helloworld! You've successfully authenticated, but GitHub does not 
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/01/12。
+      最后更新于 2012/01/13。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>

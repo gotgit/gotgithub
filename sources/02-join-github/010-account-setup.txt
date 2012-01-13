@@ -27,17 +27,20 @@ GitHub的注册页面非常简洁，只有登录ID，邮件地址和口令需要
 每个邮件地址只能注册一次。
 
 注册完毕即以新注册的账号自动登录。登录后即进入用户的仪表板（Dashborad）\
-页面，如果图2-3所示。
+页面。首次进入的仪表板页面还会在其中显示GitHub BootCamp（GitHub 新手训练营）\
+的链接，以帮助新用户快速入门。如果图2-3所示。
 
 .. figure:: /images/join-github/loggedin.png
    :scale: 100
 
    图2-3：登录后的GitHub首页
 
-仪表板页面是用户最重要的页面，创建新项目（新版本库）的链接就位于该页面。\
-页面左上角的“github”文字图标实际可以点击，是进入仪表板页面的快捷。
+仪表板页面是用户最重要的页面，因为创建新项目（新版本库）的链接就位于该页面。\
+重新设计的GitHub用户界面\ [#]_\ 中跳转到仪表板页面的链接不像之前那么直观，\
+鼠标移动到页面左上角的“github”文字图标会发现此图标可以点击，该文字图标即是\
+进入仪表板页面的快捷。
 
-页面右上方显示当前登录用户的名称和头像。图2-3中显示登录用户为 gotgithub，\
+在页面右上方显示当前登录用户的名称和头像。图2-3中显示登录用户为 gotgithub，\
 而用户头像因为尚未设置所以显示为缺省图片——GitHub吉祥物Octocat的剪影。在页面\
 右上方还有三个图标，从左至右分别是：通知、账号设置和退出。点击账号设置图标\
 对账号进行进一步设置，如图2-4所示。
@@ -128,7 +131,7 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
 
   $ ssh-keygen -C "gotgithub@gmail.com" -f ~/.ssh/gotgithub
 
-当生成的公钥/私钥对不在缺省位置（~/.ssh/id_rsa等）时，使用\ ``ssh``\ 命令\
+当生成的公钥/私钥对不在缺省位置（\ ``~/.ssh/id_rsa``\ 等）时，使用\ ``ssh``\ 命令\
 连接远程主机时需要使用参数\ ``-i <filename>``\ 指定公钥/私钥对。或者在配置\
 文件\ ``~/.ssh/config``\ 中针对相应主机进行设定。例如对于上例创建了非缺省\
 公钥/私钥对\ ``~/.ssh/gotgithub``\ ，可以在\ ``~/.ssh/config``\ 配置文件中\
@@ -142,7 +145,7 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/gotgithub
 
-好了，有了上面的准备，就将 :file:`~/.ssh/gotgithub.pub` 文件内容拷贝到剪切板。\
+好了，有了上面的准备，就将\ :file:`~/.ssh/gotgithub.pub`\ 文件内容拷贝到剪切板。\
 在命令行用下面的命令可直接将文件内容拷贝到剪切板：
 
 ::
@@ -151,14 +154,14 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
 
 
 然后将公钥文件中的内容粘贴到GitHub的SSH公钥管理的对话框中，如图2-8所示。\
-注意整个公钥为一行，不要断行。
+注意要忠实地拷贝公钥的内容，切莫在其中插入多余的换行符、空格而导致认证失败。
 
 .. figure:: /images/join-github/setting-ssh-gotgithub.png
    :scale: 100
 
    图2-8：添加SSH公钥认证
 
-设置成功后，再用\ ``ssh``\ 命令访问 github.com，会显示一条认证成功信息并退出。\
+设置成功后，再用\ ``ssh``\ 命令访问GitHub，会显示一条认证成功信息并退出。\
 在认证成功的信息中还会显示该公钥对应的用户名。
 
 ::
@@ -167,7 +170,8 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
   Hi gotgithub! You've successfully authenticated, but GitHub does not provide shell access.
 
 如果您未能看到类似的成功信息，可以通过在\ ``ssh``\ 命令后面添加\ ``-v``\ 参数\
-加以诊断，会在冗长的会话中看到认证所使用的公钥文件等信息。
+加以诊断，会在冗长的会话中看到认证所使用的公钥文件等信息。然后比对所使用的公钥\
+内容是否和GitHub账号中设置的相一致。
 
 ::
 
@@ -183,7 +187,7 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
 
 账号设置的最后一项是向GitHub提供你的求职信息。GitHub作为一个优秀程序员的聚集地，\
 已成为一个IT人才招聘的途径，如果你需要找工作的话，提供简历并打开“Available for hire”\
-选项，如图2-9所示。
+选项，GitHub会向你推荐合适的工作机会。如图2-9所示。
 
 .. figure:: /images/join-github/setting-job.png
    :scale: 100
@@ -191,3 +195,5 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
    图2-9：求职信息管理
 
 .. _gravatar.com: http://gravatar.com/
+
+.. [#] https://github.com/blog/1007-skinny-header

@@ -38,9 +38,13 @@
 和Redmine整合
 ---------------
 
-Redmine是一个开源的项目管理平台，实现需求管理和缺陷跟踪，并整合了版本库浏览\
-和关联功能。Redmine通常以计划任务（crontab）方式检查版本库更新，使得版本更新\
-反映到Redmine会有一定的延迟，而GitHub提供的Redmine整合的钩子脚本能够在GitHub\
+Redmine是一个开源的项目管理平台，用于项目的需求管理和缺陷跟踪。Redmine可以和\
+多种版本库（包括Git）整合，可以直接通过Web界面浏览Git提交，还实现了提交和问题\
+的关联。
+
+Redmine需要周期性地扫描版本库，以便更新内置数据库及建立提交和问题的关联。\
+通常是以计划任务（crontab）的方式实现版本库的周期性扫描，这导致Redmine中\
+版本库更新会存在一定的延迟。GitHub提供的Redmine整合的钩子脚本能够在GitHub\
 版本库更新后，通过WebService触发Redmine主动扫描Git版本库获取更新。
 
 GitHub提供的Redmine整合的配置界面如图3-17所示。
@@ -52,7 +56,7 @@ GitHub提供的Redmine整合的配置界面如图3-17所示。
 
 图3-17中的地址是Redmine部署的URL地址，项目ID是Redmine中的相关项目（如果不填写\
 则更新所有项目），而“Api Key”并非GitHub项目中配置的Api Key，而是Redmine中为\
-版本库更新配置的全局Api Key，相应的Redmine配置界面如图3-18所示。
+版本库更新配置的全局Api Key。相应的Redmine配置界面如图3-18所示。
 
 .. figure:: /images/project-hosting/redmine-api-key.png
    :scale: 100

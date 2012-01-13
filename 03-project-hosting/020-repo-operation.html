@@ -135,7 +135,7 @@ $ git config user.email "gotgithub@gmail.com"</pre>
 </div>
 </li>
 <li><p class="first">执行Git修补提交命令。</p>
-<p>注意使用<tt class="docutils literal"><span class="pre">--reset-author</span></tt>会将提交信息中的属性<tt class="docutils literal"><span class="pre">Author</span></tt>连同<tt class="docutils literal"><span class="pre">AuthorDate</span></tt>一并修改，否则只修改<tt class="docutils literal"><span class="pre">Commit</span></tt>和<tt class="docutils literal"><span class="pre">CommitDate</span></tt>。参数<tt class="docutils literal"><span class="pre">-C</span> <span class="pre">HEAD</span></tt>维持提交说明不变。</p>
+<p>注意使用参数<tt class="docutils literal"><span class="pre">--reset-author</span></tt>会将提交信息中的属性<tt class="docutils literal"><span class="pre">Author</span></tt>连同<tt class="docutils literal"><span class="pre">AuthorDate</span></tt>一并修改，否则只修改<tt class="docutils literal"><span class="pre">Commit</span></tt>和<tt class="docutils literal"><span class="pre">CommitDate</span></tt>。参数<tt class="docutils literal"><span class="pre">-C</span> <span class="pre">HEAD</span></tt>维持提交说明不变。</p>
 <div class="highlight-python"><pre>$ git commit --amend --reset-author -C HEAD</pre>
 </div>
 </li>
@@ -151,6 +151,7 @@ CommitDate: Wed Dec 14 15:05:47 2011 +0800
 </div>
 </li>
 <li><p class="first">直接推送会报错。</p>
+<p>错误信息中出现<tt class="docutils literal"><span class="pre">non-fast-forword</span></tt>（非快进式推送），含义为要推送的提交并非继远程版本库最新提交之后的提交，推送会造成覆盖导致服务器端有数据（提交）会丢失。</p>
 <div class="highlight-python"><pre>$ git push
 To git@github.com:gotgithub/helloworld.git
  ! [rejected]        master -&gt; master (non-fast-forward)
@@ -161,7 +162,7 @@ Merge the remote changes (e.g. 'git pull') before pushing again.  See the
 </div>
 </li>
 <li><p class="first">使用强制推送。</p>
-<p>对于此例，考虑到还没有其他人关注<tt class="docutils literal"><span class="pre">helloworld</span></tt>这个刚刚建立的示例项目，显然不需要向上面命令错误信息中提示那样先执行<tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt>合并上游版本库再推送，而是选择强制推送。</p>
+<p>对于此例，考虑到还没有其他人关注<tt class="docutils literal"><span class="pre">helloworld</span></tt>这个刚刚建立的示例项目，显然不需要向上面命令的错误信息所提示的那样先执行<tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt>合并上游版本库再推送，而是选择强制推送，以新的修补提交覆盖包含错误提交者ID的提交。</p>
 <div class="highlight-python"><pre>$ git push -f
 Counting objects: 3, done.
 Delta compression using up to 2 threads.
@@ -181,10 +182,11 @@ To git@github.com:gotgithub/helloworld.git
 </div>
 <div class="section" id="new-branch">
 <span id="id3"></span><h2>3.2.2. 新建分支<a class="headerlink" href="#new-branch" title="永久链接至标题">¶</a></h2>
-<p>现在版本库中只有一个默认分支<tt class="docutils literal"><span class="pre">master</span></tt>，如果希望在GitHub版本库中再创建分支，可以采用如下方法：</p>
+<p>Git的分支就是保存在<tt class="docutils literal"><span class="pre">.git/refs/heads/</span></tt>命名空间下的引用。引用文件的内容是该分支对应的提交ID。当前版本库中的默认分支<tt class="docutils literal"><span class="pre">master</span></tt>就对应于文件<tt class="docutils literal"><span class="pre">.git/refs/heads/master</span></tt>。</p>
+<p>若在GitHub版本库中创建分支，首先要在本地版本库中创建新的分支（即引用），然后用推送命令将本地创建的新的引用连同所指向的提交推送到GitHub版本库中完成GitHub上分支的创建。操作如下：</p>
 <ul>
-<li><p class="first">本地版本库中建立分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>。</p>
-<p>创建分支有多种方法，最为便捷的就是<tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></tt>命令，同时完成分支创建和分支切换。</p>
+<li><p class="first">本地版本库中建立新分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>。</p>
+<p>创建分支有多种方法，如使用<tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></tt>命令，但最为便捷的就是<tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></tt>命令，同时完成新分支的创建和分支切换。</p>
 <div class="highlight-python"><pre>$ git checkout -b mybranch1
 Switched to a new branch 'mybranch1'</pre>
 </div>
@@ -219,7 +221,7 @@ Branch mybranch1 set up to track remote branch mybranch1 from origin.</pre>
 </div>
 <div class="section" id="default-branch">
 <span id="id4"></span><h2>3.2.3. 设置默认分支<a class="headerlink" href="#default-branch" title="永久链接至标题">¶</a></h2>
-<p>如果希望版本库的默认分支为<tt class="docutils literal"><span class="pre">mybranch1</span></tt>，点击项目名称旁边的”Admin“按钮，修改项目的默认分支，如图3-9所示。</p>
+<p>可以改变GitHub上版本库显示的默认分支，如果版本库包含多个分支的话。例如修改版本库的默认分支为<tt class="docutils literal"><span class="pre">mybranch1</span></tt>，点击项目名称旁边的“Admin”按钮，修改项目的默认分支。如图3-9所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/set-default-branch.png"><img alt="../images/set-default-branch.png" src="../images/set-default-branch.png" /></a>
 <p class="caption">图3-9：设置缺省分支</p>
@@ -235,13 +237,13 @@ $ cd helloworld-nb
 $ git branch
 * mybranch1</pre>
 </div>
-<p>之所以本地缺省分支不再是<tt class="docutils literal"><span class="pre">master</span></tt>，是因为远程（GitHub）版本库中的特殊引用<tt class="docutils literal"><span class="pre">HEAD</span></tt>指向<tt class="docutils literal"><span class="pre">mybranch1</span></tt>分支。这可以从下面命令看出。</p>
+<p>实际上修改GitHub上版本库的默认分支，就是将GitHub版本库的头指针<tt class="docutils literal"><span class="pre">HEAD</span></tt>指向了其他分支，如<tt class="docutils literal"><span class="pre">mybranch1</span></tt>分支。这可以从下面命令看出。</p>
 <div class="highlight-python"><pre>$ git branch -r
   origin/HEAD -&gt; origin/mybranch1
   origin/master
   origin/mybranch1</pre>
 </div>
-<p>也可以从<tt class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span></tt>命令看出引用<tt class="docutils literal"><span class="pre">HEAD</span></tt>和<tt class="docutils literal"><span class="pre">refs/heads/mybranch1</span></tt>指向同一个对象的哈希值。</p>
+<p>也可以从<tt class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span></tt>命令看出头指针<tt class="docutils literal"><span class="pre">HEAD</span></tt>和引用<tt class="docutils literal"><span class="pre">refs/heads/mybranch1</span></tt>指向同一个对象的哈希值。</p>
 <div class="highlight-python"><pre>$ git ls-remote
 From git@github.com:gotgithub/helloworld.git
 f46a28484adb6c1b4830eb4df582325c740e9d6c        HEAD
@@ -251,7 +253,7 @@ f46a28484adb6c1b4830eb4df582325c740e9d6c        refs/heads/mybranch1</pre>
 </div>
 <div class="section" id="del-branch">
 <span id="id5"></span><h2>3.2.4. 删除分支<a class="headerlink" href="#del-branch" title="永久链接至标题">¶</a></h2>
-<p>删除本地版本库的分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>，用如下命令：</p>
+<p>删除当前工作分支会报错。例如下面的命令试图分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>，但没有成功：</p>
 <div class="highlight-python"><pre>$ git branch -d mybranch1
 error: Cannot delete the branch 'mybranch1' which you are currently on.</pre>
 </div>
@@ -263,7 +265,7 @@ error: Cannot delete the branch 'mybranch1' which you are currently on.</pre>
 * master
   mybranch1</pre>
 </div>
-<p>现在删除<tt class="docutils literal"><span class="pre">mybanch1</span></tt>分支。之所以使用<tt class="docutils literal"><span class="pre">-D</span></tt>参数，而非<tt class="docutils literal"><span class="pre">-d</span></tt>参数，是因为为了防止<tt class="docutils literal"><span class="pre">mybranch1</span></tt>的提交丢失，Git缺省禁止删除尚未合并的分支。</p>
+<p>现在可以删除<tt class="docutils literal"><span class="pre">mybanch1</span></tt>分支。下面的命令之所以使用<tt class="docutils literal"><span class="pre">-D</span></tt>参数，而非<tt class="docutils literal"><span class="pre">-d</span></tt>参数，是因为Git在删除分支时为避免数据丢失，默认禁止删除尚未合并的分支。参数<tt class="docutils literal"><span class="pre">-D</span></tt>则可强制删除尚未合并的分支。</p>
 <div class="highlight-python"><pre>$ git branch -D mybranch1
 Deleted branch mybranch1 (was f46a284).</pre>
 </div>
@@ -275,12 +277,12 @@ To git@github.com:gotgithub/helloworld.git
 error: failed to push some refs to 'git@github.com:gotgithub/helloworld.git'</pre>
 </div>
 <p>为什么删除远程分支出错了呢？是因为没有使用强制推送么？</p>
-<p>实际上即使使用强制推送也会遇到上面的错误。GitHub发现要删除的<tt class="docutils literal"><span class="pre">mybranch1</span></tt>分支是远程版本库的缺省分支，因而禁止删除。重新访问GitHub的项目管理页面，将缺省分支设置回<tt class="docutils literal"><span class="pre">master</span></tt>分支，参照图3-9。然后再执行上述命令，即可成功删除分支。</p>
+<p>实际上即使使用强制推送也会遇到上面的错误。GitHub发现要删除的<tt class="docutils literal"><span class="pre">mybranch1</span></tt>分支是远程版本库的缺省分支，因而禁止删除。重新访问GitHub的项目管理页面，将缺省分支设置回<tt class="docutils literal"><span class="pre">master</span></tt>分支，参照图3-9。然后再次执行如下命令，即可成功删除分支。</p>
 <div class="highlight-python"><pre>$ git push origin :mybranch1
 To git@github.com:gotgithub/helloworld.git
  - [deleted]         mybranch1</pre>
 </div>
-<p>执行<tt class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span></tt>命令可以看到GitHub远程分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>已删除。</p>
+<p>执行<tt class="docutils literal"><span class="pre">git</span> <span class="pre">ls-remote</span></tt>命令可以看到GitHub远程版本库已经不存在分支<tt class="docutils literal"><span class="pre">mybranch1</span></tt>。</p>
 <div class="highlight-python"><pre>$ git ls-remote git@github.com:gotgithub/helloworld.git
 From git@github.com:gotgithub/helloworld.git
 e1e52d99fa71fd6f606903efa9da04fd0055fca9        HEAD
@@ -289,7 +291,13 @@ e1e52d99fa71fd6f606903efa9da04fd0055fca9        refs/heads/master</pre>
 </div>
 <div class="section" id="git-tags">
 <span id="id6"></span><h2>3.2.5. 里程碑管理<a class="headerlink" href="#git-tags" title="永久链接至标题">¶</a></h2>
-<p>里程碑管理和分支管理极其类似。</p>
+<p>里程碑即tag，其管理和分支管理非常类似。里程碑和分支一样也是以引用的形式存在的，保存在<tt class="docutils literal"><span class="pre">.git/refs/tags/</span></tt>路径下。引用可能指向一个提交，但也可能是其他类型（Tag对象）。</p>
+<ul class="simple">
+<li>轻量级里程碑：用<tt class="docutils literal"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">&lt;tagname&gt;</span> <span class="pre">[&lt;commit&gt;]</span></tt> 命令创建，引用直接指向一个提交对象<tt class="docutils literal"><span class="pre">&lt;commit&gt;</span></tt>。</li>
+<li>带说明的里程碑：用<tt class="docutils literal"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-a</span> <span class="pre">&lt;tagname&gt;</span> <span class="pre">[&lt;commit&gt;]</span></tt> 命令创建，并且在创建时需要提供创建里程碑的说明。Git会创建一个tag对象保存里程碑说明、里程碑的指向、创建里程碑的用户等信息，里程碑引用指向该Tag对象。</li>
+<li>带签名的里程碑：用<tt class="docutils literal"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-s</span> <span class="pre">&lt;tagname&gt;</span> <span class="pre">[&lt;commit&gt;]</span></tt> 命令创建。是在带说明的里程碑的基础上引入了PGP签名，保证了所创建的里程碑的完整性和不可拒绝性。</li>
+</ul>
+<p>下面演示一下里程碑的创建和管理。</p>
 <ul>
 <li><p class="first">先在本地创建一个新提交。</p>
 <div class="highlight-python"><pre>$ touch hello1
@@ -371,7 +379,7 @@ To git@github.com:gotgithub/helloworld.git
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/01/12。
+      最后更新于 2012/01/13。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
