@@ -3,8 +3,10 @@
 浏览托管项目
 ===============
 
-GitHub的账户已经建立好了，在建立自己的项目托管之前，看看别人是怎么做的。在\
-GitHub中搜索字符串“GotGit”，可以搜索到我建立的一个项目，项目地址是：\
+在上一节学习了如何建立GitHub的账户，接下来在建立自己的项目托管之前，\
+先来看看别人是怎么做的。
+
+在GitHub中搜索字符串“GotGit”，可以搜索到我建立的一个项目，项目地址是：\
 https://github.com/gotgit/gotgit/\ 。\
 由上至下，GotGit项目首页可以分为如下几个区域。
 
@@ -35,9 +37,9 @@ https://github.com/gotgit/gotgit/\ 。\
 
 * 区域二：代码浏览子菜单及分支切换对话框。
 
-  默认项目代码页（即项目首页）显示项目文件列表（即\ ``Files``\ 子菜单）。在\
-  图2-11的右侧还显示了项目\ ``gotgit/gotgit``\ 默认的分支为\ ``gh-pages``\
-  而非常见的\ ``master``\ 分支。关于\ ``gh-pages``\ 分支，在“第3.5节 建立主页”\
+  默认项目代码页（即项目首页）显示项目文件列表（即\ ``Files``\ 子菜单），如\
+  图2-11所示。右侧还显示项目\ ``gotgit/gotgit``\ 默认的分支为\ ``gh-pages``\
+  而非常见的\ ``master``\ 分支。关于\ ``gh-pages``\ 分支，在“第3.5.2节 :ref:`project-homepage`\ ”\
   会介绍该分支的神奇用途。
 
   .. figure:: /images/join-github/gotgit-repo-tree-1-submenu.png

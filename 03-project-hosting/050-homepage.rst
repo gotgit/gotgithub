@@ -20,6 +20,8 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 
 * 用户\ ``gotgithub``\ 创建一个名为\ ``gotgithub.github.com``\ 的Git版本库。
 
+  在GitHub上创建版本库的操作，参见“第3.1节 :ref:`new-project`\ ”。
+
 * 在本地克隆新建立的版本库。
 
   ::
@@ -48,8 +50,10 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 
 * 访问网址： http://gotgithub.github.com/ 。
 
-  最多等待10分钟，GitHub就可以完成新网站的部署。注意访问用户二级域名主页\
-  要使用HTTP协议非HTTPS协议。
+  最多等待10分钟，GitHub就可以完成新网站的部署。网站完成部署后版本库\
+  的所有者会收到邮件通知。
+
+  还有要注意访问用户二级域名的主页要使用HTTP协议非HTTPS协议。
 
 .. _project-homepage:
 
@@ -57,7 +61,9 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 ---------------
 
 如前所述，GitHub会为每个账号分配一个二级域名\ ``<user-id>.github.com``\
-作为用户的首页地址。实际上还可以为每个项目设计主页，并通过此二级域名访问。\
+作为用户的首页地址。实际上还可以为每个项目设置主页，项目主页也通过\
+此二级域名进行访问。
+
 例如\ ``gotgithub``\ 用户创建的\ ``helloworld``\ 项目如果启用了项目主页，\
 则可通过网址\ ``http://gotgithub.github.com/helloworld/``\ 访问。
 
@@ -68,7 +74,7 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 
 下面以用户\ ``gotgithub``\ 的项目\ ``helloworld``\ 为例，介绍如何维护项目主页。
 
-如果本地尚未建立\ ``helloworld``\ 版本库克隆，执行如下命令。
+如果本地尚未从GitHub克隆\ ``helloworld``\ 版本库，执行如下命令。
 
 ::
 
@@ -79,7 +85,9 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 ``gh-pages``\ 分支操作非常简单，但是作为保存网页的\ ``gh-pages``\ 分支中的内容\
 和\ ``master``\ 分支中的可能完全不同。如果不希望\ ``gh-pages``\ 分支继承\
 ``master``\ 分支的历史和文件，即想要创建一个干净的\ ``gh-pages``\ 分支，\
-需要一点小技巧。可以从下面两个方法任选一种。
+需要一点小技巧。
+
+若使用命令行创建干净的\ ``gh-pages``\ 分支，可以从下面三个方法任选一种。
 
 第一种方法用到两个Git底层命令：\ ``git write-tree``\ 和\ ``git commit-tree``\ 。\
 步骤如下：
@@ -160,6 +168,57 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 
     $ git push -u origin gh-pages
 
+第三种方法没有使用任何Git底层命令，是从另外的版本库获取提交建立分支。\
+操作如下：
+
+* 在\ ``helloworld``\ 版本库之外创建另外一个版本库，例如\ ``helloworld-web``\ 。
+
+  ::
+
+    $ git init ../helloworld-web
+    $ cd ../helloworld-web
+
+* 在\ ``helloworld-web``\ 版本库中创建主页文件\ ``index.html``\ 。
+
+  ::
+
+    $ printf "hello world.\n" > index.html
+
+* 添加文件\ ``index.html``\ 到暂存区。
+
+  ::
+
+    $ git add index.html
+
+* 执行提交。
+
+  实际提交到\ ``master``\ 分支，虽然提交说明中出现的是\ ``gh-pages`` \。
+
+  ::
+
+    $ git commit -m "branch gh-pages init."
+
+* 切换到\ ``helloworld``\ 版本库目录。
+
+  ::
+
+    $ cd ../helloworld
+
+* 从\ ``helloworld-web``\ 版本库获取提交，并据此创建\ ``gh-pages``\ 分支。
+
+  ::
+
+    $ git fetch ../helloworld-web
+    $ git checkout -b gh-pages FETCH_HEAD
+
+
+* 执行推送命令，在GitHub远程版本库创建分支\ ``gh-pages``\ 。
+
+  ::
+
+    $ git push -u origin gh-pages
+
+
 无论哪种方法，一旦在GitHub远程版本库中创建分支\ ``gh-pages``\ ，项目的主页\
 就已经建立。稍后（不超过10分钟），用浏览器访问下面的地址即可看到刚刚提交的\
 项目首页： http://gotgithub.github.com/helloworld/ 。
@@ -203,11 +262,11 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 
 2. 将网站内容提交并推送到该版本库\ ``master``\ 分支中。
 
-   即在\ ``gotgit.github.com``\ 版本库的根目录下至少包含一个 index 文件，如\
+   即在\ ``gotgit.github.com``\ 版本库的根目录下至少包含一个首页文件，如\
    ``index.html``\ 。还可以使用下节将要介绍到的 Jekyll 技术，让网页有统一的\
    显示风格，此时首页文件可能并非一个完整的HTML文档，而是套用了页面模版。
 
-3. 至此当访问网址\ ``http://gotgit.github.com``\ 时，会将账号\ ``gotgit``\
+3. 至此当访问网址\ http://gotgit.github.com\ 时，会将账号\ ``gotgit``\
    的版本库\ ``gotgit.github.com``\ 中的内容作为网站内容显示出来。
 
 接下来进行如下操作，使得该网站能够使用专有域名\ ``www.worldhello.net``\

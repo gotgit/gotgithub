@@ -3,7 +3,7 @@
 探索GitHub
 ===============
 
-打开浏览器，访问网址 https://github.com/ 来探索GitHub吧。GitHub的首页\
+打开浏览器，访问网址 https://github.com/\ ，来探索GitHub吧。GitHub的首页\
 （图1-5所示）特意给出了Git和GitHub的音标，可能不少国人需要据此校准一下\
 Git的读音\ [#]_\ 。
 
@@ -34,8 +34,8 @@ Git的读音\ [#]_\ 。
 
    图1-7：热门版本库排行
 
-图1-8显示了托管版本库所用编程语言的动态分布，多掌握几个热门编程语言一定会对\
-找工作有帮助。;-)
+图1-8显示了托管版本库所用编程语言的动态分布，程序员多掌握几个热门编程语言\
+一定会对找工作有帮助。;-)
 
 .. figure:: /images/explore-github/explore-languages.png
    :scale: 100

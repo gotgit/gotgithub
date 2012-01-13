@@ -47,5 +47,5 @@ RSS中可能包括隐私信息，如私有版本库的更新信息，那么RSS�
 
   https://github.com/gotgithub.private.atom?token=681a8a5a38419ecfb80f8633d4cb4e16
 
-原来RSS订阅用到了API Token，既保护了隐私，又不怕密码泄露。关于API Token参见本章\
-第一节的相关介绍。
+原来RSS订阅用到了API Token进行身份认证，即保障了个人RSS的私密性，又避免直接\
+使用明文口令导致的密码泄露。关于API Token，参见本章\ :ref:`第2.1节中相关介绍 <api-token>`\ 。
