@@ -146,7 +146,10 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
     IdentityFile ~/.ssh/gotgithub
 
 好了，有了上面的准备，就将\ :file:`~/.ssh/gotgithub.pub`\ 文件内容拷贝到剪切板。\
-在命令行用下面的命令可直接将文件内容拷贝到剪切板：
+公钥是一行长长的字符串，若用编辑器打开公钥文件会折行显示，注意拷贝时切莫在其中\
+插入多余的换行符、空格等，否则在公钥认证过程因为服务器端和客户端公钥不匹配而\
+导致认证失败。命令行下可直接用\ ``pbcopy``\ 命令\ [#]_\ 将文件内容拷贝到剪切板\
+以避免拷贝错误：
 
 ::
 
@@ -154,7 +157,6 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
 
 
 然后将公钥文件中的内容粘贴到GitHub的SSH公钥管理的对话框中，如图2-8所示。\
-注意要忠实地拷贝公钥的内容，切莫在其中插入多余的换行符、空格而导致认证失败。
 
 .. figure:: /images/join-github/setting-ssh-gotgithub.png
    :scale: 100
@@ -196,4 +198,14 @@ GitHub的SSH服务支持OpenSSH格式的公钥认证，可以通过Linux、Mac O
 
 .. _gravatar.com: http://gravatar.com/
 
+----
+
 .. [#] https://github.com/blog/1007-skinny-header
+.. [#] Mac下的命令行工具\ ``pbcopy``\ 和\ ``pbpaste``\ 可以在命令行下操作剪贴板，\
+       Linux下的命令行工具\ ``xsel``\ 亦可实现类似功能。在Linux下可以创建别名用\
+       ``xsel``\ 命令来模拟\ ``pbcopy``\ 和\ ``pbpaste`` \。
+
+       ::
+
+         alias pbcopy='xsel --input'
+         alias pbpaste='xsel --output'

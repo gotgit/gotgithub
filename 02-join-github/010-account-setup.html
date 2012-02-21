@@ -119,7 +119,7 @@
 <a class="reference internal image-reference" href="../images/loggedin.png"><img alt="../images/loggedin.png" src="../images/loggedin.png" /></a>
 <p class="caption">图2-3：登录后的GitHub首页</p>
 </div>
-<p>仪表板页面是用户最重要的页面，因为创建新项目（新版本库）的链接就位于该页面。重新设计的GitHub用户界面<a class="footnote-reference" href="#id2" id="id1">[1]</a>中跳转到仪表板页面的链接不像之前那么直观，鼠标移动到页面左上角的“github”文字图标会发现此图标可以点击，该文字图标即是进入仪表板页面的快捷。</p>
+<p>仪表板页面是用户最重要的页面，因为创建新项目（新版本库）的链接就位于该页面。重新设计的GitHub用户界面<a class="footnote-reference" href="#id3" id="id1">[1]</a>中跳转到仪表板页面的链接不像之前那么直观，鼠标移动到页面左上角的“github”文字图标会发现此图标可以点击，该文字图标即是进入仪表板页面的快捷。</p>
 <p>在页面右上方显示当前登录用户的名称和头像。图2-3中显示登录用户为 gotgithub，而用户头像因为尚未设置所以显示为缺省图片——GitHub吉祥物Octocat的剪影。在页面右上方还有三个图标，从左至右分别是：通知、账号设置和退出。点击账号设置图标对账号进行进一步设置，如图2-4所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/setting-profile.png"><img alt="../images/setting-profile.png" src="../images/setting-profile.png" /></a>
@@ -162,10 +162,10 @@ Permission denied (publickey).</pre>
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/gotgithub</pre>
 </div>
-<p>好了，有了上面的准备，就将<tt class="file docutils literal"><span class="pre">~/.ssh/gotgithub.pub</span></tt>文件内容拷贝到剪切板。在命令行用下面的命令可直接将文件内容拷贝到剪切板：</p>
+<p>好了，有了上面的准备，就将<tt class="file docutils literal"><span class="pre">~/.ssh/gotgithub.pub</span></tt>文件内容拷贝到剪切板。公钥是一行长长的字符串，若用编辑器打开公钥文件会折行显示，注意拷贝时切莫在其中插入多余的换行符、空格等，否则在公钥认证过程因为服务器端和客户端公钥不匹配而导致认证失败。命令行下可直接用<tt class="docutils literal"><span class="pre">pbcopy</span></tt>命令<a class="footnote-reference" href="#id4" id="id2">[2]</a>将文件内容拷贝到剪切板以避免拷贝错误：</p>
 <div class="highlight-python"><pre>$ cat ~/.ssh/gotgithub.pub | pbcopy</pre>
 </div>
-<p>然后将公钥文件中的内容粘贴到GitHub的SSH公钥管理的对话框中，如图2-8所示。注意要忠实地拷贝公钥的内容，切莫在其中插入多余的换行符、空格而导致认证失败。</p>
+<p>然后将公钥文件中的内容粘贴到GitHub的SSH公钥管理的对话框中，如图2-8所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/setting-ssh-gotgithub.png"><img alt="../images/setting-ssh-gotgithub.png" src="../images/setting-ssh-gotgithub.png" /></a>
 <p class="caption">图2-8：添加SSH公钥认证</p>
@@ -190,10 +190,21 @@ Hi gotgithub! You've successfully authenticated, but GitHub does not provide she
 <a class="reference internal image-reference" href="../images/setting-job.png"><img alt="../images/setting-job.png" src="../images/setting-job.png" /></a>
 <p class="caption">图2-9：求职信息管理</p>
 </div>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://github.com/blog/1007-skinny-header">https://github.com/blog/1007-skinny-header</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><p class="first">Mac下的命令行工具<tt class="docutils literal"><span class="pre">pbcopy</span></tt>和<tt class="docutils literal"><span class="pre">pbpaste</span></tt>可以在命令行下操作剪贴板，Linux下的命令行工具<tt class="docutils literal"><span class="pre">xsel</span></tt>亦可实现类似功能。在Linux下可以创建别名用<tt class="docutils literal"><span class="pre">xsel</span></tt>命令来模拟<tt class="docutils literal"><span class="pre">pbcopy</span></tt>和<tt class="docutils literal"><span class="pre">pbpaste</span></tt> 。</p>
+<div class="last highlight-python"><pre>alias pbcopy='xsel --input'
+alias pbpaste='xsel --output'</pre>
+</div>
+</td></tr>
 </tbody>
 </table>
 </div>
@@ -226,7 +237,7 @@ Hi gotgithub! You've successfully authenticated, but GitHub does not provide she
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/01/13。
+      最后更新于 2012/02/21。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
