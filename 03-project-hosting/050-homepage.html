@@ -281,16 +281,16 @@ $ git checkout gh-pages</pre>
 <div class="highlight-python"><pre>$ dig @8.8.8.8 -t a www.worldhello.net
 ...
 ; ANSWER SECTION:
-www.worldhello.net.     81078   IN      A       207.97.227.245
+www.worldhello.net.     81078   IN      A       204.232.175.78
 
 $ dig @8.8.8.8 -t a gotgit.github.com
 ...
 ; ANSWER SECTION:
-gotgit.github.com.      43200   IN      A       207.97.227.245</pre>
+gotgit.github.com.      43200   IN      A       204.232.175.78</pre>
 </div>
 </li>
 </ol>
-<p>设置完成后用浏览器访问 <a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a> 即可看到由账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>的版本库<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>维护的页面。若将域名<tt class="docutils literal"><span class="pre">worldhello.net</span></tt>（不带www前缀）也指向IP地址<tt class="docutils literal"><span class="pre">207.97.227.245</span></tt>，则访问网址<a class="reference external" href="http://worldhello.net/">http://worldhello.net/</a>会发现GitHub体贴地将该网址重定向到正确的地址<a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a>。</p>
+<p>设置完成后用浏览器访问 <a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a> 即可看到由账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>的版本库<tt class="docutils literal"><span class="pre">gotgit.github.com</span></tt>维护的页面。若将域名<tt class="docutils literal"><span class="pre">worldhello.net</span></tt>（不带www前缀）也指向IP地址<tt class="docutils literal"><span class="pre">204.232.175.78</span></tt>，则访问网址<a class="reference external" href="http://worldhello.net/">http://worldhello.net/</a>会发现GitHub体贴地将该网址重定向到正确的地址<a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a>。</p>
 <p>在账号<tt class="docutils literal"><span class="pre">gotgit</span></tt>下的其他版本库，若包含了<tt class="docutils literal"><span class="pre">gh-pages</span></tt>分支，亦可由域名<tt class="docutils literal"><span class="pre">www.worldhello.net</span></tt>访问到。</p>
 <ul class="simple">
 <li>网址 <a class="reference external" href="http://www.worldhello.net/doc">http://www.worldhello.net/doc</a> 实际对应于版本库 <a class="reference external" href="https://github.com/gotgit/doc">gotgit/doc</a> 。</li>
@@ -450,7 +450,7 @@ pygments: true</pre>
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/02/29。
+      最后更新于 2012/06/08。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
