@@ -288,16 +288,16 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
      $ dig @8.8.8.8 -t a www.worldhello.net
      ...
      ; ANSWER SECTION:
-     www.worldhello.net.     81078   IN      A       207.97.227.245
+     www.worldhello.net.     81078   IN      A       204.232.175.78
      
      $ dig @8.8.8.8 -t a gotgit.github.com
      ...
      ; ANSWER SECTION:
-     gotgit.github.com.      43200   IN      A       207.97.227.245
+     gotgit.github.com.      43200   IN      A       204.232.175.78
 
 设置完成后用浏览器访问 http://www.worldhello.net/ 即可看到由账号\ ``gotgit``\
 的版本库\ ``gotgit.github.com``\ 维护的页面。若将域名\ ``worldhello.net``\
-（不带www前缀）也指向IP地址\ ``207.97.227.245``\ ，则访问网址\
+（不带www前缀）也指向IP地址\ ``204.232.175.78``\ ，则访问网址\
 http://worldhello.net/\ 会发现GitHub体贴地将该网址重定向到正确的地址\
 http://www.worldhello.net/\ 。
 
