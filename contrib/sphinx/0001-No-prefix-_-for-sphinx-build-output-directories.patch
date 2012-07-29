@@ -1,0 +1,826 @@
+From d83d125e3dadcd13b7cc95fba28e4036b4089b85 Mon Sep 17 00:00:00 2001
+Message-Id: <d83d125e3dadcd13b7cc95fba28e4036b4089b85.1343532825.git.worldhello.net@gmail.com>
+From: Jiang Xin <worldhello.net@gmail.com>
+Date: Fri, 26 Aug 2011 10:39:23 +0800
+Subject: [PATCH] No prefix '_' for sphinx build output directories
+
+[This hack is based on sphinx 1.1.3.]
+
+Some phinx output dirs has a prefix such as '_static', '_sources',
+'_images', '_downloads'. Because GitHub website host does not like
+directories with a '_' prefix, and these paths are hard-coded (can
+not be changed through config files), so comes this workaround.
+
+This patch change the hard-coded dirs from '_static', '_images',
+'_sources', '_downloads' to 'static', 'images', 'sources', and
+'downloads'.
+
+Signed-off-by: Jiang Xin <worldhello.net@gmail.com>
+---
+ doc/_templates/indexsidebar.html            |  2 +-
+ doc/_templates/layout.html                  |  2 +-
+ doc/conf.py                                 | 10 ++++----
+ doc/config.rst                              |  6 ++---
+ doc/templating.rst                          |  2 +-
+ sphinx/application.py                       |  4 +--
+ sphinx/builders/html.py                     | 40 ++++++++++++++---------------
+ sphinx/builders/htmlhelp.py                 |  2 +-
+ sphinx/builders/qthelp.py                   |  4 +--
+ sphinx/builders/websupport.py               | 10 ++++----
+ sphinx/ext/graphviz.py                      |  2 +-
+ sphinx/ext/pngmath.py                       |  2 +-
+ sphinx/quickstart.py                        |  6 ++---
+ sphinx/themes/agogo/layout.html             |  4 +--
+ sphinx/themes/basic/domainindex.html        |  2 +-
+ sphinx/themes/basic/layout.html             | 10 ++++----
+ sphinx/themes/basic/search.html             |  2 +-
+ sphinx/themes/basic/sourcelink.html         |  2 +-
+ sphinx/themes/basic/static/searchtools.js_t |  2 +-
+ sphinx/themes/default/layout.html           |  2 +-
+ sphinx/themes/haiku/layout.html             |  8 +++---
+ sphinx/themes/pyramid/layout.html           |  4 +--
+ sphinx/themes/pyramid/static/ie6.css        |  2 +-
+ sphinx/themes/scrolls/layout.html           |  4 +--
+ sphinx/websupport/__init__.py               |  2 +-
+ tests/root/_static/README                   |  1 -
+ tests/root/_static/excluded.css             |  1 -
+ tests/root/_static/subdir/foo.css           |  1 -
+ tests/root/conf.py                          |  2 +-
+ tests/root/static/README                    |  1 +
+ tests/root/static/excluded.css              |  1 +
+ tests/root/static/subdir/foo.css            |  1 +
+ tests/test_build_html.py                    | 24 ++++++++---------
+ tests/test_quickstart.py                    | 11 +++++---
+ 34 files changed, 91 insertions(+), 88 deletions(-)
+ delete mode 100644 tests/root/_static/README
+ delete mode 100644 tests/root/_static/excluded.css
+ delete mode 100644 tests/root/_static/subdir/foo.css
+ create mode 100644 tests/root/static/README
+ create mode 100644 tests/root/static/excluded.css
+ create mode 100644 tests/root/static/subdir/foo.css
+
+diff --git a/doc/_templates/indexsidebar.html b/doc/_templates/indexsidebar.html
+index feafd90..e3125f6 100644
+--- a/doc/_templates/indexsidebar.html
++++ b/doc/_templates/indexsidebar.html
+@@ -1,5 +1,5 @@
+ <p class="logo"><a href="http://pocoo.org/">
+-  <img src="{{ pathto("_static/pocoo.png", 1) }}" /></a></p>
++  <img src="{{ pathto("static/pocoo.png", 1) }}" /></a></p>
+ 
+ <h3>Download</h3>
+ {% if version.endswith('(hg)') %}
+diff --git a/doc/_templates/layout.html b/doc/_templates/layout.html
+index 6e609e1..d748c8a 100644
+--- a/doc/_templates/layout.html
++++ b/doc/_templates/layout.html
+@@ -18,6 +18,6 @@
+ 
+ {% block header %}
+ <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+-<img src="{{ pathto("_static/sphinx.png", 1) }}" alt="Sphinx logo" />
++<img src="{{ pathto("static/sphinx.png", 1) }}" alt="Sphinx logo" />
+ </div>
+ {% endblock %}
+diff --git a/doc/conf.py b/doc/conf.py
+index 1b8ba3e..f5c49b1 100644
+--- a/doc/conf.py
++++ b/doc/conf.py
+@@ -20,7 +20,7 @@ show_authors = True
+ 
+ html_theme = 'sphinxdoc'
+ modindex_common_prefix = ['sphinx.']
+-html_static_path = ['_static']
++html_static_path = ['static']
+ html_sidebars = {'index': ['indexsidebar.html', 'searchbox.html']}
+ html_additional_pages = {'index': 'index.html'}
+ html_use_opensearch = 'http://sphinx.pocoo.org'
+@@ -34,13 +34,13 @@ epub_publisher = 'http://sphinx.pocoo.org/'
+ epub_scheme = 'url'
+ epub_identifier = epub_publisher
+ epub_pre_files = [('index.html', 'Welcome')]
+-epub_exclude_files = ['_static/opensearch.xml', '_static/doctools.js',
+-    '_static/jquery.js', '_static/searchtools.js', '_static/underscore.js',
+-    '_static/basic.css', 'search.html']
++epub_exclude_files = ['static/opensearch.xml', 'static/doctools.js',
++    'static/jquery.js', 'static/searchtools.js', 'static/underscore.js',
++    'static/basic.css', 'search.html']
+ 
+ latex_documents = [('contents', 'sphinx.tex', 'Sphinx Documentation',
+                     'Georg Brandl', 'manual', 1)]
+-latex_logo = '_static/sphinx.png'
++latex_logo = 'static/sphinx.png'
+ latex_elements = {
+     'fontpkg': '\\usepackage{palatino}',
+ }
+diff --git a/doc/config.rst b/doc/config.rst
+index 5d188c6..0da3f3a 100644
+--- a/doc/config.rst
++++ b/doc/config.rst
+@@ -491,7 +491,7 @@ that use Sphinx' HTMLWriter class.
+    exceed 200 pixels.  Default: ``None``.
+ 
+    .. versionadded:: 0.4.1
+-      The image file will be copied to the ``_static`` directory of the output
++      The image file will be copied to the ``static`` directory of the output
+       HTML, so an already existing file with that name will be overwritten.
+ 
+ .. confval:: html_favicon
+@@ -836,8 +836,8 @@ the `Dublin Core metadata <http://dublincore.org/>`_.
+    template filename is empty, no html cover page is created.  No cover at all
+    is created if the tuple is empty.  Examples::
+ 
+-      epub_cover = ('_static/cover.png', 'epub-cover.html')
+-      epub_cover = ('_static/cover.png', '')
++      epub_cover = ('static/cover.png', 'epub-cover.html')
++      epub_cover = ('static/cover.png', '')
+       epub_cover = ()
+ 
+    The default value is ``()``.
+diff --git a/doc/templating.rst b/doc/templating.rst
+index 05a1346..1e24904 100644
+--- a/doc/templating.rst
++++ b/doc/templating.rst
+@@ -198,7 +198,7 @@ Overriding works like this::
+ 
+    Add additional script files here, like this::
+ 
+-      {% set script_files = script_files + ["_static/myscript.js"] %}
++      {% set script_files = script_files + ["static/myscript.js"] %}
+ 
+ .. data:: css_files
+ 
+diff --git a/sphinx/application.py b/sphinx/application.py
+index bfb39a7..9d336bf 100644
+--- a/sphinx/application.py
++++ b/sphinx/application.py
+@@ -467,7 +467,7 @@ class Sphinx(object):
+             StandaloneHTMLBuilder.script_files.append(filename)
+         else:
+             StandaloneHTMLBuilder.script_files.append(
+-                posixpath.join('_static', filename))
++                posixpath.join('static', filename))
+ 
+     def add_stylesheet(self, filename):
+         from sphinx.builders.html import StandaloneHTMLBuilder
+@@ -475,7 +475,7 @@ class Sphinx(object):
+             StandaloneHTMLBuilder.css_files.append(filename)
+         else:
+             StandaloneHTMLBuilder.css_files.append(
+-                posixpath.join('_static', filename))
++                posixpath.join('static', filename))
+ 
+     def add_lexer(self, alias, lexer):
+         from sphinx.highlighting import lexers
+diff --git a/sphinx/builders/html.py b/sphinx/builders/html.py
+index 8184037..1b38437 100644
+--- a/sphinx/builders/html.py
++++ b/sphinx/builders/html.py
+@@ -71,8 +71,8 @@ class StandaloneHTMLBuilder(Builder):
+     embedded = False  # for things like HTML help or Qt help: suppresses sidebar
+ 
+     # This is a class attribute because it is mutated by Sphinx.add_javascript.
+-    script_files = ['_static/jquery.js', '_static/underscore.js',
+-                    '_static/doctools.js']
++    script_files = ['static/jquery.js', 'static/underscore.js',
++                    'static/doctools.js']
+     # Dito for this one.
+     css_files = []
+ 
+@@ -104,7 +104,7 @@ class StandaloneHTMLBuilder(Builder):
+ 
+         if self.config.language is not None:
+             if self._get_translations_js():
+-                self.script_files.append('_static/translations.js')
++                self.script_files.append('static/translations.js')
+ 
+     def _get_translations_js(self):
+         candidates = [path.join(package_dir, 'locale', self.config.language,
+@@ -412,9 +412,9 @@ class StandaloneHTMLBuilder(Builder):
+         doctree.settings = self.docsettings
+ 
+         self.secnumbers = self.env.toc_secnumbers.get(docname, {})
+-        self.imgpath = relative_uri(self.get_target_uri(docname), '_images')
++        self.imgpath = relative_uri(self.get_target_uri(docname), 'images')
+         self.post_process_images(doctree)
+-        self.dlpath = relative_uri(self.get_target_uri(docname), '_downloads')
++        self.dlpath = relative_uri(self.get_target_uri(docname), 'downloads')
+         self.current_docname = docname
+         self.docwriter.write(doctree, destination)
+         self.docwriter.assemble_parts()
+@@ -452,7 +452,7 @@ class StandaloneHTMLBuilder(Builder):
+ 
+         if self.config.html_use_opensearch and self.name != 'htmlhelp':
+             self.info(' opensearch', nonl=1)
+-            fn = path.join(self.outdir, '_static', 'opensearch.xml')
++            fn = path.join(self.outdir, 'static', 'opensearch.xml')
+             self.handle_page('opensearch', {}, 'opensearch.xml', outfilename=fn)
+ 
+         self.info()
+@@ -507,13 +507,13 @@ class StandaloneHTMLBuilder(Builder):
+     def copy_image_files(self):
+         # copy image files
+         if self.images:
+-            ensuredir(path.join(self.outdir, '_images'))
++            ensuredir(path.join(self.outdir, 'images'))
+             for src in self.status_iterator(self.images, 'copying images... ',
+                                             brown, len(self.images)):
+                 dest = self.images[src]
+                 try:
+                     copyfile(path.join(self.srcdir, src),
+-                             path.join(self.outdir, '_images', dest))
++                             path.join(self.outdir, 'images', dest))
+                 except Exception, err:
+                     self.warn('cannot copy image file %r: %s' %
+                               (path.join(self.srcdir, src), err))
+@@ -521,14 +521,14 @@ class StandaloneHTMLBuilder(Builder):
+     def copy_download_files(self):
+         # copy downloadable files
+         if self.env.dlfiles:
+-            ensuredir(path.join(self.outdir, '_downloads'))
++            ensuredir(path.join(self.outdir, 'downloads'))
+             for src in self.status_iterator(self.env.dlfiles,
+                                             'copying downloadable files... ',
+                                             brown, len(self.env.dlfiles)):
+                 dest = self.env.dlfiles[src][1]
+                 try:
+                     copyfile(path.join(self.srcdir, src),
+-                             path.join(self.outdir, '_downloads', dest))
++                             path.join(self.outdir, 'downloads', dest))
+                 except Exception, err:
+                     self.warn('cannot copy downloadable file %r: %s' %
+                               (path.join(self.srcdir, src), err))
+@@ -536,16 +536,16 @@ class StandaloneHTMLBuilder(Builder):
+     def copy_static_files(self):
+         # copy static files
+         self.info(bold('copying static files... '), nonl=True)
+-        ensuredir(path.join(self.outdir, '_static'))
++        ensuredir(path.join(self.outdir, 'static'))
+         # first, create pygments style file
+-        f = open(path.join(self.outdir, '_static', 'pygments.css'), 'w')
++        f = open(path.join(self.outdir, 'static', 'pygments.css'), 'w')
+         f.write(self.highlighter.get_stylesheet())
+         f.close()
+         # then, copy translations JavaScript file
+         if self.config.language is not None:
+             jsfile = self._get_translations_js()
+             if jsfile:
+-                copyfile(jsfile, path.join(self.outdir, '_static',
++                copyfile(jsfile, path.join(self.outdir, 'static',
+                                            'translations.js'))
+ 
+         # add context items for search function used in searchtools.js_t
+@@ -557,7 +557,7 @@ class StandaloneHTMLBuilder(Builder):
+             themeentries = [path.join(themepath, 'static')
+                             for themepath in self.theme.get_dirchain()[::-1]]
+             for entry in themeentries:
+-                copy_static_entry(entry, path.join(self.outdir, '_static'),
++                copy_static_entry(entry, path.join(self.outdir, 'static'),
+                                   self, ctx)
+         # then, copy over all user-supplied static files
+         staticentries = [path.join(self.confdir, spath)
+@@ -570,18 +570,18 @@ class StandaloneHTMLBuilder(Builder):
+             if not path.exists(entry):
+                 self.warn('html_static_path entry %r does not exist' % entry)
+                 continue
+-            copy_static_entry(entry, path.join(self.outdir, '_static'), self,
++            copy_static_entry(entry, path.join(self.outdir, 'static'), self,
+                               ctx, exclude_matchers=matchers)
+         # copy logo and favicon files if not already in static path
+         if self.config.html_logo:
+             logobase = path.basename(self.config.html_logo)
+-            logotarget = path.join(self.outdir, '_static', logobase)
++            logotarget = path.join(self.outdir, 'static', logobase)
+             if not path.isfile(logotarget):
+                 copyfile(path.join(self.confdir, self.config.html_logo),
+                          logotarget)
+         if self.config.html_favicon:
+             iconbase = path.basename(self.config.html_favicon)
+-            icontarget = path.join(self.outdir, '_static', iconbase)
++            icontarget = path.join(self.outdir, 'static', iconbase)
+             if not path.isfile(icontarget):
+                 copyfile(path.join(self.confdir, self.config.html_favicon),
+                          icontarget)
+@@ -746,7 +746,7 @@ class StandaloneHTMLBuilder(Builder):
+             self.warn("error writing file %s: %s" % (outfilename, err))
+         if self.copysource and ctx.get('sourcename'):
+             # copy the source file for the "show source" link
+-            source_name = path.join(self.outdir, '_sources',
++            source_name = path.join(self.outdir, 'sources',
+                                     os_path(ctx['sourcename']))
+             ensuredir(path.dirname(source_name))
+             copyfile(self.env.doc2path(pagename), source_name)
+@@ -930,7 +930,7 @@ class SingleFileHTMLBuilder(StandaloneHTMLBuilder):
+ 
+         if self.config.html_use_opensearch:
+             self.info(' opensearch', nonl=1)
+-            fn = path.join(self.outdir, '_static', 'opensearch.xml')
++            fn = path.join(self.outdir, 'static', 'opensearch.xml')
+             self.handle_page('opensearch', {}, 'opensearch.xml', outfilename=fn)
+ 
+         self.info()
+@@ -1003,7 +1003,7 @@ class SerializingHTMLBuilder(StandaloneHTMLBuilder):
+         # if there is a source file, copy the source file for the
+         # "show source" link
+         if ctx.get('sourcename'):
+-            source_name = path.join(self.outdir, '_sources',
++            source_name = path.join(self.outdir, 'sources',
+                                     os_path(ctx['sourcename']))
+             ensuredir(path.dirname(source_name))
+             copyfile(self.env.doc2path(pagename), source_name)
+diff --git a/sphinx/builders/htmlhelp.py b/sphinx/builders/htmlhelp.py
+index fdf25cc..d122563 100644
+--- a/sphinx/builders/htmlhelp.py
++++ b/sphinx/builders/htmlhelp.py
+@@ -212,7 +212,7 @@ class HTMLHelpBuilder(StandaloneHTMLBuilder):
+                 outdir += os.sep
+             olen = len(outdir)
+             for root, dirs, files in os.walk(outdir):
+-                staticdir = root.startswith(path.join(outdir, '_static'))
++                staticdir = root.startswith(path.join(outdir, 'static'))
+                 for fn in files:
+                     if (staticdir and not fn.endswith('.js')) or \
+                            fn.endswith('.html'):
+diff --git a/sphinx/builders/qthelp.py b/sphinx/builders/qthelp.py
+index 5e5deaf..f2fa13a 100644
+--- a/sphinx/builders/qthelp.py
++++ b/sphinx/builders/qthelp.py
+@@ -155,8 +155,8 @@ class QtHelpBuilder(StandaloneHTMLBuilder):
+             outdir += os.sep
+         olen = len(outdir)
+         projectfiles = []
+-        staticdir = path.join(outdir, '_static')
+-        imagesdir = path.join(outdir, '_images')
++        staticdir = path.join(outdir, 'static')
++        imagesdir = path.join(outdir, 'images')
+         for root, dirs, files in os.walk(outdir):
+             resourcedir = root.startswith(staticdir) or \
+                           root.startswith(imagesdir)
+diff --git a/sphinx/builders/websupport.py b/sphinx/builders/websupport.py
+index b775730..f0a1135 100644
+--- a/sphinx/builders/websupport.py
++++ b/sphinx/builders/websupport.py
+@@ -37,7 +37,7 @@ class WebSupportBuilder(PickleHTMLBuilder):
+             raise RuntimeError('websupport builder must be used with '
+                                'the builtin templates')
+         # add our custom JS
+-        self.script_files.append('_static/websupport.js')
++        self.script_files.append('static/websupport.js')
+ 
+     def set_webinfo(self, staticdir, virtual_staticdir, search, storage):
+         self.staticdir = staticdir
+@@ -58,9 +58,9 @@ class WebSupportBuilder(PickleHTMLBuilder):
+ 
+         self.cur_docname = docname
+         self.secnumbers = self.env.toc_secnumbers.get(docname, {})
+-        self.imgpath = '/' + posixpath.join(self.virtual_staticdir, '_images')
++        self.imgpath = '/' + posixpath.join(self.virtual_staticdir, 'images')
+         self.post_process_images(doctree)
+-        self.dlpath = '/' + posixpath.join(self.virtual_staticdir, '_downloads')
++        self.dlpath = '/' + posixpath.join(self.virtual_staticdir, 'downloads')
+         self.docwriter.write(doctree, destination)
+         self.docwriter.assemble_parts()
+         body = self.docwriter.parts['fragment']
+@@ -129,7 +129,7 @@ class WebSupportBuilder(PickleHTMLBuilder):
+         # "show source" link
+         if ctx.get('sourcename'):
+             source_name = path.join(self.staticdir,
+-                                    '_sources',  os_path(ctx['sourcename']))
++                                    'sources',  os_path(ctx['sourcename']))
+             ensuredir(path.dirname(source_name))
+             copyfile(self.env.doc2path(pagename), source_name)
+ 
+@@ -142,7 +142,7 @@ class WebSupportBuilder(PickleHTMLBuilder):
+         PickleHTMLBuilder.handle_finish(self)
+ 
+         # move static stuff over to separate directory
+-        directories = ['_images', '_static']
++        directories = ['images', 'static']
+         for directory in directories:
+             src = path.join(self.outdir, directory)
+             dst = path.join(self.staticdir, directory)
+diff --git a/sphinx/ext/graphviz.py b/sphinx/ext/graphviz.py
+index ee93594..296cf0e 100644
+--- a/sphinx/ext/graphviz.py
++++ b/sphinx/ext/graphviz.py
+@@ -128,7 +128,7 @@ def render_dot(self, code, options, format, prefix='graphviz'):
+     if hasattr(self.builder, 'imgpath'):
+         # HTML
+         relfn = posixpath.join(self.builder.imgpath, fname)
+-        outfn = path.join(self.builder.outdir, '_images', fname)
++        outfn = path.join(self.builder.outdir, 'images', fname)
+     else:
+         # LaTeX
+         relfn = fname
+diff --git a/sphinx/ext/pngmath.py b/sphinx/ext/pngmath.py
+index 78c331a..e391e4c 100644
+--- a/sphinx/ext/pngmath.py
++++ b/sphinx/ext/pngmath.py
+@@ -78,7 +78,7 @@ def render_math(self, math):
+ 
+     shasum = "%s.png" % sha(math.encode('utf-8')).hexdigest()
+     relfn = posixpath.join(self.builder.imgpath, 'math', shasum)
+-    outfn = path.join(self.builder.outdir, '_images', 'math', shasum)
++    outfn = path.join(self.builder.outdir, 'images', 'math', shasum)
+     if path.isfile(outfn):
+         depth = read_png_depth(outfn)
+         return relfn, depth
+diff --git a/sphinx/quickstart.py b/sphinx/quickstart.py
+index 86dc047..4552e91 100644
+--- a/sphinx/quickstart.py
++++ b/sphinx/quickstart.py
+@@ -160,7 +160,7 @@ html_theme = 'default'
+ # Add any paths that contain custom static files (such as style sheets) here,
+ # relative to this directory. They are copied after the builtin static files,
+ # so a file named "default.css" will overwrite the builtin "default.css".
+-html_static_path = ['%(dot)sstatic']
++html_static_path = ['static']
+ 
+ # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
+ # using the given strftime format.
+@@ -852,7 +852,7 @@ Either, you use a directory "_build" within the root path, or you separate
+     if 'dot' not in d:
+         print '''
+ Inside the root directory, two more directories will be created; "_templates"
+-for custom HTML templates and "_static" for custom stylesheets and other static
++for custom HTML templates and "static" for custom stylesheets and other static
+ files. You can enter another prefix (such as ".") to replace the underscore.'''
+         do_prompt(d, 'dot', 'Name prefix for templates and static dir', '_', ok)
+ 
+@@ -997,7 +997,7 @@ def generate(d, overwrite=True, silent=False):
+         d['exclude_patterns'] = repr(d['dot'] + 'build')
+     mkdir_p(builddir)
+     mkdir_p(path.join(srcdir, d['dot'] + 'templates'))
+-    mkdir_p(path.join(srcdir, d['dot'] + 'static'))
++    mkdir_p(path.join(srcdir, 'static'))
+ 
+     def write_file(fpath, mode, content):
+         if overwrite or not path.isfile(fpath):
+diff --git a/sphinx/themes/agogo/layout.html b/sphinx/themes/agogo/layout.html
+index d063194..fd6d4a2 100644
+--- a/sphinx/themes/agogo/layout.html
++++ b/sphinx/themes/agogo/layout.html
+@@ -15,7 +15,7 @@
+       <div class="header">
+         {%- if logo %}
+           <p class="logo"><a href="{{ pathto(master_doc) }}">
+-            <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
++            <img class="logo" src="{{ pathto('static/' + logo, 1) }}" alt="Logo"/>
+           </a></p>
+         {%- endif %}
+         {%- block headertitle %}
+@@ -75,7 +75,7 @@
+           {%- endfor %}
+           {%- if show_source and has_source and sourcename %}
+             <br/>
+-            <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
++            <a href="{{ pathto('sources/' + sourcename, true)|e }}"
+                rel="nofollow">{{ _('Show Source') }}</a>
+           {%- endif %}
+         </div>
+diff --git a/sphinx/themes/basic/domainindex.html b/sphinx/themes/basic/domainindex.html
+index 947a01e..776c034 100644
+--- a/sphinx/themes/basic/domainindex.html
++++ b/sphinx/themes/basic/domainindex.html
+@@ -39,7 +39,7 @@
+              in entries %}
+      <tr{% if grouptype == 2 %} class="cg-{{ groupid.current() }}"{% endif %}>
+        <td>{% if grouptype == 1 -%}
+-         <img src="{{ pathto('_static/minus.png', 1) }}" class="toggler"
++         <img src="{{ pathto('static/minus.png', 1) }}" class="toggler"
+               id="toggle-{{ groupid.next() }}" style="display: none" alt="-" />
+            {%- endif %}</td>
+        <td>{% if grouptype == 2 %}&nbsp;&nbsp;&nbsp;{% endif %}
+diff --git a/sphinx/themes/basic/layout.html b/sphinx/themes/basic/layout.html
+index 9fb989c..a00570e 100644
+--- a/sphinx/themes/basic/layout.html
++++ b/sphinx/themes/basic/layout.html
+@@ -52,7 +52,7 @@
+           {%- block sidebarlogo %}
+           {%- if logo %}
+             <p class="logo"><a href="{{ pathto(master_doc) }}">
+-              <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
++              <img class="logo" src="{{ pathto('static/' + logo, 1) }}" alt="Logo"/>
+             </a></p>
+           {%- endif %}
+           {%- endblock %}
+@@ -100,8 +100,8 @@
+ {%- endmacro %}
+ 
+ {%- macro css() %}
+-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
++    <link rel="stylesheet" href="{{ pathto('static/' + style, 1) }}" type="text/css" />
++    <link rel="stylesheet" href="{{ pathto('static/pygments.css', 1) }}" type="text/css" />
+     {%- for cssfile in css_files %}
+     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+     {%- endfor %}
+@@ -120,10 +120,10 @@
+     {%- if use_opensearch %}
+     <link rel="search" type="application/opensearchdescription+xml"
+           title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
+-          href="{{ pathto('_static/opensearch.xml', 1) }}"/>
++          href="{{ pathto('static/opensearch.xml', 1) }}"/>
+     {%- endif %}
+     {%- if favicon %}
+-    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
++    <link rel="shortcut icon" href="{{ pathto('static/' + favicon, 1) }}"/>
+     {%- endif %}
+     {%- endif %}
+ {%- block linktags %}
+diff --git a/sphinx/themes/basic/search.html b/sphinx/themes/basic/search.html
+index 4cdc693..69a5b6e 100644
+--- a/sphinx/themes/basic/search.html
++++ b/sphinx/themes/basic/search.html
+@@ -9,7 +9,7 @@
+ #}
+ {% extends "layout.html" %}
+ {% set title = _('Search') %}
+-{% set script_files = script_files + ['_static/searchtools.js'] %}
++{% set script_files = script_files + ['static/searchtools.js'] %}
+ {% block extrahead %}
+   <script type="text/javascript">
+     jQuery(function() { Search.loadIndex("{{ pathto('searchindex.js', 1) }}"); });
+diff --git a/sphinx/themes/basic/sourcelink.html b/sphinx/themes/basic/sourcelink.html
+index 53f2f6b..7d2596b 100644
+--- a/sphinx/themes/basic/sourcelink.html
++++ b/sphinx/themes/basic/sourcelink.html
+@@ -10,7 +10,7 @@
+ {%- if show_source and has_source and sourcename %}
+   <h3>{{ _('This Page') }}</h3>
+   <ul class="this-page-menu">
+-    <li><a href="{{ pathto('_sources/' + sourcename, true)|e }}"
++    <li><a href="{{ pathto('sources/' + sourcename, true)|e }}"
+            rel="nofollow">{{ _('Show Source') }}</a></li>
+   </ul>
+ {%- endif %}
+diff --git a/sphinx/themes/basic/static/searchtools.js_t b/sphinx/themes/basic/static/searchtools.js_t
+index 45989c6..3553113 100644
+--- a/sphinx/themes/basic/static/searchtools.js_t
++++ b/sphinx/themes/basic/static/searchtools.js_t
+@@ -275,7 +275,7 @@ var Search = {
+             displayNextItem();
+           });
+         } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
+-          $.get(DOCUMENTATION_OPTIONS.URL_ROOT + '_sources/' +
++          $.get(DOCUMENTATION_OPTIONS.URL_ROOT + 'sources/' +
+                 item[0] + '.txt', function(data) {
+             if (data != '') {
+               listItem.append($.makeSearchSummary(data, searchterms, hlterms));
+diff --git a/sphinx/themes/default/layout.html b/sphinx/themes/default/layout.html
+index d91a565..9c6e06c 100644
+--- a/sphinx/themes/default/layout.html
++++ b/sphinx/themes/default/layout.html
+@@ -10,5 +10,5 @@
+ {% extends "basic/layout.html" %}
+ 
+ {% if theme_collapsiblesidebar|tobool %}
+-{% set script_files = script_files + ['_static/sidebar.js'] %}
++{% set script_files = script_files + ['static/sidebar.js'] %}
+ {% endif %}
+diff --git a/sphinx/themes/haiku/layout.html b/sphinx/themes/haiku/layout.html
+index 719dba7..79973f2 100644
+--- a/sphinx/themes/haiku/layout.html
++++ b/sphinx/themes/haiku/layout.html
+@@ -8,8 +8,8 @@
+     :license: BSD, see LICENSE for details.
+ #}
+ {% extends "basic/layout.html" %}
+-{% set script_files = script_files + ['_static/theme_extras.js'] %}
+-{% set css_files = css_files + ['_static/print.css'] %}
++{% set script_files = script_files + ['static/theme_extras.js'] %}
++{% set css_files = css_files + ['static/print.css'] %}
+ 
+ {# do not display relbars #}
+ {% block relbar1 %}{% endblock %}
+@@ -38,11 +38,11 @@
+         {%- block haikuheader %}
+         {%- if theme_full_logo != "false" %}
+         <a href="{{ pathto('index') }}">
+-          <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
++          <img class="logo" src="{{ pathto('static/' + logo, 1) }}" alt="Logo"/>
+         </a>
+         {%- else %}
+         {%- if logo -%}
+-          <img class="rightlogo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
++          <img class="rightlogo" src="{{ pathto('static/' + logo, 1) }}" alt="Logo"/>
+         {%- endif -%}
+         <h1 class="heading"><a href="{{ pathto('index') }}">
+           <span>{{ shorttitle|e }}</span></a></h1>
+diff --git a/sphinx/themes/pyramid/layout.html b/sphinx/themes/pyramid/layout.html
+index 1887361..28a5100 100644
+--- a/sphinx/themes/pyramid/layout.html
++++ b/sphinx/themes/pyramid/layout.html
+@@ -4,7 +4,7 @@
+ <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+ <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+ <!--[if lte IE 6]>
+-<link rel="stylesheet" href="{{ pathto('_static/ie6.css', 1) }}" type="text/css" media="screen" charset="utf-8" />
++<link rel="stylesheet" href="{{ pathto('static/ie6.css', 1) }}" type="text/css" media="screen" charset="utf-8" />
+ <![endif]-->
+ {% endblock %}
+ 
+@@ -13,7 +13,7 @@
+ <div class="header">
+   <div class="logo">
+     <a href="{{ pathto(master_doc) }}">
+-      <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
++      <img class="logo" src="{{ pathto('static/' + logo, 1) }}" alt="Logo"/>
+     </a>
+   </div>
+ </div>
+diff --git a/sphinx/themes/pyramid/static/ie6.css b/sphinx/themes/pyramid/static/ie6.css
+index 74baa5d..ebdcae3 100644
+--- a/sphinx/themes/pyramid/static/ie6.css
++++ b/sphinx/themes/pyramid/static/ie6.css
+@@ -1,7 +1,7 @@
+ * html img,
+ * html .png{position:relative;behavior:expression((this.runtimeStyle.behavior="none")&&(this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none",
+ this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "',sizingMethod='image')",
+-this.src = "_static/transparent.gif"):(this.origBg = this.origBg? this.origBg :this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''),
++this.src = "static/transparent.gif"):(this.origBg = this.origBg? this.origBg :this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''),
+ this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "',sizingMethod='crop')",
+ this.runtimeStyle.backgroundImage = "none")),this.pngSet=true)
+ );}
+diff --git a/sphinx/themes/scrolls/layout.html b/sphinx/themes/scrolls/layout.html
+index 92cb694..fee5ff5 100644
+--- a/sphinx/themes/scrolls/layout.html
++++ b/sphinx/themes/scrolls/layout.html
+@@ -9,8 +9,8 @@
+     :license: BSD, see LICENSE for details.
+ #}
+ {% extends "basic/layout.html" %}
+-{% set script_files = script_files + ['_static/theme_extras.js'] %}
+-{% set css_files = css_files + ['_static/print.css'] %}
++{% set script_files = script_files + ['static/theme_extras.js'] %}
++{% set css_files = css_files + ['static/print.css'] %}
+ {# do not display relbars #}
+ {% block relbar1 %}{% endblock %}
+ {% block relbar2 %}{% endblock %}
+diff --git a/sphinx/websupport/__init__.py b/sphinx/websupport/__init__.py
+index 72864a1..7aff8ec 100644
+--- a/sphinx/websupport/__init__.py
++++ b/sphinx/websupport/__init__.py
+@@ -415,7 +415,7 @@ class WebSupport(object):
+             ]
+             for key, value in static_urls:
+                 self.base_comment_opts[key] = \
+-                    '/' + posixpath.join(self.staticroot, '_static', value)
++                    '/' + posixpath.join(self.staticroot, 'static', value)
+ 
+     def _make_comment_options(self, username, moderator):
+         """Helper method to create the parts of the COMMENT_OPTIONS
+diff --git a/tests/root/_static/README b/tests/root/_static/README
+deleted file mode 100644
+index 9e1ec35..0000000
+--- a/tests/root/_static/README
++++ /dev/null
+@@ -1 +0,0 @@
+-This whole directory is there to test html_static_path.
+diff --git a/tests/root/_static/excluded.css b/tests/root/_static/excluded.css
+deleted file mode 100644
+index 03c941a..0000000
+--- a/tests/root/_static/excluded.css
++++ /dev/null
+@@ -1 +0,0 @@
+-/* This file should be excluded from being copied over */
+diff --git a/tests/root/_static/subdir/foo.css b/tests/root/_static/subdir/foo.css
+deleted file mode 100644
+index 9427981..0000000
+--- a/tests/root/_static/subdir/foo.css
++++ /dev/null
+@@ -1 +0,0 @@
+-/* Stub file */
+diff --git a/tests/root/conf.py b/tests/root/conf.py
+index b97ddfc..1b4a67e 100644
+--- a/tests/root/conf.py
++++ b/tests/root/conf.py
+@@ -36,7 +36,7 @@ html_theme_options = {'testopt': 'testoverride'}
+ html_sidebars = {'**': 'customsb.html',
+                  'contents': ['contentssb.html', 'localtoc.html'] }
+ html_style = 'default.css'
+-html_static_path = ['_static', 'templated.css_t']
++html_static_path = ['static', 'templated.css_t']
+ html_last_updated_fmt = '%b %d, %Y'
+ html_context = {'hckey': 'hcval', 'hckey_co': 'wrong_hcval_co'}
+ 
+diff --git a/tests/root/static/README b/tests/root/static/README
+new file mode 100644
+index 0000000..9e1ec35
+--- /dev/null
++++ b/tests/root/static/README
+@@ -0,0 +1 @@
++This whole directory is there to test html_static_path.
+diff --git a/tests/root/static/excluded.css b/tests/root/static/excluded.css
+new file mode 100644
+index 0000000..03c941a
+--- /dev/null
++++ b/tests/root/static/excluded.css
+@@ -0,0 +1 @@
++/* This file should be excluded from being copied over */
+diff --git a/tests/root/static/subdir/foo.css b/tests/root/static/subdir/foo.css
+new file mode 100644
+index 0000000..9427981
+--- /dev/null
++++ b/tests/root/static/subdir/foo.css
+@@ -0,0 +1 @@
++/* Stub file */
+diff --git a/tests/test_build_html.py b/tests/test_build_html.py
+index a38806a..af09b99 100644
+--- a/tests/test_build_html.py
++++ b/tests/test_build_html.py
+@@ -71,24 +71,24 @@ def tail_check(check):
+ 
+ HTML_XPATH = {
+     'images.html': [
+-        (".//img[@src='_images/img.png']", ''),
+-        (".//img[@src='_images/img1.png']", ''),
+-        (".//img[@src='_images/simg.png']", ''),
+-        (".//img[@src='_images/svgimg.svg']", ''),
++        (".//img[@src='images/img.png']", ''),
++        (".//img[@src='images/img1.png']", ''),
++        (".//img[@src='images/simg.png']", ''),
++        (".//img[@src='images/svgimg.svg']", ''),
+     ],
+     'subdir/images.html': [
+-        (".//img[@src='../_images/img1.png']", ''),
+-        (".//img[@src='../_images/rimg.png']", ''),
++        (".//img[@src='../images/img1.png']", ''),
++        (".//img[@src='../images/rimg.png']", ''),
+     ],
+     'subdir/includes.html': [
+-        (".//a[@href='../_downloads/img.png']", ''),
+-        (".//img[@src='../_images/img.png']", ''),
++        (".//a[@href='../downloads/img.png']", ''),
++        (".//img[@src='../images/img.png']", ''),
+         (".//p", 'This is an include file.'),
+     ],
+     'includes.html': [
+         (".//pre", u'Max Strauß'),
+-        (".//a[@href='_downloads/img.png']", ''),
+-        (".//a[@href='_downloads/img1.png']", ''),
++        (".//a[@href='downloads/img.png']", ''),
++        (".//a[@href='downloads/img1.png']", ''),
+         (".//pre", u'"quotes"'),
+         (".//pre", u"'included'"),
+     ],
+@@ -228,7 +228,7 @@ HTML_XPATH = {
+         (".//a[@href='http://bugs.python.org/issue1000']", "issue 1000"),
+         (".//a[@href='http://bugs.python.org/issue1042']", "explicit caption"),
+     ],
+-    '_static/statictmpl.html': [
++    'static/statictmpl.html': [
+         (".//project", 'Sphinx <Tests>'),
+     ],
+     'genindex.html': [
+@@ -301,7 +301,7 @@ def check_xpath(etree, fname, path, check):
+                            [node.text for node in nodes]))
+ 
+ def check_static_entries(outdir):
+-    staticdir = outdir / '_static'
++    staticdir = outdir / 'static'
+     assert staticdir.isdir()
+     # a file from a directory entry in html_static_path
+     assert (staticdir / 'README').isfile()
+diff --git a/tests/test_quickstart.py b/tests/test_quickstart.py
+index dba888d..7bed9ee 100644
+--- a/tests/test_quickstart.py
++++ b/tests/test_quickstart.py
+@@ -105,12 +105,13 @@ def test_quickstart_defaults(tempdir):
+     assert ns['copyright'] == '%s, Georg Brandl' % time.strftime('%Y')
+     assert ns['version'] == '0.1'
+     assert ns['release'] == '0.1'
+-    assert ns['html_static_path'] == ['_static']
++    # No prefix for static and other dirs, since GitHub does not like it.
++    assert ns['html_static_path'] == ['static']
+     assert ns['latex_documents'] == [
+         ('index', 'SphinxTest.tex', 'Sphinx Test Documentation',
+          'Georg Brandl', 'manual')]
+ 
+-    assert (tempdir / '_static').isdir()
++    assert (tempdir / 'static').isdir()
+     assert (tempdir / '_templates').isdir()
+     assert (tempdir / 'index.rst').isfile()
+     assert (tempdir / 'Makefile').isfile()
+@@ -166,7 +167,8 @@ def test_quickstart_all_answers(tempdir):
+            time.strftime('%Y')
+     assert ns['version'] == '2.0'
+     assert ns['release'] == '2.0.1'
+-    assert ns['html_static_path'] == ['.static']
++    # No prefix for static and other dirs, since GitHub does not like it.
++    assert ns['html_static_path'] == ['static']
+     assert ns['latex_documents'] == [
+         ('contents', 'STASI.tex', u'STASI™ Documentation',
+          u'Wolfgang Schäuble \\& G\'Beckstein', 'manual')]
+@@ -180,6 +182,7 @@ def test_quickstart_all_answers(tempdir):
+          'One line description of project.', 'Miscellaneous'),]
+ 
+     assert (tempdir / 'build').isdir()
+-    assert (tempdir / 'source' / '.static').isdir()
++    # No prefix for static and other dirs, since GitHub does not like it.
++    assert (tempdir / 'source' / 'static').isdir()
+     assert (tempdir / 'source' / '.templates').isdir()
+     assert (tempdir / 'source' / 'contents.txt').isfile()
+-- 
+1.7.12.rc0.27.gee08efc
+
