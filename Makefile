@@ -164,7 +164,14 @@ doctest:
 pre-build: images update-version
 
 images:
-	(cd graphics; rake convert[../images,600] )
+	@(cd graphics; \
+	 if test -f Rakefile; then \
+	     rake convert[../images,600]; \
+	 else \
+	     echo "ERROR: Submodule 'graphics' not found. Please init submodule using: " >&2; \
+			 echo "ERROR:     git submodule init && git submodule update" >&2; \
+			 exit 1; \
+	 fi)
 
 update-version:
 	@sed -e "s#<version>#$$(git describe --dirty --always)#g" < _version.inc.in > _version.inc.tmp
