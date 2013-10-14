@@ -115,7 +115,7 @@
 <span id="gist"></span><h1>6.1. GitHub:Gist<a class="headerlink" href="#github-gist" title="永久链接至标题">¶</a></h1>
 <p>在GitHub网站的导航条上就有Gist子网站的链接： <a class="reference external" href="https://gist.github.com/">https://gist.github.com/</a> ，在本节我们就揭开其面纱。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-in-github-navbar.png"><img alt="../images/gist-in-github-navbar.png" src="../images/gist-in-github-navbar.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-in-github-navbar.png"><img alt="../images/gist-in-github-navbar.png" src="../images/gist-in-github-navbar.png" style="width: 600.0px; height: 38.0px;" /></a>
 <p class="caption">图6-1：GitHub上的Gist链接</p>
 </div>
 <p>Gist作为一个粘贴数据的工具，就像 Pastie 网站<a class="footnote-reference" href="#id14" id="id1">[1]</a>一样，可以很容易地将数据粘贴在Gist网站中，并在其他网页中引用Gist中粘贴的数据。作为GitHub的一个子网站，很自然地，Gist使用Git版本库对粘贴数据进行维护，这非常酷。</p>
@@ -123,24 +123,24 @@
 <span id="id2"></span><h2>6.1.1. 数据的粘贴和引用<a class="headerlink" href="#paste" title="永久链接至标题">¶</a></h2>
 <p>进入Gist网站的首页，就会看到一个大大的数据粘贴对话框，如图6-2所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-homepage.png"><img alt="../images/gist-homepage.png" src="../images/gist-homepage.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-homepage.png"><img alt="../images/gist-homepage.png" src="../images/gist-homepage.png" style="width: 600.0px; height: 322.0px;" /></a>
 <p class="caption">图6-2：Gist网站首页</p>
 </div>
 <p>只要提供一行简单的描述、文件名，并粘贴文件内容，即可创建一个新的粘贴。创建新的粘贴时，如果不指定文件名，将由系统自动指派。如图6-3所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-create-new.png"><img alt="../images/gist-create-new.png" src="../images/gist-create-new.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-create-new.png"><img alt="../images/gist-create-new.png" src="../images/gist-create-new.png" style="width: 600.0px; height: 335.0px;" /></a>
 <p class="caption">图6-3：创建新的Gist</p>
 </div>
 <p>每一个新的粘贴称为一个Gist，并拥有唯一的URL。如果选择创建公开的Gist，URL中将使用顺序递增的ID号，如本例创建的Gist的URL地址为：<a class="reference external" href="https://gist.github.com/1202870">https://gist.github.com/1202870</a>。</p>
 <p>若选择创建私有Gist，URL中则采用20位十六进制数字的ID，例如私密Gist：<a class="reference external" href="https://gist.github.com/78d67164131ec9e08dfe">https://gist.github.com/78d67164131ec9e08dfe</a>。需要指出的是，私有Gist的私密性并不像GitHub私有版本库的私密性那么强，只是其URL没有在用户Gist列表中列出，也不能通过Gist网站搜索到而已。如果用户知道某私密Gist的URL地址，同样可以访问、克隆该私密Gist，甚至创建基于该Gist创建分支（fork）。</p>
 <p>当一个粘贴创建完毕后，会显示新建立的Gist页面，如图6-4所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-created.png"><img alt="../images/gist-created.png" src="../images/gist-created.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-created.png"><img alt="../images/gist-created.png" src="../images/gist-created.png" style="width: 600.0px; height: 348.0px;" /></a>
 <p class="caption">图6-4：新创建的Gist</p>
 </div>
 <p>点击其中的“embed”（嵌入）按钮，就会显示一段用于嵌入其他网页的JavaScript代码，如图6-5所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-embed.png"><img alt="../images/gist-embed.png" src="../images/gist-embed.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-embed.png"><img alt="../images/gist-embed.png" src="../images/gist-embed.png" style="width: 600.0px; height: 78.0px;" /></a>
 <p class="caption">图6-5：显示嵌入Java</p>
 </div>
 <p>对应的嵌入JavaScript代码如下：</p>
@@ -148,7 +148,7 @@
 </div>
 <p>将上面的JavaScript代码嵌入到网页（如博客<a class="footnote-reference" href="#id15" id="id3">[2]</a>）中，即可在相应的网页中嵌入来自Gist的数据，并保持语法加亮等功能，如图6-6所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-embed-in-blog.png"><img alt="../images/gist-embed-in-blog.png" src="../images/gist-embed-in-blog.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-embed-in-blog.png"><img alt="../images/gist-embed-in-blog.png" src="../images/gist-embed-in-blog.png" style="width: 600.0px; height: 237.0px;" /></a>
 <p class="caption">图6-6：博客中引用Gist数据</p>
 </div>
 </div>
@@ -204,7 +204,7 @@ index a9d747b..9045738 100644
 </ul>
 <p>Gist网站并没有像GitHub网站那样对于Git版本库提供完整的、近乎复杂的操作界面和工作流支持，而只提供了最基本的操作界面。如图6-7所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-git-repo.png"><img alt="../images/gist-git-repo.png" src="../images/gist-git-repo.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-git-repo.png"><img alt="../images/gist-git-repo.png" src="../images/gist-git-repo.png" style="width: 600.0px; height: 242.0px;" /></a>
 <p class="caption">图6-7：Gist版本库简易操作界面</p>
 </div>
 <p>在这个简易的Git版本库操作界面中，左侧是版本库的简介、文件预览以及在线编辑、下载、加注星标<a class="footnote-reference" href="#id16" id="id4">[3]</a>、版本库分支<a class="footnote-reference" href="#id17" id="id5">[4]</a>等相关操作按钮。若以Gist创建者登录，会在右侧看到他人基于该Gist创建分支的情况，但是并不提供GitHub才有的Pull Request等功能。在界面的右侧还显示了Gist修订历史，和之前通过<tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt>命令从Git版本库看到的一样。</p>
@@ -216,7 +216,7 @@ index a9d747b..9045738 100644
 <p>当浏览器安装了 Greasemonkey 或类似插件之后，当访问扩展名为<tt class="docutils literal"><span class="pre">.user.js</span></tt>的URL时，会将该URL指向的JavaScript脚本安装在浏览器中，当访问指定的网址时会自动调用相应的JavaScript脚本，修改相关网页内容或添加特效等等。</p>
 <p>我针对《Git权威指南》官网的测试网页写了一个Greasemonkey示例脚本，可以展示用户端JavaScript的魔法，这个用户端JavaScript脚本保存在Gist中：<a class="reference external" href="https://gist.github.com/1084591">https://gist.github.com/1084591</a>，如图6-8所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-greasemonkey.png"><img alt="../images/gist-greasemonkey.png" src="../images/gist-greasemonkey.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-greasemonkey.png"><img alt="../images/gist-greasemonkey.png" src="../images/gist-greasemonkey.png" style="width: 600.0px; height: 122.0px;" /></a>
 <p class="caption">图6-8：保存Greasemonkey用户端脚本的Gist</p>
 </div>
 <p>该Greasemonkey脚本的文件名为<tt class="docutils literal"><span class="pre">click_more.user.js</span></tt>，该文件的文件头使用特殊的注释语句为Greasemonkey提供相关的安装和注册信息，内容如下（为方便描述添加了行号）：</p>
@@ -233,17 +233,17 @@ index a9d747b..9045738 100644
 <p>其中第5、6、7行三条<cite>include</cite>语句限定了此用户端JavaScript脚本的应用范围，即只针对指定的URL（使用通配符）执行该脚本。第8行设定脚本依赖，即该脚本依赖jQuery，会在运行前到指定的URL地址加载jQuery脚本。</p>
 <p>在安装该脚本前，先用浏览器访问网址<a class="reference external" href="http://www.worldhello.net/gotgit/demo.html">http://www.worldhello.net/gotgit/demo.html</a>，看看不加载用户端JavaScript脚本时网页的模样。该网页中包含一个长长的网上书店列表，如图6-9所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-user-js-apply-before.png"><img alt="../images/gist-user-js-apply-before.png" src="../images/gist-user-js-apply-before.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-user-js-apply-before.png"><img alt="../images/gist-user-js-apply-before.png" src="../images/gist-user-js-apply-before.png" style="width: 600.0px; height: 375.0px;" /></a>
 <p class="caption">图6-9：应用用户端JavaScript脚本前的网页内容</p>
 </div>
 <p>接下来开始安装该用户端JavaScript脚本。安装非常简单，只要点击图6-8的Gist当中的脚本文件对应的“raw”链接，即点击脚本文件原始内容链接<a class="footnote-reference" href="#id23" id="id12">[10]</a>即可开启安装。这是因为该URL以<tt class="docutils literal"><span class="pre">.user.js</span></tt>结尾，会被Greasemonkey（或类似插件）识别并安装，如图6-10是Greasemonkey弹出的用户端脚本安装界面。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-user-js-install.png"><img alt="../images/gist-user-js-install.png" src="../images/gist-user-js-install.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-user-js-install.png"><img alt="../images/gist-user-js-install.png" src="../images/gist-user-js-install.png" style="width: 381.0px; height: 380.0px;" /></a>
 <p class="caption">图6-10：安装用户端JavaScript脚本</p>
 </div>
 <p>用户端脚本安装完毕后，再访问同样的测试网页<a class="reference external" href="http://www.worldhello.net/gotgit/demo.html">http://www.worldhello.net/gotgit/demo.html</a>，会发现网页中出现了一个名为“更多”的可点击链接，长长的网上书店列表不见了。如图6-11所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gist-user-js-apply-after.png"><img alt="../images/gist-user-js-apply-after.png" src="../images/gist-user-js-apply-after.png" /></a>
+<a class="reference internal image-reference" href="../images/gist-user-js-apply-after.png"><img alt="../images/gist-user-js-apply-after.png" src="../images/gist-user-js-apply-after.png" style="width: 600.0px; height: 275.0px;" /></a>
 <p class="caption">图6-11：应用用户端JavaScript脚本后的网页内容</p>
 </div>
 <p>如果查看网页源码，会发现该网页中根本没有包含和调用任何JavaScript脚本，只是在页面源码中包含着一个没有任何实质输出的标签：</p>
@@ -363,8 +363,8 @@ $ git config --global github.token "your-github-token"</pre>
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/06/08。
-      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+      最后更新于 2013/10/14。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3 创建。
 
     </div>
   </body>

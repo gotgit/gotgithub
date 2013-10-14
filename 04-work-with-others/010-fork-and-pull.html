@@ -122,17 +122,17 @@
 <p>GotGit版本库<a class="footnote-reference" href="#id12" id="id2">[1]</a>用于维护《Git权威指南》一书的官网和勘误，下面演示的勘误表修改是由王胜<a class="footnote-reference" href="#id13" id="id3">[2]</a>通过GitHub之外的一个缺陷追踪平台报告的<a class="footnote-reference" href="#id14" id="id4">[3]</a>。他在报告中，甚至直接用GNU diff格式告诉我该如何修改。</p>
 <p>下面就以用户gotgithub身份，访问版本库 <a class="reference external" href="https://github.com/gotgit/gotgit/">https://github.com/gotgit/gotgit/</a> ，添加新的勘误。如图4-1所示，gotgit项目在之前的示例中已经被我们关注但尚未Fork。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gotgit-repo-before-fork.png"><img alt="../images/gotgit-repo-before-fork.png" src="../images/gotgit-repo-before-fork.png" /></a>
+<a class="reference internal image-reference" href="../images/gotgit-repo-before-fork.png"><img alt="../images/gotgit-repo-before-fork.png" src="../images/gotgit-repo-before-fork.png" style="width: 600.0px; height: 166.0px;" /></a>
 <p class="caption">图4-1：原gotgit项目</p>
 </div>
 <p>点击项目名称右侧的Fork按钮，便在gotgithub用户自己的托管空间下创建项目派生，派生项目版本库出现在版本库列表中，如图4-2。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gotgit-in-repo-list.png"><img alt="../images/gotgit-in-repo-list.png" src="../images/gotgit-in-repo-list.png" /></a>
+<a class="reference internal image-reference" href="../images/gotgit-in-repo-list.png"><img alt="../images/gotgit-in-repo-list.png" src="../images/gotgit-in-repo-list.png" style="width: 351.0px; height: 227.0px;" /></a>
 <p class="caption">图4-2：gotgithub用户的项目列表</p>
 </div>
 <p>访问派生后的版本库，会发现和派生前的几乎相同，除了没有缺陷跟踪（ISSUE），以及标识了该项目派生之前的原路径等。如图4-3所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gotgit-repo-forked.png"><img alt="../images/gotgit-repo-forked.png" src="../images/gotgit-repo-forked.png" /></a>
+<a class="reference internal image-reference" href="../images/gotgit-repo-forked.png"><img alt="../images/gotgit-repo-forked.png" src="../images/gotgit-repo-forked.png" style="width: 600.0px; height: 132.0px;" /></a>
 <p class="caption">图4-3：派生的gotgit项目</p>
 </div>
 <p>现在gotgithub用户就在本地派生的版本库中提交。</p>
@@ -177,7 +177,7 @@ $ git commit -m "Fixed #3: should be 项目, not 项."</pre>
 </ul>
 <p>访问GitHub上的派生项目页面，会看到以用户whangsheng在<tt class="docutils literal"><span class="pre">master</span></tt>分支<a class="footnote-reference" href="#id16" id="id6">[5]</a>创建的提交。如图4-4所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/gotgit-new-commit.png"><img alt="../images/gotgit-new-commit.png" src="../images/gotgit-new-commit.png" /></a>
+<a class="reference internal image-reference" href="../images/gotgit-new-commit.png"><img alt="../images/gotgit-new-commit.png" src="../images/gotgit-new-commit.png" style="width: 600.0px; height: 68.0px;" /></a>
 <p class="caption">图4-4：派生版本库中的新提交</p>
 </div>
 </div>
@@ -186,37 +186,37 @@ $ git commit -m "Fixed #3: should be 项目, not 项."</pre>
 <p>那么如何能够让gotgit原始项目的创建者知道这个派生项目及新的提交呢？GitHub提供的工具就是“Pull Request”。注意到图4-3右上方“Pull Request”按钮了么？点击该按钮进入Pull Request创建界面。</p>
 <p>在弹出的Pull Request创建界面中，点击菜单中的“Commits”，查看所包含的提交。如图4-5所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/pull-request-form-commit.png"><img alt="../images/pull-request-form-commit.png" src="../images/pull-request-form-commit.png" /></a>
+<a class="reference internal image-reference" href="../images/pull-request-form-commit.png"><img alt="../images/pull-request-form-commit.png" src="../images/pull-request-form-commit.png" style="width: 600.0px; height: 175.0px;" /></a>
 <p class="caption">图4-5：Pull Request包含的提交</p>
 </div>
 <p>点击菜单中的“Files Changed”，查看所包含的提交。如图4-6所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/pull-request-form-file.png"><img alt="../images/pull-request-form-file.png" src="../images/pull-request-form-file.png" /></a>
+<a class="reference internal image-reference" href="../images/pull-request-form-file.png"><img alt="../images/pull-request-form-file.png" src="../images/pull-request-form-file.png" style="width: 600.0px; height: 306.0px;" /></a>
 <p class="caption">图4-6：Pull Request包含的改动差异</p>
 </div>
 <p>点击菜单中的“Preview Discussion”，填写Pull Request的标题和内容，完成Pull Request的创建。如图4-7所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/pull-request-form-discuss.png"><img alt="../images/pull-request-form-discuss.png" src="../images/pull-request-form-discuss.png" /></a>
+<a class="reference internal image-reference" href="../images/pull-request-form-discuss.png"><img alt="../images/pull-request-form-discuss.png" src="../images/pull-request-form-discuss.png" style="width: 600.0px; height: 329.0px;" /></a>
 <p class="caption">图4-7：Pull Request的提交界面</p>
 </div>
 <p>当Pull Request发出后，项目gotgit的开发者会收到通知邮件，如图4-8所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/pull-request-email.png"><img alt="../images/pull-request-email.png" src="../images/pull-request-email.png" /></a>
+<a class="reference internal image-reference" href="../images/pull-request-email.png"><img alt="../images/pull-request-email.png" src="../images/pull-request-email.png" style="width: 600.0px; height: 244.0px;" /></a>
 <p class="caption">图4-8：Pull Request的通知邮件</p>
 </div>
 <p>点击邮件中的URL链接，以项目gotgit的开发者（如ossxp-com）身份登录，看到如图4-9的视图。之所以看到有两个用户参与到此Pull Request，是因为Pull Request创建者和提交的作者是不同的用户。图4-9下方的表单可以向Pull Request追加评论，或者关闭此Pull Request。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/pull-request-owner-view.png"><img alt="../images/pull-request-owner-view.png" src="../images/pull-request-owner-view.png" /></a>
+<a class="reference internal image-reference" href="../images/pull-request-owner-view.png"><img alt="../images/pull-request-owner-view.png" src="../images/pull-request-owner-view.png" style="width: 600.0px; height: 477.0px;" /></a>
 <p class="caption">图4-9：Pull Request接收者视图</p>
 </div>
 <p>GitHub如果检测到Pull Request中包含的提交可以直接合并，会显示自动合并的提示信息，点击图4-9中提示信息中的自动合并按钮，显示图4-10的自动合并对话框。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/pull-request-auto-merge.png"><img alt="../images/pull-request-auto-merge.png" src="../images/pull-request-auto-merge.png" /></a>
+<a class="reference internal image-reference" href="../images/pull-request-auto-merge.png"><img alt="../images/pull-request-auto-merge.png" src="../images/pull-request-auto-merge.png" style="width: 600.0px; height: 114.0px;" /></a>
 <p class="caption">图4-10：Pull Request的通知邮件</p>
 </div>
 <p>点击“Confirm Merge”按钮即完成Pull Request中所含提交的自动合并。自动合并完成后，Pull Request页面下方会以评论的形式出现相关提示，并自动关闭Pull Request。如图4-11所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/pull-request-closed.png"><img alt="../images/pull-request-closed.png" src="../images/pull-request-closed.png" /></a>
+<a class="reference internal image-reference" href="../images/pull-request-closed.png"><img alt="../images/pull-request-closed.png" src="../images/pull-request-closed.png" style="width: 600.0px; height: 139.0px;" /></a>
 <p class="caption">图4-11：Pull Request关闭</p>
 </div>
 </div>
@@ -320,12 +320,12 @@ Fast-forward
 <p>GitHub提供了在线编辑功能，这样可以无需克隆版本库、无需使用Git即可完成对版本库中文件的修改，甚至可以在你的iPad甚至iPhone上完成对文件的修改。</p>
 <p>以gotgithub账户身份登录GitHub，访问之前派生而来的版本库gotgithub/gotgit中的文件，例如文件<tt class="docutils literal"><span class="pre">errata.md</span></tt><a class="footnote-reference" href="#id17" id="id10">[6]</a>，会看到其中一个“Edit this file”的按钮，如图4-12所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/edit-this-file-btn.png"><img alt="../images/edit-this-file-btn.png" src="../images/edit-this-file-btn.png" /></a>
+<a class="reference internal image-reference" href="../images/edit-this-file-btn.png"><img alt="../images/edit-this-file-btn.png" src="../images/edit-this-file-btn.png" style="width: 600.0px; height: 306.0px;" /></a>
 <p class="caption">图4-12：浏览自己版本库中文件</p>
 </div>
 <p>点击图4-12中的“Edit this file”按钮，开始在线编辑文件<tt class="docutils literal"><span class="pre">errata.md</span></tt>，编辑器还支持语法加亮，如图4-13所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/edit-this-file-form.png"><img alt="../images/edit-this-file-form.png" src="../images/edit-this-file-form.png" /></a>
+<a class="reference internal image-reference" href="../images/edit-this-file-form.png"><img alt="../images/edit-this-file-form.png" src="../images/edit-this-file-form.png" style="width: 600.0px; height: 380.0px;" /></a>
 <p class="caption">图4-13：编辑文件</p>
 </div>
 </div>
@@ -334,17 +334,17 @@ Fast-forward
 <p>到目前，我们已经了解了GitHub的三大武器：Fork、Pull Request和在线编辑。对于最常用的“Fork + Pull Request”操作，GitHub还提供了一个快捷模式。即GitHub对于无权更改的他人版本库中的文件，提供了一个类似在线编辑的按钮，名为“Fork and edit this file”按钮，自动完成版本库派生和在线编辑，即将三大武器一勺烩。</p>
 <p>访问他人版本库（尚未在自己空间派生）中的文件，例如访问下面地址：<a class="reference external" href="http://git.io/hello-world-makefile">http://git.io/hello-world-makefile</a><a class="footnote-reference" href="#id18" id="id11">[7]</a>。显示他人（ossxp-com）版本库<tt class="docutils literal"><span class="pre">hello-world</span></tt>中的<tt class="docutils literal"><span class="pre">src/Makefile</span></tt>文件，如图4-14所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/fork-and-edit-btn.png"><img alt="../images/fork-and-edit-btn.png" src="../images/fork-and-edit-btn.png" /></a>
+<a class="reference internal image-reference" href="../images/fork-and-edit-btn.png"><img alt="../images/fork-and-edit-btn.png" src="../images/fork-and-edit-btn.png" style="width: 600.0px; height: 226.0px;" /></a>
 <p class="caption">图4-14：浏览他人版本库中文件</p>
 </div>
 <p>点击图4-14中的“Fork and edit this file”按钮，会自动在自己托管空间创建派生版本库，并开始在线编辑文件<tt class="docutils literal"><span class="pre">src/Makefile</span></tt>，如图4-15所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/fork-and-edit-form.png"><img alt="../images/fork-and-edit-form.png" src="../images/fork-and-edit-form.png" /></a>
+<a class="reference internal image-reference" href="../images/fork-and-edit-form.png"><img alt="../images/fork-and-edit-form.png" src="../images/fork-and-edit-form.png" style="width: 600.0px; height: 438.0px;" /></a>
 <p class="caption">图4-15：派生并编辑文件</p>
 </div>
 <p>文件修改完毕，点击“Propose File Change”按钮，会将改动作提交到派生的版本库中，并马上开启一个新的Pull Request。如图4-16所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/fork-and-edit-pull-request.png"><img alt="../images/fork-and-edit-pull-request.png" src="../images/fork-and-edit-pull-request.png" /></a>
+<a class="reference internal image-reference" href="../images/fork-and-edit-pull-request.png"><img alt="../images/fork-and-edit-pull-request.png" src="../images/fork-and-edit-pull-request.png" style="width: 600.0px; height: 311.0px;" /></a>
 <p class="caption">图4-16：编辑完毕自动开启Pull Request</p>
 </div>
 <p>点击“Send pull request”按钮完成Pull Request的创建。如果仔细查看图4-16，会发现Pull Request所包含的修改发生在<tt class="docutils literal"><span class="pre">gotgithub/hello-world</span></tt>派生版本库中的<tt class="docutils literal"><span class="pre">patch-1</span></tt>分支中，并非通常的<tt class="docutils literal"><span class="pre">master</span></tt>分支。</p>
@@ -459,8 +459,8 @@ https://github.com/ossxp-com/hello-world/pull/1</pre>
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/06/08。
-      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+      最后更新于 2013/10/14。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3 创建。
 
     </div>
   </body>

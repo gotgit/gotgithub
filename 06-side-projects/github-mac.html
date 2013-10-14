@@ -106,12 +106,12 @@
 <p>GitHub专为Mac用户开发了一款图形化客户端应用<tt class="docutils literal"><span class="pre">github:mac</span></tt>，在Mac下操作GitHub更简单。软件下载地址： <a class="reference external" href="http://mac.github.com/">http://mac.github.com/</a> 。</p>
 <p><tt class="docutils literal"><span class="pre">github:mac</span></tt> 可以实现版本库克隆、查看历史、提交、分支管理、与GitHub同步等功能。图6-12展示的是提交界面，在提交界面中同时显示了变更的差异比较，用户可以挑选文件中的部分变更进行提交，显然这个操作要比在命令行中执行<strong class="command">git add &#8211;patch</strong>或<strong class="command">git commit &#8211;patch</strong>要更加直观。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/mac-partial-commit.png"><img alt="../images/mac-partial-commit.png" src="../images/mac-partial-commit.png" /></a>
+<a class="reference internal image-reference" href="../images/mac-partial-commit.png"><img alt="../images/mac-partial-commit.png" src="../images/mac-partial-commit.png" style="width: 600.0px; height: 417.0px;" /></a>
 <p class="caption">图6-12：筛选文件中的部分更改进行提交</p>
 </div>
 <p><tt class="docutils literal"><span class="pre">github:mac</span></tt>和GitHub深度集成，当配置好关联的GitHub账号后，会自动在本地创建专用的SSH公钥/私钥对文件 <tt class="file docutils literal"><span class="pre">~/.ssh/github_rsa</span></tt> （如果该文件不存在的话），然后将公钥文件传递到GitHub网站并自动完成配置。新增的SSH公钥文件显示在GitHub网站的账号设置中，如图6-13所示：</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/mac-new-ssh-pubkey.png"><img alt="../images/mac-new-ssh-pubkey.png" src="../images/mac-new-ssh-pubkey.png" /></a>
+<a class="reference internal image-reference" href="../images/mac-new-ssh-pubkey.png"><img alt="../images/mac-new-ssh-pubkey.png" src="../images/mac-new-ssh-pubkey.png" style="width: 600.0px; height: 199.0px;" /></a>
 <p class="caption">图6-13：在GitHub上自动添加的SSH公钥</p>
 </div>
 <p>同时<tt class="docutils literal"><span class="pre">github:mac</span></tt>还在本地将新生成的私钥文件添加到<tt class="docutils literal"><span class="pre">ssh-agent</span></tt>认证代理中，这样一旦通过 SSH 协议连接GitHub，首先采用该公钥/私钥对进行身份认证。用下面的命令可以查看添加到<tt class="docutils literal"><span class="pre">ssh-agent</span></tt>中的私钥文件。</p>
@@ -154,8 +154,8 @@ Identity removed: /Users/jiangxin/.ssh/github_rsa (/Users/jiangxin/.ssh/github_r
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/06/08。
-      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+      最后更新于 2013/10/14。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3 创建。
 
     </div>
   </body>

@@ -118,27 +118,27 @@
 <span id="id2"></span><h2>4.4.1. 提交评注<a class="headerlink" href="#commit-comments" title="永久链接至标题">¶</a></h2>
 <p>查看项目的提交历史，从中选择一个提交，如图4-37所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/commit-history.png"><img alt="../images/commit-history.png" src="../images/commit-history.png" /></a>
+<a class="reference internal image-reference" href="../images/commit-history.png"><img alt="../images/commit-history.png" src="../images/commit-history.png" style="width: 600.0px; height: 425.0px;" /></a>
 <p class="caption">图4-37：helloworld项目提交历史</p>
 </div>
 <p>如图4-38是查看提交的界面。除了提交说明、提交者信息之外，还显示提交所修改的文件和改动差异。在查看提交页面的最下方显示一个提交评注对话框，可以在其中写下评注。评注可以使用 Markdown 语法。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/commit-note.png"><img alt="../images/commit-note.png" src="../images/commit-note.png" /></a>
+<a class="reference internal image-reference" href="../images/commit-note.png"><img alt="../images/commit-note.png" src="../images/commit-note.png" style="width: 600.0px; height: 414.0px;" /></a>
 <p class="caption">图4-38：添加提交评注</p>
 </div>
 <p>添加评注后，所评注的提交的作者会收到通知邮件，提醒针对自己的提交有了新的评论。通知邮件如图4-39所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/commit-note-email-notify.png"><img alt="../images/commit-note-email-notify.png" src="../images/commit-note-email-notify.png" /></a>
+<a class="reference internal image-reference" href="../images/commit-note-email-notify.png"><img alt="../images/commit-note-email-notify.png" src="../images/commit-note-email-notify.png" style="width: 600.0px; height: 235.0px;" /></a>
 <p class="caption">图4-39：提交评注的通知邮件</p>
 </div>
 <p>通过Web界面可以看到添加在提交下方的评注，并可以撰写新的评注展开讨论。评注者本人或提交的作者还可以编辑甚至删除评注。如图4-40所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/commit-note-admin.png"><img alt="../images/commit-note-admin.png" src="../images/commit-note-admin.png" /></a>
+<a class="reference internal image-reference" href="../images/commit-note-admin.png"><img alt="../images/commit-note-admin.png" src="../images/commit-note-admin.png" style="width: 600.0px; height: 284.0px;" /></a>
 <p class="caption">图4-40：提交评注</p>
 </div>
 <p>GitHub还支持Git自身提供的评注功能<a class="footnote-reference" href="#id7" id="id3">[1]</a>，如图4-41所示的是提交<a class="reference external" href="http://git.io/git-notes">http://git.io/git-notes</a><a class="footnote-reference" href="#id8" id="id4">[2]</a>的评注，这个评注并非通过GitHub添加的，而是由<tt class="docutils literal"><span class="pre">git-note</span></tt>命令提交的评注。这种评注针对一个特定提交只能有一个，GitHub只能显示不能编辑和删除。关于如何通过命令行查看<tt class="docutils literal"><span class="pre">git-note</span></tt>格式的评注，参见《Git权威指南》第570页“41.5 Git评注”。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/commit-note-by-git-note.png"><img alt="../images/commit-note-by-git-note.png" src="../images/commit-note-by-git-note.png" /></a>
+<a class="reference internal image-reference" href="../images/commit-note-by-git-note.png"><img alt="../images/commit-note-by-git-note.png" src="../images/commit-note-by-git-note.png" style="width: 600.0px; height: 301.0px;" /></a>
 <p class="caption">图4-41：git-note评注</p>
 </div>
 </div>
@@ -146,17 +146,17 @@
 <span id="id5"></span><h2>4.4.2. 逐行评注<a class="headerlink" href="#line-comments" title="永久链接至标题">¶</a></h2>
 <p>还是以<tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt>版本库中的提交为例，看一下GitHub支持的逐行评注功能，即针对提交中的任意一行添加评注。浏览提交，如图4-42所示，当鼠标置于任意一行代码时，在该行代码的左侧会显示一个添加注释的图标。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/commit-line-note-btn.png"><img alt="../images/commit-line-note-btn.png" src="../images/commit-line-note-btn.png" /></a>
+<a class="reference internal image-reference" href="../images/commit-line-note-btn.png"><img alt="../images/commit-line-note-btn.png" src="../images/commit-line-note-btn.png" style="width: 600.0px; height: 244.0px;" /></a>
 <p class="caption">图4-42：添加逐行评注按钮</p>
 </div>
 <p>点击该图标（用于添加逐行评注的图标），会显示如图4-43所示的添加逐行评注对话框。该评注对话框出现在两行代码之间，在其中写下评注。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/commit-line-note-form.png"><img alt="../images/commit-line-note-form.png" src="../images/commit-line-note-form.png" /></a>
+<a class="reference internal image-reference" href="../images/commit-line-note-form.png"><img alt="../images/commit-line-note-form.png" src="../images/commit-line-note-form.png" style="width: 600.0px; height: 278.0px;" /></a>
 <p class="caption">图4-43：添加逐行评注</p>
 </div>
 <p>添加评注后，项目的开发人员同样会收到邮件通知。针对同一行代码的多次评论按时间顺序依次显示，图4-44展示了多个行间评注，其中一个评注还使用 Markdown 语法嵌入了一个图片。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/commit-line-note.png"><img alt="../images/commit-line-note.png" src="../images/commit-line-note.png" /></a>
+<a class="reference internal image-reference" href="../images/commit-line-note.png"><img alt="../images/commit-line-note.png" src="../images/commit-line-note.png" style="width: 600.0px; height: 403.0px;" /></a>
 <p class="caption">图4-44：逐行评注和提交评注</p>
 </div>
 <p>更有意思的评注可以围观<tt class="docutils literal"><span class="pre">MrMEEE/bumblebee</span></tt>项目的一个bug修正提交（被戏称一个空格引发的惨案）。地址： <a class="reference external" href="http://git.io/giant-bug">http://git.io/giant-bug</a><a class="footnote-reference" href="#id9" id="id6">[3]</a>。</p>
@@ -210,8 +210,8 @@
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2012/06/08。
-      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
+      最后更新于 2013/10/14。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3 创建。
 
     </div>
   </body>

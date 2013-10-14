@@ -13,12 +13,12 @@
 创建个人主页
 --------------
 
-GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ ，用户为自己\
-的二级域名创建主页很容易，只要在托管空间下创建一个名为\ ``<user-id>.github.com``\
+GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.io``\ ，用户为自己\
+的二级域名创建主页很容易，只要在托管空间下创建一个名为\ ``<user-id>.github.io``\
 的版本库，向其\ ``master``\ 分支提交网站静态页面即可，其中网站首页为\
 ``index.html``\ 。下面以\ ``gotgithub``\ 用户为例介绍如何创建个人主页。
 
-* 用户\ ``gotgithub``\ 创建一个名为\ ``gotgithub.github.com``\ 的Git版本库。
+* 用户\ ``gotgithub``\ 创建一个名为\ ``gotgithub.github.io``\ 的Git版本库。
 
   在GitHub上创建版本库的操作，参见“第3.1节 :ref:`new-project`\ ”。
 
@@ -26,8 +26,8 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 
   ::
 
-    $ git clone git@github.com:gotgithub/gotgithub.github.com.git
-    $ cd gotgithub.github.com/
+    $ git clone git@github.com:gotgithub/gotgithub.github.io.git
+    $ cd gotgithub.github.io/
 
 * 在版本库根目录中创建文件\ ``index.html``\ 作为首页。
 
@@ -48,7 +48,7 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 
     $ git push origin master
 
-* 访问网址： http://gotgithub.github.com/ 。
+* 访问网址： http://gotgithub.github.io/ 。
 
   最多等待10分钟，GitHub就可以完成新网站的部署。网站完成部署后版本库\
   的所有者会收到邮件通知。
@@ -60,17 +60,17 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 创建项目主页
 ---------------
 
-如前所述，GitHub会为每个账号分配一个二级域名\ ``<user-id>.github.com``\
+如前所述，GitHub会为每个账号分配一个二级域名\ ``<user-id>.github.io``\
 作为用户的首页地址。实际上还可以为每个项目设置主页，项目主页也通过\
 此二级域名进行访问。
 
 例如\ ``gotgithub``\ 用户创建的\ ``helloworld``\ 项目如果启用了项目主页，\
-则可通过网址\ ``http://gotgithub.github.com/helloworld/``\ 访问。
+则可通过网址\ ``http://gotgithub.github.io/helloworld/``\ 访问。
 
 为项目启用项目主页很简单，只需要在项目版本库中创建一个名为\ ``gh-pages``\
 的分支，并向其中添加静态网页即可。也就是说如果项目的Git版本库中包含了名为\
 ``gh-pages``\ 分支的话，则表明该项目提供静态网页构成的主页，可以通过网址\
-``http://<user-id>.github.com/<project-name>``\ 访问到。
+``http://<user-id>.github.io/<project-name>``\ 访问到。
 
 下面以用户\ ``gotgithub``\ 的项目\ ``helloworld``\ 为例，介绍如何维护项目主页。
 
@@ -221,7 +221,7 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 
 无论哪种方法，一旦在GitHub远程版本库中创建分支\ ``gh-pages``\ ，项目的主页\
 就已经建立。稍后（不超过10分钟），用浏览器访问下面的地址即可看到刚刚提交的\
-项目首页： http://gotgithub.github.com/helloworld/ 。
+项目首页： http://gotgithub.github.io/helloworld/ 。
 
 除了以上通过命令行创建\ ``gh-pages``\ 分支为项目设定主页之外，GitHub还提供\
 了图形操作界面。如图3-19所示。
@@ -256,32 +256,32 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
 
 首先按照前面章节介绍的步骤，为账号\ ``gotgit``\ 设置账户主页。
 
-1. 在账户\ ``gotgit``\ 下创建版本库\ ``gotgit.github.com``\ 以维护该账号主页。
+1. 在账户\ ``gotgit``\ 下创建版本库\ ``gotgit.github.io``\ 以维护该账号主页。
 
-   地址： https://github.com/gotgit/gotgit.github.com/
+   地址： https://github.com/gotgit/gotgit.github.io/
 
 2. 将网站内容提交并推送到该版本库\ ``master``\ 分支中。
 
-   即在\ ``gotgit.github.com``\ 版本库的根目录下至少包含一个首页文件，如\
+   即在\ ``gotgit.github.io``\ 版本库的根目录下至少包含一个首页文件，如\
    ``index.html``\ 。还可以使用下节将要介绍到的 Jekyll 技术，让网页有统一的\
    显示风格，此时首页文件可能并非一个完整的HTML文档，而是套用了页面模版。
 
-3. 至此当访问网址\ http://gotgit.github.com\ 时，会将账号\ ``gotgit``\
-   的版本库\ ``gotgit.github.com``\ 中的内容作为网站内容显示出来。
+3. 至此当访问网址\ http://gotgit.github.io\ 时，会将账号\ ``gotgit``\
+   的版本库\ ``gotgit.github.io``\ 中的内容作为网站内容显示出来。
 
 接下来进行如下操作，使得该网站能够使用专有域名\ ``www.worldhello.net``\
 提供服务。
 
-1. 在账号\ ``gotgit``\ 的版本库\ ``gotgit.github.com``\ 根目录下添加文件\
+1. 在账号\ ``gotgit``\ 的版本库\ ``gotgit.github.io``\ 根目录下添加文件\
    ``CNAME``\ ，文件内容为：\ ``www.worldhello.net``\ 。
 
-   参见： https://github.com/gotgit/gotgit.github.com/blob/master/CNAME
+   参见： https://github.com/gotgit/gotgit.github.io/blob/master/CNAME
 
-2. 然后更改域名\ ``www.worldhello.net``\ 的IP地址，指向域名\ ``gotgit.github.com``\
+2. 然后更改域名\ ``www.worldhello.net``\ 的IP地址，指向域名\ ``gotgit.github.io``\
    对应的IP地址（注意不是\ ``github.com``\ 的IP地址）。
 
    完成域名的DNS指向后，可试着用\ ``ping``\ 或\ ``dig``\ 命令确认域名\
-   ``www.worldhello.net``\ 和\ ``gotgit.github.com``\ 指向同一IP地址。
+   ``www.worldhello.net``\ 和\ ``gotgit.github.io``\ 指向同一IP地址。
 
    ::
 
@@ -290,13 +290,13 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.com``\ 
      ; ANSWER SECTION:
      www.worldhello.net.     81078   IN      A       204.232.175.78
      
-     $ dig @8.8.8.8 -t a gotgit.github.com
+     $ dig @8.8.8.8 -t a gotgit.github.io
      ...
      ; ANSWER SECTION:
-     gotgit.github.com.      43200   IN      A       204.232.175.78
+     gotgit.github.io.      43200   IN      A       204.232.175.78
 
 设置完成后用浏览器访问 http://www.worldhello.net/ 即可看到由账号\ ``gotgit``\
-的版本库\ ``gotgit.github.com``\ 维护的页面。若将域名\ ``worldhello.net``\
+的版本库\ ``gotgit.github.io``\ 维护的页面。若将域名\ ``worldhello.net``\
 （不带www前缀）也指向IP地址\ ``204.232.175.78``\ ，则访问网址\
 http://worldhello.net/\ 会发现GitHub体贴地将该网址重定向到正确的地址\
 http://www.worldhello.net/\ 。
