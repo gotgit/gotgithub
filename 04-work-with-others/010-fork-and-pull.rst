@@ -99,7 +99,7 @@ GotGit版本库\ [#]_\ 用于维护《Git权威指南》一书的官网和勘误
 
     $ git push
 
-访问GitHub上的派生项目页面，会看到以用户whangsheng在\ ``master``\ 分支\ [#]_\
+访问GitHub上的派生项目页面，会看到以用户wangsheng在\ ``master``\ 分支\ [#]_\
 创建的提交。如图4-4所示。
 
 .. figure:: /images/work-with-others/gotgit-new-commit.png
