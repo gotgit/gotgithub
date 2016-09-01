@@ -69,8 +69,8 @@
 
 * 通过子模组更新命令克隆子模组版本库（即保存图片的版本库）并检出。
 
-      $ git submodule init
-      $ git submodule update
+        $ git submodule init
+        $ git submodule update
 
 ### 编译书稿
 
